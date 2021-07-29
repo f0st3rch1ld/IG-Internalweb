@@ -12,7 +12,7 @@ $order_data_to_send = array();
 
 
 // Retreives order data from the kanbanotron database
-include '../db/kanbanotron_connection';
+include plugin_dir_path(__FILE__) . '../db/kanbanotron_connection';
 
 $order_data_query = "SELECT order_data FROM Purchase_orders WHERE order_id='" . $active_po . "'";
 $order_data_result = $conn->query($order_data_query);
@@ -25,7 +25,7 @@ while ($row = $order_data_result->fetch_assoc()) {
 $conn->close();
 
 
-include '../db/request.php';
+include plugin_dir_path(__FILE__) . '../db/request.php';
 
 // request reference
 
@@ -47,7 +47,7 @@ include '../db/request.php';
 function vendor_check($x) {
     global $order_data_to_send;
 
-    include '../db/knbn_wp_connection.php';
+    include plugin_dir_path(__FILE__) . '../db/knbn_wp_connection.php';
     knbn_info_request($x);
 
     if ($knbn_vendor == $vndr) {
