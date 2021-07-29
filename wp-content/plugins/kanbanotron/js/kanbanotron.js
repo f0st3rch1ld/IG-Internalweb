@@ -132,6 +132,7 @@ function submitPurchaseOrder(x, y) {
       "GET",
       `../../wp-content/plugins/kanbanotron/components/send_purchase_order.php/?active_po=${x}&vndr=${y}`
     );
+    xhttp.send();
   }
 
 }
