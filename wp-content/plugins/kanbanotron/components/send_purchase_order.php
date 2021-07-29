@@ -47,12 +47,13 @@ function vendor_check($x)
 {
     global $order_data_to_send;
     global $knbn_vendor;
+    global $vendor;
 
     include '../db/knbn_wp_connection.php';
 
     knbn_info_request($x);
 
-    if ($knbn_vendor == $vndr) {
+    if ($knbn_vendor == $vendor) {
         array_push($order_data_to_send, $x);
     }
 
