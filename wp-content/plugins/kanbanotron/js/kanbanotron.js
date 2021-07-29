@@ -120,6 +120,10 @@ function newPO() {
 function submitPurchaseOrder(x, y) {
 
   if (confirm("Are you sure you want to submit this purchase order? Make sure to double check everything looks correct before sending. If everything looks correct, continue by clicking \"OK\".")) {
+
+    console.log(x);
+    console.log(y);
+
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
       console.log(this.responseText);
