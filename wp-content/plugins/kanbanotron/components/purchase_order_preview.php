@@ -121,7 +121,7 @@ foreach ($vendors as $vendor) : ?>
         <!-- PO Control Container -->
         <div class="po-control-container">
             <!-- ind submit -->
-            <button class="ind-po-submit"><i class="fas fa-paper-plane"></i></button>
+            <button class="ind-po-submit" onmouseup="submitPurchaseOrder('<?php echo $active_po; ?>', <?php echo $vendor; ?>)"><i class="fas fa-paper-plane"></i></button>
 
             <!-- ind delete -->
             <button class="ind-po-delete" onmouseup="removeAllFromPO('<?php echo $active_po; ?>', '<?php echo $vendor; ?>')"><i class="fas fa-trash-alt"></i></button>
