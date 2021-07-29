@@ -3,9 +3,6 @@
 $active_po = $_GET['active_po'];
 $vendor = $_GET['vndr'];
 
-echo $active_po . '<br />';
-echo $vendor . '<br />';
-
 $order_data;
 
 $order_data_to_send = array();
@@ -67,7 +64,7 @@ for ($i = 0; count($order_data) > $i; $i++) {
 
 // temporary check on order_data_to_send variable to see if the values got pushed correctly.
 foreach ($order_data_to_send as $item) {
-    echo 'Item UID: ' . $item . ' -> ' . $vendor . '<br />';
+    echo 'Item UID: ' . $item . ' -> ' . $vendor;
 }
 
 
