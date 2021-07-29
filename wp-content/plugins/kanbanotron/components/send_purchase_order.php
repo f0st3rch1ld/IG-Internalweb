@@ -2,6 +2,10 @@
 
 $active_po = $_GET['active_po'];
 $vendor = $_GET['vndr'];
+
+echo $active_po . '<br />';
+echo $vendor . '<br />';
+
 $order_data;
 
 $order_data_to_send = array();
