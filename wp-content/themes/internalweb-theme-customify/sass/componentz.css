@@ -1,0 +1,52 @@
+body.home #componentz-header .header-background {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+#componentz-header .header-background {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#componentz-header #componentz-logo h2 a {
+  color: #fff;
+}
+
+#componentz-header .user-avatar {
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  border-radius: 40px;
+}
+
+#componentz-header .container-header:not(:hover):not(.hover) .cz-icon-menu,
+#componentz-header .container-header:not(:hover):not(.hover) .cz-icon-search,
+#componentz-header .container-header:not(:hover):not(.hover) .cz-icon-account {
+  color: #fff;
+}
+
+#componentz-header h1,
+#componentz-header a {
+  color: #fff;
+}
+
+#componentz-header .componentz-theme-menu {
+  display: none !important;
+}
+
+.comment-author .user-avatar {
+  height: 80px !important;
+  width: 80px !important;
+  background-size: cover !important;
+  border-radius: 80px;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+          box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+}
+
+.follow-us-dropdown {
+  display: none !important;
+}
+
+.cz-container {
+  width: 100% !important;
+  max-width: 2000px !important;
+}
+/*# sourceMappingURL=componentz.css.map */

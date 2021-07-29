@@ -1,0 +1,100 @@
+username,EMAIL,first_name,last_name,employee_extension,employee_phone,employee_department,employee_company
+AaronM,AaronM@inventive-group.com,Aaron,Molleker,126,,engineering,inventive-group
+AlexR,AlexR@inventive-group.com,Alex,Rodriguez,107,,sales,inventive-group
+AmberH,AmberH@inventive-group.com,Amber,Henninger,112,,accounting,inventive-group
+AndrewF,AndrewF@inventive-group.com,Andrew,Foster,115,,marketing   ,inventive-group
+AndrewV,AndrewV@inventive-group.com,Andrew ,Varga,124,,engineering,inventive-group
+AngieK,MachineShop@inventive-group.com,Angie (Angela),Kaupas,,,machine-shop,inventive-group
+BenA,MachineShop@inventive-group.com,Ben,Auston,,,machine-shop,inventive-group
+BenC,BenC@iwssales.com,Ben (Benjamin),Ceccarelli,208,208-598-0266,sales,iws
+BenT,powdercoating@intheditch.com,Ben (Benjamin),Tomlin,,,powder-coating,inventive-group
+BradL,Welding@inventive-group.com,Brad (Bradley),Lamm,,,welding,inventive-group
+BradP,itdmarketing@intheditch.com,Brad,Phillips,,,hot-rods-iws,iws
+BrandonJ,TubeFab@inventive-group.com,Brandon,Jones,,,tube-fab,inventive-group
+BrendaZ,Service@iwssales.com,Brenda,Zepeda,204,,service-iws,iws
+BryanS,BryanS@inventive-group.com,Bryan,Straw,131,,administration,inventive-group
+ChaceL,ChaceL@inventive-group.com,Chace,Larsen,122,,engineering,inventive-group
+ChrisF,ChrisF@iwssales.com,Chris (Christopher),Franklin,210,208-590-0034,service-iws,iws
+ChrisP,pressbrake@inventive-group.com,Chris (Christopher),Pilkington,,,press-brake,inventive-group
+ChuckC,ChuckC@inventive-group.com,Chuck (Charles),Ceccarelli,103,208-599-1501,engineering,inventive-group
+ClayP,ClayP@inventive-group.com,Clay,Pollard,128,,production                                 ,inventive-group
+ColtonR,shipping@inventive-group.com,Colton,Reynolds,,,shipping,inventive-group
+CrysL,CrysL@inventive-group.com,Crys (Crystfer),Leikert,120,,engineering                         ,inventive-group
+DarinB,Service@iwssales.com,Darin,Barton,204,,service-iws,iws
+DarrenP,welding@inventive-group.com,Darren,Parkinson,,,welding,inventive-group
+DavidS,Service@iwssales.com,David,Stowells,204,,shop-iws,iws
+DavidW,DavidW@inventive-group.com,David,Wilkinson,,,production                                 ,inventive-group
+DebbieH,DebbieH@inventive-group.com ,Debbie (Deborah),Hernandez,104,208-598-3448,administration,inventive-group
+DeronP,purchasing@inventive-group.com,Deron,Powell,,,shipping,inventive-group
+DrewP,welding@inventive-group.com,Drew,Phillips,,,welding,inventive-group
+ElianaW,ElianaW@inventive-group.com,Eliana,Wright,108,,accounting,inventive-group
+Erowe,EricaR@inventive-group.com,Erica,Rowe,114,208-943-1149,marketing   ,inventive-group
+ErikaP,ErikaP@inventive-group.com,Erika,Pedroza,103,208-943-1339,accounting,inventive-group
+FrankieS,welding@inventive-group.com,Frankie (Francisco),Santillan,,,welding,inventive-group
+GregC,shipping@inventive-group.com,Greg (Gregory),Cathey,,,shipping,inventive-group
+GregM,GregM@inventive-group.com,Greg (Gregory),Miller,,208-943-1043,tube-fab,inventive-group
+GuyK,Service@iwssales.com,Guy (Edwin),Keenan,204,,service-iws,iws
+HayleyW,pressbrake@inventive-group.com,Hayley,Woodwick,,,press-brake,inventive-group
+HeatherB,HeatherB@Inventive-Group.com,Heather,Barrett,113,,administration,inventive-group
+BertC,shipping@inventive-group.com,Bert (Humberto),Caro,,,shipping,inventive-group
+HunterD,welding@inventive-group.com,Hunter,Delsite,,,welding,inventive-group
+JacobW,JacobW@inventive-group.com,Jacob,Weber,121,,engineering,inventive-group
+JakeB,powdercoating@intheditch.com,Jake,Bassett,,,powder-coating,inventive-group
+JasonB,JasonB@iwssales.com,Jay (Jason),Bass,211,208-598-2759,service-iws,iws
+JasonR,JasonR@inventive-group.com,Jason,Rogers,,208-943-1144,machine-shop                       ,inventive-group
+JeremyL,welding@inventive-group.com,Jeremy,Larson,,,welding,inventive-group
+JimB,welding@inventive-group.com,Jim (James),Berg,,,laser,inventive-group
+JimT,Jim@razorbackoffroad.com,Jim (James),Todd,,208-591-1109,sales,inventive-group
+JoeD,shipping@inventive-group.com,Joe,DuBord,,,shipping,inventive-group
+JoeK,JoeK@iwssales.com,Joe (Joseph),Keddie,128,,service-iws,iws
+JohannaD,JohannaD@iwssales.com,Johanna,Dallas,102,,administration,inventive-group
+JohnD,JohnD@iwssales.com ,John,DeRoos,213,,sales,iws
+JohnM,JohnM@inventive-group.com,John,Murdorf,106,,sales,inventive-group
+JonE,shipping@inventive-group.com,Jon E (Jonathan),Etters,,,shipping,inventive-group
+JoshB,JoshB@inventive-group.com,Josh (Joshua),Burge,105,208-696-8299,sales,inventive-group
+JustinC,shipping@inventive-group.com,Justin,Connonly,,,shipping,inventive-group
+JustinK,MachineShop@inventive-group.com,Justin,Kennedy,,,machine-shop,inventive-group
+JustinW,JustinW@inventive-group.com,Justin,Witbeck,123,,engineering,inventive-group
+KathrynB,KathrynB@inventive-group.com,Kathryn,Boyer,111,,accounting,inventive-group
+KeeganD,Service@iwssales.com,Keegan,Dickamore,204,,service-iws,iws
+KevinB,KevinB@inventive-group.com,Kevin,Brethauer,118,,marketing,inventive-group
+KimL,shipping@inventive-group.com,Kim (Kimberly),Legrone,,,shipping,inventive-group
+KristinaM,KristinaM@inventive-group.com,Kristi (Kristina),Miller,110,,accounting,inventive-group
+KristinR,KristinR@inventive-group.com,Kristin,Robertson,143,208-598-9377,shipping,inventive-group
+GingerB,tubefab@inventive-group.com,Ginger (Kyle),Ballard,,,tube-fab,inventive-group
+KyleD,KyleD@inventive-group.com,Kyle,Davis,127,208-598-9832,engineering,inventive-group
+KyleM,KyleM@inventive-group.com,Kyle,Martinez,119,,engineering,inventive-group
+KyleS,welding@inventive-group.com,Kyle,Sayers,,,welding,inventive-group
+LoganD,logand@inventive-group.com,Logan,Dowler,109,,shipping,inventive-group
+LorraineB,LorraineB@iwssales.com,Lorraine,Bergeron,212,,administration,inventive-group
+MannyH,machineshop@inventive-group.com,Manny (Manual),Holguin,,,machine-shop,inventive-group
+MarkB,maintenance@inventive-group.com,Mark,Brown,,208-696-8663,maintenance,inventive-group
+MarkH,MarkH@iwssales.com,Mark,Hamren,202,208-696-9115,parts-iws,iws
+MarshallC,Service@iwssales.com,Marshall,Carruthers,204,,service-iws,iws
+MartyL,MartyL@iwssales.com,Marty (Martin),Lakel,203,208-599-5888,sales,iws
+MattG,welding@inventive-group.com,Matt (Matthew),Geryk,,,welding,inventive-group
+MichaelL,MichaelL@inventive-group.com,Michael,Litz,,208-696-8205,laser,inventive-group
+MicheleM,shipping@inventive-group.com,Michele,Martz,,,shipping,inventive-group
+MikeL,mikeL@inventive-group.com,Mike (Michael),Leopard,,,welding,inventive-group
+MorganR,Morgan@inventive-group.com,Morgan,Rheingruber,,,production                                 ,inventive-group
+MyronM,welding@inventive-group.com,Myron,McCoy,,,laser,inventive-group
+NathanM,NathanM@inventive-group.com,Nate (Nathaniel),Minneman,129,,marketing,inventive-group
+NateS,NateS@inventive-group.com,Nate (Nathan),Spring,116,,marketing,inventive-group
+NathanS,NathanS@inventive-group.com,Nathan,Spyker,117,,marketing,inventive-group
+NickD,Service@iwssales.com,Nick,Dillenbeck,204,,service-iws,iws
+PatB,welding@inventive-group.com,Pat (Patrick),Burger,,,welding,inventive-group
+PhilT,philt@iwssales.com,Phil,Trupiano,,,accounting,inventive-group
+RachelW,RachelW@iwssales.com,Rachel,Walker,137,,accounting,inventive-group
+RyanM,shipping@inventive-group.com,Ryan,McCardle,,,shipping,inventive-group
+SamC,SamC@inventive-group.com,Sam (Samuel),Charters,,208-598-2470,press-brake,inventive-group
+SamS,SamS@iwssales.com,Sam (Samuel),Shineflew,117,208-696-9340,sales,iws
+ShannonA,ShannonA@inventive-group.com,Shannon,Allison,146,208-598-6749,powder-coating                             ,inventive-group
+SteveD,SteveD@iwssales.com,Steve (Steven),Delaplain,,208-599-4662,sales,iws
+SteveW,welding@inventive-group.com,Steve (Steven),Whitted,,,welding,inventive-group
+TallyT,TallyT@iwssales.com,Tally (Randy),Talamantez,139,208-598-6533,service-iws,iws
+TammyL,TammyL@inventive-group.com,Tammy (Tamera),Langston,102,208-598-9839,administration,inventive-group
+TaylorA,Service@iwssales.com,Taylor,Adkins,210,,service-iws,iws
+TrevorJ,shipping@inventive-group.com,Trevor,Jewett,,,shipping,inventive-group
+TrevorK,TrevorK@inventive-group.com,Trevor,Kinghorn,,208-590-8069,welding,inventive-group
+TylerO,TylerO@intheditch.com,Tyler,Oberg,125,,engineering,inventive-group
+ZekeP,welding@inventive-group.com,Zeke (Ezekiel),Perkins,,,welding,inventive-group

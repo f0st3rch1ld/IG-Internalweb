@@ -1,0 +1,64 @@
+@import "mixins.scss";
+
+body.home {
+  #componentz-header {
+    .header-background {
+      background: rgba(0, 0, 0, 0.4) !important;
+    }
+  }
+}
+
+#componentz-header {
+  .header-background {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  #componentz-logo {
+    h2 {
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  .user-avatar {
+    height: 40px;
+    width: 40px;
+    background-size: cover;
+    border-radius: 40px;
+  }
+
+  .container-header:not(:hover):not(.hover) .cz-icon-menu,
+  .container-header:not(:hover):not(.hover) .cz-icon-search,
+  .container-header:not(:hover):not(.hover) .cz-icon-account {
+    color: #fff;
+  }
+
+  h1,
+  a {
+    color: #fff;
+  }
+
+  .componentz-theme-menu {
+    display: none !important;
+  }
+}
+
+.comment-author {
+  .user-avatar {
+    height: 80px !important;
+    width: 80px !important;
+    background-size: cover !important;
+    border-radius: 80px;
+    @include default-drop-shadow;
+  }
+}
+
+.follow-us-dropdown {
+  display: none !important;
+}
+
+.cz-container {
+  width: 100% !important;
+  max-width: 2000px !important;
+}

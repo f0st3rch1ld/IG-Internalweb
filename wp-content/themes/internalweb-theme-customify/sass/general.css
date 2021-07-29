@@ -1,0 +1,1513 @@
+input {
+  width: auto !important;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+table tbody tr th {
+  background-color: #383838 !important;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+table tbody tr td {
+  background-position: center !important;
+  background-size: cover !important;
+  background-color: transparent !important;
+  text-align: center;
+  vertical-align: middle;
+  height: 110px;
+}
+
+hr {
+  width: 80%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #bfbfbf;
+}
+
+button {
+  background-color: #bfbfbf;
+}
+
+button:hover {
+  background-color: #0f83ff;
+}
+
+button.active {
+  background-color: #0f83ff;
+}
+
+button:focus {
+  border-style: none;
+}
+
+.kanbanotron-main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.kanbanotron-main-container #knbn_uid-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-color: #f5f5f5;
+  padding: 20px;
+}
+
+.kanbanotron-main-container #knbn_uid-form input[type="text"] {
+  width: 100% !important;
+  max-width: 400px;
+}
+
+.kanbanotron-main-container h4 {
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-color: #f5f5f5;
+}
+
+.kanbanotron-main-container button,
+.kanbanotron-main-container input[type="submit"],
+.kanbanotron-main-container a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: auto;
+  width: auto;
+  height: 30px;
+  background-color: #bfbfbf !important;
+  color: #383838 !important;
+  border-radius: 3px !important;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  font-size: 1em !important;
+}
+
+.kanbanotron-main-container button i,
+.kanbanotron-main-container input[type="submit"] i,
+.kanbanotron-main-container a i {
+  margin-left: 10px;
+}
+
+.kanbanotron-main-container button:hover,
+.kanbanotron-main-container input[type="submit"]:hover,
+.kanbanotron-main-container a:hover {
+  background-color: #0f83ff !important;
+  color: #fff !important;
+}
+
+.kanbanotron-main-container .kanban-information-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50px;
+}
+
+.kanbanotron-main-container .kanban-information-container table {
+  table-layout: fixed;
+}
+
+.kanbanotron-main-container .kanban-information-container table tbody tr th {
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: #fff;
+}
+
+.kanbanotron-main-container .kanban-information-container table tbody tr td {
+  height: 50px;
+}
+
+.kanbanotron-main-container .kanban-information-container .knbn-order-form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: calc(100% - 400px);
+  height: auto;
+  min-width: 400px;
+  padding: 0px 20px;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  border-style: solid;
+  border-color: #f5f5f5;
+  border-width: 2px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  overflow: hidden;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container:hover {
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+          box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .vendor-name {
+  color: #fff;
+  background-color: #0f83ff;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container h5 {
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 5px 15px;
+  margin: 0px;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  background-color: #0f83ff;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-title-container .po-status {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-control-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-control-container button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: auto;
+  height: auto;
+  margin: 5px;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-control-container button i {
+  margin: 0px !important;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-control-container .ind-po-submit:hover {
+  background-color: #58b021 !important;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-control-container .ind-po-delete:hover {
+  background-color: #e00004 !important;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container table {
+  margin: 0px;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container table thead tr {
+  background-color: #383838;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container table thead tr th {
+  background-color: transparent;
+  color: #fff;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container table thead tr td {
+  font-weight: 600;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container table tbody tr td,
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container table tbody tr th,
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container table thead tr td,
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container table thead tr th {
+  height: 50px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container table tbody tr .remove-product,
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container table thead tr .remove-product {
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container table tbody tr .remove-product:hover > i,
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container table thead tr .remove-product:hover > i {
+  color: #e00004 !important;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.label-app-container,
+.kanban-generator-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1450px;
+  text-align: center;
+}
+
+.label-app-container a,
+.label-app-container button,
+.label-app-container input[type="submit"],
+.kanban-generator-container a,
+.kanban-generator-container button,
+.kanban-generator-container input[type="submit"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: auto;
+  height: 50px;
+  background-color: #f5f5f5;
+  min-width: 75px;
+  padding: 15px;
+  font-weight: 700;
+  font-size: 12px;
+  color: #383838;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.label-app-container a:hover, .label-app-container a.active,
+.label-app-container button:hover,
+.label-app-container button.active,
+.label-app-container input[type="submit"]:hover,
+.label-app-container input[type="submit"].active,
+.kanban-generator-container a:hover,
+.kanban-generator-container a.active,
+.kanban-generator-container button:hover,
+.kanban-generator-container button.active,
+.kanban-generator-container input[type="submit"]:hover,
+.kanban-generator-container input[type="submit"].active {
+  background-color: #0f83ff;
+  color: #fff;
+}
+
+.label-app-container .label-order-tabs,
+.kanban-generator-container .label-order-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  margin: 30px auto;
+}
+
+.label-app-container .label-order-tabs a,
+.label-app-container .label-order-tabs button,
+.label-app-container .label-order-tabs input[type="submit"],
+.kanban-generator-container .label-order-tabs a,
+.kanban-generator-container .label-order-tabs button,
+.kanban-generator-container .label-order-tabs input[type="submit"] {
+  margin: 0px 3px;
+}
+
+.label-app-container .tool-bar,
+.kanban-generator-container .tool-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  margin: 25px 0px 50px 0px;
+  background-color: #383838;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.label-app-container .tool-bar div,
+.kanban-generator-container .tool-bar div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: auto;
+  height: 100%;
+}
+
+.label-app-container .tool-bar a,
+.label-app-container .tool-bar button,
+.label-app-container .tool-bar input[type="submit"],
+.kanban-generator-container .tool-bar a,
+.kanban-generator-container .tool-bar button,
+.kanban-generator-container .tool-bar input[type="submit"] {
+  background-color: #383838 !important;
+  color: #fff !important;
+  margin: 0px 3px;
+}
+
+.label-app-container .tool-bar a:hover, .label-app-container .tool-bar a.active,
+.label-app-container .tool-bar button:hover,
+.label-app-container .tool-bar button.active,
+.label-app-container .tool-bar input[type="submit"]:hover,
+.label-app-container .tool-bar input[type="submit"].active,
+.kanban-generator-container .tool-bar a:hover,
+.kanban-generator-container .tool-bar a.active,
+.kanban-generator-container .tool-bar button:hover,
+.kanban-generator-container .tool-bar button.active,
+.kanban-generator-container .tool-bar input[type="submit"]:hover,
+.kanban-generator-container .tool-bar input[type="submit"].active {
+  background-color: #0f83ff !important;
+  color: #fff !important;
+}
+
+.label-app-container .tracking-container,
+.kanban-generator-container .tracking-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  margin: -45px 0px 50px 0px;
+  padding: 5px;
+  border-style: solid;
+  border-color: #f5f5f5;
+  border-width: 0px 0px 2px 0px;
+}
+
+.label-app-container .tracking-container a,
+.label-app-container .tracking-container button,
+.label-app-container .tracking-container input[type="submit"],
+.kanban-generator-container .tracking-container a,
+.kanban-generator-container .tracking-container button,
+.kanban-generator-container .tracking-container input[type="submit"] {
+  margin: 0px 3px;
+}
+
+.label-app-container .approval-area,
+.kanban-generator-container .approval-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #f5f5f5;
+  border-width: 2px;
+}
+
+.label-app-container .approval-area h3,
+.kanban-generator-container .approval-area h3 {
+  font-weight: 700;
+}
+
+.label-app-container .approval-area .not-sent,
+.kanban-generator-container .approval-area .not-sent {
+  color: #bfbfbf;
+}
+
+.label-app-container .approval-area .needs-approved,
+.kanban-generator-container .approval-area .needs-approved {
+  color: red;
+}
+
+.label-app-container .approval-area .approved,
+.kanban-generator-container .approval-area .approved {
+  color: #a0cc00;
+}
+
+.label-app-container .approval-area #approve-labels-submit:hover,
+.kanban-generator-container .approval-area #approve-labels-submit:hover {
+  background-color: #a0cc00 !important;
+}
+
+.label-app-container .approval-area #reject-labels-submit:hover,
+.kanban-generator-container .approval-area #reject-labels-submit:hover {
+  background-color: red !important;
+}
+
+.label-app-container .approval-area p,
+.kanban-generator-container .approval-area p {
+  width: 100%;
+  margin: 15px;
+}
+
+.label-app-container .approval-area a,
+.label-app-container .approval-area button,
+.label-app-container .approval-area input[type="submit"],
+.kanban-generator-container .approval-area a,
+.kanban-generator-container .approval-area button,
+.kanban-generator-container .approval-area input[type="submit"] {
+  margin: 0px 3px;
+}
+
+.label-app-container .label-o-matic-container,
+.kanban-generator-container .label-o-matic-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.label-app-container .label-o-matic-container h2,
+.kanban-generator-container .label-o-matic-container h2 {
+  width: 100%;
+}
+
+.label-app-container .label-o-matic-container .form-area,
+.kanban-generator-container .label-o-matic-container .form-area {
+  width: 100%;
+  max-width: 400px;
+}
+
+.label-app-container .label-o-matic-container .form-area button.accordion-button,
+.kanban-generator-container .label-o-matic-container .form-area button.accordion-button {
+  width: 100%;
+  font-weight: 800;
+  display: none;
+  margin: 5px 0px 0px 0px;
+  border-radius: 5px;
+}
+
+.label-app-container .label-o-matic-container .form-area button.accordion-button i,
+.kanban-generator-container .label-o-matic-container .form-area button.accordion-button i {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.label-app-container .label-o-matic-container .form-area button.accordion-button.active,
+.kanban-generator-container .label-o-matic-container .form-area button.accordion-button.active {
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+          box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+  z-index: 100;
+  border-radius: 5px 5px 0px 0px !important;
+}
+
+.label-app-container .label-o-matic-container .form-area button.accordion-button.active i,
+.kanban-generator-container .label-o-matic-container .form-area button.accordion-button.active i {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.label-app-container .label-o-matic-container .form-area input[type="submit"],
+.label-app-container .label-o-matic-container .form-area input[type="button"],
+.label-app-container .label-o-matic-container .form-area input[type="text"],
+.label-app-container .label-o-matic-container .form-area input[type="date"],
+.label-app-container .label-o-matic-container .form-area input[type="number"],
+.kanban-generator-container .label-o-matic-container .form-area input[type="submit"],
+.kanban-generator-container .label-o-matic-container .form-area input[type="button"],
+.kanban-generator-container .label-o-matic-container .form-area input[type="text"],
+.kanban-generator-container .label-o-matic-container .form-area input[type="date"],
+.kanban-generator-container .label-o-matic-container .form-area input[type="number"] {
+  width: 100% !important;
+}
+
+.label-app-container .label-o-matic-container .preview-area,
+.kanban-generator-container .label-o-matic-container .preview-area {
+  width: calc(100% - 400px);
+  padding: 20px;
+}
+
+.label-app-container .label-o-matic-container .column,
+.kanban-generator-container .label-o-matic-container .column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.label-app-container .label-o-matic-container .column .group,
+.kanban-generator-container .label-o-matic-container .column .group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.label-app-container .label-o-matic-container .column .group h4,
+.kanban-generator-container .label-o-matic-container .column .group h4 {
+  font-weight: 700;
+  width: 100%;
+  text-align: left;
+}
+
+.label-app-container .label-o-matic-container .column .dark-group,
+.kanban-generator-container .label-o-matic-container .column .dark-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #383838;
+  color: #fff;
+}
+
+.label-app-container .label-o-matic-container .column .dark-group h4,
+.kanban-generator-container .label-o-matic-container .column .dark-group h4 {
+  font-weight: 700;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+}
+
+.label-app-container .label-o-matic-container .column #add-label-select,
+.label-app-container .label-o-matic-container .column .order-forms-container,
+.kanban-generator-container .label-o-matic-container .column #add-label-select,
+.kanban-generator-container .label-o-matic-container .column .order-forms-container {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.label-app-container .label-o-matic-container .column #add-to-label-order,
+.kanban-generator-container .label-o-matic-container .column #add-to-label-order {
+  margin-top: 25px;
+}
+
+.label-app-container .label-o-matic-container .column #email-order,
+.kanban-generator-container .label-o-matic-container .column #email-order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.label-app-container .label-o-matic-container .column #email-order p,
+.label-app-container .label-o-matic-container .column #email-order input[type="text"],
+.label-app-container .label-o-matic-container .column #email-order input[type="date"],
+.label-app-container .label-o-matic-container .column #email-order select,
+.kanban-generator-container .label-o-matic-container .column #email-order p,
+.kanban-generator-container .label-o-matic-container .column #email-order input[type="text"],
+.kanban-generator-container .label-o-matic-container .column #email-order input[type="date"],
+.kanban-generator-container .label-o-matic-container .column #email-order select {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.label-app-container .label-o-matic-container .column #email-order input[type="submit"],
+.kanban-generator-container .label-o-matic-container .column #email-order input[type="submit"] {
+  margin-top: 25px;
+}
+
+.label-app-container .label-o-matic-container .column #email-order label,
+.kanban-generator-container .label-o-matic-container .column #email-order label {
+  width: 100%;
+  text-align: left;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container,
+.kanban-generator-container .label-o-matic-container .column .preview-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 0px 20px;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .preview-loop-controls,
+.kanban-generator-container .label-o-matic-container .column .preview-container .preview-loop-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container h2,
+.kanban-generator-container .label-o-matic-container .column .preview-container h2 {
+  font-weight: 700;
+  width: 100%;
+  text-align: left;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  border-style: solid;
+  border-color: #f5f5f5;
+  border-width: 2px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #0f83ff;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label:hover,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label:hover {
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+          box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .num-container,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .num-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 30px;
+  height: 100%;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .num-container h4,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .num-container h4 {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .ind-label-right,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .ind-label-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: calc(100% - 30px);
+  height: 100%;
+  background-color: #fff;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .preview-container,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .preview-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 300px;
+  height: 100%;
+  margin: 20px 0px;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .preview-container h3,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .preview-container h3 {
+  font-weight: 700;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .preview-container input,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .preview-container input {
+  margin: 10px;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .details-container,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: calc(100% - 300px);
+  height: 100%;
+  border-style: solid;
+  border-width: 0px 0px 0px 2px;
+  border-color: #f5f5f5;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .details-container .subtext,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .details-container .subtext {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8em;
+  color: #bfbfbf;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .details-container label,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .details-container label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 0px;
+  padding: 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .details-container label p,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .details-container label p {
+  font-weight: 700;
+  margin: 0px 10px;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .details-container label input,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .details-container label input {
+  background-color: transparent;
+  border-style: none;
+  font-weight: 700;
+  height: 30px;
+  width: 100% !important;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .details-container label span,
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .details-container label span {
+  font-weight: 700;
+}
+
+.label-app-container .label-o-matic-container .column .preview-container .ind-label .details-container label:nth-child(even),
+.kanban-generator-container .label-o-matic-container .column .preview-container .ind-label .details-container label:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.label-app-container .label-o-matic-container .column .add-label-select-container,
+.kanban-generator-container .label-o-matic-container .column .add-label-select-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+
+.label-app-container .label-o-matic-container .column .add-label-select-container #project-name,
+.label-app-container .label-o-matic-container .column .add-label-select-container #purchase-order,
+.label-app-container .label-o-matic-container .column .add-label-select-container #order-number-title,
+.label-app-container .label-o-matic-container .column .add-label-select-container #requester-first-name,
+.label-app-container .label-o-matic-container .column .add-label-select-container #requester-last-name,
+.label-app-container .label-o-matic-container .column .add-label-select-container #requester-dept,
+.kanban-generator-container .label-o-matic-container .column .add-label-select-container #project-name,
+.kanban-generator-container .label-o-matic-container .column .add-label-select-container #purchase-order,
+.kanban-generator-container .label-o-matic-container .column .add-label-select-container #order-number-title,
+.kanban-generator-container .label-o-matic-container .column .add-label-select-container #requester-first-name,
+.kanban-generator-container .label-o-matic-container .column .add-label-select-container #requester-last-name,
+.kanban-generator-container .label-o-matic-container .column .add-label-select-container #requester-dept {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.label-app-container .label-o-matic-container .column .add-label-select-container #order-number-title,
+.kanban-generator-container .label-o-matic-container .column .add-label-select-container #order-number-title {
+  font-weight: 700;
+  color: #bfbfbf;
+}
+
+.label-app-container .label-o-matic-container .order-form,
+.kanban-generator-container .label-o-matic-container .order-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 60px auto;
+  display: none;
+}
+
+.label-app-container .label-o-matic-container .order-form input,
+.kanban-generator-container .label-o-matic-container .order-form input {
+  width: 100%;
+}
+
+.shared-documents-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.shared-documents-container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 30px;
+}
+
+.shared-documents-container div:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+.shared-documents-container div i {
+  font-size: 2.5em;
+  margin-right: 20px;
+}
+
+.employee-roster-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.label-orders-table tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.inactive {
+  background-color: #f5f5f5 !important;
+  color: #999999 !important;
+}
+
+.inactive:hover {
+  color: #999999 !important;
+}
+
+.tabcontent {
+  display: none;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.tabcontent h2 {
+  font-weight: 700;
+}
+
+.tabcontent a,
+.tabcontent button,
+.tabcontent input[type="submit"] {
+  background-color: transparent !important;
+}
+
+.tabcontent a:hover, .tabcontent a.active,
+.tabcontent button:hover,
+.tabcontent button.active,
+.tabcontent input[type="submit"]:hover,
+.tabcontent input[type="submit"].active {
+  color: #0f83ff;
+}
+
+.order-form-label-preview {
+  width: 100%;
+  min-height: 200px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 20px 0px;
+}
+
+.custom-login-link-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  width: auto;
+  height: auto;
+}
+
+.custom-login-link-container p,
+.custom-login-link-container a {
+  margin: 0px !important;
+}
+
+.custom-login-link-container a:hover {
+  text-decoration: underline;
+}
+
+.radio-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+
+.radio-group label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+  height: auto;
+  margin: 5px;
+}
+
+.radio-group label input[type="radio"] {
+  width: 30px !important;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100vw;
+  max-width: 300px;
+  height: auto;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 90%;
+  white-space: break-spaces;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+          box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+#active-order-controls-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-color: #f5f5f5;
+  padding: 20px;
+}
+
+#active-order-controls-container .active-order-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: auto;
+  height: auto;
+}
+
+#active-order-controls-container .active-order-form select {
+  max-width: 250px;
+}
+
+#active-order-controls-container .active-order-form input[type="submit"] {
+  display: none !important;
+}
+
+#active-order-controls-container p {
+  width: 100%;
+  text-align: center;
+}
+
+#active-order-controls-container button,
+#active-order-controls-container form {
+  margin: 5px;
+}
+
+#roster-chuck-hover:hover {
+  background-image: url("/wp-content/uploads/chuck-ceccarelli-hover.jpg") !important;
+  cursor: progress;
+}
+/*# sourceMappingURL=general.css.map */

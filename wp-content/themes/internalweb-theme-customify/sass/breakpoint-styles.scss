@@ -1,0 +1,65 @@
+@import 'mixins.scss';
+
+@media only screen and (max-width: 1225px) {
+  .preview-container,
+  .details-container {
+    width: 100% !important;
+  }
+
+  .preview-container {
+    padding: 0px !important;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .column {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px 0px !important;
+  }
+
+  button.accordion-button {
+    display: inline-block !important;
+  }
+
+  .group,
+  .dark-group {
+    padding: 0px 15px !important;
+    border-radius: 0px 0px 5px 5px !important;
+    border-width: 0px 0px 2px 0px !important;
+    margin: 0px !important;
+
+    h4 {
+      display: none !important;
+    }
+  }
+
+  .group {
+      background-color: $default-grey !important;
+  }
+
+  .form-area {
+    .group,
+    .dark-group {
+      justify-content: flex-end !important;
+      overflow: hidden !important;
+      display: none !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  // .internalweb-logo-container {
+  //     display:none;
+  // }
+}
+
+@media only screen and (max-width: 550px) {
+  .tool-bar {
+    justify-content: center !important;
+
+    div {
+      justify-content: center !important;
+    }
+  }
+}

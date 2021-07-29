@@ -1,0 +1,49 @@
+// Shared Colors
+$default-grey: #f5f5f5;
+$button-grey: #bfbfbf;
+$default-dark-grey: #383838;
+$default-blue: #0f83ff;
+$default-red: #e00004;
+$default-green: #58b021;
+
+@mixin superflex($direction, $alignment1, $alignment2, $wrap, $width, $height) {
+  display: flex;
+
+  @if $direction == "row" {
+    flex-direction: row;
+  } @else {
+    flex-direction: column;
+  }
+
+  justify-content: $alignment1;
+  align-items: $alignment2;
+
+  @if $wrap != "none" {
+    flex-wrap: $wrap;
+  }
+
+  @if $width != "none" {
+    width: $width;
+  }
+
+  @if $height != "none" {
+    height: $height;
+  }
+}
+
+@mixin default-margin {
+  margin: 60px auto;
+}
+
+@mixin default-padding {
+  padding: 30px;
+}
+
+@mixin default-drop-shadow {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+}
+
+@mixin default-transition {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}

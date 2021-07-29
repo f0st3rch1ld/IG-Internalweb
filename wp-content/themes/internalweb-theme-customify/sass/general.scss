@@ -1,0 +1,825 @@
+@import "mixins.scss";
+
+input {
+  width: auto !important;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+
+  tbody {
+    tr {
+      th {
+        background-color: $default-dark-grey !important;
+        color: #fff;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      &:nth-child(even) {
+        background-color: $default-grey;
+      }
+
+      td {
+        background-position: center !important;
+        background-size: cover !important;
+        background-color: transparent !important;
+        text-align: center;
+        vertical-align: middle;
+        height: 110px;
+      }
+    }
+  }
+}
+
+hr {
+  width: 80%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $button-grey;
+}
+
+button {
+  background-color: $button-grey;
+
+  &:hover {
+    background-color: $default-blue;
+  }
+
+  &.active {
+    background-color: $default-blue;
+  }
+
+  &:focus {
+    border-style: none;
+  }
+}
+
+.kanbanotron-main-container {
+  @include superflex(row, center, flex-start, wrap, 100%, 100%);
+
+  #knbn_uid-form {
+    @include superflex(row, center, center, wrap, 100%, auto);
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: $default-grey;
+    padding: 20px;
+
+    input[type="text"] {
+      width: 100% !important;
+      max-width: 400px;
+    }
+  }
+
+  h4 {
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: $default-grey;
+  }
+
+  button,
+  input[type="submit"],
+  a {
+    @include superflex(row, center, center, none, 100%, auto);
+    width: auto;
+    height: 30px;
+    background-color: $button-grey !important;
+    color: $default-dark-grey !important;
+    border-radius: 3px !important;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    font-size: 1em !important;
+
+    i {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      background-color: $default-blue !important;
+      color: #fff !important;
+    }
+  }
+
+  .kanban-information-container {
+    @include superflex(column, flex-start, flex-start, none, 100%, auto);
+    max-width: 400px;
+    position: sticky;
+    top: 50px;
+
+    table {
+      table-layout: fixed;
+
+      tbody {
+        tr {
+          th {
+            border-style: solid;
+            border-width: 0px 0px 1px 0px;
+            border-color: #fff;
+          }
+          td {
+            height: 50px;
+          }
+        }
+      }
+    }
+
+    .knbn-order-form-container {
+      @include superflex(row, center, center, wrap, 100%, 100%);
+    }
+  }
+
+  .purchase-order-overview-container {
+    @include superflex(
+      column,
+      flex-start,
+      center,
+      wrap,
+      calc(100% - 400px),
+      auto
+    );
+    min-width: 400px;
+    padding: 0px 20px;
+
+    .purchase-order-container {
+      @include superflex(column, flex-start, flex-start, wrap, 100%, auto);
+      border-style: solid;
+      border-color: $default-grey;
+      border-width: 2px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      @include default-transition;
+      overflow: hidden;
+
+      &:hover {
+        @include default-drop-shadow;
+        @include default-transition;
+      }
+
+      .vendor-name {
+        color: #fff;
+        background-color: $default-blue;
+      }
+
+      h5 {
+        font-size: 1.2em;
+        font-weight: 600;
+        padding: 5px 15px;
+        margin: 0px;
+      }
+
+      .po-title-container {
+        @include superflex(row, space-between, center, wrap, 100%, auto);
+        background-color: $default-blue;
+
+        .po-status {
+          color: rgba(255, 255, 255, 0.4);
+        }
+      }
+
+      .po-control-container {
+        @include superflex(row, flex-end, center, wrap, 100%, auto);
+
+        button {
+          @include superflex(row, center, center, nowrap, auto, auto);
+          margin: 5px;
+
+          i {
+            margin: 0px !important;
+          }
+        }
+
+        .ind-po-submit {
+          &:hover {
+            background-color: $default-green !important;
+          }
+        }
+
+        .ind-po-delete {
+          &:hover {
+            background-color: $default-red !important;
+          }
+        }
+      }
+
+      table {
+        margin: 0px;
+
+        thead {
+          tr {
+            background-color: $default-dark-grey;
+            th {
+              background-color: transparent;
+              color: #fff;
+            }
+
+            td {
+              font-weight: 600;
+            }
+          }
+        }
+
+        tbody,
+        thead {
+          tr {
+            td,
+            th {
+              height: 50px;
+              white-space: nowrap;
+              text-align: center;
+            }
+
+            .remove-product {
+              @include default-transition;
+              cursor: pointer;
+
+              &:hover > i {
+                color: $default-red !important;
+                @include default-transition;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.label-app-container,
+.kanban-generator-container {
+  @include superflex(column, flex-start, center, none, 100%, 100%);
+  max-width: 1450px;
+  text-align: center;
+
+  a,
+  button,
+  input[type="submit"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: auto;
+    height: 50px;
+    background-color: $default-grey;
+    min-width: 75px;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 12px;
+    color: $default-dark-grey;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover,
+    &.active {
+      background-color: $default-blue;
+      color: #fff;
+    }
+  }
+
+  .label-order-tabs {
+    @include superflex(row, center, center, wrap, 100%, auto);
+    margin: 30px auto;
+
+    a,
+    button,
+    input[type="submit"] {
+      margin: 0px 3px;
+    }
+  }
+
+  .tool-bar {
+    @include superflex(row, space-between, center, wrap, 100%, auto);
+    margin: 25px 0px 50px 0px;
+    background-color: $default-dark-grey;
+    padding: 5px;
+    border-radius: 5px;
+
+    div {
+      @include superflex(row, flex-start, center, wrap, auto, 100%);
+    }
+
+    a,
+    button,
+    input[type="submit"] {
+      background-color: $default-dark-grey !important;
+      color: #fff !important;
+      margin: 0px 3px;
+
+      &:hover,
+      &.active {
+        background-color: $default-blue !important;
+        color: #fff !important;
+      }
+    }
+  }
+
+  .tracking-container {
+    @include superflex(row, flex-start, center, wrap, 100%, auto);
+    margin: -45px 0px 50px 0px;
+    padding: 5px;
+    border-style: solid;
+    border-color: $default-grey;
+    border-width: 0px 0px 2px 0px;
+
+    a,
+    button,
+    input[type="submit"] {
+      margin: 0px 3px;
+    }
+  }
+
+  .approval-area {
+    @include superflex(column, center, center, wrap, 100%, auto);
+    padding: 20px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: $default-grey;
+    border-width: 2px;
+
+    h3 {
+      font-weight: 700;
+    }
+
+    .not-sent {
+      color: $button-grey;
+    }
+
+    .needs-approved {
+      color: red;
+    }
+
+    .approved {
+      color: #a0cc00;
+    }
+
+    #approve-labels-submit {
+      &:hover {
+        background-color: #a0cc00 !important;
+      }
+    }
+
+    #reject-labels-submit {
+      &:hover {
+        background-color: red !important;
+      }
+    }
+
+    p {
+      width: 100%;
+      margin: 15px;
+    }
+
+    a,
+    button,
+    input[type="submit"] {
+      margin: 0px 3px;
+    }
+  }
+
+  .label-o-matic-container {
+    @include superflex(row, center, flex-start, wrap, 100%, 100%);
+    text-align: center;
+
+    h2 {
+      width: 100%;
+    }
+
+    .form-area {
+      width: 100%;
+      max-width: 400px;
+
+      button.accordion-button {
+        width: 100%;
+        font-weight: 800;
+        display: none;
+        margin: 5px 0px 0px 0px;
+        border-radius: 5px;
+
+        i {
+          transform: rotate(-90deg);
+        }
+
+        &.active {
+          @include default-drop-shadow;
+          z-index: 100;
+          border-radius: 5px 5px 0px 0px !important;
+
+          i {
+            transform: rotate(0deg);
+          }
+        }
+      }
+
+      input[type="submit"],
+      input[type="button"],
+      input[type="text"],
+      input[type="date"],
+      input[type="number"] {
+        width: 100% !important;
+      }
+    }
+
+    .preview-area {
+      width: calc(100% - 400px);
+      padding: 20px;
+    }
+
+    .column {
+      @include superflex(column, flex-start, center, none, none, none);
+
+      .group {
+        @include superflex(column, center, center, none, 100%, auto);
+        padding: 20px;
+        margin-bottom: 20px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: $default-grey;
+        border-radius: 10px;
+
+        h4 {
+          font-weight: 700;
+          width: 100%;
+          text-align: left;
+        }
+      }
+
+      .dark-group {
+        @include superflex(column, center, center, none, 100%, auto);
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        background-color: $default-dark-grey;
+        color: #fff;
+
+        h4 {
+          font-weight: 700;
+          width: 100%;
+          text-align: left;
+          color: #fff;
+        }
+      }
+
+      #add-label-select,
+      .order-forms-container {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+
+      #add-to-label-order {
+        margin-top: 25px;
+      }
+
+      #email-order {
+        @include superflex(column, center, center, none, 100%, auto);
+
+        p,
+        input[type="text"],
+        input[type="date"],
+        select {
+          width: 100%;
+          margin-bottom: 5px;
+        }
+
+        input[type="submit"] {
+          margin-top: 25px;
+        }
+
+        label {
+          width: 100%;
+          text-align: left;
+        }
+      }
+
+      .preview-container {
+        @include superflex(column, center, center, none, 100%, auto);
+        padding: 0px 20px;
+
+        .preview-loop-controls {
+          @include superflex(row, center, center, wrap, 100%, auto);
+        }
+
+        h2 {
+          font-weight: 700;
+          width: 100%;
+          text-align: left;
+        }
+
+        .ind-label {
+          @include superflex(row, flex-start, center, wrap, 100%, auto);
+          border-style: solid;
+          border-color: $default-grey;
+          border-width: 2px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+          background-color: $default-blue;
+          @include default-transition;
+
+          &:hover {
+            @include default-drop-shadow;
+            @include default-transition;
+          }
+
+          .num-container {
+            @include superflex(column, center, center, wrap, 30px, 100%);
+
+            h4 {
+              font-weight: 700;
+              color: rgba(255, 255, 255, 0.3);
+            }
+          }
+
+          .ind-label-right {
+            @include superflex(
+              row,
+              center,
+              center,
+              wrap,
+              calc(100% - 30px),
+              100%
+            );
+            background-color: #fff;
+          }
+
+          .preview-container {
+            @include superflex(
+              column,
+              space-between,
+              center,
+              wrap,
+              300px,
+              100%
+            );
+            margin: 20px 0px;
+
+            h3 {
+              font-weight: 700;
+            }
+
+            input {
+              margin: 10px;
+            }
+          }
+
+          .details-container {
+            @include superflex(
+              column,
+              center,
+              center,
+              wrap,
+              calc(100% - 300px),
+              100%
+            );
+            border-style: solid;
+            border-width: 0px 0px 0px 2px;
+            border-color: $default-grey;
+
+            .subtext {
+              width: 100%;
+              text-align: center;
+              font-size: 0.8em;
+              color: $button-grey;
+            }
+
+            label {
+              @include superflex(row, flex-start, center, none, 100%, auto);
+              margin: 0px;
+              padding: 10px;
+              text-align: left;
+              white-space: nowrap;
+
+              p {
+                font-weight: 700;
+                margin: 0px 10px;
+              }
+
+              input {
+                background-color: transparent;
+                border-style: none;
+                font-weight: 700;
+                height: 30px;
+                width: 100% !important;
+              }
+
+              span {
+                font-weight: 700;
+              }
+
+              &:nth-child(even) {
+                background-color: $default-grey;
+              }
+            }
+          }
+        }
+      }
+
+      .add-label-select-container {
+        @include superflex(row, center, center, wrap, 100%, auto);
+
+        #project-name,
+        #purchase-order,
+        #order-number-title,
+        #requester-first-name,
+        #requester-last-name,
+        #requester-dept {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        #order-number-title {
+          font-weight: 700;
+          color: $button-grey;
+        }
+      }
+    }
+
+    .order-form {
+      @include superflex(column, flex-start, center, none, 100%, 100%);
+      @include default-margin;
+
+      // Javascript toggles them on.
+      display: none;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.shared-documents-container {
+  @include superflex(column, center, center, none, 100%, 100%);
+
+  div {
+    @include superflex(row, flex-start, center, none, 100%, 50px);
+    @include default-padding;
+
+    &:nth-child(odd) {
+      background-color: $default-grey;
+    }
+
+    i {
+      font-size: 2.5em;
+      margin-right: 20px;
+    }
+  }
+}
+
+.employee-roster-container {
+  @include superflex(column, center, center, none, 100%, 100%);
+}
+
+.label-orders-table {
+  tr {
+    &:nth-child(even) {
+      background-color: $default-grey;
+    }
+  }
+}
+
+.inactive {
+  background-color: $default-grey !important;
+  color: #999999 !important;
+
+  &:hover {
+    color: #999999 !important;
+  }
+}
+
+.tabcontent {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  h2 {
+    font-weight: 700;
+  }
+
+  a,
+  button,
+  input[type="submit"] {
+    background-color: transparent !important;
+
+    &:hover,
+    &.active {
+      color: $default-blue;
+    }
+  }
+}
+
+.order-form-label-preview {
+  width: 100%;
+  min-height: 200px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 20px 0px;
+}
+
+.custom-login-link-container {
+  @include superflex(row, center, center, no-wrap, auto, auto);
+
+  p,
+  a {
+    margin: 0px !important;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.radio-group {
+  @include superflex(column, center, center, wrap, 100%, auto);
+
+  label {
+    @include superflex(row, center, center, nowrap, 100%, auto);
+    margin: 5px;
+
+    input[type="radio"] {
+      width: 30px !important;
+    }
+  }
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+  .tooltiptext {
+    visibility: hidden;
+    width: 100vw;
+    max-width: 300px;
+    height: auto;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 90%;
+    white-space: break-spaces;
+    @include default-drop-shadow;
+  }
+
+  &:hover {
+    .tooltiptext {
+      visibility: visible;
+    }
+  }
+}
+
+#active-order-controls-container {
+  @include superflex(row, center, center, wrap, 100%, auto);
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-color: $default-grey;
+  padding: 20px;
+
+  .active-order-form {
+    @include superflex(column, center, center, wrap, auto, auto);
+
+    select {
+      max-width: 250px;
+    }
+
+    input[type="submit"] {
+      display: none !important;
+    }
+  }
+
+  p {
+    width: 100%;
+    text-align: center;
+  }
+
+  button,
+  form {
+    margin: 5px;
+  }
+}
+
+#roster-chuck-hover {
+  &:hover {
+    background-image: url("/wp-content/uploads/chuck-ceccarelli-hover.jpg") !important;
+    cursor: progress;
+  }
+}

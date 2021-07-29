@@ -1,0 +1,255 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.4px;
+  background-color: #ebebeb;
+  overflow: auto;
+}
+
+header {
+  background-color: #0076c0;
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+input,
+select {
+  cursor: pointer;
+  min-height: 30px;
+  padding: 1px 2px;
+  margin-bottom: 10px;
+}
+
+select {
+  height: 36px;
+}
+
+input[type="submit"] {
+  width: auto;
+  margin: auto;
+  min-height: 45px;
+  width: 100%;
+  max-width: 205px;
+  border-style: none;
+  transition-timing-function: ease-in;
+  transition-duration: 0.2s;
+  font-weight: 600;
+}
+
+input[type="checkbox"] {
+  height: 25px;
+  width: 25px;
+}
+
+input[type="submit"]:hover {
+  letter-spacing: 0.5px;
+  transition-timing-function: ease-in;
+  transition-duration: 0.2s;
+}
+
+label {
+  text-align: left;
+  font-size: 0.85em;
+}
+
+#email-order {
+  background-color: #4f4f4f;
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#email-order input,
+#email-order select,
+#email-order label,
+#email-order p {
+  width: 100%;
+}
+
+.columns-container {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  -webkit-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-form {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+}
+
+.column50 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+.column100 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.general-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  padding: 10px;
+}
+
+.preview-area {
+  background-color: #fafafa;
+}
+
+#add-to-label-order {
+  margin-bottom: 40px;
+}
+
+#order-lookup-container {
+  background-color: #0076c0;
+}
+
+.order-forms-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.add-label-select-container,
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 30px;
+}
+
+#add-label-select {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.controls-area {
+  height: 50px;
+  width: 100%;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: #ebebeb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls-area a {
+  min-height: 40px;
+  min-width: 40px;
+}
+
+#new-order,
+#save-order,
+#order-sync,
+#share-order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: Center;
+  text-decoration: none;
+  color: #000;
+  font-size: 0.8em;
+}
+
+#new-order i,
+#save-order i,
+#order-sync i,
+#share-order i {
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.1em;
+}
+
+.order-lookup-area {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.order-lookup-area input {
+  margin: 0px;
+}
+
+.order-lookup-area a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-lookup-area a i {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+}
+
+#project-name {
+  width: 99%;
+  background-color: transparent;
+  border-style: solid;
+  border-color: #ebebeb;
+  border-width: 0px 0px 3px 0px;
+  font-size: 2em;
+  font-weight: 700;
+  color: #0076c0;
+}
+
+#order-number-title {
+  margin: 0px 0px 30px 0px;
+}
+
+.left-controls {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.how-to-text {
+  width: 90%;
+  margin: 40px auto;
+}
+
+@media only screen and (max-width: 650px) {
+  .column50 {
+    width: 100%;
+  }
+}
