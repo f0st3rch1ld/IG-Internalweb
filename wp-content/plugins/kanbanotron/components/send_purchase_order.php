@@ -24,30 +24,30 @@ while ($row = $order_data_result->fetch_assoc()) {
 // closes kanbanotron_connection
 $conn->close();
 
-
-include '../db/request.php';
-
-// request reference
-
-// $knbn_external_url;
-// $knbn_dept_location;
-// $knbn_dept_cell;
-// $knbn_vendor;
-// $knbn_part_number;
-// $knbn_vendor_part_number;
-// $knbn_description;
-// $knbn_package_quantity;
-// $knbn_reorder_quantity;
-// $knbn_blue_bin_quantity;
-// $knbn_red_bin_quantity;
-// $knbn_lead_time;
-// $knbn_notes;
-
 // Queries wordpress database to check to see what vendor specific product belongs to.
-function vendor_check($x) {
+function vendor_check($x)
+{
     global $order_data_to_send;
 
     include '../db/knbn_wp_connection.php';
+    include '../db/request.php';
+
+    // request reference
+
+    // $knbn_external_url;
+    // $knbn_dept_location;
+    // $knbn_dept_cell;
+    // $knbn_vendor;
+    // $knbn_part_number;
+    // $knbn_vendor_part_number;
+    // $knbn_description;
+    // $knbn_package_quantity;
+    // $knbn_reorder_quantity;
+    // $knbn_blue_bin_quantity;
+    // $knbn_red_bin_quantity;
+    // $knbn_lead_time;
+    // $knbn_notes;
+
     knbn_info_request($x);
 
     if ($knbn_vendor == $vndr) {
