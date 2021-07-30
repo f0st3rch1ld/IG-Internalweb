@@ -217,6 +217,3 @@ foreach ($order_data_to_send as $item) {
  * --TermsRef_ListID (Optional?)
  * --TermsRef_FullName (Optional?)
  */
-
-
-$conn->close();

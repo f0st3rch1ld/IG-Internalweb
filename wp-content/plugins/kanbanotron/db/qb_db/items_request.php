@@ -31,3 +31,5 @@ function qbdb_item_request($knbn_name)
     // Closes Quickbooks database connection
     $conn->close();
 }
+
+echo $qbdb_ListId . " " . $qbdb_FullName . " " . $qbdb_tableName . " " . $qbdb_BarCodeValue;
