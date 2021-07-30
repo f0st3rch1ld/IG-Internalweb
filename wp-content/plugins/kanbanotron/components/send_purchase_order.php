@@ -71,7 +71,6 @@ for ($i = 0; count($order_data) > $i; $i++) {
 foreach ($order_data_to_send as $item) {
     knbn_info_request($item);
     qbdb_item_request($knbn_part_number);
-    echo 'knbn_info_request returned variables - qbdb_ListID: ' . $qbdb_ListID . ' qbdb_FullName: ' . $qbdb_FullName . ' qbdb_TableName: ' . $qbdb_TableName . ' qbdb_BarCodeValue: ' . $qbdb_BarCodeValue;
 }
 
 

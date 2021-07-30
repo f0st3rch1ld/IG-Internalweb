@@ -32,4 +32,4 @@ function qbdb_item_request($knbn_name)
     $conn->close();
 }
 
-echo $qbdb_ListId . " " . $qbdb_FullName . " " . $qbdb_tableName . " " . $qbdb_BarCodeValue;
+echo $qbdb_ListID . " " . $qbdb_FullName . " " . $qbdb_TableName . " " . $qbdb_BarCodeValue;
