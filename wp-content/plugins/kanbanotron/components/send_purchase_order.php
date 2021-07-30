@@ -72,7 +72,6 @@ include '../db/qb_db/vendor_request.php';
 // vendor_request reference
 
 // $qbdb_vendor_ListID;
-// $qbdb_vendor_Name;
 // $qbdb_vendor_isActive;
 // $qbdb_vendor_CompanyName;
 // $qbdb_vendor_FirstName;
