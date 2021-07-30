@@ -73,6 +73,7 @@ foreach ($order_data_to_send as $item) {
     knbn_info_request($item);
 
     echo $knbn_part_number;
+    
     qbdb_item_request($knbn_part_number);
 }
 
