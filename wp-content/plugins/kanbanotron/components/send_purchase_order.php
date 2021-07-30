@@ -67,6 +67,10 @@ include '../db/qb_db/items_request.php';
 // $qbdb_TableName;
 // $qbdb_BarCodeValue;
 
+include '../db/qb_db/vendor_request.php';
+
+
+
 $qbdb_items_request_array = array();
 
 for ($i = 0; count($order_data_to_send) > $i; $i++) {
