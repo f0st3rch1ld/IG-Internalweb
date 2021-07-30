@@ -69,11 +69,80 @@ include '../db/qb_db/items_request.php';
 
 include '../db/qb_db/vendor_request.php';
 
+// vendor_request reference
+
+// $qbdb_vendor_ListID;
+// $qbdb_vendor_Name;
+// $qbdb_vendor_isActive;
+// $qbdb_vendor_CompanyName;
+// $qbdb_vendor_FirstName;
+// $qbdb_vendor_MiddleName;
+// $qbdb_vendor_LastName;
+// $qbdb_vendor_VendorAddress_Addr1;
+// $qbdb_vendor_VendorAddress_Addr2;
+// $qbdb_vendor_VendorAddress_Addr3;
+// $qbdb_vendor_VendorAddress_Addr4;
+// $qbdb_vendor_VendorAddress_Addr5;
+// $qbdb_vendor_VendorAddress_City;
+// $qbdb_vendor_VendorAddress_State;
+// $qbdb_vendor_VendorAddress_PostalCode;
+// $qbdb_vendor_VendorAddress_Country;
+// $qbdb_vendor_VendorAddress_Note;
+// $qbdb_vendor_ShipAddress_Addr1;
+// $qbdb_vendor_ShipAddress_Addr2;
+// $qbdb_vendor_ShipAddress_Addr3;
+// $qbdb_vendor_ShipAddress_Addr4;
+// $qbdb_vendor_ShipAddress_Addr5;
+// $qbdb_vendor_ShipAddress_City;
+// $qbdb_vendor_ShipAddress_State;
+// $qbdb_vendor_ShipAddress_PostalCode;
+// $qbdb_vendor_ShipAddress_Country;
+// $qbdb_vendor_ShipAddress_Note;
+// $qbdb_vendor_TermsRef_ListID;
+// $qbdb_vendor_TermsRef_FullName;
+
 $qbdb_items_request_array = array();
 
 for ($i = 0; count($order_data_to_send) > $i; $i++) {
     qbdb_item_request($order_data_to_send[$i]);
-    $temp_array = array($qbdb_ListID, $order_data_to_send[$i], $qbdb_TableName, $qbdb_BarCodeValue);
+    qbdb_vendor_request($vendor);
+
+    $temp_array = array(
+        $qbdb_ListID,
+        $order_data_to_send[$i],
+        $qbdb_TableName,
+        $qbdb_BarCodeValue,
+        $qbdb_vendor_ListID,
+        $vendor,
+        $qbdb_vendor_isActive,
+        $qbdb_vendor_CompanyName,
+        $qbdb_vendor_FirstName,
+        $qbdb_vendor_MiddleName,
+        $qbdb_vendor_LastName,
+        $qbdb_vendor_VendorAddress_Addr1,
+        $qbdb_vendor_VendorAddress_Addr2,
+        $qbdb_vendor_VendorAddress_Addr3,
+        $qbdb_vendor_VendorAddress_Addr4,
+        $qbdb_vendor_VendorAddress_Addr5,
+        $qbdb_vendor_VendorAddress_City,
+        $qbdb_vendor_VendorAddress_State,
+        $qbdb_vendor_VendorAddress_PostalCode,
+        $qbdb_vendor_VendorAddress_Country,
+        $qbdb_vendor_VendorAddress_Note,
+        $qbdb_vendor_ShipAddress_Addr1,
+        $qbdb_vendor_ShipAddress_Addr2,
+        $qbdb_vendor_ShipAddress_Addr3,
+        $qbdb_vendor_ShipAddress_Addr4,
+        $qbdb_vendor_ShipAddress_Addr5,
+        $qbdb_vendor_ShipAddress_City,
+        $qbdb_vendor_ShipAddress_State,
+        $qbdb_vendor_ShipAddress_PostalCode,
+        $qbdb_vendor_ShipAddress_Country,
+        $qbdb_vendor_ShipAddress_Note,
+        $qbdb_vendor_TermsRef_ListID,
+        $qbdb_vendor_TermsRef_FullName
+    );
+
     array_push($qbdb_items_request_array, $temp_array);
 }
 
