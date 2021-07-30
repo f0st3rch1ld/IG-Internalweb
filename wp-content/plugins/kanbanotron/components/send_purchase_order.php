@@ -39,7 +39,7 @@ include '../db/request.php';
 // $knbn_lead_time;
 // $knbn_notes;
 
-include '../qb/qb_db/items_request.php';
+include '../qb/items_request.php';
 
 // items_request reference
 
