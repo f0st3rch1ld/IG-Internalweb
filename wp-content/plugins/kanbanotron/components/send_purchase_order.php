@@ -54,12 +54,13 @@ function vendor_check($x)
 {
     global $order_data_to_send;
     global $knbn_vendor;
+    global $knbn_part_number;
     global $vendor;
 
     knbn_info_request($x);
 
     if ($knbn_vendor == $vendor) {
-        array_push($order_data_to_send, $x);
+        array_push($order_data_to_send, $knbn_part_number);
     }
 }
 
@@ -69,14 +70,6 @@ for ($i = 0; count($order_data) > $i; $i++) {
 }
 
 var_dump($order_data_to_send);
-
-for ($i = 0; count($order_data_to_send) > $i; $i++) {
-
-    global $knbn_part_number;
-
-    knbn_info_request($order_data_to_send[$i]);
-    echo $knbn_part_number;
-}
 
 
 
