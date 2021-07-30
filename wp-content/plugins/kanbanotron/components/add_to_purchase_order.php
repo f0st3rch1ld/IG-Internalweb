@@ -18,7 +18,12 @@ while ($row = $current_po_order_data_result->fetch_assoc()) {
 
     // checks to see if any order data has been assigned yet?
     if ($order_data) {
-        array_push($order_data, $knbn_uid);
+        if (!in_array($knbn_uid, $order_data)) {
+            array_push($order_data, $knbn_uid);
+        } else {
+            echo 'This Kanban is already on order.';
+        }
+        
     } else {
         $order_data = array(
             $knbn_uid

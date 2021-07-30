@@ -1,0 +1,51 @@
+Date : 2021-07-30 09:39:21
+Directory : /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron
+Total : 21 files,  921 codes, 271 comments, 233 blanks, all 1425 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| PHP        |         20 |        812 |        261 |        211 |      1,284 |
+| JavaScript |          1 |        109 |         10 |         22 |        141 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                               | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                                  |         21 |        921 |        271 |        233 |      1,425 |
+| admin                                                                                                                                              |          1 |        110 |          5 |         23 |        138 |
+| components                                                                                                                                         |          9 |        467 |        218 |        137 |        822 |
+| db                                                                                                                                                 |          8 |        149 |         14 |         34 |        197 |
+| db/qb_db                                                                                                                                           |          5 |         37 |          5 |         15 |         57 |
+| js                                                                                                                                                 |          1 |        109 |         10 |         22 |        141 |
++----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                                           | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/admin/import_kanbans.php                      | PHP        |        110 |          5 |         23 |        138 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/components/add_to_purchase_order.php          | PHP        |         27 |          7 |         12 |         46 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/components/app.php                            | PHP        |         23 |          2 |          4 |         29 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/components/initialize.php                     | PHP        |         70 |          3 |         19 |         92 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/components/load_kanban.php                    | PHP        |        112 |          3 |          6 |        121 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/components/new_purchase_order.php             | PHP        |         40 |          2 |         11 |         53 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/components/purchase_order_preview.php         | PHP        |         90 |         18 |         29 |        137 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/components/remove_all_from_purchase_order.php | PHP        |         50 |         18 |         21 |         89 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/components/remove_from_purchase_order.php     | PHP        |         24 |          4 |         10 |         38 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/components/send_purchase_order.php            | PHP        |         31 |        161 |         25 |        217 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/db/kanbanotron_connection.php                 | PHP        |         10 |          2 |          4 |         16 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/db/knbn_wp_connection.php                     | PHP        |         10 |          2 |          4 |         16 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/db/qb_db/items_request.php                    | PHP        |         27 |          3 |          8 |         38 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/db/qb_db/purchaseorder_update.php             | PHP        |          0 |          0 |          1 |          1 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/db/qb_db/purchaseorderlineret_update.php      | PHP        |          0 |          0 |          1 |          1 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/db/qb_db/qb_data_connection.php               | PHP        |         10 |          2 |          4 |         16 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/db/qb_db/vendor_request.php                   | PHP        |          0 |          0 |          1 |          1 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/db/request.php                                | PHP        |         92 |          5 |         11 |        108 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/js/kanbanotron.js                             | JavaScript |        109 |         10 |         22 |        141 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/kanbanotron.php                               | PHP        |         74 |         24 |         15 |        113 |
+| /Users/andrewfoster/Documents/Web_Projects/IG_Internalweb/internalweb/wp-content/plugins/kanbanotron/main.php                                      | PHP        |         12 |          0 |          2 |         14 |
+| Total                                                                                                                                              |            |        921 |        271 |        233 |      1,425 |
++----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
