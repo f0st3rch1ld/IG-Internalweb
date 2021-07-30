@@ -8,7 +8,7 @@ $qbdb_BarCodeValue;
 function qbdb_item_request($knbn_name)
 {
     // Quickbooks database connection
-    include '../qb_data_connection.php';
+    include 'qb_data_connection.php';
 
     // globals - so we can set their values
     global $qbdb_ListID;
