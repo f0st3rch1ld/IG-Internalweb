@@ -59,14 +59,11 @@ for ($i = 0; count($order_data) > $i; $i++) {
     vendor_check($order_data[$i]);
 }
 
-var_dump($order_data_to_send);
-
 include '../db/qb_db/items_request.php';
 
 // items_request reference
 
 // $qbdb_ListID;
-// $qbdb_FullName;
 // $qbdb_TableName;
 // $qbdb_BarCodeValue;
 
@@ -74,7 +71,7 @@ $qbdb_items_request_array = array();
 
 for ($i = 0; count($order_data_to_send) > $i; $i++) {
     qbdb_item_request($order_data_to_send[$i]);
-    $temp_array = array($qbdb_ListID, $qbdb_fullName, $qbdb_TableName, $qbdb_BarCodeValue);
+    $temp_array = array($qbdb_ListID, $order_data_to_send[$i], $qbdb_TableName, $qbdb_BarCodeValue);
     array_push($qbdb_items_request_array, $temp_array);
 }
 
