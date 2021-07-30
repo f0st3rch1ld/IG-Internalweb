@@ -39,6 +39,16 @@ include '../db/request.php';
 // $knbn_lead_time;
 // $knbn_notes;
 
+include '../qb/qb_db/items_request.php';
+
+// items_request reference
+
+// $qbdb_ListID;
+// $qbdb_FullName;
+// $qbdb_TableName;
+// $qbdb_BarCodeValue;
+
+
 // Queries wordpress database to check to see what vendor specific product belongs to.
 function vendor_check($x)
 {
@@ -46,15 +56,11 @@ function vendor_check($x)
     global $knbn_vendor;
     global $vendor;
 
-    include '../db/knbn_wp_connection.php';
-
     knbn_info_request($x);
 
     if ($knbn_vendor == $vendor) {
         array_push($order_data_to_send, $x);
     }
-
-    $conn->close();
 }
 
 // Loops through all items in order data array pulled from database, and runs vendor_check function on them.
@@ -62,12 +68,155 @@ for ($i = 0; count($order_data) > $i; $i++) {
     vendor_check($order_data[$i]);
 }
 
-// temporary check on order_data_to_send variable to see if the values got pushed correctly.
 foreach ($order_data_to_send as $item) {
-    echo 'Item UID: ' . $item . ' -> ' . $vendor;
+    knbn_info_request($item);
+    qbdb_item_request($knbn_part_number);
+    echo 'knbn_info_request returned variables - qbdb_ListID: ' . $qbdb_ListID . ' qbdb_FullName: ' . $qbdb_FullName . ' qbdb_TableName: ' . $qbdb_TableName . ' qbdb_BarCodeValue: ' . $qbdb_BarCodeValue;
 }
 
 
-include '../db/qb_data_connection.php';
+
+
+
+
+/**
+ * 
+ * Updated purchaseorder table rows need operation column set to 'add' in order to be pushed back to the QBD database.
+ * 
+ * Needed tables & columns from QB Database to create purchase orders
+ * Table: purchaseorder
+ * --TxnID
+ * --EditSequence
+ * --TxnNumber
+ * --VendorRef_ListID
+ * --VendorRef_FullName (Optional?)
+ * --TemplateRef_ListID
+ * --TemplateRef_Fullname (Optional?)
+ * --RefNumber
+ * --VendorAddress_Addr1 (Optional?)
+ * --VendorAddress_Addr2 (Optional?)
+ * --VendorAddress_Addr3 (Optional?)
+ * --VendorAddress_Addr4 (Optional?)
+ * --VendorAddress_Addr5 (Optional?)
+ * --VendorAddress_City (Optional?)
+ * --VendorAddress_State (Optional?)
+ * --VendorAddress_PostalCode (Optional?)
+ * --VendorAddress_Country (Optional?)
+ * --VendorAddress_Note (Optional?)
+ * --ShipAddress_Addr1 (Optional?)
+ * --ShipAddress_Addr2 (Optional?)
+ * --ShipAddress_Addr3 (Optional?)
+ * --ShipAddress_Addr4 (Optional?)
+ * --ShipAddress_Addr5 (Optional?)
+ * --ShipAddress_City (Optional?)
+ * --ShipAddress_State (Optional?)
+ * --ShipAddress_PostalCode (Optional?)
+ * --ShipAddress_Country (Optional?)
+ * --ShipAddress_Note (Optional?)
+ * --TermsRef_ListID (Optional?)
+ * --TermsRef_FullName (Optional?)
+ * --DueDate
+ * --ExpectedDate
+ * --TotalAmount
+ * --IsToBePrinted
+ * --IsToBeEmailed
+ * --IsManuallyClosed
+ * --IsFullyReceived
+ * --ExternalGUID
+ * --CustomField1
+ * --CustomField2
+ * --CustomField3
+ * --CustomField4
+ * --CustomField5
+ * --CustomField6
+ * --CustomField7
+ * --CustomField8
+ * --CustomField9
+ * --CustomField10
+ * --CustomField11
+ * --CustomField12
+ * --CustomField13
+ * --CustomField14
+ * --CustomField15
+ * --UserData
+ * --Operation
+ * --LSData
+ * 
+ * 
+ * We will use this table to add individual items to purchase orders
+ * Table: purchaseorderlineret
+ * --TxnLineID
+ * --ItemRef_ListID
+ * --ItemRef_FullName
+ * --ManufacturerPartNumber
+ * --Description
+ * --Quantity
+ * --Rate
+ * --Amount
+ * --ReceivedQuantity
+ * --IsBilled
+ * --IsManuallyClosed
+ * --CustomField1
+ * --CustomField2
+ * --CustomField3
+ * --CustomField4
+ * --CustomField5
+ * --CustomField6
+ * --CustomField7
+ * --CustomField8
+ * --CustomField9
+ * --CustomField10
+ * --CustomField11
+ * --CustomField12
+ * --CustomField13
+ * --CustomField14
+ * --CustomField15
+ * --PARENT_IDKEY
+ * --GroupPARENT_IDKEY
+ * --SeqNum
+ * --LSData
+ * 
+ * 
+ * We will reference this table for the ListID of the items to add to the purchaseorderlineret table
+ * Table: items
+ * --ListID
+ * --FullName
+ * --TableName
+ * --BarCodeValue
+ * 
+ * NOTE: May need to also reference itemservice or itemoninventory tables depending on how we use the items table. We would probably pull the same columns out of those tables as well.. unsure where all the item descriptions come from? straight from Quickbooks?
+ * 
+ * Table: vendor
+ * --ListID
+ * --Name
+ * --isActive
+ * --CompanyName
+ * --FirstName
+ * --MiddleNamer
+ * --LastName
+ * --VendorAddress_Addr1 (Optional?)
+ * --VendorAddress_Addr2 (Optional?)
+ * --VendorAddress_Addr3 (Optional?)
+ * --VendorAddress_Addr4 (Optional?)
+ * --VendorAddress_Addr5 (Optional?)
+ * --VendorAddress_City (Optional?)
+ * --VendorAddress_State (Optional?)
+ * --VendorAddress_PostalCode (Optional?)
+ * --VendorAddress_Country (Optional?)
+ * --VendorAddress_Note (Optional?)
+ * --ShipAddress_Addr1 (Optional?)
+ * --ShipAddress_Addr2 (Optional?)
+ * --ShipAddress_Addr3 (Optional?)
+ * --ShipAddress_Addr4 (Optional?)
+ * --ShipAddress_Addr5 (Optional?)
+ * --ShipAddress_City (Optional?)
+ * --ShipAddress_State (Optional?)
+ * --ShipAddress_PostalCode (Optional?)
+ * --ShipAddress_Country (Optional?)
+ * --ShipAddress_Note (Optional?)
+ * --TermsRef_ListID (Optional?)
+ * --TermsRef_FullName (Optional?)
+ */
+
 
 $conn->close();
