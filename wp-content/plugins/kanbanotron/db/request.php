@@ -99,10 +99,10 @@ function knbn_info_request($passed_knbn_uid)
         $knbn_blue_bin_quantity = $knbn_blue_bin_quantity_return[0];
         $knbn_red_bin_quantity = $knbn_red_bin_quantity_return[0];
         $knbn_lead_time = $knbn_lead_time_return[0];
-        $knbn_notes = $knbn_notes_return[0];
-
-        $conn->close();
+        $knbn_notes = $knbn_notes_return[0];        
     } else {
         echo 'No matching kanban found.';
     }
+
+    $conn->close();
 }
