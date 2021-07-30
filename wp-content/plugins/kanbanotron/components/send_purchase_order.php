@@ -54,13 +54,13 @@ function vendor_check($x)
 {
     global $order_data_to_send;
     global $knbn_vendor;
-    global $knbn_part_number;
+    global $knbn_vendor_part_number;
     global $vendor;
 
     knbn_info_request($x);
 
     if ($knbn_vendor == $vendor) {
-        array_push($order_data_to_send, $knbn_part_number);
+        array_push($order_data_to_send, $knbn_vendor_part_number);
     }
 }
 
