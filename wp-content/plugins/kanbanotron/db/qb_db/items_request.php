@@ -7,9 +7,6 @@ $qbdb_BarCodeValue;
 
 function qbdb_item_request($knbn_name)
 {
-
-    echo $knbn_name;
-
     // Quickbooks database connection
     include 'qb_data_connection.php';
 

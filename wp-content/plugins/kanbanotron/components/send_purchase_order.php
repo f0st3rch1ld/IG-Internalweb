@@ -71,6 +71,8 @@ for ($i = 0; count($order_data) > $i; $i++) {
 foreach ($order_data_to_send as $item) {
     global $knbn_part_number;
     knbn_info_request($item);
+
+    echo $knbn_part_number;
     qbdb_item_request($knbn_part_number);
 }
 
