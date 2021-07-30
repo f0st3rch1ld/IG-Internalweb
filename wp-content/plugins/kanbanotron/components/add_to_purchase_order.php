@@ -21,7 +21,7 @@ while ($row = $current_po_order_data_result->fetch_assoc()) {
         if (!in_array($knbn_uid, $order_data)) {
             array_push($order_data, $knbn_uid);
         } else {
-            echo 'This Kanban is already on order.';
+            echo 'This Kanban is already on order';
         }
         
     } else {

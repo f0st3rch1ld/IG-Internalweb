@@ -70,7 +70,13 @@ include '../db/qb_db/items_request.php';
 // $qbdb_TableName;
 // $qbdb_BarCodeValue;
 
-
+for ($i = 0; count($order_data_to_send) > $i; $i++) {
+    qbdb_item_request($order_data_to_send[$i]);
+    echo $qbdb_ListID;
+    echo $qbdb_FullName;
+    echo $qbdb_TableName;
+    echo $qbdb_BarCodeValue;
+}
 
 qbdb_item_request($order_data_to_send[0]);
 
