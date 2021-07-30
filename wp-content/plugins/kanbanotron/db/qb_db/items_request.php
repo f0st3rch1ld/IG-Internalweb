@@ -1,7 +1,6 @@
 <?php
 
 $qbdb_ListID;
-$qbdb_FullName;
 $qbdb_TableName;
 $qbdb_BarCodeValue;
 
