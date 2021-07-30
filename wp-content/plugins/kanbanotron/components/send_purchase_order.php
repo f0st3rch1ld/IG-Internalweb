@@ -39,16 +39,6 @@ include '../db/request.php';
 // $knbn_lead_time;
 // $knbn_notes;
 
-include '../db/qb_db/items_request.php';
-
-// items_request reference
-
-// $qbdb_ListID;
-// $qbdb_FullName;
-// $qbdb_TableName;
-// $qbdb_BarCodeValue;
-
-
 // Queries wordpress database to check to see what vendor specific product belongs to.
 function vendor_check($x)
 {
@@ -71,7 +61,18 @@ for ($i = 0; count($order_data) > $i; $i++) {
 
 var_dump($order_data_to_send);
 
+include '../db/qb_db/items_request.php';
 
+// items_request reference
+
+// $qbdb_ListID;
+// $qbdb_FullName;
+// $qbdb_TableName;
+// $qbdb_BarCodeValue;
+
+qbdb_item_request($order_data_to_send[0]);
+
+echo $qbdb_ListID;
 
 
 
