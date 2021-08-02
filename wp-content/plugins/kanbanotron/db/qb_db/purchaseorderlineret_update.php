@@ -44,6 +44,8 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
         generate_Ret_TxnID();
     }
 
+    echo $new_PORet_TxnLineID;
+
     // Builds purchaseorder table insertion
     for ($i = 0; count($qbdb_items_request_array) > $i; $i++) {
 
@@ -78,9 +80,9 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
             " . $qbdb_items_request_array[$i]['Item_Description'] . ",
             " . $qbdb_items_request_array[$i]['Item_Reorder_Amount'] . ",
             " . $qbdb_items_request_array[$i]['Item_Price'] . ",
-            '0.000000',
-            '0',
-            '0',
+            0.000000,
+            0,
+            0,
             $new_PO_TxnID,
             " . $i + 1 . "
         )";
