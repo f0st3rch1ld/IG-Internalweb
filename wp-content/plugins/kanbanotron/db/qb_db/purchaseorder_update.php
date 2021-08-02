@@ -37,16 +37,11 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
         }
     }
 
-    // Sorts temporary arrays
-    sort($temp_TxnID_array);
-    sort($temp_TxnNumber_array);
-    sort($temp_RefNumber_array);
-
     // Generates new random TxnID
     function generate_TxnID_check($x)
     {
         global $temp_TxnID_array;
-        if (!in_array($temp_TxnID_array, $x)) {
+        if (!in_array($x, $temp_TxnID_array)) {
             return TRUE;
         } else {
             return FALSE;

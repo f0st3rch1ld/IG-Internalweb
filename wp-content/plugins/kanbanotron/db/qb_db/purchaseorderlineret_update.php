@@ -21,9 +21,6 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
         }
     }
 
-    // Sorts temporary arrays
-    sort($temp_TxnID_array);
-
     // Generates new random TxnID
     function generate_TxnID_check($x)
     {
