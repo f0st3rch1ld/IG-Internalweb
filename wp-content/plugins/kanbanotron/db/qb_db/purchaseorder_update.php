@@ -7,12 +7,18 @@
  */
 
  // Some variables we need to set in order to insert the new data into the database
+
+ $temp_TxnID_array;
+
 $new_PO_TxnID;
 $new_PO_TxnNumber;
 $new_PO_RefNumber;
 
 function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
 {
+
+    global $temp_TxnID_array;
+
     global $new_PO_TxnID;
     global $new_PO_TxnNumber;
     global $new_PO_RefNumber;
