@@ -23,7 +23,7 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
 
     // Sorts temporary arrays
     sort($temp_TxnID_array);
-    
+
     // Generates new random TxnID
     function generate_TxnID_check($x)
     {
@@ -51,13 +51,13 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
     for ($i = 0; count($qbdb_items_request_array) > $i; $i++) {
 
         // Console Logs Content
-        foreach ($qbdb_items_request_array[$i] as $key => $value) {
-            if (!$value) {
-                echo $key . ' : NULL ; ';
-            } else {
-                echo $key . ' : ' . $value . ' ; ';
-            }
-        }
+        // foreach ($qbdb_items_request_array[$i] as $key => $value) {
+        //     if (!$value) {
+        //         echo $key . ' : NULL ; ';
+        //     } else {
+        //         echo $key . ' : ' . $value . ' ; ';
+        //     }
+        // }
 
         // This statement inserts all of our collected data into the purchaseorder table.
         $purchaseorderlineret_table_insertion = "INSERT INTO purchaseorderlineret (
@@ -87,6 +87,12 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
             $new_PO_TxnID,
             " . $i + 1 . "
         )";
+
+        if ($conn->query($purchaseorderlineret_table_insertion) === TRUE) {
+            echo 'New purchase order inserted into purchaseorder table';
+        } else {
+            echo 'There was a problem adding a new purchase order to the purchaseorder table.';
+        }
     }
 
     // Closes Quickbooks database connection
