@@ -107,43 +107,45 @@ for ($i = 0; count($order_data_to_send) > $i; $i++) {
     qbdb_vendor_request($vendor);
 
     $temp_array = array(
-        $qbdb_ListID,
-        $order_data_to_send[$i],
-        $qbdb_TableName,
-        $qbdb_BarCodeValue,
-        $qbdb_vendor_ListID,
-        $vendor,
-        $qbdb_vendor_isActive,
-        $qbdb_vendor_CompanyName,
-        $qbdb_vendor_FirstName,
-        $qbdb_vendor_MiddleName,
-        $qbdb_vendor_LastName,
-        $qbdb_vendor_VendorAddress_Addr1,
-        $qbdb_vendor_VendorAddress_Addr2,
-        $qbdb_vendor_VendorAddress_Addr3,
-        $qbdb_vendor_VendorAddress_Addr4,
-        $qbdb_vendor_VendorAddress_Addr5,
-        $qbdb_vendor_VendorAddress_City,
-        $qbdb_vendor_VendorAddress_State,
-        $qbdb_vendor_VendorAddress_PostalCode,
-        $qbdb_vendor_VendorAddress_Country,
-        $qbdb_vendor_VendorAddress_Note,
-        $qbdb_vendor_ShipAddress_Addr1,
-        $qbdb_vendor_ShipAddress_Addr2,
-        $qbdb_vendor_ShipAddress_Addr3,
-        $qbdb_vendor_ShipAddress_Addr4,
-        $qbdb_vendor_ShipAddress_Addr5,
-        $qbdb_vendor_ShipAddress_City,
-        $qbdb_vendor_ShipAddress_State,
-        $qbdb_vendor_ShipAddress_PostalCode,
-        $qbdb_vendor_ShipAddress_Country,
-        $qbdb_vendor_ShipAddress_Note,
-        $qbdb_vendor_TermsRef_ListID,
-        $qbdb_vendor_TermsRef_FullName
+        'Item_ListID' => $qbdb_ListID,
+        'Item_Name' => $order_data_to_send[$i],
+        'Table_Name' => $qbdb_TableName,
+        'BarCodeValue' => $qbdb_BarCodeValue,
+        'Vendor_ListID' => $qbdb_vendor_ListID,
+        'Vendor' => $vendor,
+        'vendor_isActive' => $qbdb_vendor_isActive,
+        'vendor_CompanyName' => $qbdb_vendor_CompanyName,
+        'vendor_FirstName' => $qbdb_vendor_FirstName,
+        'vendor_MiddleName' => $qbdb_vendor_MiddleName,
+        'vendor_LastName' => $qbdb_vendor_LastName,
+        'VendorAddress_Addr1' => $qbdb_vendor_VendorAddress_Addr1,
+        'VendorAddress_Addr2' => $qbdb_vendor_VendorAddress_Addr2,
+        'VendorAddress_Addr3' => $qbdb_vendor_VendorAddress_Addr3,
+        'VendorAddress_Addr4' => $qbdb_vendor_VendorAddress_Addr4,
+        'VendorAddress_Addr5' => $qbdb_vendor_VendorAddress_Addr5,
+        'VendorAddress_City' => $qbdb_vendor_VendorAddress_City,
+        'VendorAddress_State' => $qbdb_vendor_VendorAddress_State,
+        'VendorAddress_PostalCode' => $qbdb_vendor_VendorAddress_PostalCode,
+        'VendorAddress_Country' => $qbdb_vendor_VendorAddress_Country,
+        'VendorAddress_Note' => $qbdb_vendor_VendorAddress_Note,
+        'ShipAddress_Addr1' => $qbdb_vendor_ShipAddress_Addr1,
+        'ShipAddress_Addr2' => $qbdb_vendor_ShipAddress_Addr2,
+        'ShipAddress_Addr3' => $qbdb_vendor_ShipAddress_Addr3,
+        'ShipAddress_Addr4' => $qbdb_vendor_ShipAddress_Addr4,
+        'ShipAddress_Addr5' => $qbdb_vendor_ShipAddress_Addr5,
+        'ShipAddress_City' => $qbdb_vendor_ShipAddress_City,
+        'ShipAddress_State' => $qbdb_vendor_ShipAddress_State,
+        'ShipAddress_PostalCode' => $qbdb_vendor_ShipAddress_PostalCode,
+        'ShipAddress_Country' => $qbdb_vendor_ShipAddress_Country,
+        'ShipAddress_Note' => $qbdb_vendor_ShipAddress_Note,
+        'ListID' => $qbdb_vendor_TermsRef_ListID,
+        'ListID' => $qbdb_vendor_TermsRef_FullName
     );
 
     array_push($qbdb_items_request_array, $temp_array);
 }
+
+purchaseorder_update($qbdb_items_request_array);
 
 echo var_dump($qbdb_items_request_array);
 
