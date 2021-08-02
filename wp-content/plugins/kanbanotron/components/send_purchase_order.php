@@ -145,9 +145,10 @@ for ($i = 0; count($order_data_to_send) > $i; $i++) {
     array_push($qbdb_items_request_array, $temp_array);
 }
 
+include '../db/qb_db/purchaseorder_update.php';
 purchaseorder_update($qbdb_items_request_array);
 
-echo var_dump($qbdb_items_request_array);
+//echo var_dump($qbdb_items_request_array);
 
 
 
