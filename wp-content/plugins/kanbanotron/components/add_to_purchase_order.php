@@ -49,3 +49,5 @@ if ($conn->query($new_po_order_data_update) === TRUE) {
 
 // close database connection
 $conn->close();
+
+//one change was made
