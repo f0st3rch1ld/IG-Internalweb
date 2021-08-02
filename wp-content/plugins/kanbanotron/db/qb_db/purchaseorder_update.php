@@ -1,104 +1,155 @@
 <?php
 
 /**
- * 
  * Updated purchaseorder table rows need operation column set to 'add' in order to be pushed back to the QBD database.
  * 
  * Needed tables & columns from QB Database to create purchase orders
- * Table: purchaseorder
- * --TxnID
- * --EditSequence
- * --TxnNumber
- * --VendorRef_ListID
- * --VendorRef_FullName (Optional?)
- * --TemplateRef_ListID
- * --TemplateRef_Fullname (Optional?)
- * --RefNumber
- * --VendorAddress_Addr1 (Optional?)
- * --VendorAddress_Addr2 (Optional?)
- * --VendorAddress_Addr3 (Optional?)
- * --VendorAddress_Addr4 (Optional?)
- * --VendorAddress_Addr5 (Optional?)
- * --VendorAddress_City (Optional?)
- * --VendorAddress_State (Optional?)
- * --VendorAddress_PostalCode (Optional?)
- * --VendorAddress_Country (Optional?)
- * --VendorAddress_Note (Optional?)
- * --ShipAddress_Addr1 (Optional?)
- * --ShipAddress_Addr2 (Optional?)
- * --ShipAddress_Addr3 (Optional?)
- * --ShipAddress_Addr4 (Optional?)
- * --ShipAddress_Addr5 (Optional?)
- * --ShipAddress_City (Optional?)
- * --ShipAddress_State (Optional?)
- * --ShipAddress_PostalCode (Optional?)
- * --ShipAddress_Country (Optional?)
- * --ShipAddress_Note (Optional?)
- * --TermsRef_ListID (Optional?)
- * --TermsRef_FullName (Optional?)
- * --DueDate
- * --ExpectedDate
- * --TotalAmount
- * --IsToBePrinted
- * --IsToBeEmailed
- * --IsManuallyClosed
- * --IsFullyReceived
- * --ExternalGUID
- * --CustomField1
- * --CustomField2
- * --CustomField3
- * --CustomField4
- * --CustomField5
- * --CustomField6
- * --CustomField7
- * --CustomField8
- * --CustomField9
- * --CustomField10
- * --CustomField11
- * --CustomField12
- * --CustomField13
- * --CustomField14
- * --CustomField15
- * --UserData
- * --Operation
- * --LSData
  */
 
-function purchaseorder_update($qbdb_items_request_array)
+ // Some variables we need to set in order to insert the new data into the database
+$new_PO_TxnID;
+$new_PO_TxnNumber;
+$new_PO_RefNumber;
+
+function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
 {
-    $purchaseorder_table_data = array();
+    global $new_PO_TxnNumber;
+    global $new_PO_RefNumber;
+
+    $temp_TxnID_array = array();
+    $temp_TxnNumber_array = array();
+    $temp_RefNumber_array = array();
 
     // Quickbooks database connection
     include 'qb_data_connection.php';
 
-    $purchaseorder_table_query = "SELECT TxnID, TxnNumber, RefNumber FROM purchaseorder";
+    // Selects data from purchaseorder table for incremented values
+    $purchaseorder_table_query = "SELECT TxnNumber, RefNumber FROM purchaseorder";
     $purchaseorder_table_query_result = $conn->query($purchaseorder_table_query);
 
+    // Inserts selected data from purchaseorder table into php arrays.
     if ($purchaseorder_table_query_result->num_rows > 0) {
         while ($row = $purchaseorder_table_query_result->fetch_assoc()) {
-            $temp_array = array(
-                'TxnID' => $row['TxnID'],
-                'TxnNumber' => $row['TxnNumber'],
-                'RefNumber' => $row['RefNumber']
-            );
-            array_push($purchaseorder_table_data, $temp_array);
+            array_push($temp_TxnID_array, $row['TxnID']);
+            array_push($temp_TxnNumber_array, $row['TxnNumber']);
+            array_push($temp_RefNumber_array, $row['RefNumber']);
         }
-        echo var_dump($purchaseorder_table_data);
     }
 
-    for ($i = 0; count($qbdb_items_request_array) > $i; $i++) {
+    // Sorts temporary arrays
+    sort($temp_TxnID_array);
+    sort($temp_TxnNumber_array);
+    sort($temp_RefNumber_array);
 
-        // Console Logs Content
-        foreach ($qbdb_items_request_array[$i] as $key => $value) {
-            if (!$value) {
-                echo $key . ' : NULL ; ';
-            } else {
-                echo $key . ' : ' . $value . ' ; ';
-            }
+    // Generates new random TxnID
+    function generate_TxnID_check($x)
+    {
+        global $temp_TxnID_array;
+        if (!in_array($x, $temp_TxnID_array)) {
+            return TRUE;
+        } else {
+            return FALSE;
         }
+    }
 
-        //$purchaseorder_table_insertion = "INSERT INTO purchaseorder";
+    function generate_TxnID()
+    {
+        global $new_PO_TxnID;
+        $new_PO_TxnID = 'PO-GEN-' . rand(1000000000, 9999999999);
+    }
 
+    generate_TxnID();
+
+    while (generate_TxnId_check($new_TxnID)) {
+        generate_TxnID();
+    }
+
+    // Generates new TxnNumber
+    $new_PO_TxnNumber = max($temp_TxnNumber_array) + 1;
+
+    // Generates next RefNumber
+    $new_PO_RefNumber = max($temp_RefNumber_array) + 1;
+
+    // This statement inserts all of our collected data into the purchaseorder table.
+    $purchaseorder_table_insertion = "INSERT INTO purchaseorder (
+        TxnID,
+        TxnNumber,
+        VendorRef_ListID,
+        VendorRef_FullName,
+        TemplateRef_ListID,
+        TemplateRef_Fullname,
+        RefNumber,
+        VendorAddress_Addr1,
+        VendorAddress_Addr2,
+        VendorAddress_Addr3,
+        VendorAddress_Addr4,
+        VendorAddress_Addr5,
+        VendorAddress_City,
+        VendorAddress_State,
+        VendorAddress_PostalCode,
+        VendorAddress_Country,
+        VendorAddress_Note,
+        ShipAddress_Addr1,
+        ShipAddress_Addr2,
+        ShipAddress_Addr3,
+        ShipAddress_Addr4,
+        ShipAddress_Addr5,
+        ShipAddress_City,
+        ShipAddress_State,
+        ShipAddress_PostalCode,
+        ShipAddress_Country,
+        ShipAddress_Note,
+        TermsRef_ListID,
+        TermsRef_FullName,
+        TotalAmount,
+        IsToBePrinted,
+        IsToBeEmailed,
+        IsManuallyClosed,
+        IsFullyReceived,
+        Operation
+    )
+    VALUES (
+        $new_TxnID,
+        $new_PO_TxnNumber,
+        " . $qbdb_items_request_array[0]['Vendor_ListID'] . ",
+        $vendor,
+        '8000000F-1626707508',
+        'Custom Purchase Order',
+        $new_PO_RefNumber,
+        " . $qbdb_items_request_array[0]['VendorAddress_Addr1'] . ",
+        " . $qbdb_items_request_array[0]['VendorAddress_Addr2'] . ",
+        " . $qbdb_items_request_array[0]['VendorAddress_Addr3'] . ",
+        " . $qbdb_items_request_array[0]['VendorAddress_Addr4'] . ",
+        " . $qbdb_items_request_array[0]['VendorAddress_Addr5'] . ",
+        " . $qbdb_items_request_array[0]['VendorAddress_City'] . ",
+        " . $qbdb_items_request_array[0]['VendorAddress_State'] . ",
+        " . $qbdb_items_request_array[0]['VendorAddress_PostalCode'] . ",
+        " . $qbdb_items_request_array[0]['VendorAddress_Country'] . ",
+        " . $qbdb_items_request_array[0]['VendorAddress_Note'] . ",
+        " . $qbdb_items_request_array[0]['ShipAddress_Addr1'] . ",
+        " . $qbdb_items_request_array[0]['ShipAddress_Addr2'] . ",
+        " . $qbdb_items_request_array[0]['ShipAddress_Addr3'] . ",
+        " . $qbdb_items_request_array[0]['ShipAddress_Addr4'] . ",
+        " . $qbdb_items_request_array[0]['ShipAddress_Addr5'] . ",
+        " . $qbdb_items_request_array[0]['ShipAddress_City'] . ",
+        " . $qbdb_items_request_array[0]['ShipAddress_State'] . ",
+        " . $qbdb_items_request_array[0]['ShipAddress_PostalCode'] . ",
+        " . $qbdb_items_request_array[0]['ShipAddress_Country'] . ",
+        " . $qbdb_items_request_array[0]['ShipAddress_Note'] . ",
+        " . $qbdb_items_request_array[0]['TermsRef_ListID'] . ",
+        " . $qbdb_items_request_array[0]['TermsRef_FullName'] . ",
+        $order_total,
+        '1',
+        '0',
+        '0',
+        '0',
+        'add'
+    )";
+
+    if ($conn->query($purchaseorder_table_insertion) === TRUE) {
+        echo 'New purchase order inserted into purchaseorder table';
+    } else {
+        echo 'There was a problem adding a new purchase order to the purchaseorder table.';
     }
 
     // Closes Quickbooks database connection
