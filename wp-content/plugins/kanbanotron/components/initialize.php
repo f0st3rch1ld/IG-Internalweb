@@ -61,7 +61,7 @@ if ($active_order_id_result->num_rows == 0) {
 
     $conn->close();
 
-    echo '<input type="hidden" value="' . $active_order_id . '" />';
+    echo '<input type="hidden" id="order-selection" value="' . $active_order_id . '" />';
 
 } else {
 
