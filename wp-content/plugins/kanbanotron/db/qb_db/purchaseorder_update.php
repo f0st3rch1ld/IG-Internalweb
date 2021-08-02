@@ -37,6 +37,8 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
         }
     }
 
+    echo var_dump($temp_TxnID_array);
+
     // Generates new random TxnID
     function generate_TxnID_check($x)
     {
