@@ -151,7 +151,7 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
     if ($conn->query($purchaseorder_table_insertion) === TRUE) {
         echo 'New purchase order inserted into purchaseorder table';
     } else {
-        echo 'There was a problem adding a new purchase order to the purchaseorder table.';
+        echo 'Error: ' . $purchaseorder_table_insertion . ' ' . $conn->error;
     }
 
     // Closes Quickbooks database connection

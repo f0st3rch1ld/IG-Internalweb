@@ -88,7 +88,7 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
         if ($conn->query($purchaseorderlineret_table_insertion) === TRUE) {
             echo 'New list items inserted into purchaseorderlineret table';
         } else {
-            echo 'There was a problem adding items to the purchaseorderlineret table.';
+            echo 'Error: ' . $purchaseorderlineret_table_insertion . ' ' . $conn->error;
         }
     }
 
