@@ -13,6 +13,7 @@ $new_PO_RefNumber;
 
 function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
 {
+    global $new_PO_TxnID;
     global $new_PO_TxnNumber;
     global $new_PO_RefNumber;
 
@@ -60,7 +61,7 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
 
     generate_TxnID();
 
-    while (generate_TxnId_check($new_TxnID)) {
+    while (generate_TxnId_check($new_PO_TxnID)) {
         generate_TxnID();
     }
 
