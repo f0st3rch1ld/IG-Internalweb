@@ -68,7 +68,11 @@
 
     for ($i = 0; count($qbdb_items_request_array) > $i; $i++) {
         foreach ($qbdb_items_request_array[$i] as $key => $value) {
-            echo $key . ' : ' . $value . ' ; ';
+            if (!$value) {
+                echo $key . ' : NULL ; ';
+            } else {
+                echo $key . ' : ' . $value . ' ; ';
+            }
         }
     }
 
