@@ -64,12 +64,9 @@
  * --LSData
  */
 
-//$purchaseorder_Table_data = array();
-
 function purchaseorder_update($qbdb_items_request_array)
 {
-
-    //global $purchaseorder_table_data;
+    $purchaseorder_table_data = array();
 
     // Quickbooks database connection
     include 'qb_data_connection.php';
@@ -79,8 +76,14 @@ function purchaseorder_update($qbdb_items_request_array)
 
     if ($purchaseorder_table_query_result->num_rows > 0) {
         while ($row = $purchaseorder_table_query_result->fetch_assoc()) {
-            echo $row['TxnID'] . ' ' . $row['TxnNumber'] . ' ' . $row['RefNumber'];
+            $temp_array = array(
+                'TxnID' => $row['TxnID'],
+                'TxnNumber' => $row['TxnNumber'],
+                'RefNumber' => $row['RefNumber']
+            );
+            array_push($purchaseorder_table_data, $temp_array);
         }
+        echo var_dump($purchaseorder_table_data);
     }
 
     for ($i = 0; count($qbdb_items_request_array) > $i; $i++) {
