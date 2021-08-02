@@ -22,7 +22,7 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
     }
 
     // Generates new random TxnID
-    function generate_TxnID_check($x)
+    function generate_Ret_TxnID_check($x)
     {
         global $temp_TxnID_array;
         if (!in_array($x, $temp_TxnID_array)) {
@@ -40,7 +40,7 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
 
     generate_TxnID();
 
-    while (generate_TxnId_check($new_TxnID)) {
+    while (generate_Ret_TxnId_check($new_TxnID)) {
         generate_TxnID();
     }
 
