@@ -64,9 +64,28 @@
  * --LSData
  */
 
- function purchaseorder_update ($qbdb_items_request_array) {
+//$purchaseorder_Table_data = array();
+
+function purchaseorder_update($qbdb_items_request_array)
+{
+
+    //global $purchaseorder_table_data;
+
+    // Quickbooks database connection
+    include 'qb_data_connection.php';
+
+    $purchaseorder_table_query = "SELECT TxnID, TxnNumber, RefNumber FROM purchaseorder";
+    $purchaseorder_table_query_result = $conn->query($purchaseorder_table_query);
+
+    if ($purchaseorder_table_query_result->num_rows > 0) {
+        while ($row = $purchaseorder_table_query_result->fetch_assoc()) {
+            echo $row['TxnID'] . ' ' . $row['TxnNumber'] . ' ' . $row['RefNumber'];
+        }
+    }
 
     for ($i = 0; count($qbdb_items_request_array) > $i; $i++) {
+
+        // Console Logs Content
         foreach ($qbdb_items_request_array[$i] as $key => $value) {
             if (!$value) {
                 echo $key . ' : NULL ; ';
@@ -74,6 +93,11 @@
                 echo $key . ' : ' . $value . ' ; ';
             }
         }
+
+        //$purchaseorder_table_insertion = "INSERT INTO purchaseorder";
+
     }
 
- }
+    // Closes Quickbooks database connection
+    $conn->close();
+}
