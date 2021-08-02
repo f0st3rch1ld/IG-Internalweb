@@ -25,7 +25,7 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
     include 'qb_data_connection.php';
 
     // Selects data from purchaseorder table for incremented values
-    $purchaseorder_table_query = "SELECT TxnNumber, RefNumber FROM purchaseorder";
+    $purchaseorder_table_query = "SELECT TxnID, TxnNumber, RefNumber FROM purchaseorder";
     $purchaseorder_table_query_result = $conn->query($purchaseorder_table_query);
 
     // Inserts selected data from purchaseorder table into php arrays.
