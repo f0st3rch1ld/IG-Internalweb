@@ -32,16 +32,16 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
         }
     }
 
-    function generate_TxnID()
+    function generate_Ret_TxnID()
     {
         global $new_PORet_TxnLineID;
         $new_PORet_TxnLineID = 'PORET-GEN-' . rand(1000000000, 9999999999);
     }
 
-    generate_TxnID();
+    generate_Ret_TxnID();
 
     while (generate_Ret_TxnId_check($new_TxnID)) {
-        generate_TxnID();
+        generate_Ret_TxnID();
     }
 
     // Builds purchaseorder table insertion
