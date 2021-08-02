@@ -46,7 +46,7 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
     function generate_TxnID_check($x)
     {
         global $temp_TxnID_array;
-        if (!in_array($x, $temp_TxnID_array)) {
+        if (!in_array($temp_TxnID_array, $x)) {
             return TRUE;
         } else {
             return FALSE;
