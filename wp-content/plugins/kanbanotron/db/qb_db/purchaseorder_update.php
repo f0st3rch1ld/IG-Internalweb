@@ -8,7 +8,7 @@
 
  // Some variables we need to set in order to insert the new data into the database
 
- $temp_TxnID_array;
+$temp_TxnID_array;
 
 $new_PO_TxnID;
 $new_PO_TxnNumber;
@@ -43,16 +43,14 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
         }
     }
 
-    echo var_dump($temp_TxnID_array);
-
     // Generates new random TxnID
     function generate_TxnID_check($x)
     {
         global $temp_TxnID_array;
         if (!in_array($x, $temp_TxnID_array)) {
-            return TRUE;
-        } else {
             return FALSE;
+        } else {
+            return TRUE;
         }
     }
 

@@ -26,9 +26,9 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
     {
         global $temp_TxnID_array;
         if (!in_array($x, $temp_TxnID_array)) {
-            return TRUE;
-        } else {
             return FALSE;
+        } else {
+            return TRUE;
         }
     }
 
