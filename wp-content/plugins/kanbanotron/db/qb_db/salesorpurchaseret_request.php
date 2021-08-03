@@ -18,6 +18,8 @@ function qbdb_salesorpurchaseret_request($parent_idkey)
             global $qbdb_item_description;
             $qbdb_item_price = $row['Price'];
             $qbdb_item_description = $row['Description'];
+            echo $qbdb_item_price;
+            echo $qbdb_item_description;
         }
     } else {
         echo "No matching records were found inside the items table.";
