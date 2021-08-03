@@ -6,6 +6,11 @@ $qbdb_BarCodeValue;
 
 function qbdb_item_request($knbn_name)
 {
+    // globals - so we can set their values
+    global $qbdb_ListID;
+    global $qbdb_TableName;
+    global $qbdb_BarCodeValue;
+
     // Quickbooks database connection
     include 'qb_data_connection.php';
 
@@ -14,11 +19,6 @@ function qbdb_item_request($knbn_name)
 
     if ($qbdb_data_result->num_rows > 0) {
         while ($row = $qbdb_data_result->fetch_assoc()) {
-            // globals - so we can set their values
-            global $qbdb_ListID;
-            global $qbdb_TableName;
-            global $qbdb_BarCodeValue;
-
             $qbdb_ListID = $row['ListID'];
             $qbdb_TableName = $row['TableName'];
             $qbdb_BarCodeValue = $row['BarCodeValue'];
