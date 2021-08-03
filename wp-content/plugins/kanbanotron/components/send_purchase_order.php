@@ -110,7 +110,7 @@ $qbdb_items_request_array = array();
 for ($i = 0; count($order_data_to_send) > $i; $i++) {
     qbdb_item_request($order_data_to_send[$i][0]);
     qbdb_vendor_request($vendor);
-    qbdb_salesorpurchaseret_request($qbdb_listID);
+    qbdb_salesorpurchaseret_request($qbdb_ListID);
 
     $temp_array = array(
         'Item_ListID' => $qbdb_ListID,

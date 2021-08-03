@@ -75,8 +75,6 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
     // This statement inserts all of our collected data into the purchaseorder table.
     $purchaseorder_table_insertion = "INSERT INTO purchaseorder (
         TxnID,
-        TimeCreated,
-        TimeModified,
         TxnNumber,
         VendorRef_ListID,
         VendorRef_FullName,
@@ -114,8 +112,6 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
     )
     VALUES (
         '$new_PO_TxnID',
-        " . date('Y-m-d', time()) . ",
-        " . date('Y-m-d', time()) . ",
         $new_PO_TxnNumber,
         '" . $qbdb_items_request_array[0]['Vendor_ListID'] . "',
         '$vendor',
