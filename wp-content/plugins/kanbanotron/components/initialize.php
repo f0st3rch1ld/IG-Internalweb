@@ -60,6 +60,9 @@ if ($active_order_id_result->num_rows == 0) {
     }
 
     $conn->close();
+
+    echo '<input type="hidden" id="order-selection" value="' . $active_order_id . '" />';
+
 } else {
 
     if ($active_order_id_result->num_rows > 1) : ?>
@@ -81,7 +84,9 @@ if ($active_order_id_result->num_rows == 0) {
 <?php while ($row = $active_order_id_result->fetch_assoc()) {
             $active_order_id = $row['order_id'];
         }
-        echo "<p>Active order retrieved.</p>";
+        echo '
+        <p>Active order retrieved.</p>
+        <input type="hidden" id="order-selection" value="' . $active_order_id . '" />';
     endif;
 }
 ?>

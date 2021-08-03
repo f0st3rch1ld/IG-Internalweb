@@ -45,12 +45,13 @@ function vendor_check($x)
     global $order_data_to_send;
     global $knbn_vendor;
     global $knbn_vendor_part_number;
+    global $knbn_reorder_quantity;
     global $vendor;
 
     knbn_info_request($x);
 
     if ($knbn_vendor == $vendor) {
-        array_push($order_data_to_send, $knbn_vendor_part_number);
+        array_push($order_data_to_send, array($knbn_vendor_part_number, $knbn_reorder_quantity));
     }
 }
 
@@ -60,7 +61,6 @@ for ($i = 0; count($order_data) > $i; $i++) {
 }
 
 include '../db/qb_db/items_request.php';
-
 // items_request reference
 
 // $qbdb_ListID;
@@ -68,7 +68,6 @@ include '../db/qb_db/items_request.php';
 // $qbdb_BarCodeValue;
 
 include '../db/qb_db/vendor_request.php';
-
 // vendor_request reference
 
 // $qbdb_vendor_ListID;
@@ -100,15 +99,25 @@ include '../db/qb_db/vendor_request.php';
 // $qbdb_vendor_TermsRef_ListID;
 // $qbdb_vendor_TermsRef_FullName;
 
+include '../db/qb_db/salesorpurchaseret_request.php';
+// salesorpurchaseret_request reference
+
+// $qbdb_item_price
+// $qbdb_item_description
+
 $qbdb_items_request_array = array();
 
 for ($i = 0; count($order_data_to_send) > $i; $i++) {
-    qbdb_item_request($order_data_to_send[$i]);
+    qbdb_item_request($order_data_to_send[$i][0]);
     qbdb_vendor_request($vendor);
+    qbdb_salesorpurchaseret_request($qbdb_listID);
 
     $temp_array = array(
         'Item_ListID' => $qbdb_ListID,
-        'Item_Name' => $order_data_to_send[$i],
+        'Item_Price' => $qbdb_item_price,
+        'Item_Reorder_Amount' => $order_data_to_send[$i][1],
+        'Item_Name' => $order_data_to_send[$i][0],
+        'Item_description' => $qbdb_item_description,
         'Table_Name' => $qbdb_TableName,
         'BarCodeValue' => $qbdb_BarCodeValue,
         'Vendor_ListID' => $qbdb_vendor_ListID,
@@ -138,156 +147,40 @@ for ($i = 0; count($order_data_to_send) > $i; $i++) {
         'ShipAddress_PostalCode' => $qbdb_vendor_ShipAddress_PostalCode,
         'ShipAddress_Country' => $qbdb_vendor_ShipAddress_Country,
         'ShipAddress_Note' => $qbdb_vendor_ShipAddress_Note,
-        'ListID' => $qbdb_vendor_TermsRef_ListID,
-        'ListID' => $qbdb_vendor_TermsRef_FullName
+        'TermsRef_ListID' => $qbdb_vendor_TermsRef_ListID,
+        'TermsRef_FullName' => $qbdb_vendor_TermsRef_FullName
     );
 
     array_push($qbdb_items_request_array, $temp_array);
 }
 
+// Calculates total order price
+include '../db/qb_db/salesorder_price_calculation.php';
+// Price Calculation Reference
+
+// $order_total;
+
+calculate_order_total($qbdb_items_request_array);
+
+// Sends data to purchaseorder table
 include '../db/qb_db/purchaseorder_update.php';
-purchaseorder_update($qbdb_items_request_array);
+// PO Data Reference
+
+// $new_PO_TxnID;
+// $new_PO_TxnNumber;
+// $new_PO_RefNumber;
+
+purchaseorder_update($qbdb_items_request_array, $vendor, $order_total);
+
+// Sends data to purchaseorderlineret table
+include '../db/qb_db/purchaseorderlineret_update.php';
+
+purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID);
+
+
 
 //echo var_dump($qbdb_items_request_array);
 
-
-
-
 /**
- * 
- * Updated purchaseorder table rows need operation column set to 'add' in order to be pushed back to the QBD database.
- * 
- * Needed tables & columns from QB Database to create purchase orders
- * Table: purchaseorder
- * --TxnID
- * --EditSequence
- * --TxnNumber
- * --VendorRef_ListID
- * --VendorRef_FullName (Optional?)
- * --TemplateRef_ListID
- * --TemplateRef_Fullname (Optional?)
- * --RefNumber
- * --VendorAddress_Addr1 (Optional?)
- * --VendorAddress_Addr2 (Optional?)
- * --VendorAddress_Addr3 (Optional?)
- * --VendorAddress_Addr4 (Optional?)
- * --VendorAddress_Addr5 (Optional?)
- * --VendorAddress_City (Optional?)
- * --VendorAddress_State (Optional?)
- * --VendorAddress_PostalCode (Optional?)
- * --VendorAddress_Country (Optional?)
- * --VendorAddress_Note (Optional?)
- * --ShipAddress_Addr1 (Optional?)
- * --ShipAddress_Addr2 (Optional?)
- * --ShipAddress_Addr3 (Optional?)
- * --ShipAddress_Addr4 (Optional?)
- * --ShipAddress_Addr5 (Optional?)
- * --ShipAddress_City (Optional?)
- * --ShipAddress_State (Optional?)
- * --ShipAddress_PostalCode (Optional?)
- * --ShipAddress_Country (Optional?)
- * --ShipAddress_Note (Optional?)
- * --TermsRef_ListID (Optional?)
- * --TermsRef_FullName (Optional?)
- * --DueDate
- * --ExpectedDate
- * --TotalAmount
- * --IsToBePrinted
- * --IsToBeEmailed
- * --IsManuallyClosed
- * --IsFullyReceived
- * --ExternalGUID
- * --CustomField1
- * --CustomField2
- * --CustomField3
- * --CustomField4
- * --CustomField5
- * --CustomField6
- * --CustomField7
- * --CustomField8
- * --CustomField9
- * --CustomField10
- * --CustomField11
- * --CustomField12
- * --CustomField13
- * --CustomField14
- * --CustomField15
- * --UserData
- * --Operation
- * --LSData
- * 
- * 
- * We will use this table to add individual items to purchase orders
- * Table: purchaseorderlineret
- * --TxnLineID
- * --ItemRef_ListID
- * --ItemRef_FullName
- * --ManufacturerPartNumber
- * --Description
- * --Quantity
- * --Rate
- * --Amount
- * --ReceivedQuantity
- * --IsBilled
- * --IsManuallyClosed
- * --CustomField1
- * --CustomField2
- * --CustomField3
- * --CustomField4
- * --CustomField5
- * --CustomField6
- * --CustomField7
- * --CustomField8
- * --CustomField9
- * --CustomField10
- * --CustomField11
- * --CustomField12
- * --CustomField13
- * --CustomField14
- * --CustomField15
- * --PARENT_IDKEY
- * --GroupPARENT_IDKEY
- * --SeqNum
- * --LSData
- * 
- * 
- * We will reference this table for the ListID of the items to add to the purchaseorderlineret table
- * Table: items
- * --ListID
- * --FullName
- * --TableName
- * --BarCodeValue
- * 
  * NOTE: May need to also reference itemservice or itemoninventory tables depending on how we use the items table. We would probably pull the same columns out of those tables as well.. unsure where all the item descriptions come from? straight from Quickbooks?
- * 
- * Table: vendor
- * --ListID
- * --Name
- * --isActive
- * --CompanyName
- * --FirstName
- * --MiddleNamer
- * --LastName
- * --VendorAddress_Addr1 (Optional?)
- * --VendorAddress_Addr2 (Optional?)
- * --VendorAddress_Addr3 (Optional?)
- * --VendorAddress_Addr4 (Optional?)
- * --VendorAddress_Addr5 (Optional?)
- * --VendorAddress_City (Optional?)
- * --VendorAddress_State (Optional?)
- * --VendorAddress_PostalCode (Optional?)
- * --VendorAddress_Country (Optional?)
- * --VendorAddress_Note (Optional?)
- * --ShipAddress_Addr1 (Optional?)
- * --ShipAddress_Addr2 (Optional?)
- * --ShipAddress_Addr3 (Optional?)
- * --ShipAddress_Addr4 (Optional?)
- * --ShipAddress_Addr5 (Optional?)
- * --ShipAddress_City (Optional?)
- * --ShipAddress_State (Optional?)
- * --ShipAddress_PostalCode (Optional?)
- * --ShipAddress_Country (Optional?)
- * --ShipAddress_Note (Optional?)
- * --TermsRef_ListID (Optional?)
- * --TermsRef_FullName (Optional?)
  */
