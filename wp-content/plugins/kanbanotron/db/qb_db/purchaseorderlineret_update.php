@@ -23,31 +23,6 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
         }
     }
 
-    // Generates new random TxnID
-    function generate_Ret_TxnID_check($x)
-    {
-        global $temp_TxnID_array;
-        if (!in_array($x, $temp_TxnID_array)) {
-            return FALSE;
-        } else {
-            return TRUE;
-        }
-    }
-
-    function generate_Ret_TxnID()
-    {
-        global $new_PORet_TxnLineID;
-        $new_PORet_TxnLineID = 'PORET-GEN-' . rand(1000000000, 9999999999);
-    }
-
-    generate_Ret_TxnID();
-
-    while (generate_Ret_TxnId_check($new_PORet_TxnLineID)) {
-        generate_Ret_TxnID();
-    }
-
-    echo $new_PORet_TxnLineID;
-
     // Builds purchaseorder table insertion
     for ($i = 0; count($qbdb_items_request_array) > $i; $i++) {
 
@@ -59,6 +34,31 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
         //         echo $key . ' : ' . $value . ' ; ';
         //     }
         // }
+
+        // Generates new random TxnID
+        function generate_Ret_TxnID_check($x)
+        {
+            global $temp_TxnID_array;
+            if (!in_array($x, $temp_TxnID_array)) {
+                return FALSE;
+            } else {
+                return TRUE;
+            }
+        }
+
+        function generate_Ret_TxnID()
+        {
+            global $new_PORet_TxnLineID;
+            $new_PORet_TxnLineID = 'PORET-GEN-' . rand(1000000000, 9999999999);
+        }
+
+        generate_Ret_TxnID();
+
+        while (generate_Ret_TxnId_check($new_PORet_TxnLineID)) {
+            generate_Ret_TxnID();
+        }
+
+        echo $new_PORet_TxnLineID;
 
         // This statement inserts all of our collected data into the purchaseorder table.
         $purchaseorderlineret_table_insertion = "INSERT INTO purchaseorderlineret (
@@ -82,7 +82,7 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
             '" . $qbdb_items_request_array[$i]['Item_Description'] . "',
             '" . $qbdb_items_request_array[$i]['Item_Reorder_Amount'] . "',
             '" . $qbdb_items_request_array[$i]['Item_Price'] . "',
-            '" . intval($qbdb_items_request_array[$i]['Item_Price']) * intval($qbdb_items_request_array[$i]['Item_Reorder_Amount']) . "'
+            '" . intval($qbdb_items_request_array[$i]['Item_Price']) * intval($qbdb_items_request_array[$i]['Item_Reorder_Amount']) . "',
             0.000000,
             0,
             0,
