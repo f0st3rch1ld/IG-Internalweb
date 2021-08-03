@@ -5,6 +5,8 @@ $new_PORet_TxnLineID;
 function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
 {
 
+    global $new_PORet_TxnLineID;
+
     $temp_TxnID_array = array();
 
     // Quickbooks database connection
