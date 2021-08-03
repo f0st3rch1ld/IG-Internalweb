@@ -82,7 +82,7 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
             '" . $qbdb_items_request_array[$i]['Item_Description'] . "',
             '" . $qbdb_items_request_array[$i]['Item_Reorder_Amount'] . "',
             '" . $qbdb_items_request_array[$i]['Item_Price'] . "',
-            '" . $qbdb_items_request_array[$i]['Item_Price'] * $qbdb_items_request_array[$i]['Item_Reorder_Amount'] . "'
+            '" . intval($qbdb_items_request_array[$i]['Item_Price']) * intval($qbdb_items_request_array[$i]['Item_Reorder_Amount']) . "'
             0.000000,
             0,
             0,
