@@ -24,7 +24,7 @@ function qbdb_item_request($knbn_name)
             $qbdb_BarCodeValue = $row['BarCodeValue'];
         }
     } else {
-        echo "No matching records were found inside the items table.";
+        echo "No matching records were found inside the items table for " . $knbn_name;
     }
 
     // Closes Quickbooks database connection
