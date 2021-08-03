@@ -114,8 +114,8 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
     )
     VALUES (
         '$new_PO_TxnID',
-        date('Y/m/d', time()),
-        date('Y/m/d', time()),
+        " . date('Y/m/d', time()) . ",
+        " . date('Y/m/d', time()) . ",
         $new_PO_TxnNumber,
         '" . $qbdb_items_request_array[0]['Vendor_ListID'] . "',
         '$vendor',
