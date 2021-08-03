@@ -65,7 +65,6 @@
  */
 
  function purchaseorder_update ($qbdb_items_request_array) {
-
     for ($i = 0; count($qbdb_items_request_array) > $i; $i++) {
         foreach ($qbdb_items_request_array[$i] as $key => $value) {
             if (!$value) {
@@ -75,5 +74,4 @@
             }
         }
     }
-
  }
