@@ -68,7 +68,6 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
             Description,
             Quantity,
             Rate,
-            Amount,
             ReceivedQuantity,
             isBilled,
             isManuallyClosed,
