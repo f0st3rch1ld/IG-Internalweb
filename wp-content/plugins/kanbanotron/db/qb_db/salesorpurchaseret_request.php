@@ -5,6 +5,9 @@ $qbdb_item_description;
 
 function qbdb_salesorpurchaseret_request($parent_idkey)
 {
+
+    echo 'Trying to find a record that matches this idkey inside salesorpurchaseret table: ' . $parent_idkey;
+
     // Quickbooks database connection
     include 'qb_data_connection.php';
 
@@ -22,7 +25,7 @@ function qbdb_salesorpurchaseret_request($parent_idkey)
             echo $qbdb_item_description;
         }
     } else {
-        echo "No matching records were found inside the items table.";
+        echo "No matching records were found inside the salesorpurchaseret table.";
     }
 
     // Closes Quickbooks database connection
