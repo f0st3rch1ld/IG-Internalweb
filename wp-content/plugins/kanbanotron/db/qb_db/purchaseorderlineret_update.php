@@ -40,7 +40,7 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
 
     generate_Ret_TxnID();
 
-    while (generate_Ret_TxnId_check($new_TxnID)) {
+    while (generate_Ret_TxnId_check($new_PORet_TxnLineID)) {
         generate_Ret_TxnID();
     }
 
@@ -74,7 +74,7 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
             SeqNum
         )
         VALUES (
-            $new_PORet_TxnLineID,
+            '$new_PORet_TxnLineID',
             " . $qbdb_items_request_array[$i]['Item_ListID'] . ",
             " . $qbdb_items_request_array[$i]['Item_Name'] . ",
             " . $qbdb_items_request_array[$i]['Item_Description'] . ",
@@ -83,7 +83,7 @@ function purchaseorderlineret_update($qbdb_items_request_array, $new_PO_TxnID)
             0.000000,
             0,
             0,
-            $new_PO_TxnID,
+            '$new_PO_TxnID',
             " . $i + 1 . "
         )";
 

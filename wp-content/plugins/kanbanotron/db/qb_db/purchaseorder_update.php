@@ -111,10 +111,10 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
         Operation
     )
     VALUES (
-        $new_TxnID,
-        $new_PO_TxnNumber,
+        '$new_PO_TxnID',
+        '$new_PO_TxnNumber',
         " . $qbdb_items_request_array[0]['Vendor_ListID'] . ",
-        $vendor,
+        '$vendor',
         '8000000F-1626707508',
         'Custom Purchase Order',
         $new_PO_RefNumber,
