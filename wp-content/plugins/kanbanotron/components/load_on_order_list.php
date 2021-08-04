@@ -34,7 +34,8 @@ for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
 }
 ?>
 
-<?php //echo var_dump($order_txnid_array); ?>
+<?php //echo var_dump($order_txnid_array); 
+?>
 
 <?php foreach ($order_txnid_array as $key => $value) : ?>
     <!-- Generated PO Table -->
@@ -63,8 +64,16 @@ for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
                                 <td><?php echo $purchaseorderlineret_table_data_array[$y]['ItemRef_FullName']; ?></td>
                                 <td><?php echo $purchaseorderlineret_table_data_array[$y]['Description']; ?></td>
                                 <td><?php echo number_format($purchaseorderlineret_table_data_array[$y]['Quantity'], 0); ?></td>
-                                <td>Date Ordered</td>
-                                <td>Memo</td>
+
+                                <?php
+                                for ($x = 0; count($purchaseorder_table_data_array) > $x; $x++) {
+                                    if ($purchaseorder_table_data_array[$x]['TxnID'] == $purchaseorderlineret_table_data_array[$y]['PARENT_IDKEY']) : ?>
+                                        <td><?php echo $purchaseorder_table_data_array[$x]['TimeCreated']; ?></td>
+                                        <td><?php echo $purchaseorder_table_data_array[$x]['Memo']; ?></td>
+                                <?php endif;
+                                }
+                                ?>
+
                                 <td>ETA</td>
                             </tr>
                         <?php endif; ?>
