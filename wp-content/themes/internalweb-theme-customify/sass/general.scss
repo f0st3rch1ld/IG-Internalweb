@@ -823,7 +823,7 @@ button {
   }
 }
 
-.on-order-list-container {
+#on-order-list-container {
   @include superflex(column, flex-start, center, wrap, 100%, auto);
 
   .purchase-order-container {

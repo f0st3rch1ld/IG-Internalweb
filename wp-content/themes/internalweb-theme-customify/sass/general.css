@@ -1510,7 +1510,7 @@ button:focus {
   cursor: progress;
 }
 
-.on-order-list-container {
+#on-order-list-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1530,7 +1530,7 @@ button:focus {
   height: auto;
 }
 
-.on-order-list-container .purchase-order-container {
+#on-order-list-container .purchase-order-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1561,7 +1561,7 @@ button:focus {
   overflow: hidden;
 }
 
-.on-order-list-container .purchase-order-container:hover {
+#on-order-list-container .purchase-order-container:hover {
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
           box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
   -webkit-transition-timing-function: ease-in-out;
@@ -1570,19 +1570,19 @@ button:focus {
           transition-duration: 0.2s;
 }
 
-.on-order-list-container .purchase-order-container .vendor-name {
+#on-order-list-container .purchase-order-container .vendor-name {
   color: #fff;
   background-color: #0f83ff;
 }
 
-.on-order-list-container .purchase-order-container h5 {
+#on-order-list-container .purchase-order-container h5 {
   font-size: 1.2em;
   font-weight: 600;
   padding: 5px 15px;
   margin: 0px;
 }
 
-.on-order-list-container .purchase-order-container .po-title-container {
+#on-order-list-container .purchase-order-container .po-title-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1603,11 +1603,11 @@ button:focus {
   background-color: #0f83ff;
 }
 
-.on-order-list-container .purchase-order-container .po-title-container .po-status {
+#on-order-list-container .purchase-order-container .po-title-container .po-status {
   color: rgba(255, 255, 255, 0.4);
 }
 
-.on-order-list-container .purchase-order-container .po-control-container {
+#on-order-list-container .purchase-order-container .po-control-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1627,7 +1627,7 @@ button:focus {
   height: auto;
 }
 
-.on-order-list-container .purchase-order-container .po-control-container button {
+#on-order-list-container .purchase-order-container .po-control-container button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1648,40 +1648,40 @@ button:focus {
   margin: 5px;
 }
 
-.on-order-list-container .purchase-order-container .po-control-container button i {
+#on-order-list-container .purchase-order-container .po-control-container button i {
   margin: 0px !important;
 }
 
-.on-order-list-container .purchase-order-container .po-control-container .ind-po-submit:hover {
+#on-order-list-container .purchase-order-container .po-control-container .ind-po-submit:hover {
   background-color: #58b021 !important;
 }
 
-.on-order-list-container .purchase-order-container .po-control-container .ind-po-delete:hover {
+#on-order-list-container .purchase-order-container .po-control-container .ind-po-delete:hover {
   background-color: #e00004 !important;
 }
 
-.on-order-list-container .purchase-order-container table {
+#on-order-list-container .purchase-order-container table {
   margin: 0px;
   table-layout: fixed;
 }
 
-.on-order-list-container .purchase-order-container table thead tr {
+#on-order-list-container .purchase-order-container table thead tr {
   background-color: #383838;
 }
 
-.on-order-list-container .purchase-order-container table thead tr th {
+#on-order-list-container .purchase-order-container table thead tr th {
   background-color: transparent;
   color: #fff;
 }
 
-.on-order-list-container .purchase-order-container table thead tr td {
+#on-order-list-container .purchase-order-container table thead tr td {
   font-weight: 600;
 }
 
-.on-order-list-container .purchase-order-container table tbody tr td,
-.on-order-list-container .purchase-order-container table tbody tr th,
-.on-order-list-container .purchase-order-container table thead tr td,
-.on-order-list-container .purchase-order-container table thead tr th {
+#on-order-list-container .purchase-order-container table tbody tr td,
+#on-order-list-container .purchase-order-container table tbody tr th,
+#on-order-list-container .purchase-order-container table thead tr td,
+#on-order-list-container .purchase-order-container table thead tr th {
   height: 50px;
   white-space: nowrap;
   text-align: center;
