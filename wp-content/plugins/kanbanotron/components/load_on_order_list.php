@@ -36,7 +36,6 @@ for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
 
 <?php
 echo var_dump($order_txnid_array);
-echo key($order_txnid_array[0]);
 ?>
 
 <?php for ($i = 0; count($order_txnid_array) > $i; $i++) : ?>
