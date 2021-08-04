@@ -50,6 +50,7 @@ echo var_dump($order_txnid_array);
             <thead>
                 <tr>
                     <th>PN</th>
+                    <th>Description</th>
                     <th>QTY</th>
                     <th>Date Ordered</th>
                     <th>PO</th>
@@ -61,9 +62,8 @@ echo var_dump($order_txnid_array);
                     <?php for ($y = 0; count($purchaseorderlineret_table_data_array) > $y; $y++) : ?>
                         <?php if ($purchaseorderlineret_table_data_array[$y]['PARENT_IDKEY'] == $value[$i]) : ?>
                             <tr>
-                                <td class="tooltip"><?php echo $purchaseorderlineret_table_data_array[$y]['ItemRef_FullName']; ?>
-                                    <p class="tooltiptext"><?php echo $purchaseorderlineret_table_data_array[$y]['Description']; ?></p>
-                                </td>
+                                <td><?php echo $purchaseorderlineret_table_data_array[$y]['ItemRef_FullName']; ?></td>
+                                <td><?php echo $purchaseorderlineret_table_data_array[$y]['Description']; ?></td>
                                 <td><?php echo $purchaseorderlineret_table_data_array[$y]['Quantity']; ?></td>
                                 <td>Date Ordered</td>
                                 <td>Memo</td>
