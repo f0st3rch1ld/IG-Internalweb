@@ -25,8 +25,10 @@
             <tbody>
                 <tr>
                     <td class="tooltip">PN
+                        <p class="tooltiptext">Description</p>
                     </td>
                     <td class="tooltip">Vendor PN
+                        <p class="tooltiptext">Description</p>
                     </td>
                     <td>QTY</td>
                     <td>Date Ordered</td>
