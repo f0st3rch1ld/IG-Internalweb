@@ -1,7 +1,7 @@
 <?php
 
-include '../db/qb_db/qb_data_connection.php';
-include '../db/qb_db/purchaseorder_request.php';
+include plugin_dir_path(__FILE__) . '../db/qb_db/qb_data_connection.php';
+include plugin_dir_path(__FILE__) . '../db/qb_db/purchaseorder_request.php';
 
 // purchaseorder_request referance
 
