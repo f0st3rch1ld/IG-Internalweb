@@ -22,12 +22,14 @@ $order_txnid_array = array();
 
 ?>
 
-<?php echo $purchaseorder_table_data_array[0]['VendorRef_FullName']; ?>
-
 <?php
 // Loops through all purchaseorder data, and groups / pushes vendors and vendor ids to array
 for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
+    if (!array_key_exists($purchaseorder_table_data_array[$i]['VendorRef_FullName'], $order_txnid_array)) {
         $order_txnid_array[$purchaseorder_table_data_array[$i]['VendorRef_FullName']] = $purchaseorder_table_data_array[$i]['TxnID'];
+    } else {
+        array_push($order_txnid_array[$purchaseorder_table_data_array[$i]['VendorRef_FullName']], $purchaseorder_table_data_array[$i]['TxnID']);
+    }
 }
 ?>
 
