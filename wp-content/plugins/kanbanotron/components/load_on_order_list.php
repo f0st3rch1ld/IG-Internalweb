@@ -52,12 +52,12 @@ $vendors = array();
                 <tbody>
 
                     <?php for ($y = 0; count($purchaseorderlineret_table_data_array) > $y; $y++) : ?>
-                        <?php if ($purchaseorderlineret_table_data[$y]['PARENT_IDKEY'] == $purchaseorder_table_data_array[$i]['TxnID']) : ?>
+                        <?php if ($purchaseorderlineret_table_data_array[$y]['PARENT_IDKEY'] == $purchaseorder_table_data_array[$i]['TxnID']) : ?>
                             <tr>
-                                <td class="tooltip"><?php echo $purchaseorderlineret_table_data[$y]['ItemRef_FullName']; ?>
-                                    <p class="tooltiptext"><?php echo $purchaseorderlineret_table_data[$y]['Description']; ?></p>
+                                <td class="tooltip"><?php echo $purchaseorderlineret_table_data_array[$y]['ItemRef_FullName']; ?>
+                                    <p class="tooltiptext"><?php echo $purchaseorderlineret_table_data_array[$y]['Description']; ?></p>
                                 </td>
-                                <td><?php echo $purchaseorderlineret_table_data[$y]['Quantity']; ?></td>
+                                <td><?php echo $purchaseorderlineret_table_data_array[$y]['Quantity']; ?></td>
                                 <td><?php echo $purchaesorder_table_data_array[$i]['TimeCreated']; ?></td>
                                 <td><?php echo $purchaesorder_table_data_array[$i]['Memo']; ?></td>
                                 <td>ETA</td>
