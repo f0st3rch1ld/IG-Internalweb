@@ -1,8 +1,8 @@
 <?php
-// On Order List
+// On Order Overview
 ?>
 
-<h3>On Order List</h3>
+<h3>On-Order Overview</h3>
 
 <!-- On Order List Container -->
 <div class="on-order-list-container">
