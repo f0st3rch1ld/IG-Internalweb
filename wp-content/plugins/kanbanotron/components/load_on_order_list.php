@@ -1,3 +1,12 @@
+<?php
+
+include '../db/qb_db/qb_data_connection.php';
+include '../db/qb_db/purchaseorder_request.php';
+
+// purchaseorder_request referance
+
+?>
+
 <!-- On Order List Container -->
 <div id="on-order-list-container">
     <!-- Generated PO Table -->
