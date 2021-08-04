@@ -1487,7 +1487,6 @@ button:focus {
 /* Tooltip container */
 .tooltip {
   position: relative;
-  display: inline-block;
 }
 
 .tooltip .tooltiptext {
@@ -1732,6 +1731,7 @@ button:focus {
 
 .on-order-list-container .purchase-order-container table {
   margin: 0px;
+  table-layout: fixed;
 }
 
 .on-order-list-container .purchase-order-container table thead tr {

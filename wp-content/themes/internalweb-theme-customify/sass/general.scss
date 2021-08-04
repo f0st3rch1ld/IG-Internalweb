@@ -760,7 +760,6 @@ button {
 /* Tooltip container */
 .tooltip {
   position: relative;
-  display: inline-block;
 
   .tooltiptext {
     visibility: hidden;
@@ -891,6 +890,7 @@ button {
 
     table {
       margin: 0px;
+      table-layout:fixed;
 
       thead {
         tr {
