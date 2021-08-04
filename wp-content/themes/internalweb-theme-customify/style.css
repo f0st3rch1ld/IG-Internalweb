@@ -1580,6 +1580,200 @@ button:focus {
   cursor: progress;
 }
 
+.on-order-list-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+
+.on-order-list-container .purchase-order-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  border-style: solid;
+  border-color: #f5f5f5;
+  border-width: 2px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  overflow: hidden;
+}
+
+.on-order-list-container .purchase-order-container:hover {
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+          box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.on-order-list-container .purchase-order-container .vendor-name {
+  color: #fff;
+  background-color: #0f83ff;
+}
+
+.on-order-list-container .purchase-order-container h5 {
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 5px 15px;
+  margin: 0px;
+}
+
+.on-order-list-container .purchase-order-container .po-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  background-color: #0f83ff;
+}
+
+.on-order-list-container .purchase-order-container .po-title-container .po-status {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.on-order-list-container .purchase-order-container .po-control-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+
+.on-order-list-container .purchase-order-container .po-control-container button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: auto;
+  height: auto;
+  margin: 5px;
+}
+
+.on-order-list-container .purchase-order-container .po-control-container button i {
+  margin: 0px !important;
+}
+
+.on-order-list-container .purchase-order-container .po-control-container .ind-po-submit:hover {
+  background-color: #58b021 !important;
+}
+
+.on-order-list-container .purchase-order-container .po-control-container .ind-po-delete:hover {
+  background-color: #e00004 !important;
+}
+
+.on-order-list-container .purchase-order-container table {
+  margin: 0px;
+}
+
+.on-order-list-container .purchase-order-container table thead tr {
+  background-color: #383838;
+}
+
+.on-order-list-container .purchase-order-container table thead tr th {
+  background-color: transparent;
+  color: #fff;
+}
+
+.on-order-list-container .purchase-order-container table thead tr td {
+  font-weight: 600;
+}
+
+.on-order-list-container .purchase-order-container table tbody tr td,
+.on-order-list-container .purchase-order-container table tbody tr th,
+.on-order-list-container .purchase-order-container table thead tr td,
+.on-order-list-container .purchase-order-container table thead tr th {
+  height: 50px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.on-order-list-container .purchase-order-container table tbody tr .remove-product,
+.on-order-list-container .purchase-order-container table thead tr .remove-product {
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.on-order-list-container .purchase-order-container table tbody tr .remove-product:hover > i,
+.on-order-list-container .purchase-order-container table thead tr .remove-product:hover > i {
+  color: #e00004 !important;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
 h1.titlebar-title {
   font-size: 3em;
   font-weight: 700;

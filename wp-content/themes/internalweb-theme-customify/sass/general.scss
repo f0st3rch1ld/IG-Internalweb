@@ -823,3 +823,110 @@ button {
     cursor: progress;
   }
 }
+
+.on-order-list-container {
+  @include superflex(column, flex-start, center, wrap, 100%, auto);
+
+  .purchase-order-container {
+    @include superflex(column, flex-start, flex-start, wrap, 100%, auto);
+    border-style: solid;
+    border-color: $default-grey;
+    border-width: 2px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    @include default-transition;
+    overflow: hidden;
+
+    &:hover {
+      @include default-drop-shadow;
+      @include default-transition;
+    }
+
+    .vendor-name {
+      color: #fff;
+      background-color: $default-blue;
+    }
+
+    h5 {
+      font-size: 1.2em;
+      font-weight: 600;
+      padding: 5px 15px;
+      margin: 0px;
+    }
+
+    .po-title-container {
+      @include superflex(row, space-between, center, wrap, 100%, auto);
+      background-color: $default-blue;
+
+      .po-status {
+        color: rgba(255, 255, 255, 0.4);
+      }
+    }
+
+    .po-control-container {
+      @include superflex(row, flex-end, center, wrap, 100%, auto);
+
+      button {
+        @include superflex(row, center, center, nowrap, auto, auto);
+        margin: 5px;
+
+        i {
+          margin: 0px !important;
+        }
+      }
+
+      .ind-po-submit {
+        &:hover {
+          background-color: $default-green !important;
+        }
+      }
+
+      .ind-po-delete {
+        &:hover {
+          background-color: $default-red !important;
+        }
+      }
+    }
+
+    table {
+      margin: 0px;
+
+      thead {
+        tr {
+          background-color: $default-dark-grey;
+          th {
+            background-color: transparent;
+            color: #fff;
+          }
+
+          td {
+            font-weight: 600;
+          }
+        }
+      }
+
+      tbody,
+      thead {
+        tr {
+          td,
+          th {
+            height: 50px;
+            white-space: nowrap;
+            text-align: center;
+          }
+
+          .remove-product {
+            @include default-transition;
+            cursor: pointer;
+
+            &:hover > i {
+              color: $default-red !important;
+              @include default-transition;
+            }
+          }
+        }
+      }
+    }
+  }
+}

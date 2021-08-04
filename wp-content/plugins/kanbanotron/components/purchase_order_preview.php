@@ -80,7 +80,6 @@ foreach ($vendors as $vendor) : ?>
     <div class="purchase-order-container">
         <div class="po-title-container">
             <h5 class="vendor-name"><?php echo $vendor; ?></h5>
-            <h5 class="po-status">Status</h5>
         </div>
         <table>
             <thead>
@@ -103,11 +102,13 @@ foreach ($vendors as $vendor) : ?>
                             <td class="tooltip"><?php if ($knbn_part_number) : echo $knbn_part_number; else : echo '-'; endif; ?>
                                 <p class="tooltiptext"><?php echo $knbn_description ?></p>
                             </td>
-                            <td><?php echo $knbn_vendor_part_number; ?></td>
+                            <td class="tooltip"><?php echo $knbn_vendor_part_number; ?>
+                                <p class="tooltiptext"><?php echo $knbn_description ?></p>
+                            </td>
                             <td><?php echo $knbn_reorder_quantity; ?></td>
                             <?php $date = date('m/d/Y'); ?>
                             <td><?php echo $date; ?></td>
-                            <td><?php echo date('m/d/Y', strtotime($date. ' +' . $knbn_lead_time . ' days')); ?></td>
+                            <td><?php echo date('m/d/Y', strtotime($date . ' +' . $knbn_lead_time . ' days')); ?></td>
                             <td class="remove-product" onmouseup="removeFromPO('<?php echo $active_po; ?>', '<?php echo $i; ?>')"><i class="fas fa-trash-alt"></i></td>
                         </tr>
                         <!-- /order_data item index <?php echo $i; ?> -->
