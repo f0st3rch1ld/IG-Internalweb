@@ -31,6 +31,7 @@ for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
                 $purchaseorder_table_data_array[$i]['TxnID']
             )
         );
+        array_push($order_txnid_array, $temp_array);
     } else {
         array_push($order_txnid_array[$purchaseorder_table_data_array[$i]['VendorRef_FullName']], $purchaseorder_table_data_array[$i]['TxnID']);
     }
