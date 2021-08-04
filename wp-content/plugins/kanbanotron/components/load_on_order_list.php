@@ -33,7 +33,7 @@ for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
 }
 ?>
 
-
+<?php echo print_r($order_txnid_array); ?>
 
 <?php for ($i = 0; count($order_txnid_array) > $i; $i++) : ?>
     <!-- Generated PO Table -->
