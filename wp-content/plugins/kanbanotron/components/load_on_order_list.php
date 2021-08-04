@@ -27,7 +27,7 @@ $order_txnid_array = array();
 for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
     if (!array_key_exists($purchaseorder_table_data_array[$i]['VendorRef_FullName'], $order_txnid_array)) {
         $order_txnid_array[$purchaseorder_table_data_array[$i]['VendorRef_FullName']] = $purchaseorder_table_data_array[$i]['TxnID'];
-        echo var_dump($order_txnid_array);
+        echo print_r($order_txnid_array);
     } else {
         array_push($order_txnid_array[$purchaseorder_table_data_array[$i]['VendorRef_FullName']], $purchaseorder_table_data_array[$i]['TxnID']);
     }
