@@ -63,8 +63,6 @@ if ($active_order_id_result->num_rows == 0) {
 
     echo '<input type="hidden" id="order-selection" value="' . $active_order_id . '" />';
 
-    echo '<a href="/kanbanotron/?on_order_ov=1">View On Order List</a>';
-
 } else {
 
     if ($active_order_id_result->num_rows > 1) : ?>
@@ -80,8 +78,7 @@ if ($active_order_id_result->num_rows == 0) {
             </select>
             <input type="submit" id="active-order-submit" />
         </form>
-        <a href="/kanbanotron/?on_order_ov=1">View On Order List</a>
-
+    
     <?php else : ?>
 
 <?php while ($row = $active_order_id_result->fetch_assoc()) {
@@ -89,13 +86,14 @@ if ($active_order_id_result->num_rows == 0) {
         }
         echo '
         <p>Active order retrieved.</p>
-        <input type="hidden" id="order-selection" value="' . $active_order_id . '" />
-        <a href="/kanbanotron/?on_order_ov=1">View On Order List</a>';
+        <input type="hidden" id="order-selection" value="' . $active_order_id . '" />';
     endif;
 }
 ?>
 
 <button onclick="newPO()">New Chocolate Chip <i class="fas fa-cookie-bite"></i></button>
+
+<a href="/kanbanotron/?on_order_ov=1">View On Order List</a>
 
 </div>
 <!-- /Active Order Controls Container -->
