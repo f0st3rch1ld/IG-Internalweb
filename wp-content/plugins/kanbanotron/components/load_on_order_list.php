@@ -22,6 +22,8 @@ $order_txnid_array = array();
 
 ?>
 
+<?php echo $purchaseorder_Table_data_array[0]['VendorRef_FullName']; ?>
+
 <?php
 // Loops through all purchaseorder data, and groups / pushes vendors and vendor ids to array
 for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
