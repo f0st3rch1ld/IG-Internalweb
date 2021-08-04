@@ -1662,7 +1662,6 @@ button:focus {
 
 #on-order-list-container .purchase-order-container table {
   margin: 0px;
-  table-layout: fixed;
 }
 
 #on-order-list-container .purchase-order-container table thead tr {
@@ -1683,7 +1682,6 @@ button:focus {
 #on-order-list-container .purchase-order-container table thead tr td,
 #on-order-list-container .purchase-order-container table thead tr th {
   height: 50px;
-  white-space: nowrap;
   text-align: center;
 }
 /*# sourceMappingURL=general.css.map */

@@ -890,7 +890,6 @@ button {
 
     table {
       margin: 0px;
-      table-layout:fixed;
 
       thead {
         tr {
@@ -912,7 +911,6 @@ button {
           td,
           th {
             height: 50px;
-            white-space: nowrap;
             text-align: center;
           }
         }
