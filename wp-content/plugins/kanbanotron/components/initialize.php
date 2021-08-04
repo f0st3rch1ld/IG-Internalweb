@@ -80,7 +80,7 @@ if ($active_order_id_result->num_rows == 0) {
             </select>
             <input type="submit" id="active-order-submit" />
         </form>
-        echo '<a href="/kanbanotron/?on_order_ov=1">View On Order List</a>';
+        <a href="/kanbanotron/?on_order_ov=1">View On Order List</a>
 
     <?php else : ?>
 
