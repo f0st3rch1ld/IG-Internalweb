@@ -58,8 +58,8 @@ $vendors = array();
                                     <p class="tooltiptext"><?php echo $purchaseorderlineret_table_data_array[$y]['Description']; ?></p>
                                 </td>
                                 <td><?php echo $purchaseorderlineret_table_data_array[$y]['Quantity']; ?></td>
-                                <td><?php echo $purchaesorder_table_data_array[$i]['TimeCreated']; ?></td>
-                                <td><?php echo $purchaesorder_table_data_array[$i]['Memo']; ?></td>
+                                <td><?php echo $purchaseorder_table_data_array[$i]['TimeCreated']; ?></td>
+                                <td><?php echo $purchaseorder_table_data_array[$i]['Memo']; ?></td>
                                 <td>ETA</td>
                             </tr>
                         <?php endif; ?>
