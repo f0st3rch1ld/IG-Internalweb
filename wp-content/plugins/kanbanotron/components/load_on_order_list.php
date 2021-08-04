@@ -59,7 +59,7 @@ echo var_dump($order_txnid_array);
             <tbody>
                 <?php for ($i = 0; count($value) > $i; $i++) : ?>
                     <?php for ($y = 0; count($purchaseorderlineret_table_data_array) > $y; $y++) : ?>
-                        <?php if ($purchaseorderlineret_table_Data_array[$i]['PARENT_IDKEY'] == $value[$i]) : ?>
+                        <?php if ($purchaseorderlineret_table_data_array[$i]['PARENT_IDKEY'] == $value[$i]) : ?>
                             <tr>
                                 <td class="tooltip"><?php echo $purchaseorderlineret_table_data_array[$y]['ItemRef_FullName']; ?>
                                     <p class="tooltiptext"><?php echo $purchaseorderlineret_table_data_array[$y]['Description']; ?></p>
