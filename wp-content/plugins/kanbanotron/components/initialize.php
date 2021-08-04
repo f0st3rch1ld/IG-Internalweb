@@ -63,6 +63,8 @@ if ($active_order_id_result->num_rows == 0) {
 
     echo '<input type="hidden" id="order-selection" value="' . $active_order_id . '" />';
 
+    echo '<a href="/kanbanotron/?on_order_ov=1">View On Order List</a>';
+
 } else {
 
     if ($active_order_id_result->num_rows > 1) : ?>
@@ -78,6 +80,7 @@ if ($active_order_id_result->num_rows == 0) {
             </select>
             <input type="submit" id="active-order-submit" />
         </form>
+        echo '<a href="/kanbanotron/?on_order_ov=1">View On Order List</a>';
 
     <?php else : ?>
 
@@ -86,7 +89,8 @@ if ($active_order_id_result->num_rows == 0) {
         }
         echo '
         <p>Active order retrieved.</p>
-        <input type="hidden" id="order-selection" value="' . $active_order_id . '" />';
+        <input type="hidden" id="order-selection" value="' . $active_order_id . '" />
+        <a href="/kanbanotron/?on_order_ov=1">View On Order List</a>';
     endif;
 }
 ?>
