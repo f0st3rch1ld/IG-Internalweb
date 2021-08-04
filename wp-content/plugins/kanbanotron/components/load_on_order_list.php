@@ -10,6 +10,7 @@ retrieve_po_data();
 // ----TimeCreated
 // ----VendorRef_FullName
 // ----Memo
+
 // --$purchaseorderlineret_table_data_array;
 // ----ItemRef_FullName
 // ----Description
@@ -25,11 +26,7 @@ $vendors = array();
 
     <?php if (!in_array($purchaseorder_table_data_array[$i]['VendorRef_FullName'], $vendors)) : ?>
         <?php
-        $temp_array = array(
-            $purchaseorder_table_data_array[$i]['VendorRef_FullName'],
-            $purchaseorder_table_data_array[$i]['TxnID']
-        );
-        array_push($vendors, $temp_array);
+        array_push($vendors, $purchaseorder_table_data_array[$i]['VendorRef_FullName']);
         ?>
 
         <!-- Generated PO Table -->
