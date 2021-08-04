@@ -5,7 +5,7 @@ function retrieve_po_data()
     $purchaseorder_table_data_array = array();
 
     // QuickBooks Database Connection
-    include plugin_dir_path(__FILE__) . '../db/qb_db/qb_data_connection.php';
+    include 'qb_data_connection.php';
 
     $purchaseorder_request = "SELECT TxnID, TimeCreated, VendorRef_FullName, Memo FROM purchaseorder WHERE IsManuallyClosed='0'";
     $purchaseorder_request_result = $conn->query($purchaseorder_request);
