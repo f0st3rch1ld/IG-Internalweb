@@ -38,12 +38,12 @@ for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
 echo var_dump($order_txnid_array);
 ?>
 
-<?php for ($i = 0; count($order_txnid_array) > $i; $i++) : ?>
+<?php foreach ($order_txnid_array as $key => $value) : ?>
     <!-- Generated PO Table -->
     <div class="purchase-order-container">
         <div class="po-title-container">
             <h5 class="vendor-name">
-                <?php echo key($order_txnid_array[$i]); ?>
+                <?php echo $key; ?>
             </h5>
         </div>
         <table class="tablesorter">
@@ -57,23 +57,25 @@ echo var_dump($order_txnid_array);
                 </tr>
             </thead>
             <tbody>
-
-                <?php for ($y = 0; count($purchaseorder_table_data_array) > $y; $y++) : ?>
-                    <?php if ($order_txnid_array[$i][$y] == $purchaseorder_table_data_array[$y]['TxnID']) : ?>
-                        <tr>
-                            <td class="tooltip"><?php echo $purchaseorderlineret_table_data_array[$y]['ItemRef_FullName']; ?>
-                                <p class="tooltiptext"><?php echo $purchaseorderlineret_table_data_array[$y]['Description']; ?></p>
-                            </td>
-                            <td><?php echo $purchaseorderlineret_table_data_array[$y]['Quantity']; ?></td>
-                            <td><?php echo $purchaseorder_table_data_array[$i]['TimeCreated']; ?></td>
-                            <td><?php echo $purchaseorder_table_data_array[$i]['Memo']; ?></td>
-                            <td>ETA</td>
-                        </tr>
-                    <?php endif; ?>
+                <?php for ($i = 0; count($value) > $i; $i++) : ?>
+                    <?php for ($y = 0; count($purchaseorderlineret_table_data_array) > $y; $y++) : ?>
+                        <?php foreach ($purchaseorderlineret_table_data_array[$y]['PARENT_IDKEY'] as $data) : ?>
+                            <?php if ($data == $value[$i]) : ?>
+                                <tr>
+                                    <td class="tooltip"><?php echo $purchaseorderlineret_table_data_array[$y]['ItemRef_FullName']; ?>
+                                        <p class="tooltiptext"><?php echo $purchaseorderlineret_table_data_array[$y]['Description']; ?></p>
+                                    </td>
+                                    <td><?php echo $purchaseorderlineret_table_data_array[$y]['Quantity']; ?></td>
+                                    <td>Date Ordered</td>
+                                    <td>Memo</td>
+                                    <td>ETA</td>
+                                </tr>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endfor; ?>
                 <?php endfor; ?>
-
             </tbody>
         </table>
     </div>
     <!-- /Generated PO Table -->
-<?php endfor; ?>
+<?php endforeach; ?>
