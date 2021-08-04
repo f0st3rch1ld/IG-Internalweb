@@ -53,7 +53,6 @@ for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
                     <th>QTY</th>
                     <th>Date Ordered</th>
                     <th>PO</th>
-                    <th>ETA</th>
                 </tr>
             </thead>
             <tbody>
@@ -73,8 +72,6 @@ for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
                                 <?php endif;
                                 }
                                 ?>
-
-                                <td>ETA</td>
                             </tr>
                         <?php endif; ?>
                     <?php endfor; ?>
