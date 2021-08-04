@@ -11,7 +11,7 @@
         <div class="po-title-container">
             <h5 class="vendor-name">Vendor</h5>
         </div>
-        <table>
+        <table class="tablesorter">
             <thead>
                 <tr>
                     <th>PN</th>
@@ -25,10 +25,8 @@
             <tbody>
                 <tr>
                     <td class="tooltip">PN
-                        <p class="tooltiptext">Description</p>
                     </td>
                     <td class="tooltip">Vendor PN
-                        <p class="tooltiptext">Description</p>
                     </td>
                     <td>QTY</td>
                     <td>Date Ordered</td>

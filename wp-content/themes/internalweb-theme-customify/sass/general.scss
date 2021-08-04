@@ -891,7 +891,6 @@ button {
 
     table {
       margin: 0px;
-      table-layout: fixed;
 
       thead {
         tr {
@@ -915,16 +914,6 @@ button {
             height: 50px;
             white-space: nowrap;
             text-align: center;
-          }
-
-          .remove-product {
-            @include default-transition;
-            cursor: pointer;
-
-            &:hover > i {
-              color: $default-red !important;
-              @include default-transition;
-            }
           }
         }
       }

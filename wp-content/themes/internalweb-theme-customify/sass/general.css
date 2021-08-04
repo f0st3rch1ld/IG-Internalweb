@@ -1663,7 +1663,6 @@ button:focus {
 
 .on-order-list-container .purchase-order-container table {
   margin: 0px;
-  table-layout: fixed;
 }
 
 .on-order-list-container .purchase-order-container table thead tr {
@@ -1686,23 +1685,5 @@ button:focus {
   height: 50px;
   white-space: nowrap;
   text-align: center;
-}
-
-.on-order-list-container .purchase-order-container table tbody tr .remove-product,
-.on-order-list-container .purchase-order-container table thead tr .remove-product {
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  cursor: pointer;
-}
-
-.on-order-list-container .purchase-order-container table tbody tr .remove-product:hover > i,
-.on-order-list-container .purchase-order-container table thead tr .remove-product:hover > i {
-  color: #e00004 !important;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
 }
 /*# sourceMappingURL=general.css.map */
