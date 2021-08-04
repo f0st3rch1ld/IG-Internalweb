@@ -1,7 +1,14 @@
 <?php
 
+$purchaseorder_table_data_array;
+$purchaseorderlineret_table_data_array;
+
 function retrieve_po_data()
 {
+
+    global $purchaseorder_table_data_array;
+    global $purchaseorderlineret_table_data_array;
+
     $purchaseorder_table_data_array = array();
     $purchaseorderlineret_table_data_array = array();
 
@@ -44,7 +51,7 @@ function retrieve_po_data()
         }
     }
 
-    echo var_dump($purchaseorderlineret_table_data_array);
+    // echo var_dump($purchaseorderlineret_table_data_array);
 
     $conn->close();
 }
