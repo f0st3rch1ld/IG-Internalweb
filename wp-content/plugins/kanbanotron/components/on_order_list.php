@@ -11,9 +11,9 @@
 <!-- /On Order List Container -->
 
 <!-- Page Refresh Script -->
-<script>
+<!-- <script>
     document.addEventListener('load', function() {
         setInterval(refreshOverview(), 10000);
     });
-</script>
+</script> -->
 <!-- /Page Refresh Script -->
