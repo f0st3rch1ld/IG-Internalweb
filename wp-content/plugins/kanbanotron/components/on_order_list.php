@@ -12,6 +12,8 @@
 
 <!-- Page Refresh Script -->
 <script>
-    setInterval(refreshOverview(), 10000);
+    document.addEventListener('load', function() {
+        setInterval(refreshOverview(), 2000);
+    });
 </script>
 <!-- /Page Refresh Script -->
