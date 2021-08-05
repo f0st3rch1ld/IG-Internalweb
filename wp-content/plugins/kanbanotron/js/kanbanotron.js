@@ -134,6 +134,9 @@ function submitPurchaseOrder(x, y) {
 
 }
 
+// AJAX request to set default reorder quantity
+function setDefaultReorderQuan(x) {}
+
 // Updates browser cookies to reflect chosen purchase order.
 function updateActiveOrder(x) {
   document.cookie = `working_purchase_order=${x}`;

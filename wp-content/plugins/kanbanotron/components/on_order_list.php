@@ -6,7 +6,7 @@
 
 <form name="knbn_uid-enter" id="knbn_uid-form" action="/kanbanotron/" method="get">
     <input type="text" id="knbn_uid" name="knbn_uid" placeholder="Scan your QR Code" autofocus />
-    <input type="submit" value="Search for Kanban" />
+    <input type="submit" value="Search for Kanban to add to order" />
 </form>
 
 <!-- On Order List Container -->

@@ -144,9 +144,23 @@ for ($i = 0; count($purchaseorderlineret_table_data_array) > $i; $i++) {
 </table>
 
 <div class="knbn-order-form-container">
+
     <?php if ($knbn_on_order) : ?>
-        <p id="warning-text">This item is already on an order.</p>
+        <!-- On Order Warning Text -->
+        <p id="warning-text">This item is already on a purchase order.</p>
     <?php endif; ?>
+
+    <?php if (!$knbn_reorder_quantity) : ?>
+        <!-- Set Default Reorder Quantity Group -->
+        <div class="group">
+            <label for="default-reorder-quantity">
+                <input type="number" name="default-reorder-quantity" id="default-reorder-quantity" />
+            </label>
+            <button onclick="setDefaultReorderQuan('<?php echo $knbn_uid; ?>', document.getElementById('default-reorder-quantity').value)">Set Default Reorder Quantity</button>
+        </div>
+        <!-- /Set Default Reorder Quantity Group -->
+    <?php endif; ?>
+
     <?php if ($knbn_external_url) : ?>
         <a href="<?php echo $knbn_external_url; ?>" target="_blank">Click to order from <?php echo $knbn_vendor; ?> <i class="far fa-plus-square"></i></a>
     <?php else : ?>

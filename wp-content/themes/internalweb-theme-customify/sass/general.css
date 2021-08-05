@@ -208,7 +208,7 @@ button:focus {
 }
 
 .kanbanotron-main-container .kanban-information-container .knbn-order-form-container #warning-text {
-  font-weight: 800;
+  font-weight: 600;
   color: red;
 }
 
