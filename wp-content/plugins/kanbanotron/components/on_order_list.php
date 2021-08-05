@@ -12,7 +12,7 @@
 
 <!-- Page Refresh Script -->
 <script>
-    window.addEventListener('load', function() {
+    document.addEventListener('load', function() {
         setInterval(refreshOverview(), 10000);
     });
 </script>
