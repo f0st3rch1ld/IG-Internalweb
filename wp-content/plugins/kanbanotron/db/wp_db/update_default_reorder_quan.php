@@ -11,7 +11,7 @@ $retrieved_id;
 include '../knbn_wp_connection.php';
 
 // Retrieves Kanban Post ID from unique value located inside QR
-$knbn_post_id = "SELECT post_id FROM wp_postmeta WHERE meta_value='" . $passed_knbn_uid . "'";
+$knbn_post_id = "SELECT post_id FROM wp_postmeta WHERE meta_value='" . $knbn_uid . "'";
 $knbn_post_id_result = $conn->query($knbn_post_id);
 
 if ($knbn_post_id_result->num_rows > 0) {
