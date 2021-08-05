@@ -1,6 +1,6 @@
 // AJAX request to load new kanban info
 function loadKanban(x) {
-  let knbnUID = x.replace("https://internalweb/kanbanotron/?knbn_uid=", "");
+  let knbnUID = x.replace("http://internalweb/kanbanotron/?knbn_uid=", "");
 
   // state reset
   const state = null;
@@ -139,10 +139,11 @@ function setDefaultReorderQuan(x, y) {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function () {
     loadKanban(x);
+    addToPO(x, document.getElementById('order-selection').value);
   }
   xhttp.open(
     "GET",
-    `../../wp-content/plugins/kanbanotron/db/wp_db/update_default_reorder_quan.php?knbn_uid=${x}&quan=${y}`
+    `../../wp-content/plugins/kanbanotron/db/wp_db/update_default_reorder_quan.php/?knbn_uid=${x}&quan=${y}`
   );
   xhttp.send();
 }
@@ -152,10 +153,11 @@ function setExternalURL(x, y) {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function () {
     loadKanban(x);
+    addToPO(x, document.getElementById('order-selection').value);
   }
   xhttp.open(
     "GET",
-    `../../wp-content/plugins/kanbanotron/db/wp_db/update_external_url.php?knbn_uid=${x}&ext_url=${y}`
+    `../../wp-content/plugins/kanbanotron/db/wp_db/update_external_url.php/?knbn_uid=${x}&ext_url=${y}`
   );
   xhttp.send();
 }
