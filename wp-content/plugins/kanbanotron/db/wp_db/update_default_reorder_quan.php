@@ -3,9 +3,9 @@
 $knbn_uid = $_GET['knbn_uid'];
 $quan = $_GET['quan'];
 
-echo $knbn_uid . $quan;
+echo 'update reoreder quan';
 
-$retreived_id;
+$retrieved_id;
 
 // Connects to WP Database
 include '../knbn_wp_connection.php';
@@ -15,12 +15,10 @@ $knbn_post_id = "SELECT post_id FROM wp_postmeta WHERE meta_value='" . $passed_k
 $knbn_post_id_result = $conn->query($knbn_post_id);
 
 while ($row = $knbn_post_id_result->fetch_assoc()) {
-    $retreived_id = $row['post_id'];
+    $retrieved_id = $row['post_id'];
 }
 
-echo 'update_default_reorder test: knbn_uid=' . $knbn_uid . ' quan=' . $quan . ' retrieved_id=' . $retreived_id;
-
-$knbn_set_reorder_quan = "UPDATE wp_postmeta SET meta_value=$quan WHERE meta_key='kanban_information_quantities_reorder_quantity' AND post_id=$retrieved_id";
+$knbn_set_reorder_quan = "UPDATE wp_postmeta SET meta_value='$quan' WHERE meta_key='kanban_information_quantities_reorder_quantity' AND post_id='$retrieved_id'";
 
 if ($conn->query($knbn_set_reorder_quan) === TRUE) {
     echo "Default quantity updated";
