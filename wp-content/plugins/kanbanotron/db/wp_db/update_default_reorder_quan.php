@@ -24,7 +24,7 @@ if ($knbn_post_id_result->num_rows > 0) {
 
 
 
-$knbn_set_reorder_quan = "UPDATE wp_postmeta SET meta_value='$quan' WHERE meta_key='kanban_information_quantities_reorder_quantity' AND post_id='$retrieved_id'";
+$knbn_set_reorder_quan = "UPDATE wp_postmeta SET meta_value=$quan WHERE meta_key='kanban_information_quantities_reorder_quantity' AND post_id='$retrieved_id'";
 
 if ($conn->query($knbn_set_reorder_quan) === TRUE) {
     echo "Default quantity updated";

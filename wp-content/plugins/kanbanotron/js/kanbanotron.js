@@ -132,8 +132,8 @@ function submitPurchaseOrder(x, y) {
 function setDefaultReorderQuan(x, y) {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function () {
+    console.log(this.responseText);
     loadKanban(x);
-    addToPO(x, document.getElementById('order-selection').value);
   }
   xhttp.open(
     "GET",
@@ -146,8 +146,8 @@ function setDefaultReorderQuan(x, y) {
 function setExternalURL(x, y) {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function () {
+    console.log(this.responseText);
     loadKanban(x);
-    addToPO(x, document.getElementById('order-selection').value);
   }
   xhttp.open(
     "GET",
