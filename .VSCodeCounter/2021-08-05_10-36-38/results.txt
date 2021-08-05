@@ -1,0 +1,64 @@
+Date : 2021-08-05 10:36:38
+Directory : \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify
+Total : 34 files,  5358 codes, 431 comments, 753 blanks, all 6542 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| CSS      |          7 |      3,261 |         21 |        322 |      3,604 |
+| PHP      |         20 |      1,159 |        390 |        241 |      1,790 |
+| SCSS     |          7 |        938 |         20 |        190 |      1,148 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                               | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                                  |         34 |      5,358 |        431 |        753 |      6,542 |
+| inc                                                                                                                                                |          1 |        484 |        184 |         81 |        749 |
+| inc\blog                                                                                                                                           |          1 |        484 |        184 |         81 |        749 |
+| page-templates                                                                                                                                     |          6 |        199 |         53 |         76 |        328 |
+| sass                                                                                                                                               |         12 |      2,586 |         13 |        353 |      2,952 |
++----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                                                           | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\404.php                             | PHP      |         25 |          7 |          3 |         35 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\archive.php                         | PHP      |         14 |          7 |          2 |         23 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\comments.php                        | PHP      |         46 |         19 |         10 |         75 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\footer.php                          | PHP      |         19 |         21 |          6 |         46 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\functions.php                       | PHP      |        177 |         12 |         35 |        224 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\header.php                          | PHP      |         69 |         22 |         12 |        103 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\inc\blog\class-post-entry.php       | PHP      |        484 |        184 |         81 |        749 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\index.php                           | PHP      |         25 |         12 |          2 |         39 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\page-templates\employee-roster.php  | PHP      |         43 |          4 |          8 |         55 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\page-templates\homepage.php         | PHP      |         20 |         37 |         15 |         72 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\page-templates\kanban-generator.php | PHP      |         57 |          3 |         22 |         82 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\page-templates\kanbanotron.php      | PHP      |          5 |          3 |          5 |         13 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\page-templates\label-o-matic.php    | PHP      |         21 |          3 |         12 |         36 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\page-templates\shared-documents.php | PHP      |         53 |          3 |         14 |         70 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\page.php                            | PHP      |         19 |         13 |          4 |         36 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sass\breakpoint-styles.css          | CSS      |         53 |          1 |          2 |         56 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sass\breakpoint-styles.scss         | SCSS     |         51 |          3 |         12 |         66 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sass\componentz.css                 | CSS      |         42 |          1 |          9 |         52 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sass\componentz.scss                | SCSS     |         54 |          0 |         11 |         65 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sass\customify.css                  | CSS      |          7 |          1 |          1 |          9 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sass\customify.scss                 | SCSS     |          9 |          0 |          2 |         11 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sass\font-awesome.css               | CSS      |         12 |          1 |          3 |         16 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sass\font-awesome.scss              | SCSS     |         12 |          1 |          4 |         17 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sass\general.css                    | CSS      |      1,537 |          2 |        149 |      1,688 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sass\general.scss                   | SCSS     |        770 |          2 |        149 |        921 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sass\mixins.css                     | CSS      |          1 |          0 |          0 |          1 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sass\mixins.scss                    | SCSS     |         38 |          1 |         11 |         50 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\search.php                          | PHP      |         21 |          7 |          2 |         30 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sidebar-secondary.php               | PHP      |         15 |          7 |          2 |         24 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\sidebar.php                         | PHP      |         15 |          7 |          2 |         24 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\single.php                          | PHP      |         20 |          7 |          2 |         29 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\style.css                           | CSS      |      1,609 |         15 |        158 |      1,782 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\style.scss                          | SCSS     |          4 |         13 |          1 |         18 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\themes\internalweb-theme-customify\woocommerce.php                     | PHP      |         11 |         12 |          2 |         25 |
+| Total                                                                                                                                              |          |      5,358 |        431 |        753 |      6,542 |
++----------------------------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

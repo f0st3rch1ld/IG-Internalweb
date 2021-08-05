@@ -35,13 +35,14 @@ function retrieve_po_data()
     // echo var_dump($purchaseorder_table_data_array);
 
     // Request from purchaseorderlineret table
-    $purchaseorderlineret_request = "SELECT ItemRef_FullName, Description, Quantity, PARENT_IDKEY FROM purchaseorderlineret";
+    $purchaseorderlineret_request = "SELECT ItemRef_ListID, ItemRef_FullName, Description, Quantity, PARENT_IDKEY FROM purchaseorderlineret";
     $purchaseorderlineret_request_result = $conn->query($purchaseorderlineret_request);
 
     // Assigns request data to an array
     if ($purchaseorder_request_result->num_rows > 0) {
         while ($row = $purchaseorderlineret_request_result->fetch_assoc()) {
             $temp_po_items_array = array(
+                'ItemRef_ListID' => $row['ItemRef_ListID'],
                 'ItemRef_FullName' => $row['ItemRef_FullName'],
                 'Description' => $row['Description'],
                 'Quantity' => $row['Quantity'],

@@ -4,15 +4,48 @@ if (array_key_exists('xhttp', $_REQUEST)) {
     $knbn_uid = $_REQUEST['knbn_uid'];
 
     // includes
-    include '../db/knbn_wp_connection.php';
     include '../db/request.php';
+    include '../db/qb_db/items_request.php';
+    include '../db/qb_db/purchaseorder_request.php';
 } else {
     // includes
-    include plugin_dir_path(__FILE__) . '../db/knbn_wp_connection.php';
     include plugin_dir_path(__FILE__) . '../db/request.php';
+    include plugin_dir_path(__FILE__) . '../db/qb_db/items_request.php';
+    include plugin_dir_path(__FILE__) . '../db/qb_db/purchaseorder_request.php';
 }
 
-knbn_info_request($knbn_uid); ?>
+retrieve_po_data();
+// purchaseorder_request referance
+
+// --$purchaseorder_table_data_array;
+// ----TxnID
+// ----TimeCreated
+// ----VendorRef_FullName
+// ----Memo
+
+// --$purchaseorderlineret_table_data_array;
+// ----ItemRef_ListID
+// ----ItemRef_FullName
+// ----Description
+// ----Quantity
+// ----PARENT_IDKEY
+
+knbn_info_request($knbn_uid);
+
+qbdb_item_request($knbn_vendor_part_number);
+// qbdb_item_request reference
+
+// $qbdb_ListID;
+// $qbdb_TableName;
+// $qbdb_BarCodeValue;
+
+$knbn_on_order;
+
+for ($i = 0; count($purchaseorderlineret_table_data_array) > $i; $i++) {
+    if ($qbdb_ListID == $purchaseorderlineret_table_data_array[$i]['ItemRef_ListID']) {
+        $knbn_on_order = TRUE;
+    }
+} ?>
 
 <!-- kanban search container -->
 <div id="knbn_uid-form">
@@ -84,7 +117,7 @@ knbn_info_request($knbn_uid); ?>
                 <td>
                     <?php
                     $date = date('m/d/Y');
-                    echo date('m/d/Y', strtotime($date. ' +' . $knbn_lead_time . ' days'));
+                    echo date('m/d/Y', strtotime($date . ' +' . $knbn_lead_time . ' days'));
                     ?>
                 </td>
             </tr>
@@ -111,11 +144,12 @@ knbn_info_request($knbn_uid); ?>
 </table>
 
 <div class="knbn-order-form-container">
+    <?php if ($knbn_on_order) : ?>
+        <p>This item is already on an order.</p>
+    <?php endif; ?>
     <?php if ($knbn_external_url) : ?>
         <a href="<?php echo $knbn_external_url; ?>" target="_blank">Click to order from <?php echo $knbn_vendor; ?> <i class="far fa-plus-square"></i></a>
     <?php else : ?>
         <button onclick="addToPO('<?php echo $knbn_uid; ?>', document.getElementById('order-selection').value)">Add to PO <i class="far fa-plus-square"></i></button>
     <?php endif; ?>
 </div>
-
-<?php $conn->close(); ?>
