@@ -150,6 +150,7 @@ for ($i = 0; count($purchaseorderlineret_table_data_array) > $i; $i++) {
     <?php endif; ?>
 
     <?php if (!$knbn_reorder_quantity) : ?>
+        <p>This product does not appear to have a default reorder quantity set. Please set one by adjusting the field below.</p>
         <!-- Set Default Reorder Quantity Group -->
         <div class="group">
             <input type="number" name="default-reorder-quantity" id="default-reorder-quantity" placeholder="Set Default Reorder Quantity" />
