@@ -14,9 +14,15 @@ include '../knbn_wp_connection.php';
 $knbn_post_id = "SELECT post_id FROM wp_postmeta WHERE meta_value='" . $passed_knbn_uid . "'";
 $knbn_post_id_result = $conn->query($knbn_post_id);
 
-while ($row = $knbn_post_id_result->fetch_assoc()) {
-    $retrieved_id = $row['post_id'];
+if ($knbn_post_id_result->num_rows > 0) {
+    while ($row = $knbn_post_id_result->fetch_assoc()) {
+        $retrieved_id = $row['post_id'];
+    }
+} else {
+    echo 'No matching record found - update_default_reorder_quan.php';
 }
+
+
 
 $knbn_set_reorder_quan = "UPDATE wp_postmeta SET meta_value='$quan' WHERE meta_key='kanban_information_quantities_reorder_quantity' AND post_id='$retrieved_id'";
 
