@@ -135,7 +135,7 @@ function submitPurchaseOrder(x, y) {
 }
 
 // AJAX request to refresh On-Order Overview
-let refreshOverview = () => {
+function refreshOverview() {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function () {
     document.getElementById('on-order-list-container').innerHTML = this.responseText;
