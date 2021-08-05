@@ -134,6 +134,19 @@ function submitPurchaseOrder(x, y) {
 
 }
 
+// AJAX request to refresh On-Order Overview
+let refreshOverview = () => {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function () {
+    document.getElementById('on-order-list-container').innerHTML = this.responseText;
+  }
+  xhttp.open(
+    "GET",
+    `../../wp-content/plugins/kanbanotron/components/load_on_order_list.php`
+  );
+  xhttp.send();
+}
+
 // Updates browser cookies to reflect chosen purchase order.
 function updateActiveOrder(x) {
   document.cookie = `working_purchase_order=${x}`;

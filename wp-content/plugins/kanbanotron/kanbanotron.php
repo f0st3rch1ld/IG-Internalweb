@@ -104,11 +104,9 @@
         }
     }
 
-    // Custom Header Scripts
+    // Custom Scripts
     add_action('wp_enqueue_scripts', 'custom_scripts');
     function custom_scripts()
     {
         wp_enqueue_script('kanbanotron', plugin_dir_url(__FILE__) . 'js/kanbanotron.js', array('jquery'));
-
-        wp_enqueue_script('auto_refresh', plugin_dir_url(__FILE__) . 'js/auto_refresh.js', array('jquery'), false, true);
     }
