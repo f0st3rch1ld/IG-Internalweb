@@ -142,7 +142,7 @@ function refreshOverview() {
   }
   xhttp.open(
     "GET",
-    `../../wp-content/plugins/kanbanotron/components/load_on_order_list.php`
+    `../../wp-content/plugins/kanbanotron/components/load_on_order_list.php/?xhttp=1`
   );
   xhttp.send();
 }

@@ -1,6 +1,14 @@
 <?php
 
-include plugin_dir_path(__FILE__) . '../db/qb_db/purchaseorder_request.php';
+if (array_key_exists('xhttp', $_REQUEST)) {
+    // includes
+    include '../db/qb_db/purchaseorder_request.php';
+} else {
+    // includes
+    include plugin_dir_path(__FILE__) . '../db/qb_db/purchaseorder_request.php';
+}
+
+
 retrieve_po_data();
 
 // purchaseorder_request referance
