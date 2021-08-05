@@ -25,8 +25,6 @@
         xhttp.send();
     }
 
-    document.addEventListener('load', function() {
-        setInterval(refreshOverview(), 5000);
-    });
+    setInterval(refreshOverview(), 5000);
 </script>
 <!-- /Page Refresh Script -->
