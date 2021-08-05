@@ -1,10 +1,10 @@
 // AJAX request to load new kanban info
 function loadKanban(x) {
-  let knbnUID = x.replace("http://internalweb/kanbanotron/?knbn_uid=", "");
+  let knbnUID = x.replace("https://internalweb/kanbanotron/?knbn_uid=", "");
 
   // state reset
   const state = null;
-  let url = window.location.hostname + `/kanbanotron/?knbn_uid=${knbnUID}`;
+  let url = `http://internalweb/kanbanotron/?knbn_uid=${knbnUID}`;
   history.replaceState(state, "", url);
 
   const xhttp = new XMLHttpRequest();
