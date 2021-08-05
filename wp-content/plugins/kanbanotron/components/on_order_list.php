@@ -12,8 +12,6 @@
 
 <!-- Page Refresh Script -->
 <script>
-    document.onload = function() {
-        setInterval(refreshOverview(), 10000);
-    }
+    setInterval(refreshOverview(), 10000);
 </script>
 <!-- /Page Refresh Script -->
