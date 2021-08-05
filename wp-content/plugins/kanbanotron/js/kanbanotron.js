@@ -139,7 +139,6 @@ function setDefaultReorderQuan(x, y) {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function () {
     loadKanban(x);
-    addToPO(x, document.getElementById('order-selection').value);
   }
   xhttp.open(
     "GET",
@@ -153,7 +152,6 @@ function setExternalURL(x, y) {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function () {
     loadKanban(x);
-    addToPO(x, document.getElementById('order-selection').value);
   }
   xhttp.open(
     "GET",
