@@ -140,11 +140,14 @@ button {
 
       .group {
         @include superflex(row, center, center, wrap, 100%, auto);
-        margin:10px 0px;
+        margin: 10px 0px;
+        border-style: solid;
+        border-width: 0px 0px 2px 0px;
+        border-color: $default-grey;
 
         input {
           width: calc(100% - 100px) !important;
-          margin:5px;
+          margin: 5px;
         }
       }
     }

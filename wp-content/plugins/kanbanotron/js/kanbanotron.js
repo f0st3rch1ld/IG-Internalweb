@@ -157,7 +157,7 @@ function setExternalURL(x, y) {
   }
   xhttp.open(
     "GET",
-    `../../wp-content/plugins/kanbanotron/db/wp_db/update_external_url.php/?knbn_uid=${x}&quan=${y}`
+    `../../wp-content/plugins/kanbanotron/db/wp_db/update_external_url.php/?knbn_uid=${x}&ext_url=${y}`
   );
   xhttp.send();
 }
