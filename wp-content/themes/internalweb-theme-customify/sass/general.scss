@@ -137,6 +137,10 @@ button {
         font-weight: 600;
         color: red;
       }
+
+      .group {
+        @include superflex(row, center, center, wrap, 100%, auto);
+      }
     }
   }
 

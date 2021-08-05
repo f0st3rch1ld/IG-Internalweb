@@ -153,8 +153,8 @@ for ($i = 0; count($purchaseorderlineret_table_data_array) > $i; $i++) {
     <?php if (!$knbn_reorder_quantity) : ?>
         <!-- Set Default Reorder Quantity Group -->
         <div class="group">
-            <input type="number" name="default-reorder-quantity" id="default-reorder-quantity" placeholder />
-            <button onclick="setDefaultReorderQuan('<?php echo $knbn_uid; ?>', document.getElementById('default-reorder-quantity').value)">Set Default Reorder Quantity</button>
+            <input type="number" name="default-reorder-quantity" id="default-reorder-quantity" placeholder="Set Default Reorder Quantity" />
+            <button onclick="setDefaultReorderQuan('<?php echo $knbn_uid; ?>', document.getElementById('default-reorder-quantity').value)">Set</button>
         </div>
         <!-- /Set Default Reorder Quantity Group -->
     <?php endif; ?>
