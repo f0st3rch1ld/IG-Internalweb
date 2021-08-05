@@ -145,7 +145,7 @@ for ($i = 0; count($purchaseorderlineret_table_data_array) > $i; $i++) {
 
 <div class="knbn-order-form-container">
     <?php if ($knbn_on_order) : ?>
-        <p>This item is already on an order.</p>
+        <p id="warning-text">This item is already on an order.</p>
     <?php endif; ?>
     <?php if ($knbn_external_url) : ?>
         <a href="<?php echo $knbn_external_url; ?>" target="_blank">Click to order from <?php echo $knbn_vendor; ?> <i class="far fa-plus-square"></i></a>

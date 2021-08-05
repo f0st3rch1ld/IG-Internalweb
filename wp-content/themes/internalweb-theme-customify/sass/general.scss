@@ -131,7 +131,12 @@ button {
     }
 
     .knbn-order-form-container {
-      @include superflex(row, center, center, wrap, 100%, 100%);
+      @include superflex(column, center, center, wrap, 100%, 100%);
+
+      #warning-text {
+        font-weight: 800;
+        color: red;
+      }
     }
   }
 
