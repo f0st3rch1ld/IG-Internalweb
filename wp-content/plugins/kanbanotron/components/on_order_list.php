@@ -13,7 +13,7 @@
 <!-- Page Refresh Script -->
 <script>
     document.addEventListener('load', function() {
-        setInterval(refreshOverview(), 2000);
+        setInterval(refreshOverview(), 5000);
     });
 </script>
 <!-- /Page Refresh Script -->
