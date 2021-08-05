@@ -4,7 +4,7 @@ Donate link: https://codection.com/go/donate-import-users-from-csv-with-meta/
 Tags: csv, import, importer, meta data, meta, user, users, user meta,  editor, profile, custom, fields, delimiter, update, insert
 Requires at least: 3.4
 Tested up to: 5.8
-Stable tag: 1.17.8.1
+Stable tag: 1.17.8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,13 @@ Plugin will automatically detect:
 5. Extra profile information (user meta)
 
 == Changelog ==
+
+= 1.17.8.3 =
+*   Export shortcode parameter column now also defines the order of the columns
+
+= 1.17.8.2 =
+*   Password documentation updated
+*   New hooks added for filtering from and to user_registered date in export acui_export_user_registered_from_date and acui_export_user_registered_to_date
 
 = 1.17.8.1 =
 *   Ready for WordPress 5.8

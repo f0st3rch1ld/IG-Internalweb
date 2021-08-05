@@ -16,9 +16,11 @@ class ACUI_Exporter{
 		add_action( 'wp_ajax_acui_export_users_csv', array( $this, 'export_users_csv' ) );
 		add_filter( 'acui_export_get_key_user_data', array( $this, 'filter_key_user_id' ) );
 		add_filter( 'acui_export_non_date_keys', array( $this, 'get_non_date_keys' ), 1, 1 );
-		add_filter( 'acui_export_columns', array( $this, 'maybe_order_columns_alphabetacally' ), PHP_INT_MAX, 2 );
-		add_filter( 'acui_export_data', array( $this, 'maybe_order_row_alphabetically' ), PHP_INT_MAX, 5 );
-        add_filter( 'acui_export_data', array( $this, 'maybe_double_encapsulate_serialized_values' ), PHP_INT_MAX - 1, 5 );
+		add_filter( 'acui_export_columns', array( $this, 'maybe_order_columns_alphabetacally' ), 10, 2 );
+        add_filter( 'acui_export_columns', array( $this, 'maybe_order_columns_filtered_columns_parameter' ), 11, 2 );
+		add_filter( 'acui_export_data', array( $this, 'maybe_double_encapsulate_serialized_values' ), 9 - 1, 5 );
+        add_filter( 'acui_export_data', array( $this, 'maybe_order_row_alphabetically' ), 10, 5 );
+        add_filter( 'acui_export_data', array( $this, 'maybe_order_row_filtered_columns_parameter' ), 11, 5 );
 	}
 
 	public static function admin_gui(){
@@ -132,12 +134,28 @@ class ACUI_Exporter{
         return array_merge( $first_two_columns, $to_order_columns );
 	}
 
+    function maybe_order_columns_filtered_columns_parameter( $row, $args ){
+        return ( !is_array( $args['filtered_columns'] ) || count( $args['filtered_columns'] ) == 0 ) ? $row : $args['filtered_columns'];
+    }
+
 	function maybe_order_row_alphabetically( $row, $user, $datetime_format, $columns, $args ){
         if( !$args['order_fields_alphabetically'] )
 			return $row;
 
         $row_sorted = array();
         foreach( $columns as $field ){
+            $row_sorted[ $field ] = $row[ $field ];
+        }
+
+        return $row_sorted;
+	}
+
+    function maybe_order_row_filtered_columns_parameter( $row, $user, $datetime_format, $columns, $args ){
+        if( !is_array( $args['filtered_columns'] ) || count( $args['filtered_columns'] ) == 0 )
+			return $row;
+
+        $row_sorted = array();
+        foreach( $args['filtered_columns'] as $field ){
             $row_sorted[ $field ] = $row[ $field ];
         }
 
@@ -261,7 +279,10 @@ class ACUI_Exporter{
 			$row[] = $key;
 		}
 
-		$row = apply_filters( 'acui_export_columns', $row, array( 'order_fields_alphabetically' => $order_fields_alphabetically, 'double_encapsulate_serialized_values' => $double_encapsulate_serialized_values ) );
+		$row = apply_filters( 'acui_export_columns', $row, array( 'order_fields_alphabetically' => $order_fields_alphabetically, 'double_encapsulate_serialized_values' => $double_encapsulate_serialized_values, 'filtered_columns' => $filtered_columns ) );
+        $from = apply_filters( 'acui_export_user_registered_from_date', $from );
+        $to = apply_filters( 'acui_export_user_registered_to_date', $to );
+
 		$columns = $row;
 		$data[] = $row;
 		$row = array();
@@ -286,7 +307,7 @@ class ACUI_Exporter{
             if( count( $filtered_columns ) == 0 || in_array( 'user_email', $filtered_columns ) || in_array( 'user_login', $filtered_columns ) )
 			    $row = $this->maybe_fill_empty_data( $row, $user, $filtered_columns );
 
-			$row = apply_filters( 'acui_export_data', $row, $user, $datetime_format, $columns, array( 'order_fields_alphabetically' => $order_fields_alphabetically, 'double_encapsulate_serialized_values' => $double_encapsulate_serialized_values ));
+			$row = apply_filters( 'acui_export_data', $row, $user, $datetime_format, $columns, array( 'order_fields_alphabetically' => $order_fields_alphabetically, 'double_encapsulate_serialized_values' => $double_encapsulate_serialized_values, 'filtered_columns' => $filtered_columns ));
 			$data[] = array_values( $row );
 			$row = array();
 		}
