@@ -3,7 +3,7 @@
 $knbn_uid = $_GET['knbn_uid'];
 $ext_url = $_GET['ext_url'];
 
-$retreived_id;
+$retrieved_id;
 
 // Connects to WP Database
 include '../knbn_wp_connection.php';
@@ -13,7 +13,7 @@ $knbn_post_id = "SELECT post_id FROM wp_postmeta WHERE meta_value='" . $knbn_uid
 $knbn_post_id_result = $conn->query($knbn_post_id);
 
 while ($row = $knbn_post_id_result->fetch_assoc()) {
-    $retreived_id = $row['post_id'];
+    $retrieved_id = $row['post_id'];
 }
 
 
