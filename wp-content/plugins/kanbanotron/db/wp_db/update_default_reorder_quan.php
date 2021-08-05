@@ -3,6 +3,8 @@
 $knbn_uid = $_GET['knbn_uid'];
 $quan = $_GET['quan'];
 
+echo $knbn_uid . $quan;
+
 $retreived_id;
 
 // Connects to WP Database
