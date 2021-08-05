@@ -144,7 +144,6 @@ for ($i = 0; count($purchaseorderlineret_table_data_array) > $i; $i++) {
 </table>
 
 <div class="knbn-order-form-container">
-
     <?php if ($knbn_on_order) : ?>
         <!-- On Order Warning Text -->
         <p id="warning-text">This item is already on a purchase order.</p>
@@ -159,9 +158,21 @@ for ($i = 0; count($purchaseorderlineret_table_data_array) > $i; $i++) {
         <!-- /Set Default Reorder Quantity Group -->
     <?php endif; ?>
 
+    <?php if ($knbn_external_yn == 'external' && $knbn_order_method == 'website' && !$knbn_external_url) : ?>
+        <p>This kanban is marked to be ordered online, but doesn't seem to have a url link to the product. Please set one by copying the url into the input below.</p>
+        <!-- Set External URL Group -->
+        <div class="group">
+            <input type="text" name="default-external-url" id="default-external-url" placeholder="Copy URL of product here." />
+            <button onclick="setExternalURL('<?php echo $knbn_uid; ?>', document.getElementById('default-external-url').value)">Set</button>
+        </div>
+        <!-- /Set External URL Group -->
+    <?php endif; ?>
+
     <?php if ($knbn_external_url) : ?>
         <a href="<?php echo $knbn_external_url; ?>" target="_blank">Click to order from <?php echo $knbn_vendor; ?> <i class="far fa-plus-square"></i></a>
-    <?php else : ?>
+    <?php elseif ($knbn_external_yn == 'external' && $knbn_order_method == 'generated-po') : ?>
         <button onclick="addToPO('<?php echo $knbn_uid; ?>', document.getElementById('order-selection').value)">Add to PO <i class="far fa-plus-square"></i></button>
+    <?php else : ?>
+        <button onclick="">Send to Scheduler <i class="far fa-plus-square"></i></button>
     <?php endif; ?>
 </div>

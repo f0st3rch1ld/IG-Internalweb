@@ -1,5 +1,7 @@
 <?php
 
+$knbn_external_yn;
+$knbn_order_method;
 $knbn_external_url;
 $knbn_dept_location;
 $knbn_dept_cell;
@@ -30,6 +32,8 @@ function knbn_info_request($passed_knbn_uid)
         $knbn_post_id_val = $knbn_post_id_return[0];
 
         // This builds out the specific sql queries we need from the database
+        $knbn_external_url_yn_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='product_setup_product_type'";
+        $knbn_order_method_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='product_setup_order_method'";
         $knbn_external_url_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='external_product_url'";
         $knbn_dept_location_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_location_department_location'";
         $knbn_dept_cell_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_location_department_cell'";
@@ -45,6 +49,8 @@ function knbn_info_request($passed_knbn_uid)
         $knbn_notes_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_notes'";
 
         // This is where the program actually queries the database, and assigns the results to variables.
+        $knbn_external_url_yn_result = $conn->query($knbn_external_url_yn_query);
+        $knbn_order_method_result = $conn->query($knbn_order_method_query);
         $knbn_external_url_result = $conn->query($knbn_external_url_query);
         $knbn_dept_location_result = $conn->query($knbn_dept_location_query);
         $knbn_dept_cell_result = $conn->query($knbn_dept_cell_query);
@@ -59,6 +65,8 @@ function knbn_info_request($passed_knbn_uid)
         $knbn_lead_time_result = $conn->query($knbn_lead_time_query);
         $knbn_notes_result = $conn->query($knbn_notes_query);
 
+        $knbn_external_url_yn_return = $knbn_external_url_yn_result->fetch_array(MYSQLI_NUM);
+        $knbn_order_method_return = $knbn_order_method_result->fetch_array(MYSQLI_NUM);
         $knbn_external_url_return = $knbn_external_url_result->fetch_array(MYSQLI_NUM);
         $knbn_dept_location_return = $knbn_dept_location_result->fetch_array(MYSQLI_NUM);
         $knbn_dept_cell_return = $knbn_dept_cell_result->fetch_array(MYSQLI_NUM);
@@ -73,6 +81,8 @@ function knbn_info_request($passed_knbn_uid)
         $knbn_lead_time_return = $knbn_lead_time_result->fetch_array(MYSQLI_NUM);
         $knbn_notes_return = $knbn_notes_result->fetch_array(MYSQLI_NUM);
 
+        global $knbn_external_url_yn;
+        global $knbn_order_method;
         global $knbn_external_url;
         global $knbn_dept_location;
         global $knbn_dept_cell;
@@ -87,6 +97,8 @@ function knbn_info_request($passed_knbn_uid)
         global $knbn_lead_time;
         global $knbn_notes;
 
+        $knbn_external_url_yn = $knbn_external_url_yn_return[0];
+        $knbn_order_method = $knbn_order_method_return[0];
         $knbn_external_url = $knbn_external_url_return[0];
         $knbn_dept_location = $knbn_dept_location_return[0];
         $knbn_dept_cell = $knbn_dept_cell_return[0];

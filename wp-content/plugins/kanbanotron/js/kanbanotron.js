@@ -135,7 +135,32 @@ function submitPurchaseOrder(x, y) {
 }
 
 // AJAX request to set default reorder quantity
-function setDefaultReorderQuan(x) {}
+function setDefaultReorderQuan(x, y) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function () {
+    loadKanban(x);
+    addToPO(x, document.getElementById('order-selection').value);
+  }
+  xhttp.open(
+    "GET",
+    `../../wp-content/plugins/kanbanotron/db/wp_db/update_default_reorder_quan.php/?knbn_uid=${x}&quan=${y}`
+  );
+  xhttp.send();
+}
+
+// AJAX request to set external URL
+function setExternalURL(x, y) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function () {
+    loadKanban(x);
+    addToPO(x, document.getElementById('order-selection').value);
+  }
+  xhttp.open(
+    "GET",
+    `../../wp-content/plugins/kanbanotron/db/wp_db/update_external_url.php/?knbn_uid=${x}&quan=${y}`
+  );
+  xhttp.send();
+}
 
 // Updates browser cookies to reflect chosen purchase order.
 function updateActiveOrder(x) {
