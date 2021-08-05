@@ -39,9 +39,6 @@ function loadPOPreview(x) {
 
 // AJAX request to add a kanban to the appropriate PO
 function addToPO(x, y) {
-  console.log(x);
-  console.log(y);
-
   const xhttp = new XMLHttpRequest();
 
   xhttp.onload = function () {
@@ -61,9 +58,6 @@ function addToPO(x, y) {
 function removeFromPO(x, y) {
   if (confirm("Delete this item from it's purchase order?")) {
     txt = "Item Deleted";
-    console.log(x);
-    console.log(y);
-
     const xhttp = new XMLHttpRequest();
 
     xhttp.onload = function () {
