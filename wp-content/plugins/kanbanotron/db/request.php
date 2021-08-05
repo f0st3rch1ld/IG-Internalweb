@@ -81,7 +81,7 @@ function knbn_info_request($passed_knbn_uid)
         $knbn_lead_time_return = $knbn_lead_time_result->fetch_array(MYSQLI_NUM);
         $knbn_notes_return = $knbn_notes_result->fetch_array(MYSQLI_NUM);
 
-        global $knbn_external_url_yn;
+        global $knbn_external_yn;
         global $knbn_order_method;
         global $knbn_external_url;
         global $knbn_dept_location;
@@ -97,7 +97,7 @@ function knbn_info_request($passed_knbn_uid)
         global $knbn_lead_time;
         global $knbn_notes;
 
-        $knbn_external_url_yn = $knbn_external_url_yn_return[0];
+        $knbn_external_yn = $knbn_external_url_yn_return[0];
         $knbn_order_method = $knbn_order_method_return[0];
         $knbn_external_url = $knbn_external_url_return[0];
         $knbn_dept_location = $knbn_dept_location_return[0];
