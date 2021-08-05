@@ -39,7 +39,7 @@ qbdb_item_request($knbn_vendor_part_number);
 // $qbdb_TableName;
 // $qbdb_BarCodeValue;
 
-$knbn_on_order;
+$knbn_on_order = FALSE;
 
 for ($i = 0; count($purchaseorderlineret_table_data_array) > $i; $i++) {
     if ($qbdb_ListID == $purchaseorderlineret_table_data_array[$i]['ItemRef_ListID']) {
