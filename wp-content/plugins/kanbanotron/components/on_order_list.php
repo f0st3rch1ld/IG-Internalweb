@@ -25,6 +25,6 @@
         xhttp.send();
     }
 
-    setInterval(refreshOverview, 5000);
+    setInterval(refreshOverview, 10000);
 </script>
 <!-- /Page Refresh Script -->
