@@ -230,6 +230,12 @@ button:focus {
       flex-wrap: wrap;
   width: 100%;
   height: auto;
+  margin: 10px 0px;
+}
+
+.kanbanotron-main-container .kanban-information-container .knbn-order-form-container .group input {
+  width: calc(100% - 100px) !important;
+  margin: 5px;
 }
 
 .kanbanotron-main-container .purchase-order-overview-container {

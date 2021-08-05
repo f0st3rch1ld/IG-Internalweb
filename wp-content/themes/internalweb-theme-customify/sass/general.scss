@@ -140,6 +140,12 @@ button {
 
       .group {
         @include superflex(row, center, center, wrap, 100%, auto);
+        margin:10px 0px;
+
+        input {
+          width: calc(100% - 100px) !important;
+          margin:5px;
+        }
       }
     }
   }
