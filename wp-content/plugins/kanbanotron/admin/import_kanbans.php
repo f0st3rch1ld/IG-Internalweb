@@ -7,7 +7,20 @@
     <hr />
     <p>Here is an example table of how the .csv needs to be formatted:</p>
 
-    <table>
+    <style>
+        #knbn-example-table {
+            width: 100%;
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, .2) 2px 3px 5px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: lightgrey;
+            border-radius: 4px;
+            text-align: center;
+        }
+    </style>
+
+    <table id="knbn-example-table">
         <thead>
             <tr>
                 <th>vendor</th>
@@ -39,6 +52,8 @@
             </tr>
         </tbody>
     </table>
+
+    <hr />
 
     <form method="post" action="options.php" enctype="multipart/form-data">
         <?php settings_fields('kanbanotron_settings_group'); ?>
