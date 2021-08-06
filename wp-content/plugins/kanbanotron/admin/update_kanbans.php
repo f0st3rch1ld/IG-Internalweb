@@ -137,7 +137,8 @@
 
         <div>
             <label>
-                <input type="radio" name="sync-type" value="Manual Sync" />
+                <input type="radio" name="sync-type" value="Manual Sync"
+                selected />
                 Manual Sync
             </label>
             <label>
@@ -146,10 +147,10 @@
             </label>
 
         </div>
+
         <div>
             <button>Sync Databases</button>
         </div>
-
 
         <hr />
 
