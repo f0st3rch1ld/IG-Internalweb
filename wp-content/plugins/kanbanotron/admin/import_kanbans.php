@@ -4,6 +4,41 @@
 <div class="wrap">
     <h1>Kanbanotron - Import Kanbans</h1><br />
     <p>Use this form to upload a .csv to the website and create / update kanbans!<br /> <strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong><br /> Thank you!<br />When you're ready to upload or update, just click the "import kanbans" button below!</p>
+    <hr />
+    <p>Here is an example table of how the .csv needs to be formatted:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>vendor</th>
+                <th>itd_part_number</th>
+                <th>location</th>
+                <th>cell</th>
+                <th>man_part_number</th>
+                <th>description</th>
+                <th>blue_qty</th>
+                <th>red_qty</th>
+                <th>freight_policy</th>
+                <th>package_qty</th>
+                <th>lead_time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>McMaster-Carr</td>
+                <td>ITD7104</td>
+                <td>Hardware</td>
+                <td>H34</td>
+                <td>9283K14</td>
+                <td>1" Internal Poly Plug</td>
+                <td>100</td>
+                <td>100</td>
+                <td>Fed Ex</td>
+                <td>100</td>
+                <td>2 Days</td>
+            </tr>
+        </tbody>
+    </table>
 
     <form method="post" action="options.php" enctype="multipart/form-data">
         <?php settings_fields('kanbanotron_settings_group'); ?>

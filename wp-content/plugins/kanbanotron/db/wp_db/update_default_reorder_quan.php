@@ -3,8 +3,6 @@
 $knbn_uid = $_GET['knbn_uid'];
 $quan = $_GET['quan'];
 
-echo 'update reoreder quan';
-
 $retrieved_id;
 
 // Connects to WP Database
