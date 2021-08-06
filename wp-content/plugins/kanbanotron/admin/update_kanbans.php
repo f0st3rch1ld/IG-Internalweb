@@ -54,6 +54,17 @@
         color: #fff;
         border-style: none;
     }
+
+    hr {
+        border-color: lightgrey;
+        border-style: dashed;
+        border-width: 1px;
+        width: 90%;
+    }
+
+    th {
+        padding: 3px;
+    }
 </style>
 
 <div class="update-kanbans-app-container">
