@@ -135,6 +135,14 @@
             <p>Use the QuickBooks Sync if you would like to sync/update kanbans inside the database with new information straight to and from QuickBooks. Kanbans generated using the Kanbanotron will be sent directly to the QB database, and any records changed inside QuickBooks will be updated inside the Kanbanotron database.</p>
         </div>
 
+        <label>
+            Manual / Automatic Sync
+            <input type="radio" name="sync-type" value="Manual Sync" />
+            <input type="radio" name="sync-type" value="Automatic Sync" />
+        </label>
+
+        <button>Sync Databases</button>
+
         <hr />
 
     </div>
