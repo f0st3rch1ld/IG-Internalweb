@@ -53,7 +53,7 @@
     function kanbanotron_create_menu()
     {
         //create new sub menu
-        add_submenu_page('edit.php?post_type=knbn_action', 'Import Kanbans', 'Import Kanbans', 'administrator', 'import_kanbans', 'kanbanotron_import_kanbans_page');
+        add_submenu_page('edit.php?post_type=knbn_action', 'Update Kanbans', 'Update Kanbans', 'administrator', 'update_kanbans', 'kanbanotron_import_kanbans_page');
 
         //call register settings function
         add_action('admin_init', 'register_kanbanotron_settings');
@@ -68,7 +68,7 @@
 
     function kanbanotron_import_kanbans_page()
     {
-        include 'admin/import_kanbans.php';
+        include 'admin/update_kanbans.php';
     }
 
 
