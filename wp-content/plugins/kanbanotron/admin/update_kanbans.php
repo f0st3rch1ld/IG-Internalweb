@@ -145,6 +145,8 @@
                 Automatic Sync
             </label>
 
+        </div>
+        <div>
             <button>Sync Databases</button>
         </div>
 
