@@ -135,10 +135,9 @@
             <p>Use the QuickBooks Sync if you would like to sync/update kanbans inside the database with new information straight to and from QuickBooks. Kanbans generated using the Kanbanotron will be sent directly to the QB database, and any records changed inside QuickBooks will be updated inside the Kanbanotron database.</p>
         </div>
 
-        <div>
+        <div style="flex-direction:row;">
             <label>
-                <input type="radio" name="sync-type" value="Manual Sync"
-                checked="checked" />
+                <input type="radio" name="sync-type" value="Manual Sync" checked="checked" />
                 Manual Sync
             </label>
             <label>
@@ -149,6 +148,13 @@
         </div>
 
         <div>
+            <label>
+                <input type="number" name="sync-frequency" />
+                Sync Frequency (In Minutes)
+            </label>
+        </div>
+
+        <div id="sync-databases">
             <button>Sync Databases</button>
         </div>
 
