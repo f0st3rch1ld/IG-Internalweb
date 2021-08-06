@@ -18,6 +18,13 @@
             border-radius: 4px;
             text-align: center;
         }
+
+        #knbn-example-table thead {
+            background-color: grey;
+            height: 30px;
+            color: #fff;
+            border-style: none;
+        }
     </style>
 
     <table id="knbn-example-table">
@@ -26,7 +33,6 @@
                 <th>vendor</th>
                 <th>itd_part_number</th>
                 <th>location</th>
-                <th>cell</th>
                 <th>man_part_number</th>
                 <th>description</th>
                 <th>blue_qty</th>
@@ -41,7 +47,6 @@
                 <td>McMaster-Carr</td>
                 <td>ITD7104</td>
                 <td>Hardware</td>
-                <td>H34</td>
                 <td>9283K14</td>
                 <td>1" Internal Poly Plug</td>
                 <td>100</td>
@@ -89,7 +94,6 @@ if (file_exists($csv_loc)) {
                 'vendor' => $data[0],
                 'itd_part_number' => $data[1],
                 'location' => $data[2],
-                'cell' => $data[3],
                 'man_part_number' => $data[4],
                 'description' => $data[5],
                 'blue_qty' => $data[6],
