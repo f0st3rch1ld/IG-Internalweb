@@ -73,10 +73,19 @@
             <h1>Kanbanotron - Update Kanbans</h1><br />
             <p>Use this page to upload a .csv to the website and create / update kanbans! <strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong> Thank you! When you're ready to upload or update, just click the "import kanbans" button below!</p>
             <hr />
-            <p>Here is an example table of how the .csv needs to be formatted:</p>
         </div>
 
         <div>
+            <p>Here is an example table of how the .csv needs to be formatted:</p>
+
+            <form method="post" action="options.php" enctype="multipart/form-data">
+                <?php settings_fields('kanbanotron_settings_group'); ?>
+                <?php do_settings_sections('kanbanotron_settings_group'); ?>
+                Upload your .csv
+                <input type="file" name="csv" />
+                <input type="submit" value="import kanbans" />
+            </form>
+
             <table id="knbn-example-table">
                 <thead>
                     <tr>
@@ -111,15 +120,6 @@
 
         <hr />
 
-        <div>
-            <form method="post" action="options.php" enctype="multipart/form-data">
-                <?php settings_fields('kanbanotron_settings_group'); ?>
-                <?php do_settings_sections('kanbanotron_settings_group'); ?>
-                Upload your .csv
-                <input type="file" name="csv" />
-                <input type="submit" value="import kanbans" />
-            </form>
-        </div>
     </div>
 </div>
 
