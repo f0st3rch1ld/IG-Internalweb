@@ -137,12 +137,12 @@
 
         <div>
             <label>
-                Manual Sync
                 <input type="radio" name="sync-type" value="Manual Sync" />
+                Manual Sync
             </label>
             <label>
-                Automatic Sync
                 <input type="radio" name="sync-type" value="Automatic Sync" />
+                Automatic Sync
             </label>
 
             <button>Sync Databases</button>
