@@ -1,32 +1,43 @@
 <?php
 // Kanban Importer
 ?>
-<div class="wrap">
+
+<style>
+    .update-kanbans-app-container {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        width: 100%;
+        max-width: 1400px;
+        background-color: #fff;
+    }
+
+    #knbn-example-table {
+        width: 100%;
+        max-width: 1200px;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, .2) 2px 3px 5px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: lightgrey;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    #knbn-example-table thead {
+        background-color: grey;
+        height: 30px;
+        color: #fff;
+        border-style: none;
+    }
+</style>
+
+<div class="update-kanbans-app-container">
     <h1>Kanbanotron - Update Kanbans</h1><br />
     <p>Use this page to upload a .csv to the website and create / update kanbans!<br /> <strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong><br /> Thank you!<br />When you're ready to upload or update, just click the "import kanbans" button below!</p>
     <hr />
     <p>Here is an example table of how the .csv needs to be formatted:</p>
-
-    <style>
-        #knbn-example-table {
-            width: 100%;
-            max-width: 1200px;
-            background-color: #fff;
-            box-shadow: rgba(0, 0, 0, .2) 2px 3px 5px;
-            border-style: solid;
-            border-width: 1px;
-            border-color: lightgrey;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        #knbn-example-table thead {
-            background-color: grey;
-            height: 30px;
-            color: #fff;
-            border-style: none;
-        }
-    </style>
 
     <table id="knbn-example-table">
         <thead>
