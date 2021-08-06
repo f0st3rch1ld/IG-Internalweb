@@ -10,6 +10,7 @@
         align-items: center;
         width: 100%;
         height: 100%;
+        margin-left:20px
     }
 
     .update-kanbans-app-container .inner-container {
@@ -29,9 +30,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        width: 90%;
         height: auto;
-        margin: 40px;
+        margin:20px;
     }
 
 
@@ -59,7 +60,7 @@
     <div class="inner-container">
         <div>
             <h1>Kanbanotron - Update Kanbans</h1><br />
-            <p>Use this page to upload a .csv to the website and create / update kanbans!<br /> <strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong><br /> Thank you!<br />When you're ready to upload or update, just click the "import kanbans" button below!</p>
+            <p>Use this page to upload a .csv to the website and create / update kanbans! <strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong> Thank you! When you're ready to upload or update, just click the "import kanbans" button below!</p>
             <hr />
             <p>Here is an example table of how the .csv needs to be formatted:</p>
         </div>
