@@ -80,6 +80,7 @@
         </div>
 
         <div>
+            <h3>.csv Update</h3>
             <p>Here is an example table of how the .csv needs to be formatted:</p>
 
             <table id="knbn-example-table">
@@ -123,6 +124,10 @@
         </div>
 
         <hr />
+
+        <div>
+            <h3>Quickbooks Sync</h3>
+        </div>
 
     </div>
 </div>
