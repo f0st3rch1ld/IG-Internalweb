@@ -10,7 +10,7 @@
         align-items: center;
         width: 100%;
         height: 100%;
-        margin-left:20px
+        margin-left: 20px
     }
 
     .update-kanbans-app-container .inner-container {
@@ -32,7 +32,7 @@
         align-items: center;
         width: 90%;
         height: auto;
-        margin:20px;
+        margin: 20px;
     }
 
 
@@ -104,14 +104,8 @@
             <form method="post" action="options.php" enctype="multipart/form-data">
                 <?php settings_fields('kanbanotron_settings_group'); ?>
                 <?php do_settings_sections('kanbanotron_settings_group'); ?>
-                <table class="form-table">
-                    <tr valign="top">
-                        <th scope="row">Upload your .csv</th>
-                        <td>
-                            <input type="file" name="csv" />
-                        </td>
-                    </tr>
-                </table>
+                Upload your .csv
+                <input type="file" name="csv" />
                 <input type="submit" value="import kanbans" />
             </form>
         </div>
