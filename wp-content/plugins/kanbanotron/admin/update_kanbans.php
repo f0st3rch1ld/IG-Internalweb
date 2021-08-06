@@ -75,7 +75,6 @@
     <div class="inner-container">
         <div>
             <h1>Kanbanotron - Update Kanbans</h1><br />
-            <p>Use this page to upload a .csv to the website and create / update kanbans! <strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong> Thank you! When you're ready to upload or update, just click the "import kanbans" button below!</p>
             <hr />
         </div>
 
@@ -113,6 +112,8 @@
                     </tr>
                 </tbody>
             </table>
+
+            <p><strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong></p>
 
             <form method="post" action="options.php" enctype="multipart/form-data">
                 <?php settings_fields('kanbanotron_settings_group'); ?>
