@@ -80,7 +80,11 @@
 
         <div>
             <h3>CSV Update</h3>
-            <p>Here is an example table of how the .csv needs to be formatted:</p>
+            <p>
+                Use the CSV updater when you want to update both kanbanotron, and quickbooks with new kanbans. It will read your .csv, importing it into both the kanbanotron database, as well as the quickbooks database, creating new records, or updating ones that already exist.
+                <br />
+                Here is an example table of how the .csv needs to be formatted:
+            </p>
 
             <table id="knbn-example-table">
                 <thead>
@@ -128,6 +132,7 @@
 
         <div>
             <h3>QuickBooks Sync</h3>
+            <p>Use the QuickBooks Sync if you would like to sync/update kanbans inside the database with new information straight to and from QuickBooks. Kanbans generated using the Kanbanotron will be sent directly to the QB database, and any records changed inside QuickBooks will be updated inside the Kanbanotron database.</p>
         </div>
 
     </div>
