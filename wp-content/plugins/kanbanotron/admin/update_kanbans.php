@@ -65,6 +65,10 @@
     th {
         padding: 3px;
     }
+
+    form {
+        margin: 20px;
+    }
 </style>
 
 <div class="update-kanbans-app-container">
@@ -77,14 +81,6 @@
 
         <div>
             <p>Here is an example table of how the .csv needs to be formatted:</p>
-
-            <form method="post" action="options.php" enctype="multipart/form-data">
-                <?php settings_fields('kanbanotron_settings_group'); ?>
-                <?php do_settings_sections('kanbanotron_settings_group'); ?>
-                Upload your .csv
-                <input type="file" name="csv" />
-                <input type="submit" value="import kanbans" />
-            </form>
 
             <table id="knbn-example-table">
                 <thead>
@@ -116,6 +112,14 @@
                     </tr>
                 </tbody>
             </table>
+
+            <form method="post" action="options.php" enctype="multipart/form-data">
+                <?php settings_fields('kanbanotron_settings_group'); ?>
+                <?php do_settings_sections('kanbanotron_settings_group'); ?>
+                Upload your .csv
+                <input type="file" name="csv" />
+                <input type="submit" value="import kanbans" />
+            </form>
         </div>
 
         <hr />
