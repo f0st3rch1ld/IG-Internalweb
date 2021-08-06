@@ -138,7 +138,7 @@
         <div>
             <label>
                 <input type="radio" name="sync-type" value="Manual Sync"
-                selected />
+                checked="checked" />
                 Manual Sync
             </label>
             <label>
