@@ -188,8 +188,6 @@
     </div>
 </div>
 
-<script src="js/knbn_admin.js"></script>
-
 <?php
 
 $csv_loc =  WP_CONTENT_DIR . '/uploads/kanban-upload.csv';

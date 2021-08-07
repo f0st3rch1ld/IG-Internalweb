@@ -109,4 +109,19 @@
     function custom_scripts()
     {
         wp_enqueue_script('kanbanotron', plugin_dir_url(__FILE__) . 'js/kanbanotron.js', array('jquery'));
+
+    }
+
+    // Custom Admin Scripts
+    add_action('admin_enqueue_scripts', 'custom_admin_scripts');
+    function custom_admin_scripts()
+    {
+        wp_enqueue_script('knbn_admin.js', plugin_dir_url(__FILE__) . 'admin/js/knbn_admin.js', array('jquery'), false, true);
+    }
+
+    // Custom Admin Styles
+    add_action('admin_enqueue_styles', 'custom_admin_styles');
+    function custom_admin_styles() 
+    {
+        wp_enqueue_style('admin.css', plugin_dir_url(__FILE__) . 'admin/admin.css', false, false);
     }
