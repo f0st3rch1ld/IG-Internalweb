@@ -126,7 +126,7 @@
             </div>
 
             <div class="mku-form-container">
-                <label>
+                <label id="kanban-selection-label">
                     Select a kanban to edit - Or add a new kanban
                     <select id="kanban-selection">
                         <!-- Default Option -->
@@ -140,7 +140,6 @@
                         <!-- Generated Kanbans List -->
                         <optgroup label="Currently Available Kanbans">
                             <?php
-
                             // Connection to Wordpress Database
                             include plugin_dir_path(__FILE__) . '../db/knbn_wp_connection.php';
 
@@ -168,44 +167,19 @@
 
                             for ($i = 0; count($wp_knbn_post_list) > $i; $i++) : ?>
                                     <option value="<?php echo $wp_knbn_post_list[$i]['ID']; ?>"><?php echo $wp_knbn_post_list[$i]['post_title']; ?></option>
-                            <?php endfor; ?>
+                            <?php endfor;
+                            
+                            // closes connection to Wordpress Database
+                            $conn->close();
+                            ?>
                         </optgroup>
 
                     </select>
                 </label>
             </div>
 
-            <div class="mku-form-container">
-                <label>Vendor
-                    <input type="text" name="vendor" id="vendor" placeholder="Vendor" />
-                </label>
-                <label>ITD Part Number
-                    <input type="text" name="itd_part_number" id="itd_part_number" placeholder="ITD Part Number" />
-                </label>
-                <label>Location
-                    <input type="text" name="Location" id="Location" placeholder="Location" />
-                </label>
-                <label>Manufacturer's Part Number
-                    <input type="text" name="man_part_number" id="man_part_number" placeholder="Manufacturer's Part Number" />
-                </label>
-                <label>Description
-                    <input type="text" name="description" id="description" placeholder="Description" />
-                </label>
-                <label>Kanban Quantities
-                    <input type="text" name="knbn_qty" id="knbn_qty" placeholder="Kanban Quantities (ex. 'blue'/'red', 100/100)" />
-                </label>
-                <label>Freight Policy
-                    <input type="text" name="freight_policy" id="freight_policy" placeholder="Freight Policy" />
-                </label>
-                <label>Package Quantity
-                    <input type="text" name="package_qty" id="package_qty" placeholder="Package Quantity" />
-                </label>
-                <label>Minimum Reorder Quantity
-                    <input type="text" name="min_reorder_qty" id="min_reorder_qty" placeholder="Minimum Reorder Quantity" />
-                </label>
-                <label>Lead Time
-                    <input type="text" name="lead_time" id="lead_time" placeholder="Lead Time" />
-                </label>
+            <div class="mku-form-container" id="mku-form-fields">
+                <?php include plugin_dir_path(__FILE__) . '../admin/components/load_mku_form_fields.php'; ?>
             </div>
 
             <div id="sync-databases">

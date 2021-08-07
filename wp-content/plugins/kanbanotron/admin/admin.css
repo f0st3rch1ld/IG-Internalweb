@@ -109,3 +109,13 @@ label {
 .knbn-admin-tab h4 {
     margin: none;
 }
+
+#knbn-selection-label {
+    width:100% !important;
+    max-width:none !important;
+}
+
+#knbn-selection {
+    width:100% !important;
+    max-width:none !important;
+}

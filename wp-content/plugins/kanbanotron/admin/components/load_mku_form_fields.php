@@ -1,0 +1,82 @@
+<?php
+
+$wp_knbn_pid;
+$knbn_uid;
+$update;
+
+if (array_key_exists('xhttp', $_REQUEST)) {
+    // includes
+    include '../../db/knbn_wp_connection.php';
+    include '../../db/request.php';
+
+    $wp_knbn_pid = $GET_['wpknbnpid'];
+    $update = TRUE;
+
+    $knbn_uid_request = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $wp_knbn_pid . "' AND meta_key='product_setup_knbn_uid'";
+    $knbn_uid_request_result = $conn->query($knbn_uid_request);
+
+    if ($knbn_uid_request_result->num_rows > 0) {
+        while ($row = $knbn_uid_request_result->fetch_assoc()) {
+            $knbn_uid = $row['meta_value'];
+        }
+    } else {
+        echo 'There was an error trying to recieve this kanbans uid: ' . $conn->error;
+    }
+
+    $conn->close();
+
+    echo $knbn_uid;
+
+    // knbn_info_request reference
+
+    // $knbn_external_yn;
+    // $knbn_order_method;
+    // $knbn_external_url;
+    // $knbn_dept_location;
+    // $knbn_dept_cell;
+    // $knbn_vendor;
+    // $knbn_part_number;
+    // $knbn_vendor_part_number;
+    // $knbn_description;
+    // $knbn_package_quantity;
+    // $knbn_reorder_quantity;
+    // $knbn_blue_bin_quantity;
+    // $knbn_red_bin_quantity;
+    // $knbn_lead_time;
+    // $knbn_notes;
+
+    knbn_info_request($knbn_uid);
+}
+
+?>
+
+<label>Vendor
+    <input type="text" name="vendor" id="vendor" placeholder="Vendor" <?php if ($update) : ?>value="" <?php endif; ?> />
+</label>
+<label>ITD Part Number
+    <input type="text" name="itd_part_number" id="itd_part_number" placeholder="ITD Part Number" <?php if ($update) : ?>value="" <?php endif; ?> />
+</label>
+<label>Location
+    <input type="text" name="Location" id="Location" placeholder="Location" <?php if ($update) : ?>value="" <?php endif; ?> />
+</label>
+<label>Manufacturer's Part Number
+    <input type="text" name="man_part_number" id="man_part_number" placeholder="Manufacturer's Part Number" <?php if ($update) : ?>value="" <?php endif; ?> />
+</label>
+<label>Description
+    <input type="text" name="description" id="description" placeholder="Description" <?php if ($update) : ?>value="" <?php endif; ?> />
+</label>
+<label>Kanban Quantities
+    <input type="text" name="knbn_qty" id="knbn_qty" placeholder="Kanban Quantities (ex. 'blue'/'red', 100/100)" <?php if ($update) : ?>value="" <?php endif; ?> />
+</label>
+<label>Freight Policy
+    <input type="text" name="freight_policy" id="freight_policy" placeholder="Freight Policy" <?php if ($update) : ?>value="" <?php endif; ?> />
+</label>
+<label>Package Quantity
+    <input type="text" name="package_qty" id="package_qty" placeholder="Package Quantity" <?php if ($update) : ?>value="" <?php endif; ?> />
+</label>
+<label>Minimum Reorder Quantity
+    <input type="text" name="min_reorder_qty" id="min_reorder_qty" placeholder="Minimum Reorder Quantity" <?php if ($update) : ?>value="" <?php endif; ?> />
+</label>
+<label>Lead Time
+    <input type="text" name="lead_time" id="lead_time" placeholder="Lead Time" <?php if ($update) : ?>value="" <?php endif; ?> />
+</label>
