@@ -1,9 +1,8 @@
 <?php
-// Kanban Importer
-?>
 
-<!-- Admin CSS link -->
-<link rel="stylesheet" href="admin.css">
+// Kanban Importer
+
+?>
 
 <div class="update-kanbans-app-container">
     <div class="inner-container">
