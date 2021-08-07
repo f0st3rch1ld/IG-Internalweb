@@ -190,13 +190,15 @@
         </div>
 
         <div>
-            <select id="kanban-selection">
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-                <option>Option 5</option>
-            </select>
+            <label>
+                <select id="kanban-selection">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+            </label>
         </div>
 
         <div id="mku-form-container">
