@@ -124,7 +124,7 @@
 
         <hr style="margin:0px" />
 
-        
+
 
         <div style="flex-direction:row; flex-wrap:wrap; justify-content:flex-start; margin:0px">
             <div class="knbn-admin-tab active" id="knbn-auto-sync">
@@ -286,6 +286,10 @@
             <label>Lead Time
                 <input type="text" name="lead_time" id="lead_time" placeholder="Lead Time" />
             </label>
+        </div>
+
+        <div id="sync-databases">
+            <button>Update Kanban</button>
         </div>
     </div>
 </div>
