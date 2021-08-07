@@ -226,71 +226,76 @@
 
         <hr />
 
-        <div>
-            <h3>Manual Kanban Update</h3>
-            <p>If you need to manually update a kanbans info, or add a new kanban, you can do so here. This will pull a list of all the kanbans currently synced between QuickBooks & Kanbanotron. You can select which kanban you would like to edit, or you can create a new kanban if you can't find the one you're trying to work on. After you Update the databases, changes made will automatically be synced with quickbooks. No more importation!</p>
+        <!-- manual update container -->
+        <div id="manual-knbn-update-container">
+            <div>
+                <h3>Manual Kanban Update</h3>
+                <p>If you need to manually update a kanbans info, or add a new kanban, you can do so here. This will pull a list of all the kanbans currently synced between QuickBooks & Kanbanotron. You can select which kanban you would like to edit, or you can create a new kanban if you can't find the one you're trying to work on. After you Update the databases, changes made will automatically be synced with quickbooks. No more importation!</p>
+            </div>
+
+            <div class="mku-form-container">
+                <label>
+                    Select a kanban to edit - Or add a new kanban
+                    <select id="kanban-selection">
+                        <!-- Default Option -->
+                        <option value selected></option>
+
+                        <!-- Add New Option -->
+                        <optgroup label="Can't find your kanban? Add a new kanban.">
+                            <option value="add-new-knbn">Add a New Kanban</option>
+                        </optgroup>
+
+                        <!-- Generated Kanbans List -->
+                        <optgroup label="Currently Available Kanbans">
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                            <option>Option 4</option>
+                        </optgroup>
+
+                    </select>
+                </label>
+            </div>
+
+            <div class="mku-form-container">
+                <label>Vendor
+                    <input type="text" name="vendor" id="vendor" placeholder="Vendor" />
+                </label>
+                <label>ITD Part Number
+                    <input type="text" name="itd_part_number" id="itd_part_number" placeholder="ITD Part Number" />
+                </label>
+                <label>Location
+                    <input type="text" name="Location" id="Location" placeholder="Location" />
+                </label>
+                <label>Manufacturer's Part Number
+                    <input type="text" name="man_part_number" id="man_part_number" placeholder="Manufacturer's Part Number" />
+                </label>
+                <label>Description
+                    <input type="text" name="description" id="description" placeholder="Description" />
+                </label>
+                <label>Kanban Quantities
+                    <input type="text" name="knbn_qty" id="knbn_qty" placeholder="Kanban Quantities (ex. 'blue'/'red', 100/100)" />
+                </label>
+                <label>Freight Policy
+                    <input type="text" name="freight_policy" id="freight_policy" placeholder="Freight Policy" />
+                </label>
+                <label>Package Quantity
+                    <input type="text" name="package_qty" id="package_qty" placeholder="Package Quantity" />
+                </label>
+                <label>Minimum Reorder Quantity
+                    <input type="text" name="min_reorder_qty" id="min_reorder_qty" placeholder="Minimum Reorder Quantity" />
+                </label>
+                <label>Lead Time
+                    <input type="text" name="lead_time" id="lead_time" placeholder="Lead Time" />
+                </label>
+            </div>
+
+            <div id="sync-databases">
+                <button>Update Kanban</button>
+            </div>
         </div>
+        <!-- /manual update container -->
 
-        <div class="mku-form-container">
-            <label>
-                Select a kanban to edit - Or add a new kanban
-                <select id="kanban-selection">
-                    <!-- Default Option -->
-                    <option value selected></option>
-
-                    <!-- Add New Option -->
-                    <optgroup label="Can't find your kanban? Add a new kanban.">
-                        <option value="add-new-knbn">Add a New Kanban</option>
-                    </optgroup>
-
-                    <!-- Generated Kanbans List -->
-                    <optgroup label="Currently Available Kanbans">
-                        <option>Option 1</option>
-                        <option>Option 2</option>
-                        <option>Option 3</option>
-                        <option>Option 4</option>
-                    </optgroup>
-
-                </select>
-            </label>
-        </div>
-
-        <div class="mku-form-container">
-            <label>Vendor
-                <input type="text" name="vendor" id="vendor" placeholder="Vendor" />
-            </label>
-            <label>ITD Part Number
-                <input type="text" name="itd_part_number" id="itd_part_number" placeholder="ITD Part Number" />
-            </label>
-            <label>Location
-                <input type="text" name="Location" id="Location" placeholder="Location" />
-            </label>
-            <label>Manufacturer's Part Number
-                <input type="text" name="man_part_number" id="man_part_number" placeholder="Manufacturer's Part Number" />
-            </label>
-            <label>Description
-                <input type="text" name="description" id="description" placeholder="Description" />
-            </label>
-            <label>Kanban Quantities
-                <input type="text" name="knbn_qty" id="knbn_qty" placeholder="Kanban Quantities (ex. 'blue'/'red', 100/100)" />
-            </label>
-            <label>Freight Policy
-                <input type="text" name="freight_policy" id="freight_policy" placeholder="Freight Policy" />
-            </label>
-            <label>Package Quantity
-                <input type="text" name="package_qty" id="package_qty" placeholder="Package Quantity" />
-            </label>
-            <label>Minimum Reorder Quantity
-                <input type="text" name="min_reorder_qty" id="min_reorder_qty" placeholder="Minimum Reorder Quantity" />
-            </label>
-            <label>Lead Time
-                <input type="text" name="lead_time" id="lead_time" placeholder="Lead Time" />
-            </label>
-        </div>
-
-        <div id="sync-databases">
-            <button>Update Kanban</button>
-        </div>
     </div>
 </div>
 
