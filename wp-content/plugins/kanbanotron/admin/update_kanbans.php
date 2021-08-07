@@ -122,9 +122,9 @@
             <h1>Kanbanotron - Update Kanbans</h1>
         </div>
 
-        <hr />
+        <hr style="margin:0px"/>
 
-        <div style="flex-direction:row; flex-wrap:wrap;">
+        <div style="flex-direction:row; flex-wrap:wrap; justify-content:flex-start; margin:0px">
             <div class="knbn-admin-tab" id="knbn-auto-sync">
                 <h4>QuickBooks Sync</h4>
             </div>
