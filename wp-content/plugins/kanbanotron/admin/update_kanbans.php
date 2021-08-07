@@ -191,6 +191,7 @@
 
         <div>
             <label>
+                Select a kanban to edit - Or add a new kanban
                 <select id="kanban-selection">
                     <option>Option 1</option>
                     <option>Option 2</option>
