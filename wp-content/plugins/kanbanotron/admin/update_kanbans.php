@@ -161,7 +161,7 @@
                             }
 
                             // post_list test
-                            //echo var_dump($wp_knbn_post_list);
+                            echo var_dump($wp_knbn_post_list);
 
                             asort($wp_knbn_post_list);
 
