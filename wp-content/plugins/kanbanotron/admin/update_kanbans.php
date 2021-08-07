@@ -12,16 +12,18 @@
 
         <hr style="margin:0px" />
 
-
-
-        <div style="flex-direction:row; flex-wrap:wrap; justify-content:flex-start; margin:0px">
-            <div class="knbn-admin-tab active" id="knbn-auto-sync">
-                <h4>QuickBooks Sync</h4>
+        <?php if (!wp_is_mobile()) : ?>
+            <!-- knbn settings tabs -->
+            <div style="flex-direction:row; flex-wrap:wrap; justify-content:flex-start; margin:0px">
+                <div class="knbn-admin-tab active" id="knbn-auto-sync">
+                    <h4>QuickBooks Sync</h4>
+                </div>
+                <div class="knbn-admin-tab" id="knbn-csv-update">
+                    <h4>CSV Update</h4>
+                </div>
             </div>
-            <div class="knbn-admin-tab" id="knbn-csv-update">
-                <h4>CSV Update</h4>
-            </div>
-        </div>
+            <!-- /knbn settings tabs -->
+        <?php endif; ?>
 
         <!-- qb sync container -->
         <div class="knbn-admin-container" id="knbn-auto-sync-container" style="display:flex;">
@@ -58,59 +60,61 @@
         </div>
         <!-- /qb sync container -->
 
-        <!-- csv update container -->
-        <div class="knbn-admin-container" id="knbn-csv-update-container" style="display:none">
-            <h3>CSV Update</h3>
-            <p>
-                Use the CSV updater when you want to update both kanbanotron, and quickbooks with new kanbans. It will read your .csv, importing it into both the kanbanotron database, as well as the quickbooks database, creating new records, or updating ones that already exist.
-                <br />
-                Here is an example table of how the .csv needs to be formatted:
-            </p>
+        <?php if (wp_is_mobile()) : ?>
+            <!-- csv update container -->
+            <div class="knbn-admin-container" id="knbn-csv-update-container" style="display:none">
+                <h3>CSV Update</h3>
+                <p>
+                    Use the CSV updater when you want to update both kanbanotron, and quickbooks with new kanbans. It will read your .csv, importing it into both the kanbanotron database, as well as the quickbooks database, creating new records, or updating ones that already exist.
+                    <br />
+                    Here is an example table of how the .csv needs to be formatted:
+                </p>
 
-            <table id="knbn-example-table">
-                <thead>
-                    <tr>
-                        <th>vendor</th>
-                        <th>itd_part_number</th>
-                        <th>location</th>
-                        <th>man_part_number</th>
-                        <th>description</th>
-                        <th>blue_qty</th>
-                        <th>red_qty</th>
-                        <th>freight_policy</th>
-                        <th>package_qty</th>
-                        <th>lead_time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>McMaster-Carr</td>
-                        <td>ITD7104</td>
-                        <td>Hardware</td>
-                        <td>9283K14</td>
-                        <td>1" Internal Poly Plug</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>Fed Ex</td>
-                        <td>100</td>
-                        <td>2 Days</td>
-                    </tr>
-                </tbody>
-            </table>
+                <table id="knbn-example-table">
+                    <thead>
+                        <tr>
+                            <th>vendor</th>
+                            <th>itd_part_number</th>
+                            <th>location</th>
+                            <th>man_part_number</th>
+                            <th>description</th>
+                            <th>blue_qty</th>
+                            <th>red_qty</th>
+                            <th>freight_policy</th>
+                            <th>package_qty</th>
+                            <th>lead_time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>McMaster-Carr</td>
+                            <td>ITD7104</td>
+                            <td>Hardware</td>
+                            <td>9283K14</td>
+                            <td>1" Internal Poly Plug</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>Fed Ex</td>
+                            <td>100</td>
+                            <td>2 Days</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-            <p><strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong></p>
+                <p><strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong></p>
 
-            <form method="post" action="options.php" enctype="multipart/form-data">
-                <?php settings_fields('kanbanotron_settings_group');
-                ?>
-                <?php do_settings_sections('kanbanotron_settings_group');
-                ?>
-                Upload your .csv
-                <input type="file" name="csv" />
-                <input type="submit" value="import kanbans" />
-            </form>
-        </div>
-        <!-- /csv update container -->
+                <form method="post" action="options.php" enctype="multipart/form-data">
+                    <?php settings_fields('kanbanotron_settings_group');
+                    ?>
+                    <?php do_settings_sections('kanbanotron_settings_group');
+                    ?>
+                    Upload your .csv
+                    <input type="file" name="csv" />
+                    <input type="submit" value="import kanbans" />
+                </form>
+            </div>
+            <!-- /csv update container -->
+        <?php endif; ?>
 
         <hr />
 
