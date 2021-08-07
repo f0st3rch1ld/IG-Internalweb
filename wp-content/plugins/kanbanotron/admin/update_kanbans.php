@@ -152,7 +152,8 @@
                             if ($wp_knbn_posts_query_result->num_rows > 0) {
                                 while ($row = $wp_knbn_posts_query_result->fetch_assoc()) {
                                     $temp_array = array(
-                                        $row['ID'] => $row['post_title']
+                                        'ID' => $row['ID'],
+                                        'post_title' => $row['post_title']
                                     );
                                     array_push($wp_knbn_post_list, $temp_array);
                                 }
@@ -161,16 +162,13 @@
                             }
 
                             // post_list test
-                            echo var_dump($wp_knbn_post_list);
+                            //echo var_dump($wp_knbn_post_list);
 
                             asort($wp_knbn_post_list);
 
-                            for ($i = 0; count($wp_knbn_post_list) > $i; $i++) {
-                                foreach ($wp_knbn_post_list as $key => $value) : ?>
-                                    <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
-                                <?php 
-                                endforeach;
-                            } ?>
+                            for ($i = 0; count($wp_knbn_post_list) > $i; $i++) : ?>
+                                    <option value="<?php echo $wp_knbn_post_list[$i]['ID']; ?>"><?php echo $wp_knbn_post_list[$i]['post_title']; ?></option>
+                            <?php endfor; ?>
                         </optgroup>
 
                     </select>
