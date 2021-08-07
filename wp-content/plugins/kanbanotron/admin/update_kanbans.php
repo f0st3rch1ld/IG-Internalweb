@@ -73,12 +73,12 @@
         margin: 5px;
     }
 
-    #mku-form-container {
+    .mku-form-container {
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-    #mku-form-container label {
+    .mku-form-container label {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -189,7 +189,7 @@
             <p>If you need to manually update a kanbans info, or add a new kanban, you can do so here. This will pull a list of all the kanbans currently synced between QuickBooks & Kanbanotron. You can select which kanban you would like to edit, or you can create a new kanban if you can't find the one you're trying to work on. After you Update the databases, changes made will automatically be synced with quickbooks. No more importation!</p>
         </div>
 
-        <div>
+        <div class="mku-form-container">
             <label>
                 Select a kanban to edit - Or add a new kanban
                 <select id="kanban-selection">
@@ -202,7 +202,7 @@
             </label>
         </div>
 
-        <div id="mku-form-container">
+        <div class="mku-form-container">
             <label>Vendor
                 <input type="text" name="vendor" id="vendor" placeholder="Vendor" />
             </label>
