@@ -126,6 +126,9 @@
             </div>
 
             <div class="mku-form-container">
+
+                <form name="manual-knbn-update" action=""></form>
+
                 <label style="width:100%; max-width:none;">
                     Select a kanban to edit - Or add a new kanban
                     <select id="kanban-selection" style="width:100%; max-width:none;">
