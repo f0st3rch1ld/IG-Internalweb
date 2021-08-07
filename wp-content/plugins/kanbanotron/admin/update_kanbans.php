@@ -72,6 +72,13 @@
     label {
         margin: 5px;
     }
+
+    #mku-form-container label{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-content:center;
+    }
 </style>
 
 <div class="update-kanbans-app-container">
@@ -184,7 +191,7 @@
             </select>
         </div>
 
-        <div>
+        <div id="mku-form-container">
             <label>Vendor
                 <input type="text" name="vendor" id="vendor" placeholder="Vendor" />
             </label>
