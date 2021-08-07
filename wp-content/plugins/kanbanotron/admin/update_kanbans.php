@@ -1,6 +1,6 @@
 <?php
 
-// Kanban Importer
+// Kanbanotron Update Kanbans Admin Page
 
 ?>
 
@@ -139,10 +139,35 @@
 
                         <!-- Generated Kanbans List -->
                         <optgroup label="Currently Available Kanbans">
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                            <option>Option 4</option>
+                            <?php
+
+                            // Connection to Wordpress Database
+                            include '../db/knbn_wp_connection.php';
+
+                            $wp_knbn_post_list = array();
+
+                            $wp_knbn_posts_query = "SELECT ID, post_title FROM wp_posts WHERE post_status='publish' AND post_type='knbn_action'";
+                            $wp_knbn_posts_query_result = $conn->query($wp_knbn_posts_query);
+
+                            if ($wp_knbn_posts_query_result->num_rows > 0) {
+                                while ($row = $wp_knbn_posts_query_result->fetch_assoc()) {
+                                    $temp_array = array(
+                                        $row['ID'] => $row['post_title']
+                                    );
+                                    array_push($wp_knbn_post_list, $temp_array);
+                                }
+                            } else {
+                                echo 'Error retrieving data: ' . $conn->error;
+                            }
+
+                            // post_list test
+                            //echo var_dump($wp_knbn_post_list);
+
+                            asort($wp_knbn_post_list);
+
+                            foreach($wp_knbn_post_list as $key => $value) : ?>
+                                <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                            <?php endforeach; ?>
                         </optgroup>
 
                     </select>
