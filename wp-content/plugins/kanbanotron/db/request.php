@@ -3,21 +3,53 @@
 $knbn_external_yn;
 $knbn_order_method;
 $knbn_external_url;
-$knbn_dept_location;
-$knbn_dept_cell;
+$knbn_location;
 $knbn_vendor;
 $knbn_part_number;
 $knbn_vendor_part_number;
 $knbn_description;
 $knbn_package_quantity;
 $knbn_reorder_quantity;
-$knbn_blue_bin_quantity;
-$knbn_red_bin_quantity;
+$knbn_quantity;
 $knbn_lead_time;
 $knbn_notes;
 
 function knbn_info_request($passed_knbn_uid)
 {
+
+    // Global variables that we will set later
+    global $knbn_external_yn;
+    global $knbn_order_method;
+    global $knbn_external_url;
+    global $knbn_location;
+    global $knbn_vendor;
+    global $knbn_part_number;
+    global $knbn_vendor_part_number;
+    global $knbn_description;
+    global $knbn_package_quantity;
+    global $knbn_reorder_quantity;
+    global $knbn_quantity;
+    global $knbn_lead_time;
+    global $knbn_notes;
+
+    // Array of meta keys. These keys are what determine how the program parses the wordpress database, and what variables values get assigned.
+    $meta_key_array = array(
+        'product_setup_product_type',
+        'product_setup_order_method',
+        'external_product_url',
+        'kanban_information_location',
+        'kanban_information_vendor',
+        'kanban_information_part_number_group_part_number',
+        'kanban_information_part_number_group_vendor_part_number',
+        'kanban_information_description',
+        'kanban_information_quantities_kanban_quantity',
+        'kanban_information_quantities_package_quantity',
+        'kanban_information_quantities_reorder_quantity',
+        'kanban_information_lead_time',
+        'kanban_notes'
+    );
+
+    // Wordpress database connection
     include 'knbn_wp_connection.php';
 
     // Retrieves Kanban Post ID from unique value located inside QR
@@ -31,87 +63,59 @@ function knbn_info_request($passed_knbn_uid)
         $knbn_post_id_return = $knbn_post_id_result->fetch_array(MYSQLI_NUM);
         $knbn_post_id_val = $knbn_post_id_return[0];
 
-        // This builds out the specific sql queries we need from the database
-        $knbn_external_url_yn_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='product_setup_product_type'";
-        $knbn_order_method_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='product_setup_order_method'";
-        $knbn_external_url_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='external_product_url'";
-        $knbn_dept_location_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_location_department_location'";
-        $knbn_dept_cell_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_location_department_cell'";
-        $knbn_vendor_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_vendor'";
-        $knbn_part_number_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_part_number_group_part_number'";
-        $knbn_vendor_part_number_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_part_number_group_vendor_part_number'";
-        $knbn_description_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_description'";
-        $knbn_package_quantity_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_quantities_package_quantity'";
-        $knbn_reorder_quantity_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_quantities_reorder_quantity'";
-        $knbn_blue_bin_quantity_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_quantities_blue_bin_quantity'";
-        $knbn_red_bin_quantity_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_quantities_red_bin_quantity'";
-        $knbn_lead_time_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_information_lead_time'";
-        $knbn_notes_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='kanban_notes'";
-
-        // This is where the program actually queries the database, and assigns the results to variables.
-        $knbn_external_url_yn_result = $conn->query($knbn_external_url_yn_query);
-        $knbn_order_method_result = $conn->query($knbn_order_method_query);
-        $knbn_external_url_result = $conn->query($knbn_external_url_query);
-        $knbn_dept_location_result = $conn->query($knbn_dept_location_query);
-        $knbn_dept_cell_result = $conn->query($knbn_dept_cell_query);
-        $knbn_vendor_result = $conn->query($knbn_vendor_query);
-        $knbn_part_number_result = $conn->query($knbn_part_number_query);
-        $knbn_vendor_part_number_result = $conn->query($knbn_vendor_part_number_query);
-        $knbn_description_result = $conn->query($knbn_description_query);
-        $knbn_package_quantity_result = $conn->query($knbn_package_quantity_query);
-        $knbn_reorder_quantity_result = $conn->query($knbn_reorder_quantity_query);
-        $knbn_blue_bin_quantity_result = $conn->query($knbn_blue_bin_quantity_query);
-        $knbn_red_bin_quantity_result = $conn->query($knbn_red_bin_quantity_query);
-        $knbn_lead_time_result = $conn->query($knbn_lead_time_query);
-        $knbn_notes_result = $conn->query($knbn_notes_query);
-
-        $knbn_external_url_yn_return = $knbn_external_url_yn_result->fetch_array(MYSQLI_NUM);
-        $knbn_order_method_return = $knbn_order_method_result->fetch_array(MYSQLI_NUM);
-        $knbn_external_url_return = $knbn_external_url_result->fetch_array(MYSQLI_NUM);
-        $knbn_dept_location_return = $knbn_dept_location_result->fetch_array(MYSQLI_NUM);
-        $knbn_dept_cell_return = $knbn_dept_cell_result->fetch_array(MYSQLI_NUM);
-        $knbn_vendor_return = $knbn_vendor_result->fetch_array(MYSQLI_NUM);
-        $knbn_part_number_return = $knbn_part_number_result->fetch_array(MYSQLI_NUM);
-        $knbn_vendor_part_number_return = $knbn_vendor_part_number_result->fetch_array(MYSQLI_NUM);
-        $knbn_description_return = $knbn_description_result->fetch_array(MYSQLI_NUM);
-        $knbn_package_quantity_return = $knbn_package_quantity_result->fetch_array(MYSQLI_NUM);
-        $knbn_reorder_quantity_return = $knbn_reorder_quantity_result->fetch_array(MYSQLI_NUM);
-        $knbn_blue_bin_quantity_return = $knbn_blue_bin_quantity_result->fetch_array(MYSQLI_NUM);
-        $knbn_red_bin_quantity_return = $knbn_red_bin_quantity_result->fetch_array(MYSQLI_NUM);
-        $knbn_lead_time_return = $knbn_lead_time_result->fetch_array(MYSQLI_NUM);
-        $knbn_notes_return = $knbn_notes_result->fetch_array(MYSQLI_NUM);
-
-        global $knbn_external_yn;
-        global $knbn_order_method;
-        global $knbn_external_url;
-        global $knbn_dept_location;
-        global $knbn_dept_cell;
-        global $knbn_vendor;
-        global $knbn_part_number;
-        global $knbn_vendor_part_number;
-        global $knbn_description;
-        global $knbn_package_quantity;
-        global $knbn_reorder_quantity;
-        global $knbn_blue_bin_quantity;
-        global $knbn_red_bin_quantity;
-        global $knbn_lead_time;
-        global $knbn_notes;
-
-        $knbn_external_yn = $knbn_external_url_yn_return[0];
-        $knbn_order_method = $knbn_order_method_return[0];
-        $knbn_external_url = $knbn_external_url_return[0];
-        $knbn_dept_location = $knbn_dept_location_return[0];
-        $knbn_dept_cell = $knbn_dept_cell_return[0];
-        $knbn_vendor = $knbn_vendor_return[0];
-        $knbn_part_number = $knbn_part_number_return[0];
-        $knbn_vendor_part_number = $knbn_vendor_part_number_return[0];
-        $knbn_description = $knbn_description_return[0];
-        $knbn_package_quantity = $knbn_package_quantity_return[0];
-        $knbn_reorder_quantity = $knbn_reorder_quantity_return[0];
-        $knbn_blue_bin_quantity = $knbn_blue_bin_quantity_return[0];
-        $knbn_red_bin_quantity = $knbn_red_bin_quantity_return[0];
-        $knbn_lead_time = $knbn_lead_time_return[0];
-        $knbn_notes = $knbn_notes_return[0];        
+        // Foreach loops through each item in meta_key_array, parses the database, then assigns the return value to the global variables above.
+        foreach ($meta_key_array as $value) {
+            $db_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id_val . "' AND meta_key='" . $value . "'";
+            $db_query_result = $conn->query($db_query);
+            if ($db_query_result->num_rows > 0) {
+                while ($row = $db_query_result->fetch_assoc()) {
+                    switch ($value) {
+                        case 'product_setup_product_type':
+                            $knbn_external_yn = $row['meta_value'];
+                            break;
+                        case 'product_setup_order_method':
+                            $knbn_order_method = $row['meta_value'];
+                            break;
+                        case 'external_product_url':
+                            $knbn_external_url = $row['meta_value'];
+                            break;
+                        case 'kanban_information_location':
+                            $knbn_location = $row['meta_value'];
+                            break;
+                        case 'kanban_information_vendor':
+                            $knbn_vendor = $row['meta_value'];
+                            break;
+                        case 'kanban_information_part_number_group_part_number':
+                            $knbn_part_number = $row['meta_value'];
+                            break;
+                        case 'kanban_information_part_number_group_vendor_part_number'
+                        :
+                        $knbn_vendor_part_number = $row['meta_value'];
+                            break;
+                        case 'kanban_information_description':
+                            $knbn_description = $row['meta_value'];
+                            break;
+                        case 'kanban_information_quantities_kanban_quantity':
+                            $knbn_quantity = $row['meta_value'];
+                            break;
+                        case 'kanban_information_quantities_package_quantity':
+                            $knbn_package_quantity = $row['meta_value'];
+                            break;
+                        case 'kanban_information_quantities_reorder_quantity':
+                            $knbn_reorder_quantity = $row['meta_value'];
+                            break;
+                        case 'kanban_information_lead_time':
+                            $knbn_lead_time = $row['meta_value'];
+                            break;
+                        case 'kanban_notes':
+                            $knbn_notes = $row['meta_value'];
+                            break;
+                        default:
+                            echo 'Error: ' . $conn->error;
+                    }
+                }
+            }
+        }
     } else {
         echo 'No matching kanban found.';
     }

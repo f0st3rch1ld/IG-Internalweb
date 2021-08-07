@@ -49,32 +49,32 @@ if (array_key_exists('xhttp', $_REQUEST)) {
 ?>
 
 <label>Vendor
-    <input form="manual-knbn-update" type="text" name="vendor" id="vendor" placeholder="Vendor" <?php if ($update) : ?>value="<?php echo $knbn_vendor; ?>" <?php endif; ?> />
+    <input form="manual-knbn-update" type="text" name="vendor" id="vendor" <?php if ($update) : ?>value="<?php echo $knbn_vendor; ?>" <?php endif; ?> />
 </label>
 <label>ITD Part Number
-    <input form="manual-knbn-update" type="text" name="itd_part_number" id="itd_part_number" placeholder="ITD Part Number" <?php if ($update) : ?>value="<?php echo $knbn_part_number; ?>" <?php endif; ?> />
+    <input form="manual-knbn-update" type="text" name="itd_part_number" id="itd_part_number" <?php if ($update) : ?>value="<?php echo $knbn_part_number; ?>" <?php endif; ?> />
 </label>
 <label>Location
-    <input form="manual-knbn-update" type="text" name="Location" id="Location" placeholder="Location" <?php if ($update) : ?>value="<?php echo $knbn_dept_location; ?>" <?php endif; ?> />
+    <input form="manual-knbn-update" type="text" name="Location" id="Location" <?php if ($update) : ?>value="<?php echo $knbn_dept_location; ?>" <?php endif; ?> />
 </label>
 <label>Manufacturer's Part Number
-    <input type="text" name="man_part_number" id="man_part_number" placeholder="Manufacturer's Part Number" <?php if ($update) : ?>value="<?php echo $knbn_vendor_part_number; ?>" <?php endif; ?> />
+    <input type="text" name="man_part_number" id="man_part_number" <?php if ($update) : ?>value="<?php echo $knbn_vendor_part_number; ?>" <?php endif; ?> />
 </label>
 <label>Description
-    <input form="manual-knbn-update" type="text" name="description" id="description" placeholder="Description" <?php if ($update) : ?>value="<?php echo $knbn_description; ?>" <?php endif; ?> />
+    <input form="manual-knbn-update" type="text" name="description" id="description" <?php if ($update) : ?>value="<?php echo $knbn_description; ?>" <?php endif; ?> />
 </label>
 <label>Kanban Quantities
-    <input form="manual-knbn-update" type="text" name="knbn_qty" id="knbn_qty" placeholder="Kanban Quantities (ex. 'blue'/'red', 100/100)" <?php if ($update) : ?>value="<?php echo $knbn_qty; ?>" <?php endif; ?> />
+    <input form="manual-knbn-update" type="text" name="knbn_qty" id="knbn_qty" <?php if ($update) : ?>value="<?php echo $knbn_qty; ?>" <?php endif; ?> />
 </label>
 <label>Freight Policy
-    <input form="manual-knbn-update" type="text" name="freight_policy" id="freight_policy" placeholder="Freight Policy" <?php if ($update) : ?>value="" <?php endif; ?> />
+    <input form="manual-knbn-update" type="text" name="freight_policy" id="freight_policy" <?php if ($update) : ?>value="" <?php endif; ?> />
 </label>
 <label>Package Quantity
-    <input form="manual-knbn-update" type="text" name="package_qty" id="package_qty" placeholder="Package Quantity" <?php if ($update) : ?>value="<?php echo $knbn_package_quantity; ?>" <?php endif; ?> />
+    <input form="manual-knbn-update" type="text" name="package_qty" id="package_qty" <?php if ($update) : ?>value="<?php echo $knbn_package_quantity; ?>" <?php endif; ?> />
 </label>
 <label>Minimum Reorder Quantity
-    <input form="manual-knbn-update" type="number" name="min_reorder_qty" id="min_reorder_qty" placeholder="Minimum Reorder Quantity" <?php if ($update) : ?>value="<?php echo $knbn_reorder_quantity; ?>" <?php endif; ?> />
+    <input form="manual-knbn-update" type="number" name="min_reorder_qty" id="min_reorder_qty" <?php if ($update) : ?>value="<?php echo $knbn_reorder_quantity; ?>" <?php endif; ?> />
 </label>
 <label>Lead Time (In Days)
-    <input form="manual-knbn-update" type="number" name="lead_time" id="lead_time" placeholder="Lead Time" <?php if ($update) : ?>value="<?php echo $knbn_lead_time; ?>" <?php endif; ?> />
+    <input form="manual-knbn-update" type="number" name="lead_time" id="lead_time" <?php if ($update) : ?>value="<?php echo $knbn_lead_time; ?>" <?php endif; ?> />
 </label>
