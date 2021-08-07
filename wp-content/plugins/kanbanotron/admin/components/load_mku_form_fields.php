@@ -12,8 +12,6 @@ if (array_key_exists('xhttp', $_REQUEST)) {
     $wp_knbn_pid = $_GET['wpknbnpid'];
     $update = TRUE;
 
-    echo $wp_knbn_pid;
-
     $knbn_uid_request = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $wp_knbn_pid . "' AND meta_key='product_setup_knbn_uid'";
     $knbn_uid_request_result = $conn->query($knbn_uid_request);
 
@@ -26,8 +24,6 @@ if (array_key_exists('xhttp', $_REQUEST)) {
     }
 
     $conn->close();
-
-    echo $knbn_uid;
 
     // knbn_info_request reference
 
