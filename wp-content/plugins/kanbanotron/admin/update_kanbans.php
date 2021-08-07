@@ -122,7 +122,7 @@
             <h1>Kanbanotron - Update Kanbans</h1>
         </div>
 
-        <hr style="margin:0px"/>
+        <hr style="margin:0px" />
 
         <div style="flex-direction:row; flex-wrap:wrap; justify-content:flex-start; margin:0px">
             <div class="knbn-admin-tab" id="knbn-auto-sync">
@@ -133,8 +133,43 @@
             </div>
         </div>
 
+        <!-- qb sync container -->
+        <div id="knbn-qb-sync-container" style="display:flex;">
+            <div>
+                <h3>QuickBooks Sync</h3>
+                <p>Use the QuickBooks Sync if you would like to sync/update kanbans inside the database with new information straight to and from QuickBooks. Kanbans generated using the Kanbanotron will be sent directly to the QB database, and any records changed inside QuickBooks will be updated inside the Kanbanotron database.</p>
+            </div>
 
-        <!-- <div>
+            <div style="flex-direction:row;">
+                <label>
+                    <input type="radio" name="sync-type" value="Manual Sync" checked="checked" />
+                    Manual Sync
+                </label>
+                <label>
+                    <input type="radio" name="sync-type" value="Automatic Sync" />
+                    Automatic Sync
+                </label>
+            </div>
+
+            <div>
+                <label>
+                    <input type="number" name="sync-frequency" />
+                    Sync Frequency (In Minutes)
+                </label>
+            </div>
+
+            <div id="sync-databases">
+                <button>Sync Databases</button>
+            </div>
+
+            <div id="auto-sync-databases">
+                <button>Sync Databases</button>
+            </div>
+        </div>
+        <!-- /qb sync container -->
+
+        <!-- csv update container -->
+        <div id="knbn-csv-update-container" style="display:none">
             <h3>CSV Update</h3>
             <p>
                 Use the CSV updater when you want to update both kanbanotron, and quickbooks with new kanbans. It will read your .csv, importing it into both the kanbanotron database, as well as the quickbooks database, creating new records, or updating ones that already exist.
@@ -176,48 +211,16 @@
             <p><strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong></p>
 
             <form method="post" action="options.php" enctype="multipart/form-data">
-                <?php //settings_fields('kanbanotron_settings_group'); 
+                <?php settings_fields('kanbanotron_settings_group');
                 ?>
-                <?php //do_settings_sections('kanbanotron_settings_group'); 
+                <?php do_settings_sections('kanbanotron_settings_group');
                 ?>
                 Upload your .csv
                 <input type="file" name="csv" />
                 <input type="submit" value="import kanbans" />
             </form>
-        </div> 
-
-        <hr /> -->
-
-        <div>
-            <h3>QuickBooks Sync</h3>
-            <p>Use the QuickBooks Sync if you would like to sync/update kanbans inside the database with new information straight to and from QuickBooks. Kanbans generated using the Kanbanotron will be sent directly to the QB database, and any records changed inside QuickBooks will be updated inside the Kanbanotron database.</p>
         </div>
-
-        <div style="flex-direction:row;">
-            <label>
-                <input type="radio" name="sync-type" value="Manual Sync" checked="checked" />
-                Manual Sync
-            </label>
-            <label>
-                <input type="radio" name="sync-type" value="Automatic Sync" />
-                Automatic Sync
-            </label>
-        </div>
-
-        <div>
-            <label>
-                <input type="number" name="sync-frequency" />
-                Sync Frequency (In Minutes)
-            </label>
-        </div>
-
-        <div id="sync-databases">
-            <button>Sync Databases</button>
-        </div>
-
-        <div id="auto-sync-databases">
-            <button>Sync Databases</button>
-        </div>
+        <!-- /csv update container -->
 
         <hr />
 
