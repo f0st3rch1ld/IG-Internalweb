@@ -89,10 +89,11 @@
     }
 
     .knbn-admin-tab {
-        display:flex;
-        justify-content:center;
-        align-items:center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 50px;
+        width: auto !important;
         padding: 10px;
         font-weight: bold;
         border-style: solid;
@@ -102,7 +103,7 @@
     }
 
     .knbn-admin-tab h4 {
-        margin:none;
+        margin: none;
     }
 </style>
 
@@ -114,12 +115,15 @@
 
         <hr />
 
-        <div class="knbn-admin-tab" id="knbn-auto-sync">
-            <h4>QuickBooks Sync</h4>
+        <div style="flex-direction:row; flex-wrap:wrap">
+            <div class="knbn-admin-tab" id="knbn-auto-sync">
+                <h4>QuickBooks Sync</h4>
+            </div>
+            <div class="knbn-admin-tab" id="knbn-csv-update">
+                <h4>CSV Update</h4>
+            </div>
         </div>
-        <div class="knbn-admin-tab" id="knbn-csv-update">
-            <h4>CSV Update</h4>
-        </div>
+
 
         <!-- <div>
             <h3>CSV Update</h3>
