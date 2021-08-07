@@ -107,8 +107,12 @@
 
         <hr />
 
-        <div class="knbn-admin-tab"></div>
-        <div class="knbn-admin-tab"></div>
+        <div class="knbn-admin-tab" id="knbn-auto-sync">
+            <h5>QuickBooks Sync</h5>
+        </div>
+        <div class="knbn-admin-tab" id="knbn-csv-update">
+            <h5>CSV Update</h5>
+        </div>
 
         <!-- <div>
             <h3>CSV Update</h3>
