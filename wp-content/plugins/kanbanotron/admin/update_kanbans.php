@@ -85,7 +85,7 @@
         align-content: center;
         width: 100%;
         min-width: 215px;
-        max-width: 350px;
+        max-width: 315px;
     }
 </style>
 
