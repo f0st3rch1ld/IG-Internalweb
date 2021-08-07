@@ -105,7 +105,7 @@
     }
 
     .knbn-admin-tab:hover,
-    .knbn-admin-tab .active {
+    .knbn-admin-tab.active {
         border-color: #2271b1;
         background-color: #2271b1;
         color: #fff;
