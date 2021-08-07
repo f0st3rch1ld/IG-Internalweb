@@ -69,6 +69,10 @@
     form {
         margin: 20px;
     }
+
+    label {
+        margin: 5px;
+    }
 </style>
 
 <div class="update-kanbans-app-container">
@@ -78,7 +82,7 @@
             <hr />
         </div>
 
-        <div>
+        <!-- <div>
             <h3>CSV Update</h3>
             <p>
                 Use the CSV updater when you want to update both kanbanotron, and quickbooks with new kanbans. It will read your .csv, importing it into both the kanbanotron database, as well as the quickbooks database, creating new records, or updating ones that already exist.
@@ -120,15 +124,17 @@
             <p><strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong></p>
 
             <form method="post" action="options.php" enctype="multipart/form-data">
-                <?php settings_fields('kanbanotron_settings_group'); ?>
-                <?php do_settings_sections('kanbanotron_settings_group'); ?>
+                <?php //settings_fields('kanbanotron_settings_group'); 
+                ?>
+                <?php //do_settings_sections('kanbanotron_settings_group'); 
+                ?>
                 Upload your .csv
                 <input type="file" name="csv" />
                 <input type="submit" value="import kanbans" />
             </form>
-        </div>
+        </div> 
 
-        <hr />
+        <hr /> -->
 
         <div>
             <h3>QuickBooks Sync</h3>
@@ -155,6 +161,10 @@
         </div>
 
         <div id="sync-databases">
+            <button>Sync Databases</button>
+        </div>
+
+        <div id="auto-sync-databases">
             <button>Sync Databases</button>
         </div>
 
