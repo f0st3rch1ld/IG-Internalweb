@@ -119,7 +119,7 @@
 <div class="update-kanbans-app-container">
     <div class="inner-container">
         <div>
-            <h1>Kanbanotron - Update Kanbans</h1>
+            <h1 style="color:#2271b1;">Kanbanotron - Update Kanbans</h1>
         </div>
 
         <hr style="margin:0px" />
