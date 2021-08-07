@@ -74,8 +74,8 @@
     }
 
     .mku-form-container {
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
     }
 
     .mku-form-container label {
