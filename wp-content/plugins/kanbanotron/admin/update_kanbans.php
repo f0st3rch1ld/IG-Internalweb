@@ -124,8 +124,10 @@
 
         <hr style="margin:0px" />
 
+        
+
         <div style="flex-direction:row; flex-wrap:wrap; justify-content:flex-start; margin:0px">
-            <div class="knbn-admin-tab" id="knbn-auto-sync">
+            <div class="knbn-admin-tab active" id="knbn-auto-sync">
                 <h4>QuickBooks Sync</h4>
             </div>
             <div class="knbn-admin-tab" id="knbn-csv-update">
@@ -287,6 +289,8 @@
         </div>
     </div>
 </div>
+
+<script src="js/knbn_admin.js"></script>
 
 <?php
 
