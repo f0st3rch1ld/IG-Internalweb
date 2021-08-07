@@ -150,7 +150,6 @@
                 <input type="radio" name="sync-type" value="Automatic Sync" />
                 Automatic Sync
             </label>
-
         </div>
 
         <div>
@@ -169,6 +168,16 @@
         </div>
 
         <hr />
+
+        <div>
+            <select>
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+            </select>
+        </div>
 
     </div>
 </div>
