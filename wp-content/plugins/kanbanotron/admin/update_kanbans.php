@@ -89,6 +89,9 @@
     }
 
     .knbn-admin-tab {
+        display:flex;
+        justify-content:center;
+        align-items:center;
         height: 50px;
         padding: 10px;
         font-weight: bold;
@@ -96,6 +99,10 @@
         border-color: lightgrey;
         border-width: 0px 1px 1px 1px;
         border-radius: 0px 0px 5px 5px;
+    }
+
+    .knbn-admin-tab h4 {
+        margin:none;
     }
 </style>
 
@@ -108,10 +115,10 @@
         <hr />
 
         <div class="knbn-admin-tab" id="knbn-auto-sync">
-            <h5>QuickBooks Sync</h5>
+            <h4>QuickBooks Sync</h4>
         </div>
         <div class="knbn-admin-tab" id="knbn-csv-update">
-            <h5>CSV Update</h5>
+            <h4>CSV Update</h4>
         </div>
 
         <!-- <div>
