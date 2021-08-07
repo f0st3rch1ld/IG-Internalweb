@@ -78,9 +78,10 @@
 <div class="update-kanbans-app-container">
     <div class="inner-container">
         <div>
-            <h1>Kanbanotron - Update Kanbans</h1><br />
-            <hr />
+            <h1>Kanbanotron - Update Kanbans</h1>
         </div>
+
+        <hr />
 
         <!-- <div>
             <h3>CSV Update</h3>
@@ -170,6 +171,11 @@
         <hr />
 
         <div>
+            <h3>Manual Kanban Update</h3>
+            <p>If you need to manually update a kanbans info, or add a new kanban, you can do so here. This will pull a list of all the </p>
+        </div>
+
+        <div>        
             <select>
                 <option>Option 1</option>
                 <option>Option 2</option>
