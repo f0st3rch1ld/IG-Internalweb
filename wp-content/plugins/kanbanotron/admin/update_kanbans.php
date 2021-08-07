@@ -73,12 +73,17 @@
         margin: 5px;
     }
 
-    #mku-form-container label{
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-content:center;
+    #mku-form-container label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        min-width: 215px;
+        max-width: 350px;
     }
+
+    #mku-form-container labe
 </style>
 
 <div class="update-kanbans-app-container">
