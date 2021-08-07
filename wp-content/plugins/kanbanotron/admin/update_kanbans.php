@@ -87,6 +87,16 @@
         min-width: 215px;
         max-width: 315px;
     }
+
+    .knbn-admin-tab {
+        height: 50px;
+        padding: 10px;
+        font-weight: bold;
+        border-style: solid;
+        border-color: lightgrey;
+        border-width: 0px 1px 1px 1px;
+        border-radius: 0px 0px 5px 5px;
+    }
 </style>
 
 <div class="update-kanbans-app-container">
@@ -96,6 +106,9 @@
         </div>
 
         <hr />
+
+        <div class="knbn-admin-tab"></div>
+        <div class="knbn-admin-tab"></div>
 
         <!-- <div>
             <h3>CSV Update</h3>
@@ -202,7 +215,7 @@
                     </optgroup>
 
                     <!-- Generated Kanbans List -->
-                    <optgroup>
+                    <optgroup label="Currently Available Kanbans">
                         <option>Option 1</option>
                         <option>Option 2</option>
                         <option>Option 3</option>
