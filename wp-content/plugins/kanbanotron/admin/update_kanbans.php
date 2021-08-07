@@ -60,7 +60,7 @@
         </div>
         <!-- /qb sync container -->
 
-        <?php if (wp_is_mobile()) : ?>
+        <?php if (!wp_is_mobile()) : ?>
             <!-- csv update container -->
             <div class="knbn-admin-container" id="knbn-csv-update-container" style="display:none">
                 <h3>CSV Update</h3>
