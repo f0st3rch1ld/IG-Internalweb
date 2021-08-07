@@ -92,7 +92,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 50px;
+        height: 20px !important;
         width: auto !important;
         padding: 10px;
         font-weight: bold;
@@ -100,6 +100,13 @@
         border-color: lightgrey;
         border-width: 0px 1px 1px 1px;
         border-radius: 0px 0px 5px 5px;
+        cursor: pointer;
+    }
+
+    .knbn-admin-tab:hover,
+    .knbn-admin-tab .active {
+        background-color: #2271b1;
+        color: #fff;
     }
 
     .knbn-admin-tab h4 {
@@ -115,7 +122,7 @@
 
         <hr />
 
-        <div style="flex-direction:row; flex-wrap:wrap">
+        <div style="flex-direction:row; flex-wrap:wrap;">
             <div class="knbn-admin-tab" id="knbn-auto-sync">
                 <h4>QuickBooks Sync</h4>
             </div>
