@@ -98,9 +98,10 @@
         font-weight: bold;
         border-style: solid;
         border-color: lightgrey;
-        border-width: 0px 1px 1px 1px;
+        border-width: 0px 2px 2px 2px;
         border-radius: 0px 0px 5px 5px;
         cursor: pointer;
+        margin: 3px !important;
     }
 
     .knbn-admin-tab:hover,
