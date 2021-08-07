@@ -9,7 +9,7 @@ if (array_key_exists('xhttp', $_REQUEST)) {
     include '../../db/knbn_wp_connection.php';
     include '../../db/request.php';
 
-    $wp_knbn_pid = $REQUEST_['wpknbnpid'];
+    $wp_knbn_pid = $_GET['wpknbnpid'];
     $update = TRUE;
 
     echo $wp_knbn_pid;
