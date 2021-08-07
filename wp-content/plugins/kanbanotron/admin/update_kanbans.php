@@ -165,9 +165,12 @@
 
                             asort($wp_knbn_post_list);
 
-                            foreach($wp_knbn_post_list as $key => $value) : ?>
-                                <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
-                            <?php endforeach; ?>
+                            for ($i = 0; count($wp_knbn_post_list) > $i; $i++) {
+                                foreach ($wp_knbn_post_list as $key => $value) : ?>
+                                    <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                <?php 
+                                endforeach;
+                            } ?>
                         </optgroup>
 
                     </select>
