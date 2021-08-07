@@ -126,9 +126,9 @@
             </div>
 
             <div class="mku-form-container">
-                <label id="kanban-selection-label">
+                <label style="width:100%; max-width:none;">
                     Select a kanban to edit - Or add a new kanban
-                    <select id="kanban-selection">
+                    <select id="kanban-selection" style="width:100%; max-width:none;">
                         <!-- Default Option -->
                         <option value selected></option>
 
