@@ -213,8 +213,6 @@
             </label>
         </div>
 
-        <hr />
-
         <div class="mku-form-container">
             <label>Vendor
                 <input type="text" name="vendor" id="vendor" placeholder="Vendor" />
