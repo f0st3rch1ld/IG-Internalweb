@@ -2,7 +2,7 @@
 
 $wp_knbn_pid;
 $knbn_uid;
-$update;
+$update = FALSE;
 
 if (array_key_exists('xhttp', $_REQUEST)) {
     // includes
