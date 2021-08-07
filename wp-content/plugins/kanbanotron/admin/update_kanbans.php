@@ -24,7 +24,7 @@
         </div>
 
         <!-- qb sync container -->
-        <div class="knbn-admin-container" id="knbn-qb-sync-container" style="display:flex;">
+        <div class="knbn-admin-container" id="knbn-auto-sync-container" style="display:flex;">
             <div>
                 <h3>QuickBooks Sync</h3>
                 <p>Use the QuickBooks Sync if you would like to sync/update kanbans inside the database with new information straight to and from QuickBooks. Kanbans generated using the Kanbanotron will be sent directly to the QB database, and any records changed inside QuickBooks will be updated inside the Kanbanotron database.</p>
