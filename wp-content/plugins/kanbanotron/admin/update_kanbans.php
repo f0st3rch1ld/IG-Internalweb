@@ -193,14 +193,27 @@
             <label>
                 Select a kanban to edit - Or add a new kanban
                 <select id="kanban-selection">
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                    <option>Option 3</option>
-                    <option>Option 4</option>
-                    <option>Option 5</option>
+                    <!-- Default Option -->
+                    <option value selected></option>
+
+                    <!-- Add New Option -->
+                    <optgroup label="Can't find your kanban? Add a new kanban.">
+                        <option value="add-new-knbn">Add a New Kanban</option>
+                    </optgroup>
+
+                    <!-- Generated Kanbans List -->
+                    <optgroup>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                    </optgroup>
+
                 </select>
             </label>
         </div>
+
+        <hr />
 
         <div class="mku-form-container">
             <label>Vendor
