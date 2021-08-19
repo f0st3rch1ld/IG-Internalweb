@@ -2,16 +2,9 @@
 
 // CSV Update Page
 
+get_header();
+
 ?>
-
-<!doctype html>
-<html>
-
-<head>
-    <?php wp_head(); ?>
-</head>
-
-<body>
 
 <div class="update-kanbans-app-container">
     <div class="inner-container">
@@ -180,8 +173,4 @@
     </div>
 </div>
 
-<?php wp_footer(); ?>
-
-</body>
-
-</html>
+<?php get_footer(); ?>
