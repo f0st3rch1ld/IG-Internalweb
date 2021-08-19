@@ -67,13 +67,6 @@
         add_action('admin_init', 'register_kanbanotron_settings');
     }
 
-    function register_kanbanotron_settings()
-    {
-        //register our settings
-        register_setting('kanbanotron_settings_group', 'upload-csv');
-        register_setting("kanbanotron_settings_group", "csv", "handle_csv_upload");
-    }
-
     function kanbanotron_import_kanbans_page()
     {
         include 'admin/update_kanbans.php';
@@ -84,49 +77,13 @@
         include 'admin/components/csv_update.php';
     }
 
-    function handle_csv_upload($option)
+    add_filter('mime_types', 'wpse_mime_types');
+    function wpse_mime_types($existing_mimes)
     {
-        if (!empty($_FILES["csv"]["tmp_name"])) {
-            $urls = wp_handle_upload($_FILES["csv"], array('test_form' => FALSE));
-            $temp = $urls["url"];
-            return $temp;
-        }
+        // Add csv to the list of allowed mime types
+        $existing_mimes['csv'] = 'text/csv';
 
-        return $option;
-    }
-
-    //* Register activation and deactivation hooks
-    register_activation_hook(__FILE__, 'wpse_258192_activation');
-    register_deactivation_hook(__FILE__, 'wpse_258192_deactivation');
-
-    //* Add upload_csv capability to administrator role
-    function wpse_258192_activation()
-    {
-        $admin = get_role('administrator');
-        $admin->add_cap('upload_csv');
-    }
-
-    //* Remove upload_csv capability from administrator role
-    function wpse_258192_deactivation()
-    {
-        $admin = get_role('administrator');
-        $admin->remove_cap('upload_csv');
-    }
-
-    //* Add filter to check filetype and extension
-    add_filter('wp_check_filetype_and_ext', 'wpse_258192_check_filetype_and_ext', 10, 4);
-
-    //* If the current user can upload_csv and the file extension is csv, override arguments - edit - "$pathinfo" changed to "pathinfo"
-    function wpse_258192_check_filetype_and_ext($args, $file, $filename, $mimes)
-    {
-        if (current_user_can('upload_csv') && 'csv' === pathinfo($filename)['extension']) {
-            $args = array(
-                'ext'             => 'csv',
-                'type'            => 'text/csv',
-                'proper_filename' => $filename,
-            );
-        }
-        return $args;
+        return $existing_mimes;
     }
 
     /**
