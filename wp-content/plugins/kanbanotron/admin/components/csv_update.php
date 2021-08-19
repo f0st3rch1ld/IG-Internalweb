@@ -10,24 +10,8 @@
             <h4>CSV Update</h4>
 
             <?php
-            // Upload File to Server
-            $target_dir = WP_CONTENT_DIR . "/uploads";
-            $target_file = $target_dir . basename($_FILES["userfile"]["name"]);
-            $upload_ok = 1;
 
-            // Check if $upload_ok is set to 0 by an error
-            if ($upload_ok == 0) {
-                echo "Sorry, your file was not uploaded.";
-                // if everything is ok, try to upload file
-            } else {
-                if (move_uploaded_file($_FILES["userfile"]["tmp_name"], $target_file)) {
-                    echo "The file " . htmlspecialchars(basename($_FILES["userfile"]["name"])) . " has been uploaded.";
-                } else {
-                    echo "Sorry, there was an error uploading your file.";
-                }
-            }
-
-            $csv_loc =  WP_CONTENT_DIR . '/uploads/' . htmlspecialchars(basename($_FILES["userfile"]["name"]));
+            $csv_loc =  WP_CONTENT_DIR . '/uploads' . htmlspecialchars(basename($_FILES["userfile"]["name"]));
 
             if (file_exists($csv_loc)) {
                 echo 'File Uploaded<br /><p>-----------------------------------<p><br />';
