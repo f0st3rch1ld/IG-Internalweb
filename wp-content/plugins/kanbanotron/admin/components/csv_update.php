@@ -39,7 +39,7 @@
 
                 fclose($file);
 
-                include plugin_dir_path(__FILE__) . '../db/knbn_wp_connection.php';
+                include plugin_dir_path(__FILE__) . '../../db/knbn_wp_connection.php';
 
                 for ($i = 0; count($all_data) > $i; $i++) {
 
