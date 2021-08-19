@@ -2,8 +2,8 @@
 
 // CSV Update Page
 
-require_once($_SERVER['DOCUMENT_ROOT'] . 'wp-admin/includes/file.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . 'wp-admin/includes/media.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-admin/includes/file.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-admin/includes/media.php');
 
 $attachment_id = media_handle_upload('csv_file', 0, array(), array(
     'test_form' => false,
