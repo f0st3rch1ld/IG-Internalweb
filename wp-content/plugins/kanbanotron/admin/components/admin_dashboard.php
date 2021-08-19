@@ -142,7 +142,7 @@
                 <optgroup label="Currently Available Kanbans">
                     <?php
                     // Connection to Wordpress Database
-                    include plugin_dir_path(__FILE__) . '../db/knbn_wp_connection.php';
+                    include plugin_dir_path(__FILE__) . '../../db/knbn_wp_connection.php';
 
                     $wp_knbn_post_list = array();
 
