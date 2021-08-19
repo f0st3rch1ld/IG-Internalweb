@@ -50,6 +50,7 @@
     // create custom plugin settings menu
     add_action('admin_menu', 'kanbanotron_create_menu');
 
+    // Hides csv_update page from backend of wordpress
     add_action('admin_head', function() {
         remove_submenu_page('edit.php?post_type=knbn_action', 'csv_update');
     });

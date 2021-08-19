@@ -109,7 +109,7 @@
                     <?php do_settings_sections('kanbanotron_settings_group');
                     ?>
                     Upload your .csv
-                    <input type="file" name="csv" />
+                    <input type="file" name="csv" required/>
                     <input type="submit" value="import kanbans" />
                 </form>
             </div>
