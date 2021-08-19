@@ -67,13 +67,6 @@
         add_action('admin_init', 'register_kanbanotron_settings');
     }
 
-    function register_kanbanotron_settings()
-    {
-        //register our settings
-        register_setting('kanbanotron_settings_group', 'upload-csv');
-        register_setting("kanbanotron_settings_group", "csv", "handle_csv_upload");
-    }
-
     function kanbanotron_import_kanbans_page()
     {
         include 'admin/update_kanbans.php';
@@ -81,18 +74,6 @@
 
     function kanbanotron_import_csv_update_page() {
         include 'admin/components/csv_update.php';
-    }
-
-
-    function handle_csv_upload($option)
-    {
-        if (!empty($_FILES["csv"]["tmp_name"])) {
-            $urls = wp_handle_upload($_FILES["csv"], array('test_form' => FALSE));
-            $temp = $urls["url"];
-            return $temp;
-        }
-
-        return $option;
     }
 
     /**
