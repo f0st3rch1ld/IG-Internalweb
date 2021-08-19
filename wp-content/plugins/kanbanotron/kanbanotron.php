@@ -50,10 +50,17 @@
     // create custom plugin settings menu
     add_action('admin_menu', 'kanbanotron_create_menu');
 
+    add_action('admin_head', function() {
+        remove_submenu_page('index.php', 'csv_update');
+    });
+
     function kanbanotron_create_menu()
     {
         //create new sub menu
         add_submenu_page('edit.php?post_type=knbn_action', 'Update Kanbans', 'Update Kanbans', 'administrator', 'update_kanbans', 'kanbanotron_import_kanbans_page');
+
+        //create new sub menu that will be hidden for updating csv's
+        add_submenu_page('edit.php?post_type=knbn_action', 'csv_update', 'csv_update', 'administrator', 'csv_update', 'kanbanotron_import_csv_update_page');
 
         //call register settings function
         add_action('admin_init', 'register_kanbanotron_settings');
@@ -69,6 +76,10 @@
     function kanbanotron_import_kanbans_page()
     {
         include 'admin/update_kanbans.php';
+    }
+
+    function kanbanotron_import_csv_update_page() {
+        include 'admin/components/csv_update.php';
     }
 
 
