@@ -12,7 +12,7 @@ $attachment_id = media_handle_upload('csv_file', 0, array(), array(
     ),
 ));
 
-$csv_loc =  'uploads/' . htmlspecialchars(basename($_FILES["csv_file"]["name"]));
+$csv_loc =  WP_CONTENT_DIR . '/uploads/' . htmlspecialchars(basename($_FILES["csv_file"]["name"]));
 echo $_FILES['csv_file']['error'];
 echo $csv_loc;
 
