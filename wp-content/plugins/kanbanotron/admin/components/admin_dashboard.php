@@ -180,7 +180,7 @@
     </div>
 
     <div class="mku-form-container" id="mku-form-fields">
-        <?php include plugin_dir_path(__FILE__) . '../admin/components/load_mku_form_fields.php'; ?>
+        <?php include plugin_dir_path(__FILE__) . '../../admin/components/load_mku_form_fields.php'; ?>
     </div>
 
     <div id="sync-databases">
