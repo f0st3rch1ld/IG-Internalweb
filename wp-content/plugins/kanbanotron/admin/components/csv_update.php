@@ -161,6 +161,8 @@
                 } else {
                     echo 'There has been an error with the upload, please try again later.<br />';
                 }
+            } else {
+                echo 'There was no kanban-upload.csv found on the server.';
             }
 
             ?>

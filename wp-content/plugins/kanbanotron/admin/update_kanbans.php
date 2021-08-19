@@ -83,6 +83,7 @@
                             <th>freight_policy</th>
                             <th>package_qty</th>
                             <th>lead_time</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
