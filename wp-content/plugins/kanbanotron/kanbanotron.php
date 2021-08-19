@@ -51,7 +51,7 @@
     add_action('admin_menu', 'kanbanotron_create_menu');
 
     add_action('admin_head', function() {
-        remove_submenu_page('index.php', 'csv_update');
+        remove_submenu_page('edit.php?post_type=knbn_action', 'csv_update');
     });
 
     function kanbanotron_create_menu()

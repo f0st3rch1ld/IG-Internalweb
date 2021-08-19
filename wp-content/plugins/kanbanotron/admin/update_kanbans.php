@@ -103,7 +103,7 @@
 
                 <p><strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong></p>
 
-                <form method="post" action="/wp-content/plugins/kanbanotron/admin/components/csv_update.php" enctype="multipart/form-data">
+                <form method="post" action="/wp-admin/edit.php?post_type=knbn_action&page=csv_update" enctype="multipart/form-data">
                     <?php settings_fields('kanbanotron_settings_group');
                     ?>
                     <?php do_settings_sections('kanbanotron_settings_group');
