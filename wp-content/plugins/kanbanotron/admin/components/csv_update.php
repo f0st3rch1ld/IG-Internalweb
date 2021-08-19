@@ -179,9 +179,9 @@ if (file_exists($csv_loc)) {
                 }
             } else {
                 if ($knbn_post_id != 0) {
-                    echo $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . ": Kanban successfully updated!<br />";
+                    echo $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully updated!<br />";
                 } else {
-                    echo $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . ": Kanban successfully added!<br />";
+                    echo $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully added!<br />";
                 }
             }
         }
