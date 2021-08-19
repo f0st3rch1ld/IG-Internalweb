@@ -67,10 +67,11 @@ if (file_exists($csv_loc)) {
         if ($i != 0) {
 
             // cross referencing existing posts to check and see if one already exists using either the part number or vendor part number so we don't make any extra posts we don't need.
-            $knbn_vendor_part_number_query = "SELECT post_id, FROM wp_postmeta WHERE meta_value='" . $all_data[$i]['man_part_number'] . "'";
-            $knbn_vendor_part_number_result = $conn->query($knbn_vendor_part_number_query);
-
             $knbn_post_id = 0;
+
+            $knbn_vendor_part_number_query = "SELECT post_id FROM wp_postmeta WHERE meta_value='" . $all_data[$i]['man_part_number'] . "'";
+            
+            $knbn_vendor_part_number_result = $conn->query($knbn_vendor_part_number_query);
 
             if ($knbn_vendor_part_number_result->num_rows > 0) {
                 while ($row = $knbn_vendor_part_number_result->fetch_assoc()) {
