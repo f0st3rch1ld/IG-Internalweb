@@ -12,9 +12,9 @@
         </div>
 
         <?php if (array_key_exists('csv', $_GET)) {
-            include WP_CONTENT_DIR . '/components/csv_update.php';
+            include WP_CONTENT_DIR . 'plugins/kanbanotron/admin/components/csv_update.php';
         } else {
-            include WP_CONTENT_DIR . '/components/admin_dashboard.php';
+            include WP_CONTENT_DIR . 'plugins/kanbanotron/admin/components/admin_dashboard.php';
         }
         ?>
     </div>
