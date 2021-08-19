@@ -3,7 +3,7 @@
 // CSV Update Page
 
 $csv_loc =  'uploads/' . htmlspecialchars(basename($_FILES["csv_file"]["name"]));
-echo $_FILES['csv']['error'];
+echo $_FILES['csv_file']['error'];
 echo $csv_loc;
 
 if (file_exists($csv_loc)) {
