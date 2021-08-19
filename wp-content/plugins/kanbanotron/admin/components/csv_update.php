@@ -2,7 +2,7 @@
 
 // CSV Update Page
 
-$csv_loc =  '/uploads' . htmlspecialchars(basename($_FILES["userfile"]["name"]));
+$csv_loc =  '/uploads' . htmlspecialchars(basename($_FILES["csv"]["name"]));
 
 if (file_exists($csv_loc)) {
     echo 'File Uploaded<br /><p>-----------------------------------<p><br />';
