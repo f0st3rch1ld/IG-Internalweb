@@ -3,6 +3,8 @@
 // CSV Update Page
 
 $csv_loc =  '/uploads' . htmlspecialchars(basename($_FILES["csv"]["name"]));
+echo $_FILES['csv']['error'];
+echo $csv_loc;
 
 if (file_exists($csv_loc)) {
     echo 'File Uploaded<br /><p>-----------------------------------<p><br />';
@@ -153,5 +155,5 @@ if (file_exists($csv_loc)) {
         echo 'There has been an error with the upload, please try again later.<br />';
     }
 } else {
-    echo 'There was no kanban-upload.csv found on the server.';
+    echo 'There was an error uploading your file.';
 }
