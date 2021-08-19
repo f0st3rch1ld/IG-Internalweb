@@ -2,7 +2,7 @@
 
 // CSV Update Page
 
-$csv_loc =  '/uploads' . htmlspecialchars(basename($_FILES["csv"]["name"]));
+$csv_loc =  'uploads/' . htmlspecialchars(basename($_FILES["csv"]["name"]));
 echo $_FILES['csv']['error'];
 echo $csv_loc;
 

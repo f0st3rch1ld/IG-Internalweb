@@ -51,7 +51,7 @@
     add_action('admin_menu', 'kanbanotron_create_menu');
 
     // Hides csv_update page from backend of wordpress
-    add_action('admin_head', function() {
+    add_action('admin_head', function () {
         remove_submenu_page('edit.php?post_type=knbn_action', 'csv_update');
     });
 
@@ -79,10 +79,10 @@
         include 'admin/update_kanbans.php';
     }
 
-    function kanbanotron_import_csv_update_page() {
+    function kanbanotron_import_csv_update_page()
+    {
         include 'admin/components/csv_update.php';
     }
-
 
     function handle_csv_upload($option)
     {
@@ -93,6 +93,40 @@
         }
 
         return $option;
+    }
+
+    //* Register activation and deactivation hooks
+    register_activation_hook(__FILE__, 'wpse_258192_activation');
+    register_deactivation_hook(__FILE__, 'wpse_258192_deactivation');
+
+    //* Add upload_csv capability to administrator role
+    function wpse_258192_activation()
+    {
+        $admin = get_role('administrator');
+        $admin->add_cap('upload_csv');
+    }
+
+    //* Remove upload_csv capability from administrator role
+    function wpse_258192_deactivation()
+    {
+        $admin = get_role('administrator');
+        $admin->remove_cap('upload_csv');
+    }
+
+    //* Add filter to check filetype and extension
+    add_filter('wp_check_filetype_and_ext', 'wpse_258192_check_filetype_and_ext', 10, 4);
+
+    //* If the current user can upload_csv and the file extension is csv, override arguments - edit - "$pathinfo" changed to "pathinfo"
+    function wpse_258192_check_filetype_and_ext($args, $file, $filename, $mimes)
+    {
+        if (current_user_can('upload_csv') && 'csv' === pathinfo($filename)['extension']) {
+            $args = array(
+                'ext'             => 'csv',
+                'type'            => 'text/csv',
+                'proper_filename' => $filename,
+            );
+        }
+        return $args;
     }
 
     /**
@@ -121,7 +155,6 @@
     function custom_scripts()
     {
         wp_enqueue_script('kanbanotron', plugin_dir_url(__FILE__) . 'js/kanbanotron.js', array('jquery'));
-
     }
 
     // Custom Admin Scripts
