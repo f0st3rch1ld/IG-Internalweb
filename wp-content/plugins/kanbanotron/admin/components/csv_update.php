@@ -4,6 +4,18 @@
 
 $knbn_uid;
 
+// Function for generating knbn_uid cannot be held inside of next for loop
+function generate_knbn_uid()
+{
+    global $knbn_uid;
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $generated_number = '';
+    for ($i = 0; $i < 20; $i++) {
+        $generated_number .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    $knbn_uid = $generated_number;
+}
+
 require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-admin/includes/file.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-admin/includes/media.php');
 
@@ -50,18 +62,9 @@ if (file_exists($csv_loc)) {
 
     include plugin_dir_path(__FILE__) . '../../db/knbn_wp_connection.php';
 
-    // Function for generating knbn_uid cannot be held inside of next for loop
-    function generate_knbn_uid() {
-        global $knbn_uid;
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $generated_number = '';
-        for ($i = 0; $i < 20; $i++) {
-            $generated_number .= $characters[rand(0, strlen($characters) - 1)];
-        }
-        $knbn_uid = $generated_number;
-    }
-
     for ($i = 0; count($all_data) > $i; $i++) {
+
+        global $knbn_uid;
 
         // skip first row
         if ($i != 0) {
@@ -70,7 +73,7 @@ if (file_exists($csv_loc)) {
             $knbn_post_id = 0;
 
             $knbn_vendor_part_number_query = "SELECT post_id FROM wp_postmeta WHERE meta_value='" . $all_data[$i]['man_part_number'] . "'";
-            
+
             $knbn_vendor_part_number_result = $conn->query($knbn_vendor_part_number_query);
 
             if ($knbn_vendor_part_number_result->num_rows > 0) {
@@ -192,7 +195,6 @@ if (file_exists($csv_loc)) {
     }
 
     $conn->close();
-
 } else {
     echo 'There was an error uploading your file.';
 }
