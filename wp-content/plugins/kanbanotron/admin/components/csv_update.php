@@ -157,7 +157,7 @@ if (file_exists($csv_loc)) {
                     'product_setup_knbn_uid' => $knbn_uid,
                     'kanban_information_location' => $all_data[$i]['location'],
                     'kanban_information_vendor' => $all_data[$i]['vendor'],
-                    'kanban_information_part_number_group_part_number' => $all_data[$i['part_number']],
+                    'kanban_information_part_number_group_part_number' => $all_data[$i]['part_number'],
                     'kanban_information_part_number_group_vendor_part_number' => $all_data[$i]['man_part_number'],
                     'kanban_information_description' => $all_data[$i]['description'],
                     'kanban_information_quantities_kanban_quantity' => $all_data[$i]['knbn_qty'],
