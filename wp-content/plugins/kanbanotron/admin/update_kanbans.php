@@ -104,11 +104,25 @@
 
                 <p><strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong></p>
 
-                <form method="post" action="/wp-content/plugins/kanbanotron/admin/components/csv_update.php" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data">
                     Upload your .csv
-                    <input type="file" name="csv" required />
+                    <input type="file" name="csv_file" id="csv_file" accept=".csv" required />
                     <input type="submit" value="import kanbans" />
                 </form>
+
+                <?php
+
+                require_once(ABSPATH . 'wp-admin/includes/file.php');
+                require_once(ABSPATH . 'wp-admin/includes/media.php');
+
+                $attachment_id = media_handle_upload('csv_file', 0, array(), array(
+                    'test_form' => false,
+                    'mimes'     => array(
+                        'csv'   => 'text/csv',
+                    ),
+                ));
+
+                ?>
             </div>
             <!-- /csv update container -->
         <?php endif; ?>
@@ -166,9 +180,9 @@
                             asort($wp_knbn_post_list);
 
                             for ($i = 0; count($wp_knbn_post_list) > $i; $i++) : ?>
-                                    <option value="<?php echo $wp_knbn_post_list[$i]['ID']; ?>"><?php echo $wp_knbn_post_list[$i]['post_title']; ?></option>
+                                <option value="<?php echo $wp_knbn_post_list[$i]['ID']; ?>"><?php echo $wp_knbn_post_list[$i]['post_title']; ?></option>
                             <?php endfor;
-                            
+
                             // closes connection to Wordpress Database
                             $conn->close();
                             ?>
