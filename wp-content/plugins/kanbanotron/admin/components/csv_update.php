@@ -40,7 +40,24 @@ if (file_exists($csv_loc)) {
 
     fclose($file);
 
+    if (unlink($csv_loc)) {
+        echo 'Kanbans succesfully uploaded<br />';
+    } else {
+        echo 'There has been an error with the upload, please try again later.<br />';
+    }
+
     include plugin_dir_path(__FILE__) . '../../db/knbn_wp_connection.php';
+
+    // Function for generating knbn_uid cannot be held inside of next for loop
+    function generate_knbn_uid() {
+        global $knbn_uid;
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $generated_number = '';
+        for ($i = 0; $i < 20; $i++) {
+            $generated_number .= $characters[rand(0, strlen($characters) - 1)];
+        }
+        $knbn_uid = $generated_number;
+    }
 
     for ($i = 0; count($all_data) > $i; $i++) {
 
@@ -61,16 +78,6 @@ if (file_exists($csv_loc)) {
 
             // Generates a new 20 char random alphanumeric Unique Kanban Identifier
             $knbn_uid;
-
-            function generate_knbn_uid() {
-                global $knbn_uid;
-                $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                $generated_number = '';
-                for ($i = 0; $i < 20; $i++) {
-                    $generated_number .= $characters[rand(0, strlen($characters) - 1)];
-                }
-                $knbn_uid = $generated_number;
-            }
 
             if ($knbn_post_id == 0) {
                 generate_knbn_uid();
@@ -185,11 +192,6 @@ if (file_exists($csv_loc)) {
 
     $conn->close();
 
-    if (unlink($csv_loc)) {
-        echo 'Kanbans succesfully uploaded<br />';
-    } else {
-        echo 'There has been an error with the upload, please try again later.<br />';
-    }
 } else {
     echo 'There was an error uploading your file.';
 }
