@@ -13,8 +13,6 @@ $attachment_id = media_handle_upload('csv_file', 0, array(), array(
 ));
 
 $csv_loc =  WP_CONTENT_DIR . '/uploads/' . htmlspecialchars(basename($_FILES["csv_file"]["name"]));
-echo $_FILES['csv_file']['error'];
-echo $csv_loc;
 
 if (file_exists($csv_loc)) {
     echo 'File Uploaded<br /><p>-----------------------------------<p><br />';
@@ -50,7 +48,7 @@ if (file_exists($csv_loc)) {
         if ($i != 0) {
 
             // cross referencing existing posts to check and see if one already exists using either the part number or vendor part number so we don't make any extra posts we don't need.
-            $knbn_vendor_part_number_query = "SELECT post_id FROM wp_postmeta WHERE meta_value='" . $all_data[$i]['man_part_number'] . "'";
+            $knbn_vendor_part_number_query = "SELECT post_id, FROM wp_postmeta WHERE meta_value='" . $all_data[$i]['man_part_number'] . "'";
             $knbn_vendor_part_number_result = $conn->query($knbn_vendor_part_number_query);
 
             $knbn_post_id = 0;
@@ -58,6 +56,33 @@ if (file_exists($csv_loc)) {
             if ($knbn_vendor_part_number_result->num_rows > 0) {
                 while ($row = $knbn_vendor_part_number_result->fetch_assoc()) {
                     $knbn_post_id = $row['post_id'];
+                }
+            }
+
+            // Generates a new 20 char random alphanumeric Unique Kanban Identifier
+            $knbn_uid;
+
+            function generate_knbn_uid() {
+                global $knbn_uid;
+                $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $generated_number = '';
+                for ($i = 0; $i < 20; $i++) {
+                    $generated_number .= $characters[rand(0, strlen($characters) - 1)];
+                }
+                $knbn_uid = $generated_number;
+            }
+
+            if ($knbn_post_id == 0) {
+                generate_knbn_uid();
+            } else {
+                $knbn_uid_query = "SELECT meta_value FROM wp_postmeta WHERE post_id='" . $knbn_post_id . "' AND meta_key='product_setup_knbn_uid'";
+                $knbn_uid_query_result = $conn->query($knbn_uid_query);
+                if ($knbn_uid_query_result->num_rows > 0) {
+                    while ($row = $knbn_uid_query_result->fetch_assoc()) {
+                        $knbn_uid = $row['meta_value'];
+                    }
+                } else {
+                    generate_knbn_uid();
                 }
             }
 
@@ -121,6 +146,7 @@ if (file_exists($csv_loc)) {
                 'meta_input' => array(
                     'product_setup_product_type' => $product_type_determination,
                     'product_setup_order_method' => $order_method_determination,
+                    'product_setup_knbn_uid' => $knbn_uid,
                     'kanban_information_location' => $all_data[$i]['location'],
                     'kanban_information_vendor' => $all_data[$i]['vendor'],
                     'kanban_information_part_number_group_part_number' => $all_data[$i['part_number']],
