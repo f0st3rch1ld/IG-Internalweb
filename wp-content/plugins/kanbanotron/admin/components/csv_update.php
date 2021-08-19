@@ -4,6 +4,15 @@
 
 ?>
 
+<!doctype html>
+<html>
+
+<head>
+    <?php wp_head(); ?>
+</head>
+
+<body>
+
 <div class="update-kanbans-app-container">
     <div class="inner-container">
         <div>
@@ -11,7 +20,7 @@
 
             <?php
 
-            $csv_loc =  WP_CONTENT_DIR . '/uploads' . htmlspecialchars(basename($_FILES["userfile"]["name"]));
+            $csv_loc =  '/uploads' . htmlspecialchars(basename($_FILES["userfile"]["name"]));
 
             if (file_exists($csv_loc)) {
                 echo 'File Uploaded<br /><p>-----------------------------------<p><br />';
@@ -170,3 +179,9 @@
         </div>
     </div>
 </div>
+
+<?php wp_footer(); ?>
+
+</body>
+
+</html>
