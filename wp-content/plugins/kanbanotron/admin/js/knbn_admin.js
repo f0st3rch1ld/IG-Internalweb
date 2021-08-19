@@ -40,6 +40,7 @@ let upManKnbnFields = (x) => {
 
 document.getElementById('kanban-selection').addEventListener('change', function() {
     if (this.value != 'add-new-knbn') {
+        
         upManKnbnFields(this.value);
     }
 });

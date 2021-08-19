@@ -102,6 +102,7 @@ function show_extra_profile_fields($user)
                     "machine-shop",
                     "marketing",
                     "maintenance",
+                    "night-shift",
                     "powder-coating",
                     "press-brake",
                     "production",

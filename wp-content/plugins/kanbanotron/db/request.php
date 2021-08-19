@@ -16,7 +16,6 @@ $knbn_notes;
 
 function knbn_info_request($passed_knbn_uid)
 {
-
     // Global variables that we will set later
     global $knbn_external_yn;
     global $knbn_order_method;
