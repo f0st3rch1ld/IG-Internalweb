@@ -179,16 +179,9 @@ if (file_exists($csv_loc)) {
                 }
             } else {
                 if ($knbn_post_id != 0) {
-                    echo "Kanban successfully updated!<br />";
+                    echo $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . ": Kanban successfully updated!<br />";
                 } else {
-                    echo "Kanban successfully added!<br />";
-                }
-
-                foreach ($all_data[$i] as $key => $value) {
-                    echo $key . " : " . $value . "<br />";
-                    if ($key == 'lead_time') {
-                        echo "<p>-----------------------------------<p><br />";
-                    }
+                    echo $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . ": Kanban successfully added!<br />";
                 }
             }
         }
