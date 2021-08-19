@@ -62,9 +62,6 @@
 
         //create new sub menu that will be hidden for updating csv's
         add_submenu_page('edit.php?post_type=knbn_action', 'csv_update', 'csv_update', 'administrator', 'csv_update', 'kanbanotron_import_csv_update_page');
-
-        //call register settings function
-        add_action('admin_init', 'register_kanbanotron_settings');
     }
 
     function kanbanotron_import_kanbans_page()
