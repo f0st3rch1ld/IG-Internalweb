@@ -92,7 +92,7 @@
 
         <p><strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong></p>
 
-        <form method="post" action="/?csv=1" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
             Upload your .csv
             <input type="file" name="csv_file" id="csv_file" accept=".csv" required />
             <input type="submit" value="import kanbans" />
