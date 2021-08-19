@@ -2,6 +2,8 @@
 
 // CSV Update Page
 
+$knbn_uid;
+
 require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-admin/includes/file.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-admin/includes/media.php');
 
@@ -77,8 +79,6 @@ if (file_exists($csv_loc)) {
             }
 
             // Generates a new 20 char random alphanumeric Unique Kanban Identifier
-            $knbn_uid;
-
             if ($knbn_post_id == 0) {
                 generate_knbn_uid();
             } else {
