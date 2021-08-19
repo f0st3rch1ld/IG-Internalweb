@@ -109,20 +109,6 @@
                     <input type="file" name="csv_file" id="csv_file" accept=".csv" required />
                     <input type="submit" value="import kanbans" />
                 </form>
-
-                <?php
-
-                require_once(ABSPATH . 'wp-admin/includes/file.php');
-                require_once(ABSPATH . 'wp-admin/includes/media.php');
-
-                $attachment_id = media_handle_upload('csv_file', 0, array(), array(
-                    'test_form' => false,
-                    'mimes'     => array(
-                        'csv'   => 'text/csv',
-                    ),
-                ));
-
-                ?>
             </div>
             <!-- /csv update container -->
         <?php endif; ?>
