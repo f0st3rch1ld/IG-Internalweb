@@ -6,6 +6,8 @@
      <option value="3 x 5">3" x 5"</option>
      <option value="2.3 x 3.35">2.3" x 3.35"</option>
      <option value="1.5 x 1.25">1.5" x 1.25"</option>
+     <option value="1 x 2.5">1" x 2.5" (Small Black Bins Only)</option>
+     <option value=".75 x 3.25">.75" x 3.25" (IWS Only)</option>
  </select>
 
  <!-- Blue Kanban Labels -->

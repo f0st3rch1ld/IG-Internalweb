@@ -90,8 +90,6 @@
             </tbody>
         </table>
 
-        <p><strong>In order to upload, your file must be a .csv, and it must be named "kanban-upload.csv"</strong></p>
-
         <form method="post" enctype="multipart/form-data">
             Upload your .csv
             <input type="file" name="csv_file" id="csv_file" accept=".csv" required />

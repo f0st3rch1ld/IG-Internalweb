@@ -133,7 +133,7 @@ if (file_exists($csv_loc)) {
             // Reorder Quantity Determination
             $reorder_qty_determination = NULL;
 
-            if ($all_data[$i]['knbn_qty'] && $all_data[$i]) {
+            if ($all_data[$i]['knbn_qty']) {
                 $exploded_knbn_qty = explode('/', $all_data[$i]['knbn_qty']);
                 $reorder_qty_determination = $exploded_knbn_qty[0];
             }
