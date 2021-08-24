@@ -173,7 +173,7 @@ if (file_exists($csv_loc)) {
 
             $post_id = wp_insert_post($my_post, true);
 
-            echo '<div style="align-items:flex-start;">';
+            echo '<div style="align-items:flex-start; margin:0px 20px;">';
 
             if (is_wp_error($post_id)) {
                 $errors = $post_id->get_error_messages();
@@ -182,9 +182,9 @@ if (file_exists($csv_loc)) {
                 }
             } else {
                 if ($knbn_post_id != 0) {
-                    echo $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully updated!<br />";
+                    echo $i . '. ' . $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully updated!<br />";
                 } else {
-                    echo $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully added!<br />";
+                    echo $i . '. ' . $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully added!<br />";
                 }
             }
 
