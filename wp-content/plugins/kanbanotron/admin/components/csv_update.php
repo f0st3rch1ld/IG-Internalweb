@@ -170,9 +170,9 @@ if (file_exists($csv_loc)) {
                 )
             );
 
-            $post_id = wp_insert_post($my_post, true);
+            $post_id = wp_insert_post($my_post, true, false);
 
-            echo '<div>';
+            echo '<div style="text-align:left;">';
 
             if (is_wp_error($post_id)) {
                 $errors = $post_id->get_error_messages();
