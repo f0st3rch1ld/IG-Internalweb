@@ -176,18 +176,20 @@ if (file_exists($csv_loc)) {
             echo '<div style="align-items:flex-start; margin:0px 20px;">';
 
             if (is_wp_error($post_id)) {
-                echo '<p style="color:red;">';
+                echo '<p style="color:red; margin:0px;">';
                 $errors = $post_id->get_error_messages();
                 foreach ($errors as $error) {
                     echo "- " . $error . "<br />";
                 }
                 echo '</p>';
             } else {
+                echo '<p style="color:green; margin:0px;">';
                 if ($knbn_post_id != 0) {
-                    echo '<p style="color:green;">' . $i . '. ' . $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully updated!</p><br />";
+                    echo $i . '. ' . $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully updated!<br />";
                 } else {
-                    echo '<p style="color:green;">' . $i . '. ' . $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully added!</p><br />";
+                    echo $i . '. ' . $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully added!<br />";
                 }
+                echo '</p>';
             }
 
             echo '</div>';
