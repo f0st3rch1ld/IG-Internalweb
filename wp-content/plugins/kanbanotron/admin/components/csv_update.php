@@ -55,7 +55,7 @@ if (file_exists($csv_loc)) {
     fclose($file);
 
     if (unlink($csv_loc)) {
-        echo 'Syncing CSV Data...<br />';
+        echo '<strong>Syncing CSV Data...</strong><br />';
     } else {
         echo 'There has been an error with the upload, please try again later.<br />';
     }
@@ -149,6 +149,7 @@ if (file_exists($csv_loc)) {
             }
 
             $my_post = array(
+                'post_author' => get_current_user_id(),
                 'ID' => $knbn_post_id,
                 'post_title' => ucwords(str_replace(' ', '-', $all_data[$i]['vendor']) . '-' . $all_data[$i]['part_number'] . str_replace(' ', '-', $all_data[$i]['description'])),
                 'post_content' => '',
@@ -170,9 +171,9 @@ if (file_exists($csv_loc)) {
                 )
             );
 
-            $post_id = wp_insert_post($my_post, true, false);
+            $post_id = wp_insert_post($my_post, true);
 
-            echo '<div style="text-align:left;">';
+            echo '<div style="align-items:flex-start;">';
 
             if (is_wp_error($post_id)) {
                 $errors = $post_id->get_error_messages();

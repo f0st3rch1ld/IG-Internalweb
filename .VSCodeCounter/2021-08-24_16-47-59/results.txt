@@ -1,0 +1,68 @@
+Date : 2021-08-24 16:47:59
+Directory : \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron
+Total : 34 files,  1954 codes, 291 comments, 444 blanks, all 2689 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| PHP        |         31 |      1,687 |        279 |        403 |      2,369 |
+| JavaScript |          2 |        170 |         12 |         27 |        209 |
+| CSS        |          1 |         97 |          0 |         14 |        111 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                          | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                             |         34 |      1,954 |        291 |        444 |      2,689 |
+| admin                                                                                                                                         |          7 |        521 |         32 |        104 |        657 |
+| admin\components                                                                                                                              |          4 |        368 |         31 |         82 |        481 |
+| admin\js                                                                                                                                      |          1 |         41 |          0 |          5 |         46 |
+| components                                                                                                                                    |         11 |        652 |        157 |        180 |        989 |
+| db                                                                                                                                            |         13 |        558 |         64 |        119 |        741 |
+| db\qb_db                                                                                                                                      |          8 |        393 |         47 |         82 |        522 |
+| db\wp_db                                                                                                                                      |          2 |         38 |          6 |         19 |         63 |
+| js                                                                                                                                            |          1 |        129 |         12 |         22 |        163 |
++-----------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                                      | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\admin\admin.css                               | CSS        |         97 |          0 |         14 |        111 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\admin\components\admin_dashboard.php          | PHP        |        144 |          4 |         28 |        176 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\admin\components\csv_update.php               | PHP        |        151 |         10 |         37 |        198 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\admin\components\delete_rows_sql.php          | PHP        |         21 |          0 |          6 |         27 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\admin\components\load_mku_form_fields.php     | PHP        |         52 |         17 |         11 |         80 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\admin\js\knbn_admin.js                        | JavaScript |         41 |          0 |          5 |         46 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\admin\update_kanbans.php                      | PHP        |         15 |          1 |          3 |         19 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\components\add_to_purchase_order.php          | PHP        |         31 |          7 |         13 |         51 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\components\app.php                            | PHP        |         23 |          2 |          4 |         29 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\components\initialize.php                     | PHP        |         74 |          3 |         22 |         99 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\components\load_kanban.php                    | PHP        |        145 |         19 |         15 |        179 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\components\load_on_order_list.php             | PHP        |         64 |         15 |         12 |         91 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\components\new_purchase_order.php             | PHP        |         40 |          2 |         11 |         53 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\components\on_order_list.php                  | PHP        |         28 |          2 |          5 |         35 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\components\purchase_order_preview.php         | PHP        |         91 |         18 |         29 |        138 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\components\remove_all_from_purchase_order.php | PHP        |         50 |         18 |         21 |         89 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\components\remove_from_purchase_order.php     | PHP        |         24 |          4 |         10 |         38 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\components\send_purchase_order.php            | PHP        |         82 |         67 |         38 |        187 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\kanbanotron_connection.php                 | PHP        |         10 |          2 |          4 |         16 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\knbn_wp_connection.php                     | PHP        |         10 |          2 |          4 |         16 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\qb_db\items_request.php                    | PHP        |         23 |          3 |          7 |         33 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\qb_db\purchaseorder_request.php            | PHP        |         39 |          7 |         13 |         59 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\qb_db\purchaseorder_update.php             | PHP        |        121 |         14 |         21 |        156 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\qb_db\purchaseorderlineret_update.php      | PHP        |         70 |         15 |         18 |        103 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\qb_db\qb_data_connection.php               | PHP        |         10 |          2 |          4 |         16 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\qb_db\salesorder_price_calculation.php     | PHP        |          9 |          0 |          5 |         14 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\qb_db\salesorpurchaseret_request.php       | PHP        |         23 |          3 |          7 |         33 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\qb_db\vendor_request.php                   | PHP        |         98 |          3 |          7 |        108 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\request.php                                | PHP        |        107 |          7 |         10 |        124 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\wp_db\update_default_reorder_quan.php      | PHP        |         21 |          3 |         10 |         34 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\db\wp_db\update_external_url.php              | PHP        |         17 |          3 |          9 |         29 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\js\kanbanotron.js                             | JavaScript |        129 |         12 |         22 |        163 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\kanbanotron.php                               | PHP        |         79 |         26 |         17 |        122 |
+| \\media\Marketing\Development\internalweb\internalweb_repository\wp-content\plugins\kanbanotron\main.php                                      | PHP        |         15 |          0 |          2 |         17 |
+| Total                                                                                                                                         |            |      1,954 |        291 |        444 |      2,689 |
++-----------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
