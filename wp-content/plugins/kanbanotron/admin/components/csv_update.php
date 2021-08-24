@@ -149,6 +149,7 @@ if (file_exists($csv_loc)) {
             }
 
             $my_post = array(
+                'ID' => $knbn_post_id,
                 'post_title' => ucwords(str_replace(' ', '-', $all_data[$i]['vendor']) . '-' . $all_data[$i]['part_number'] . str_replace(' ', '-', $all_data[$i]['description'])),
                 'post_content' => '',
                 'post_status' => 'publish',
@@ -168,10 +169,6 @@ if (file_exists($csv_loc)) {
                     'kanban_information_lead_time' =>  $converted_lead_time
                 )
             );
-
-            if ($knbn_post_id != 0) {
-                $my_post['ID'][$knbn_post_id];
-            }
 
             $post_id = wp_insert_post($my_post, true);
 
