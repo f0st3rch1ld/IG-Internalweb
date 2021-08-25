@@ -111,9 +111,9 @@
     // create custom plugin settings menu
     add_action('admin_menu', 'kanbanotron_create_menu');
 
-    // Hides csv_update page from backend of wordpress
+    // Hides download kanbans page from backend of wordpress
     add_action('admin_head', function () {
-        remove_submenu_page('edit.php?post_type=knbn_action', 'csv_update');
+        remove_submenu_page('edit.php?post_type=knbn_action', 'download_kanban_labels');
     });
 
     function kanbanotron_create_menu()
@@ -122,7 +122,7 @@
         add_submenu_page('edit.php?post_type=knbn_action', 'Update Kanbans', 'Update Kanbans', 'administrator', 'update_kanbans', 'kanbanotron_import_kanbans_page');
 
         //create new sub menu that will be hidden for updating csv's
-        add_submenu_page('edit.php?post_type=knbn_action', 'csv_update', 'csv_update', 'administrator', 'csv_update', 'kanbanotron_import_csv_update_page');
+        add_submenu_page('edit.php?post_type=knbn_action', 'download_kanban_labels', 'download_kanban_labels', 'administrator', 'download_kanban_labels', 'kanbanotron_import_download_kanban_labels_page');
     }
 
     function kanbanotron_import_kanbans_page()
@@ -130,9 +130,9 @@
         include 'admin/update_kanbans.php';
     }
 
-    function kanbanotron_import_csv_update_page()
+    function kanbanotron_import_download_kanban_labels_page()
     {
-        include 'admin/components/csv_update.php';
+        include 'admin/components/download_kanban_labels.php';
     }
 
     add_filter('mime_types', 'wpse_mime_types');
