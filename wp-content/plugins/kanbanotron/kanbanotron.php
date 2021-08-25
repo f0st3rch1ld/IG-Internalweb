@@ -45,8 +45,14 @@
     }
     add_action('init', 'knbn_custom_post_type');
 
+    // adds extra columns to kanbans post type
+
+    // Custom Columns
     add_filter('manage_knbn_action_posts_columns', function($columns) {
-        return array_merge($columns, ['vendor' => __('Vendor', 'textdomain')]);
+        return array_merge($columns, [
+            'vendor' => __('Vendor', 'textdomain'),
+            'product_type' => __('Product Type', 'textdomain'),
+        ]);
     });
      
     add_action('manage_knbn_action_posts_custom_column', function($column_key, $post_id) {
@@ -56,7 +62,16 @@
             if ($vendor) {
                 echo $vendor;
             } else {
-                echo 'There was an error retrieving the vendor';
+                echo 'No Vendor';
+            }
+            echo '</span>';
+        } elseif ($column_key == 'product_type') {
+            $product_type = get_post_meta($post_id, 'product_setup_product_type');
+            echo '<span>';
+            if ($product_type) {
+                echo $product_type;
+            } else {
+                echo 'Error Getting Product Type';
             }
             echo '</span>';
         }
