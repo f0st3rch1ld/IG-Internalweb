@@ -108,8 +108,39 @@
 
     // Adds an option for bulk downloading kanban labels
     add_filter('bulk_actions-edit-knbn_action', function($bulk_actions) {
-        $bulk_actions['bulk_download_kanban_labels'] = __('Download Kanban Labels', 'txtdomain');
+        $bulk_actions['bulk_download_kanban_labels'] = __('Download Selected Kanban Labels', 'txtdomain');
         return $bulk_actions;
+    });
+
+    // Bulk Download Functionality
+    add_filter('handle_bulk_actions-edit-knbn_action', function($redirect_url, $action, $post_ids) {
+        if ($action == 'bulk_download_kanban_labels') {
+            // empty array to store uid's we need to download
+            $knbn_uid_to_dwnld = array();
+
+            // gotta include the bulk downloader
+            include 'admin/components/bulk_download_kanban_labels.php';
+
+            // lets add all the uids to the previous array
+            foreach ($post_ids as $post_id) {
+                $bulk_knbn_uid = get_post_meta($post_id, 'product_setup_knbn_uid', true);
+                array_push($knbn_uid_to_dwnld, $bulk_knbn_uid);
+            }
+
+            // now that we have all the uids, time to generate/download some lábels
+            blk_dwnld_lbls($knbn_uid_to_dwnld);
+
+            $redirect_url = add_query_arg('bulk_download_kanban_labels', count($post_ids), $redirect_url);
+        }
+        return $redirect_url;
+    }, 10, 3);
+
+    // Gotta tell people that the bulk action has completed
+    add_action('admin_notices', function() {
+        if (!empty($_REQUEST['bulk_download_kanban_labels'])) {
+            $num_downloaded = (int) $_REQUEST['bulk_download_kanban_labels'];
+            printf('<div id="message" class="updated notice is-dismissable"><p>' . __('Generated and Downloaded %d Kanban Labels.', 'txtdomain') . '</p></div>', $num_downloaded);
+        }
     });
 
     // Adds an option page for importing kanbans
