@@ -107,7 +107,7 @@
     }, 10, 2);
 
     // Adds an option for bulk downloading kanban labels
-    add_filter('bulk_actions_edit_knbn_action', function($bulk_actions) {
+    add_filter('bulk_actions_knbn_action', function($bulk_actions) {
         $bulk_actions['download_kanban_labels'] = __('Download Kanban Labels', 'txtdomain');
         return $bulk_actions;
     });
