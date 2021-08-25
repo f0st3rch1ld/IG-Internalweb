@@ -55,6 +55,7 @@
             'part_number' => __('Part Number', 'textdomain'),
             'vendor_part_number' => __('Vendor Part Number', 'textdomain'),
             'product_type' => __('Product Type', 'textdomain'),
+            'download_kanban_labels' => __('Download Kanban Labels', 'textdomain')
         ]);
     });
 
@@ -100,6 +101,8 @@
             } else {
                 echo 'No Vendor Part Number';
             }
+        } elseif ($column_key == 'download_kanban_labels') {
+            echo '<a href="/wp-admin/edit.php?post_type=knbn_action&page=download_kanban_labels&knbn_uid=' . get_post_meta($post_id, 'product_setup_knbn_uid', true) . '" target="blank">Download Kanban Labels</a>';
         }
     }, 10, 2);
 
