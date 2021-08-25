@@ -66,7 +66,7 @@
             }
             echo '</span>';
         } elseif ($column_key == 'product_type') {
-            $product_type = get_post_meta($post_id, 'product_setup_product_type');
+            $product_type = get_post_meta($post_id, 'product_setup_product_type', true);
             echo '<span>';
             if ($product_type) {
                 echo $product_type;
