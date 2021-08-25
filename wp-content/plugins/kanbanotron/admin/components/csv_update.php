@@ -142,10 +142,14 @@ if (file_exists($csv_loc)) {
             $converted_lead_time;
             $lowercase_lead_time = strtolower($all_data[$i]['lead_time']);
 
-            if (strpos($lowercase_lead_time, 'weeks') != false || strpos($lowercase_lead_time, 'week') != false) {
-                $converted_lead_time = intval($lowercase_lead_time) * 7;
+            if (strpos($lowercase_lead_time, 'weeks') != false || strpos($lowercase_lead_time, 'week') != false || strpos($lowercase_lead_time, 'days') != false || strpos($lowercase_lead_time, 'day') != false || strpos($lowercase_lead_time, '-') == false) {
+                if (strpos($lowercase_lead_time, 'weeks') != false || strpos($lowercase_lead_time, 'week') != false) {
+                    $converted_lead_time = intval($lowercase_lead_time) * 7;
+                } else {
+                    $converted_lead_time = intval($lowercase_lead_time);
+                }
             } else {
-                $converted_lead_time = intval($lowercase_lead_time);
+                $converted_lead_time = NULL;
             }
 
             $my_post = array(
