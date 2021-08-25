@@ -48,14 +48,15 @@
     // adds extra columns to kanbans post type
 
     // Custom Columns
-    add_filter('manage_knbn_action_posts_columns', function($columns) {
+    add_filter('manage_knbn_action_posts_columns', function ($columns) {
         return array_merge($columns, [
             'vendor' => __('Vendor', 'textdomain'),
             'product_type' => __('Product Type', 'textdomain'),
+            'knbn_uid' => __('Kanban Unique ID', 'textdomain'),
         ]);
     });
-     
-    add_action('manage_knbn_action_posts_custom_column', function($column_key, $post_id) {
+
+    add_action('manage_knbn_action_posts_custom_column', function ($column_key, $post_id) {
         if ($column_key == 'vendor') {
             $vendor = get_post_meta($post_id, 'kanban_information_vendor', true);
             echo '<span>';
@@ -72,6 +73,15 @@
                 echo $product_type;
             } else {
                 echo 'Error Getting Product Type';
+            }
+            echo '</span>';
+        } elseif ($column_key == 'knbn_uid') {
+            $knbn_uid = get_post_meta($post_id, 'product_setup_knbn_uid', true);
+            echo '<span>';
+            if ($knbn_uid) {
+                echo $knbn_uid;
+            } else {
+                echo 'Error Getting Kanban Unique ID';
             }
             echo '</span>';
         }
