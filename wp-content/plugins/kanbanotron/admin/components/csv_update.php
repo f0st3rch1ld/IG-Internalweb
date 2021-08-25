@@ -183,13 +183,11 @@ if (file_exists($csv_loc)) {
                 }
                 echo '</p>';
             } else {
-                echo '<p style="color:green; margin:0px;">';
                 if ($knbn_post_id != 0) {
-                    echo $i . '. ' . $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully updated!<br />";
+                    echo '<p style="color:#ffc800; margin:0px;">' . $i . '. ' . $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully updated!</p><br />";
                 } else {
-                    echo $i . '. ' . $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully added!<br />";
+                    echo '<p style="color:green; margin:0px;">' . $i . '. ' . $all_data[$i]['vendor'] . "-" . $all_data[$i]['man_part_number'] . "-" . $all_data[$i]['description'] . ": Kanban successfully added!</p><br />";
                 }
-                echo '</p>';
             }
 
             echo '</div>';
