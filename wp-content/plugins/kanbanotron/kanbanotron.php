@@ -53,7 +53,11 @@
         if ($column_key == 'vendor') {
             $vendor = get_post_meta($post_id, 'vendor', true);
             echo '<span>';
-            echo $vendor;
+            if ($vendor) {
+                echo $vendor;
+            } else {
+                echo 'There was an error retrieving the vendor';
+            }
             echo '</span>';
         }
     }, 10, 2);
