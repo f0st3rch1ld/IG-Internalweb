@@ -53,7 +53,7 @@
         if ($column_key == 'vendor') {
             $vendor = get_post_meta($post_id, 'vendor', true);
             echo '<span>';
-            _e($vendor, 'textdomain');
+            echo $vendor;
             echo '</span>';
         }
     }, 10, 2);

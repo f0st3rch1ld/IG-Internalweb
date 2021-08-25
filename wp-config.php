@@ -79,10 +79,10 @@ $table_prefix = 'wp_';
  */
 
 define( 'WP_DEBUG', true );
-// define( 'WP_DEBUG_LOG', true );
-// define( 'WP_DEBUG_DISPLAY', false );
-// @ini_set( 'display_errors', 0 );
-// define( 'SCRIPT_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
+define( 'WP_DEBUG_DISPLAY', false );
+@ini_set( 'display_errors', 0 );
+define( 'SCRIPT_DEBUG', true );
 
 /* That's all, stop editing! Happy publishing. */
 
