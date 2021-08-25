@@ -51,7 +51,7 @@
      
     add_action('manage_knbn_action_posts_custom_column', function($column_key, $post_id) {
         if ($column_key == 'vendor') {
-            $vendor = get_post_meta($post_id, 'vendor', true);
+            $vendor = get_post_meta($post_id, 'kanban_information_vendor', true);
             echo '<span>';
             if ($vendor) {
                 echo $vendor;
