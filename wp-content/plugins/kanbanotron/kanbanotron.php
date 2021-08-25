@@ -45,6 +45,19 @@
     }
     add_action('init', 'knbn_custom_post_type');
 
+    add_filter('manage_knbn_action_posts_columns', function($columns) {
+        return array_merge($columns, ['vendor' => __('Vendor', 'textdomain')]);
+    });
+     
+    add_action('manage_knbn_action_posts_custom_column', function($column_key, $post_id) {
+        if ($column_key == 'vendor') {
+            $vendor = get_post_meta($post_id, 'vendor', true);
+            echo '<span>';
+            _e($vendor, 'textdomain');
+            echo '</span>';
+        }
+    }, 10, 2);
+
     // Adds an option page for importing kanbans
 
     // create custom plugin settings menu
