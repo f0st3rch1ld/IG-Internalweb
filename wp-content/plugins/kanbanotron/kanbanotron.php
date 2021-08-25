@@ -50,9 +50,11 @@
     // Custom Columns
     add_filter('manage_knbn_action_posts_columns', function ($columns) {
         return array_merge($columns, [
-            'vendor' => __('Vendor', 'textdomain'),
-            'product_type' => __('Product Type', 'textdomain'),
             'knbn_uid' => __('Kanban Unique ID', 'textdomain'),
+            'vendor' => __('Vendor', 'textdomain'),
+            'part_number' => __('Part Number', 'textdomain'),
+            'vendor_part_number' => __('Vendor Part Number', 'textdomain'),
+            'product_type' => __('Product Type', 'textdomain'),
         ]);
     });
 
@@ -84,6 +86,20 @@
                 echo 'Error Getting Kanban Unique ID';
             }
             echo '</span>';
+        } elseif ($column_key == 'part_number') {
+            $part_number = get_post_meta($post_id, 'kanban_information_part_number_group_part_number', true);
+            if ($part_number) {
+                echo $part_number;
+            } else {
+                echo 'No Part Number';
+            }
+        } elseif ($column_key == 'vendor_part_number') {
+            $vendor_part_number = get_post_meta($post_id, 'kanban_information_part_number_group_vendor_part_number', true);
+            if ($vendor_part_number) {
+                echo $vendor_part_number;
+            } else {
+                echo 'No Vendor Part Number';
+            }
         }
     }, 10, 2);
 
