@@ -14,7 +14,7 @@ retrieve_po_data();
 
 // --$purchaseorder_table_data_array;
 // ----TxnID
-// ----TimeCreated
+// ----TimeModified
 // ----VendorRef_FullName
 // ----Memo
 // ----IsFullyReceived
@@ -31,14 +31,10 @@ $order_txnid_array = array();
 // Loops through all purchaseorder data, and groups / pushes vendors and vendor ids to array
 for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
     if (!array_key_exists($purchaseorder_table_data_array[$i]['VendorRef_FullName'], $order_txnid_array)) {
-        if ($purchaseorder_table_data_array[$i]['IsFullyReceived'] == 0 && strtotime($purchaseorder_table_data_array[$i]['TimeCreated']) > strtotime("2021-01-01 01:01:01")) {
-            $vendorName = $purchaseorder_table_data_array[$i]['VendorRef_FullName'];
-            $order_txnid_array[$vendorName] = array($purchaseorder_table_data_array[$i]['TxnID']);
-        }
+        $vendorName = $purchaseorder_table_data_array[$i]['VendorRef_FullName'];
+        $order_txnid_array[$vendorName] = array($purchaseorder_table_data_array[$i]['TxnID']);
     } else {
-        if ($purchaseorder_table_data_array[$i]['IsFullyReceived'] == 0) {
-            array_push($order_txnid_array[$purchaseorder_table_data_array[$i]['VendorRef_FullName']], $purchaseorder_table_data_array[$i]['TxnID']);
-        }
+        array_push($order_txnid_array[$purchaseorder_table_data_array[$i]['VendorRef_FullName']], $purchaseorder_table_data_array[$i]['TxnID']);
     }
 }
 
@@ -74,7 +70,7 @@ for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
                                 <?php
                                 for ($x = 0; count($purchaseorder_table_data_array) > $x; $x++) {
                                     if ($purchaseorder_table_data_array[$x]['TxnID'] == $purchaseorderlineret_table_data_array[$y]['PARENT_IDKEY']) : ?>
-                                        <td><?php echo $purchaseorder_table_data_array[$x]['TimeCreated']; ?></td>
+                                        <td><?php echo $purchaseorder_table_data_array[$x]['TimeModified']; ?></td>
                                         <td><?php echo $purchaseorder_table_data_array[$x]['Memo']; ?></td>
                                 <?php endif;
                                 }
