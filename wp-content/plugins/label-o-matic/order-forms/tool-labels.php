@@ -41,6 +41,7 @@ $tool_labels = array(
         'Short-Chalk-Line-HND1012' => 'Short Chalk Line',
         'Chalk-HND1013' => 'Chalk',
         'String-Line-HND1014' => 'String Line'
+	
     ),
     // /Hand Tools Array
 
@@ -54,7 +55,8 @@ $tool_labels = array(
         'Finger-Sander-PWR1001' => 'Finger Sander',
         'Air-Nozzle-PWR1002' => 'Air Nozzle',
         'Cut-Off-Tool-PWR1003' => 'Cut Off Tool',
-        'Air-Buffer-PWR1004' => 'Air Buffer'
+        'Air-Buffer-PWR1004' => 'Air Buffer',
+	'Heat-Gun-PWR1023' => 'Heat Gun',
     ),
     // /Power Tools Array
 
