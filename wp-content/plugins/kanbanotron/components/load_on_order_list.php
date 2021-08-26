@@ -31,7 +31,7 @@ $order_txnid_array = array();
 // Loops through all purchaseorder data, and groups / pushes vendors and vendor ids to array
 for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
     if (!array_key_exists($purchaseorder_table_data_array[$i]['VendorRef_FullName'], $order_txnid_array)) {
-        if ($purchaseorder_table_data_array[$i]['IsFullyReceived'] == 0) {
+        if ($purchaseorder_table_data_array[$i]['IsFullyReceived'] == 0 && $purchaseorder_table_data_array[$i]['TimeCreated'] > '2021-01-01 00:00:00') {
             $vendorName = $purchaseorder_table_data_array[$i]['VendorRef_FullName'];
             $order_txnid_array[$vendorName] = array($purchaseorder_table_data_array[$i]['TxnID']);
         }
