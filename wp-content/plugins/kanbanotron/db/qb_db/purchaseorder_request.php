@@ -16,7 +16,7 @@ function retrieve_po_data()
     include 'qb_data_connection.php';
 
     // Request from purchaseorder table
-    $purchaseorder_request = "SELECT TxnID, TimeModified, VendorRef_FullName, Memo, IsFullyReceived FROM purchaseorder WHERE IsFullyReceived=0 AND YEAR(TimeModified) >= '2021'";
+    $purchaseorder_request = "SELECT TxnID, TimeCreated, VendorRef_FullName, Memo, IsFullyReceived FROM purchaseorder WHERE IsFullyReceived=0 AND YEAR(TimeCreated) >= '2021'";
     $purchaseorder_request_result = $conn->query($purchaseorder_request);
 
     // Assigns request data to an array
@@ -24,7 +24,7 @@ function retrieve_po_data()
         while ($row = $purchaseorder_request_result->fetch_assoc()) {
             $temp_po_array = array(
                 'TxnID' => $row['TxnID'],
-                'TimeModified' => $row['TimeModified'],
+                'TimeCreated' => $row['TimeCreated'],
                 'VendorRef_FullName' => $row['VendorRef_FullName'],
                 'Memo' => $row['Memo'],
                 'IsFullyReceived' => $row['IsFullyReceived']
