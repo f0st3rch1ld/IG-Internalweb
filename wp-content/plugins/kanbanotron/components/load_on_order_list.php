@@ -67,7 +67,7 @@ for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
                 <?php for ($i = 0; count($value) > $i; $i++) : ?>
                     <?php for ($y = 0; count($purchaseorderlineret_table_data_array) > $y; $y++) : ?>
                         <?php if ($purchaseorderlineret_table_data_array[$y]['PARENT_IDKEY'] == $value[$i]) : ?>
-                            <?php if ($purchaseorder_table_data_array[$x]['timeCreated'] > '2021-1-1 00:00:00') : ?>
+                            <?php if ($purchaseorder_table_data_array[$x]['timeCreated'] < '2021-1-1 00:00:00') : ?>
                                 <tr>
                                     <td><?php echo $purchaseorderlineret_table_data_array[$y]['ItemRef_FullName']; ?></td>
                                     <td><?php echo $purchaseorderlineret_table_data_array[$y]['Description']; ?></td>
