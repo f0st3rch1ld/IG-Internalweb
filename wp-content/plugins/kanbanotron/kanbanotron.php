@@ -55,7 +55,7 @@
             'part_number' => __('Part Number', 'textdomain'),
             'vendor_part_number' => __('Vendor Part Number', 'textdomain'),
             'product_type' => __('Product Type', 'textdomain'),
-            'download_kanban_labels' => __('Download Kanban Labels', 'textdomain')
+            // 'download_kanban_labels' => __('Download Kanban Labels', 'textdomain')
         ]);
     });
 
