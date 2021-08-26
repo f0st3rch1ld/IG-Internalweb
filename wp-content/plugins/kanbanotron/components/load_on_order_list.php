@@ -42,7 +42,7 @@ for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
     }
 }
 
-asort($order_txnid_array);
+ksort($order_txnid_array);
 
 ?>
 
