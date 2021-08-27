@@ -26,7 +26,7 @@
     <option value="training-room">Training Room</option>
     <option value="tube-fab">Tube Fab</option>
     <option value="welding">Welding</option>
-    <option value="iws-shop">IWS Office</option>
+    <option value="iws-office">IWS Office</option>
     <option value="iws-parts">IWS Parts</option>
     <option value="iws-shop">IWS Shop</option>
 </select>
