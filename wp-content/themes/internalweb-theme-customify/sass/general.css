@@ -1565,15 +1565,6 @@ button:focus {
   overflow: hidden;
 }
 
-#on-order-list-container .purchase-order-container:hover {
-  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
-          box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-}
-
 #on-order-list-container .purchase-order-container h5 {
   font-size: 1.2em;
   font-weight: 600;

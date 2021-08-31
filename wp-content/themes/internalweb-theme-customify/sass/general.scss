@@ -841,11 +841,6 @@ button {
     @include default-transition;
     overflow: hidden;
 
-    &:hover {
-      @include default-drop-shadow;
-      @include default-transition;
-    }
-
     h5 {
       font-size: 1.2em;
       font-weight: 600;
