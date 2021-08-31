@@ -31,8 +31,8 @@ $order_txnid_array = array();
 // Loops through all purchaseorder data, and groups / pushes vendors and vendor ids to array
 for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
     if (!array_key_exists($purchaseorder_table_data_array[$i]['VendorRef_FullName'], $order_txnid_array)) {
-        $vendorName = $purchaseorder_table_data_array[$i]['VendorRef_FullName'];
-        $order_txnid_array[$vendorName] = array($purchaseorder_table_data_array[$i]['TxnID']);
+        $tabNumber = $purchaseorder_table_data_array[$i]['VendorRef_FullName'];
+        $order_txnid_array[$tabNumber] = array($purchaseorder_table_data_array[$i]['TxnID']);
     } else {
         array_push($order_txnid_array[$purchaseorder_table_data_array[$i]['VendorRef_FullName']], $purchaseorder_table_data_array[$i]['TxnID']);
     }
@@ -63,8 +63,8 @@ ksort($order_txnid_array);
     let poVendorTabs = document.getElementsByClassName("po-title-container");
     for (i = 0; poVendorTabs.length > i; i++) {
         poVendorTabs[i].addEventListener("click", function() {
-            let vendorName = this.getAttribute("data").value;
-            document.getElementById(`${vendorName}-parts-accordion`).setAttribute('style', 'display:flex');
+            let tabNumber = poVendorTabs[i].getAttribute("data").value;
+            document.getElementById(`${tabNumber}-parts-accordion`).setAttribute('style', 'display:flex');
         });
     }
 </script>
