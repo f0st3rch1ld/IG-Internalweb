@@ -63,17 +63,17 @@ echo var_dump($order_txnid_array);
                 </tr>
             </thead>
             <tbody>
-                <?php for ($i = 0; count($value) > $i; $i++) : ?>
-                    <?php for ($y = 0; count($purchaseorderlineret_table_data_array) > $y; $y++) : ?>
-                        <?php if ($purchaseorderlineret_table_data_array[$y]['PARENT_IDKEY'] == $value[$i]) : ?>
+                <?php foreach ($value as $ind_purchase_order) : ?>
+                    <?php foreach ($purchaseorderlineret_table_data_array as $ind_products) : ?>
+                        <?php if ($ind_purchase_order == $ind_products['PARENT_IDKEY']) : ?>
                             <tr>
-                                <td><?php echo $purchaseorderlineret_table_data_array[$y]['ItemRef_FullName']; ?></td>
-                                <td><?php echo $purchaseorderlineret_table_data_array[$y]['Description']; ?></td>
-                                <td><?php echo number_format($purchaseorderlineret_table_data_array[$y]['Quantity'], 0); ?></td>
+                                <td class="full-name"><?php echo $ind_products['ItemRef_FullName']; ?></td>
+                                <td class="description"><?php echo $ind_products['Description']; ?></td>
+                                <td class="quantity"><?php echo number_format($ind_products['Quantity'], 0); ?></td>
                             </tr>
                         <?php endif; ?>
-                    <?php endfor; ?>
-                <?php endfor; ?>
+                    <?php endforeach; ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
