@@ -175,6 +175,7 @@ button {
       background-color: #fff;
       @include default-transition;
       overflow: hidden;
+      cursor: pointer;
 
       &:hover {
         @include default-drop-shadow;

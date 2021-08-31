@@ -44,19 +44,27 @@ ksort($order_txnid_array);
 
 ?>
 
+<?php $i = 1; ?>
 <?php foreach ($order_txnid_array as $key => $value) : ?>
     <!-- Generated PO Table -->
     <div class="purchase-order-container">
         <div class="po-title-container" data="<?php echo $key; ?>">
             <h5 class="vendor-name">
-                <?php echo $key; ?>
+                <?php echo $i . '. ' . $key; ?>
             </h5>
         </div>
-        <div id="<?php echo $key; ?>-parts-accordion"></div>
+        <div id="<?php echo str_replace(' ', '-', strtolower($key)); ?>-parts-accordion" class="parts-accordion"></div>
     </div>
     <!-- /Generated PO Table -->
+    <?php $i++; ?>
 <?php endforeach; ?>
 
 <script>
-    
+    let poVendorTabs = document.getElementsByClassName("po-title-container");
+    for (i = 0; poVendorTabs.length > i; i++) {
+        poVendorTabs[i].addEventListener("click", function() {
+            let vendorName = this.getAttribute("data").value;
+            document.getElementById(`${vendorName}-parts-accordion`).setAttribute('style', 'display:flex');
+        });
+    }
 </script>

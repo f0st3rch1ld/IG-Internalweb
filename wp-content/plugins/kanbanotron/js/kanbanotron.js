@@ -17,7 +17,7 @@ function loadKanban(x) {
   xhttp.open(
     "GET",
     "../../wp-content/plugins/kanbanotron/components/load_kanban.php?xhttp=1&knbn_uid=" +
-    knbnUID
+      knbnUID
   );
   xhttp.send();
 }
@@ -75,7 +75,11 @@ function removeFromPO(x, y) {
 
 // AJAX request to remove all kanbans from a specific vendor from a PO
 function removeAllFromPO(x, y) {
-  if (confirm("Are you sure you want to delete all products from this vendor? If you choose to delete them, the only way to get them back is to manually add them back to the order... If you wish to delete them, click \"OK\".")) {
+  if (
+    confirm(
+      'Are you sure you want to delete all products from this vendor? If you choose to delete them, the only way to get them back is to manually add them back to the order... If you wish to delete them, click "OK".'
+    )
+  ) {
     console.log(x);
     console.log(y);
 
@@ -112,20 +116,21 @@ function newPO() {
 
 // AJAX request to submit a single purchase order
 function submitPurchaseOrder(x, y) {
-
-  if (confirm("Are you sure you want to submit this purchase order? Make sure to double check everything looks correct before sending. If everything looks correct, continue by clicking \"OK\".")) {
-
+  if (
+    confirm(
+      'Are you sure you want to submit this purchase order? Make sure to double check everything looks correct before sending. If everything looks correct, continue by clicking "OK".'
+    )
+  ) {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
       console.log(this.responseText);
-    }
+    };
     xhttp.open(
       "GET",
       `../../wp-content/plugins/kanbanotron/components/send_purchase_order.php/?active_po=${x}&vndr=${y}`
     );
     xhttp.send();
   }
-
 }
 
 // AJAX request to set default reorder quantity
@@ -134,7 +139,7 @@ function setDefaultReorderQuan(x, y) {
   xhttp.onload = function () {
     console.log(this.responseText);
     loadKanban(x);
-  }
+  };
   xhttp.open(
     "GET",
     `../../wp-content/plugins/kanbanotron/db/wp_db/update_default_reorder_quan.php/?knbn_uid=${x}&quan=${y}`
@@ -148,7 +153,7 @@ function setExternalURL(x, y) {
   xhttp.onload = function () {
     console.log(this.responseText);
     loadKanban(x);
-  }
+  };
   xhttp.open(
     "GET",
     `../../wp-content/plugins/kanbanotron/db/wp_db/update_external_url.php/?knbn_uid=${x}&ext_url=${y}`

@@ -361,6 +361,7 @@ button:focus {
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .kanbanotron-main-container .purchase-order-overview-container .purchase-order-container:hover {
