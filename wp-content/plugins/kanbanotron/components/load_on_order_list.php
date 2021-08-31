@@ -62,11 +62,12 @@ ksort($order_txnid_array);
 <script>
     let poVendorTabs = document.getElementsByClassName("po-title-container");
     console.log(poVendorTabs);
-    poVendorTabs.foreach(x, function(x) {
-        x.addEventListener('click', function() {
+
+    for (i = 0; poVendorTabs.length > i; i++) {
+        poVendorTabs[i].addEventListener('click', function () {
             this.getAttribute('data').value;
             console.log(this.getAttribute('data').value);
             document.getElementById(`${tabNumber}-parts-accordion`).setAttribute('style', 'display:flex');
         });
-    });
+    }
 </script>
