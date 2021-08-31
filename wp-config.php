@@ -84,6 +84,8 @@ define( 'WP_DEBUG', false );
 // @ini_set( 'display_errors', 0 );
 // define( 'SCRIPT_DEBUG', true );
 
+define( 'WP_MEMORY_LIMIT', '256M' );
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
