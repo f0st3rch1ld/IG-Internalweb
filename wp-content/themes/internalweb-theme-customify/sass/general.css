@@ -1563,6 +1563,7 @@ button:focus {
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
   overflow: hidden;
+  cursor: hover;
 }
 
 #on-order-list-container .purchase-order-container h5 {
@@ -1590,8 +1591,6 @@ button:focus {
       flex-wrap: wrap;
   width: 100%;
   height: auto;
-  background-color: #fff;
-  cursor: pointer;
 }
 
 #on-order-list-container .purchase-order-container .po-title-container .po-status {

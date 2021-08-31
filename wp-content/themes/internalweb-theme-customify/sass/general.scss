@@ -840,6 +840,7 @@ button {
     background-color: #fff;
     @include default-transition;
     overflow: hidden;
+    cursor: hover;
 
     h5 {
       font-size: 1.2em;
@@ -850,8 +851,6 @@ button {
 
     .po-title-container {
       @include superflex(row, space-between, center, wrap, 100%, auto);
-      background-color: #fff;
-      cursor: pointer;
 
       .po-status {
         color: rgba(255, 255, 255, 0.4);
