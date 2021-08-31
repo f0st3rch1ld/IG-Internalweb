@@ -372,47 +372,11 @@ button:focus {
           transition-duration: 0.2s;
 }
 
-.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .vendor-name {
-  color: #fff;
-  background-color: #0f83ff;
-}
-
 .kanbanotron-main-container .purchase-order-overview-container .purchase-order-container h5 {
   font-size: 1.2em;
   font-weight: 600;
   padding: 5px 15px;
   margin: 0px;
-}
-
-.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-title-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
-  height: auto;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-title-container .po-status {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-title-container:hover, .kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-title-container.active {
-  background-color: #0f83ff;
-  color: #fff;
 }
 
 .kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-control-container {
@@ -1709,11 +1673,17 @@ button:focus {
       flex-wrap: wrap;
   width: 100%;
   height: auto;
-  background-color: #0f83ff;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 #on-order-list-container .purchase-order-container .po-title-container .po-status {
   color: rgba(255, 255, 255, 0.4);
+}
+
+#on-order-list-container .purchase-order-container .po-title-container:hover, #on-order-list-container .purchase-order-container .po-title-container.active {
+  background-color: #0f83ff;
+  color: #fff;
 }
 
 #on-order-list-container .purchase-order-container .po-control-container {

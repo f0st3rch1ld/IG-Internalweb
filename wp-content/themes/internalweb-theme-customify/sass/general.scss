@@ -181,32 +181,11 @@ button {
         @include default-transition;
       }
 
-      .vendor-name {
-        color: #fff;
-        background-color: $default-blue;
-      }
-
       h5 {
         font-size: 1.2em;
         font-weight: 600;
         padding: 5px 15px;
         margin: 0px;
-      }
-
-      .po-title-container {
-        @include superflex(row, space-between, center, wrap, 100%, auto);
-        background-color: #fff;
-        cursor: pointer;
-
-        .po-status {
-          color: rgba(255, 255, 255, 0.4);
-        }
-
-        &:hover,
-        &.active {
-          background-color: $default-blue;
-          color: #fff;
-        }
       }
 
       .po-control-container {
@@ -881,10 +860,17 @@ button {
 
     .po-title-container {
       @include superflex(row, space-between, center, wrap, 100%, auto);
-      background-color: $default-blue;
+      background-color: #fff;
+      cursor: pointer;
 
       .po-status {
         color: rgba(255, 255, 255, 0.4);
+      }
+
+      &:hover,
+      &.active {
+        background-color: $default-blue;
+        color: #fff;
       }
     }
 
