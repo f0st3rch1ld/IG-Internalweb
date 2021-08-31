@@ -40,6 +40,8 @@ for ($i = 0; count($purchaseorder_table_data_array) > $i; $i++) {
 
 ksort($order_txnid_array);
 
+echo var_dump($order_txnid_array);
+
 ?>
 
 <?php foreach ($order_txnid_array as $key => $value) : ?>
