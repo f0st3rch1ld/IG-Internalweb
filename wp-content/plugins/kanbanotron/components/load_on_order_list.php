@@ -48,12 +48,12 @@ ksort($order_txnid_array);
 <?php foreach ($order_txnid_array as $key => $value) : ?>
     <!-- Generated PO Table -->
     <div class="purchase-order-container">
-        <div class="po-title-container" data="<?php echo $key; ?>">
+        <div class="po-title-container" data="<?php echo $i; ?>">
             <h5 class="vendor-name">
                 <?php echo $i . '. ' . $key; ?>
             </h5>
         </div>
-        <div id="<?php echo str_replace(' ', '-', strtolower($key)); ?>-parts-accordion" class="parts-accordion"></div>
+        <div id="<?php echo $i; ?>-parts-accordion" class="parts-accordion"></div>
     </div>
     <!-- /Generated PO Table -->
     <?php $i++; ?>
