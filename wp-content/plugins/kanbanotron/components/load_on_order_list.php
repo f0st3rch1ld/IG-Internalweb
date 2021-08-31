@@ -61,6 +61,7 @@ ksort($order_txnid_array);
 
 <script>
     let poVendorTabs = document.getElementsByClassName("po-title-container");
+    console.log(poVendorTabs);
     for (i = 0; poVendorTabs.length > i; i++) {
         poVendorTabs[i].addEventListener("click", function() {
             let tabNumber = poVendorTabs[i].getAttribute("data").value;
