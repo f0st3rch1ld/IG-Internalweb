@@ -32,7 +32,7 @@ if ($knbn_does_url_exist_result->num_rows > 0) {
     $select_max_meta_result = $conn->query($select_max_meta_id);
     $new_max_meta;
 
-    echo var_dump($select_max_meta_result);
+    echo print_r($select_max_meta_result);
     
     while ($row = $select_max_meta_result->fetch_assoc()) {
         $new_max_meta = $row[0]++;
