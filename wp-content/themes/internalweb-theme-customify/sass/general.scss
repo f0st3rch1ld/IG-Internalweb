@@ -856,12 +856,14 @@ button {
       .po-status {
         color: rgba(255, 255, 255, 0.4);
       }
+    }
 
-      &:hover,
-      &.active {
-        background-color: $default-blue;
-        color: #fff;
-      }
+    &:hover,
+    &.active {
+      background-color: $default-blue;
+      color: #fff;
+      @include default-transition;
+      @include default-drop-shadow;
     }
 
     .po-control-container {

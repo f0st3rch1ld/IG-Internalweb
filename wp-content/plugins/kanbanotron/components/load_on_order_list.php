@@ -48,7 +48,7 @@ ksort($order_txnid_array);
 <?php foreach ($order_txnid_array as $key => $value) : ?>
     <!-- Generated PO Table -->
     <div class="purchase-order-container">
-        <div class="po-title-container" data="<?php echo $i; ?>">
+        <div class="po-title-container" data="<?php echo $i; ?>" >
             <h5 class="vendor-name">
                 <?php echo $i . '. ' . $key; ?>
             </h5>
@@ -66,6 +66,7 @@ ksort($order_txnid_array);
         poVendorTabs[i].addEventListener('click', function () {
             let tabNumber = this.getAttribute('data');
             document.getElementById(`${tabNumber}-parts-accordion`).setAttribute('style', 'display:flex');
+
         });
     }
 </script>
