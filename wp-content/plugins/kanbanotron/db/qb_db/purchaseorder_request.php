@@ -43,6 +43,7 @@ function retrieve_po_data()
     if ($purchaseorder_request_result->num_rows > 0) {
         $temp_po_ret_items_array = array();
         while ($row = $purchaseorderlineret_request_result->fetch_assoc()) {
+            if ($row['ItemRef_FullName'] != 'ibt online' && $row['Description'] != 'ibt online' && $row['Quantity'] != 'ibt online') {}
             $temp_po_items_array = array(
                 'ItemRef_ListID' => $row['ItemRef_ListID'],
                 'ItemRef_FullName' => $row['ItemRef_FullName'],
