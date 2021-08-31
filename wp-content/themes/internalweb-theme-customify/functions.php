@@ -107,6 +107,7 @@ function show_extra_profile_fields($user)
                     "press-brake",
                     "production",
                     "sales",
+                    "sewing",
                     "shipping",
                     "tube-fab",
                     "welding",
