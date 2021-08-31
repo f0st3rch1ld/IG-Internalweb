@@ -16,8 +16,7 @@ while ($row = $knbn_post_id_result->fetch_assoc()) {
     $retrieved_id = $row['post_id'];
 }
 
-
-$knbn_set_reorder_quan = "UPDATE wp_postmeta SET meta_value='$ext_url' WHERE meta_key='external_product_url' AND post_id=$retrieved_id";
+$knbn_set_reorder_quan = "UPDATE wp_postmeta SET meta_value='$ext_url' WHERE meta_key='external_product_url' AND post_id='$retrieved_id'";
 
 if ($conn->query($knbn_set_reorder_quan) === TRUE) {
     echo "External URL updated";
