@@ -22,7 +22,7 @@ function retrieve_po_data()
     // Assigns request data to an array
     if ($purchaseorder_request_result->num_rows > 0) {
         while ($row = $purchaseorder_request_result->fetch_assoc()) {
-            if ($row['VendorRef_FullName'] != 'ibt online') {
+            if ($row['VendorRef_FullName'] != 'IBT Online LLC') {
                 $temp_po_array = array(
                     'TxnID' => $row['TxnID'],
                     'TimeCreated' => $row['TimeCreated'],
