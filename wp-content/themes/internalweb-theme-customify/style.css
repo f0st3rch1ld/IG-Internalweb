@@ -1632,7 +1632,7 @@ button:focus {
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
   overflow: hidden;
-  cursor: hover;
+  cursor: pointer;
 }
 
 #on-order-list-container .purchase-order-container h5 {
@@ -1668,13 +1668,20 @@ button:focus {
 
 #on-order-list-container .purchase-order-container:hover, #on-order-list-container .purchase-order-container.active {
   background-color: #0f83ff;
-  color: #fff;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
           box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
+}
+
+#on-order-list-container .purchase-order-container:hover h5, #on-order-list-container .purchase-order-container.active h5 {
+  color: #fff;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 
 #on-order-list-container .purchase-order-container .po-control-container {

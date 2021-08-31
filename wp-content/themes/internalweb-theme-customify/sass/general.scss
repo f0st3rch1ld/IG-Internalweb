@@ -840,7 +840,7 @@ button {
     background-color: #fff;
     @include default-transition;
     overflow: hidden;
-    cursor: hover;
+    cursor: pointer;
 
     h5 {
       font-size: 1.2em;
@@ -860,9 +860,13 @@ button {
     &:hover,
     &.active {
       background-color: $default-blue;
-      color: #fff;
       @include default-transition;
       @include default-drop-shadow;
+
+      h5 {
+        color: #fff;
+        @include default-transition;
+      }
     }
 
     .po-control-container {
