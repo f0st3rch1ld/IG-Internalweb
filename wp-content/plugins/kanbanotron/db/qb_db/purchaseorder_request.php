@@ -16,23 +16,22 @@ function retrieve_po_data()
     include 'qb_data_connection.php';
 
     // Request from purchaseorder table
-    $purchaseorder_request = "SELECT TxnID, TimeCreated, VendorRef_FullName, Memo, IsFullyReceived FROM purchaseorder WHERE IsFullyReceived=0 AND TimeCreated > '2021-01-01 01:01:01' AND VendorRef_FullName = '800001D7-1267113009'";
+    $purchaseorder_request = "SELECT TxnID, TimeCreated, VendorRef_FullName, Memo, IsFullyReceived FROM purchaseorder WHERE IsFullyReceived=0 AND YEAR(TimeCreated) >= '2021'";
     $purchaseorder_request_result = $conn->query($purchaseorder_request);
 
     // Assigns request data to an array
     if ($purchaseorder_request_result->num_rows > 0) {
         while ($row = $purchaseorder_request_result->fetch_assoc()) {
-            // if (preg_match('/^[a-z]{2}[0-9]{4}$/', strtolower($row['Memo']))) {
-                
-            // }
-            $temp_po_array = array(
-                'TxnID' => $row['TxnID'],
-                'TimeCreated' => $row['TimeCreated'],
-                'VendorRef_FullName' => $row['VendorRef_FullName'],
-                'Memo' => $row['Memo'],
-                'IsFullyReceived' => $row['IsFullyReceived']
-            );
-            array_push($purchaseorder_table_data_array, $temp_po_array);
+            if (preg_match('/^[a-z]{2}[0-9]{4}$/', strtolower($row['Memo']))) {
+                $temp_po_array = array(
+                    'TxnID' => $row['TxnID'],
+                    'TimeCreated' => $row['TimeCreated'],
+                    'VendorRef_FullName' => $row['VendorRef_FullName'],
+                    'Memo' => $row['Memo'],
+                    'IsFullyReceived' => $row['IsFullyReceived']
+                );
+                array_push($purchaseorder_table_data_array, $temp_po_array);
+            }
         }
     }
 
