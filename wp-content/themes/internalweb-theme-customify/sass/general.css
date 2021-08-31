@@ -1574,11 +1574,6 @@ button:focus {
           transition-duration: 0.2s;
 }
 
-#on-order-list-container .purchase-order-container .vendor-name {
-  color: #fff;
-  background-color: #0f83ff;
-}
-
 #on-order-list-container .purchase-order-container h5 {
   font-size: 1.2em;
   font-weight: 600;
