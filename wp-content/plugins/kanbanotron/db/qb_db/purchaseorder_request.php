@@ -16,13 +16,13 @@ function retrieve_po_data()
     include 'qb_data_connection.php';
 
     // Request from purchaseorder table
-    $purchaseorder_request = "SELECT TxnID, TimeCreated, VendorRef_FullName, Memo, IsFullyReceived FROM purchaseorder WHERE IsFullyReceived=0 AND YEAR(TimeCreated) >= '2021'";
+    $purchaseorder_request = "SELECT TxnID, TimeCreated, VendorRef_FullName, Memo, IsFullyReceived FROM purchaseorder WHERE IsFullyReceived=0 AND YEAR(TimeCreated) >= '2021' AND VendorRef_FullName = '800001D7-1267113009'";
     $purchaseorder_request_result = $conn->query($purchaseorder_request);
 
     // Assigns request data to an array
     if ($purchaseorder_request_result->num_rows > 0) {
         while ($row = $purchaseorder_request_result->fetch_assoc()) {
-            if ($row['VendorRef_FullName'] != 'IBT Online LLC') {
+            if (preg_match('/^[a-z]{2}[0-9]{4}$/', strtolower($row['Memo']))) {
                 $temp_po_array = array(
                     'TxnID' => $row['TxnID'],
                     'TimeCreated' => $row['TimeCreated'],
