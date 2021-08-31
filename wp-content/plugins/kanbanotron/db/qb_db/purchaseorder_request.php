@@ -36,7 +36,7 @@ function retrieve_po_data()
     }
 
     // Request from purchaseorderlineret table
-    $purchaseorderlineret_request = "SELECT ItemRef_ListID, ItemRef_FullName, Description, Quantity, PARENT_IDKEY FROM purchaseorderlineret WHERE Amount > 0 AND Rate > 0";
+    $purchaseorderlineret_request = "SELECT ItemRef_ListID, ItemRef_FullName, Description, Quantity, PARENT_IDKEY FROM purchaseorderlineret WHERE Amount > 0 AND Rate > 0 AND ItemRef_ListID";
     $purchaseorderlineret_request_result = $conn->query($purchaseorderlineret_request);
 
     // Assigns request data to an array
