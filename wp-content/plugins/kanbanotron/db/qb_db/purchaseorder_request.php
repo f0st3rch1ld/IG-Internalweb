@@ -22,14 +22,16 @@ function retrieve_po_data()
     // Assigns request data to an array
     if ($purchaseorder_request_result->num_rows > 0) {
         while ($row = $purchaseorder_request_result->fetch_assoc()) {
-            $temp_po_array = array(
-                'TxnID' => $row['TxnID'],
-                'TimeCreated' => $row['TimeCreated'],
-                'VendorRef_FullName' => $row['VendorRef_FullName'],
-                'Memo' => $row['Memo'],
-                'IsFullyReceived' => $row['IsFullyReceived']
-            );
-            array_push($purchaseorder_table_data_array, $temp_po_array);
+            if ($row['VendorRef_FullName'] != 'ibt online') {
+                $temp_po_array = array(
+                    'TxnID' => $row['TxnID'],
+                    'TimeCreated' => $row['TimeCreated'],
+                    'VendorRef_FullName' => $row['VendorRef_FullName'],
+                    'Memo' => $row['Memo'],
+                    'IsFullyReceived' => $row['IsFullyReceived']
+                );
+                array_push($purchaseorder_table_data_array, $temp_po_array);
+            }
         }
     }
 
@@ -56,7 +58,7 @@ function retrieve_po_data()
                     array_push($purchaseorderlineret_table_data_array, $value);
                 }
             }
-        } 
+        }
     }
 
     $conn->close();
