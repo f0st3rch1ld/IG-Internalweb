@@ -63,7 +63,7 @@ ksort($order_txnid_array);
     let poVendorTabs = document.getElementsByClassName("po-title-container");
     for (i = 0; poVendorTabs.length > i; i++) {
         poVendorTabs[i].addEventListener("click", function() {
-            let tabNumber = this.getAttribute("data").value;
+            let tabNumber = poVendorTabs[i].getAttribute("data").value;
             console.log(this.getAttribute("data").value)
             document.getElementById(tabNumber + '-parts-accordion').setAttribute('style', 'display:flex');
         });
