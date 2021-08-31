@@ -175,7 +175,6 @@ button {
       background-color: #fff;
       @include default-transition;
       overflow: hidden;
-      cursor: pointer;
 
       &:hover {
         @include default-drop-shadow;
@@ -196,10 +195,17 @@ button {
 
       .po-title-container {
         @include superflex(row, space-between, center, wrap, 100%, auto);
-        background-color: $default-blue;
+        background-color: #fff;
+        cursor: pointer;
 
         .po-status {
           color: rgba(255, 255, 255, 0.4);
+        }
+
+        &:hover,
+        &.active {
+          background-color: $default-blue;
+          color: #fff;
         }
       }
 

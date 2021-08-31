@@ -361,7 +361,6 @@ button:focus {
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
   overflow: hidden;
-  cursor: pointer;
 }
 
 .kanbanotron-main-container .purchase-order-overview-container .purchase-order-container:hover {
@@ -403,11 +402,17 @@ button:focus {
       flex-wrap: wrap;
   width: 100%;
   height: auto;
-  background-color: #0f83ff;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-title-container .po-status {
   color: rgba(255, 255, 255, 0.4);
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-title-container:hover, .kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-title-container.active {
+  background-color: #0f83ff;
+  color: #fff;
 }
 
 .kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-control-container {
