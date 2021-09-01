@@ -11,96 +11,58 @@ foreach ($post_ids as $post_id) {
     array_push($knbn_uid_to_dwnld, $bulk_knbn_uid);
 }
 
+// Now we need to include the wp database connection
+include '../../db/knbn_wp_connection.php';
+include '../../db/request.php';
+
+// request.php reference
+// $knbn_external_yn;
+// $knbn_order_method;
+// $knbn_external_url;
+// $knbn_location;
+// $knbn_vendor;
+// $knbn_part_number;
+// $knbn_vendor_part_number;
+// $knbn_description;
+// $knbn_package_quantity;
+// $knbn_reorder_quantity;
+// $knbn_quantity;
+// $knbn_lead_time;
+// $knbn_notes;
+
 ?>
-
-<style>
-    .knbn-lbl-grid-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: center;
-        width: 100%;
-        height: auto;
-        font-family: roboto;
-    }
-
-    .knbn-lbl {
-        width: 450px;
-        min-height: 100px;
-        margin: 10px;
-    }
-
-    .blue-label,
-    .red-label {
-        height: calc(103px * 1.76);
-        width: calc(234px * 1.76);
-        border-radius: 25px;
-        border-style: solid;
-        border-width: 3px;
-        border-color: #000;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        overflow: hidden;
-        margin: 10px;
-    }
-
-    .blue-label {
-        background-color: #2E3192;
-    }
-
-    .red-label {
-        background-color: #ED2024;
-    }
-
-    .title-container {
-        height: calc(100% - (74px * 1.76));
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        color: #fff;
-    }
-
-    .title-container h4 {
-        margin: 0px;
-        color: #fff;
-        margin: 0px;
-        padding: 0px;
-        font-size: 40px;
-    }
-
-    .lower-label-container {
-        background-color: #fff;
-        border-style: solid;
-        border-width: 3px 0px 0px 0px;
-        border-color: #000;
-        height: calc(74px * 1.76);
-        width: 100%;
-    }
-</style>
 
 <!-- Kanban Label Grid Container -->
 <div class="knbn-lbl-grid-container">
     <?php foreach ($knbn_uid_to_dwnld as $knbn_uid) : ?>
+        <?php knbn_info_request($knbn_uid); ?>
+
+        <!-- <?php echo $knbn_uid; ?> Kanban Label -->
         <div class="knbn-lbl">
+
+            <!-- Blue Label -->
             <div class="blue-label">
                 <div class="title-container">
-                    <h4>Title</h4>
+                    <h4><?php echo $knbn_part_number; ?></h4>
                 </div>
                 <div class="lower-label-container"></div>
             </div>
+            <!-- /Blue Label -->
+
+            <!-- Red Label -->
             <div class="red-label">
                 <div class="title-container">
-                    <h4>Title</h4>
+                    <h4><?php echo $knbn_part_number; ?></h4>
                 </div>
                 <div class="lower-label-container"></div>
             </div>
+            <!-- /Red Label -->
+
             <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:100px; height:100px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
+
         </div>
+        <!-- /<?php echo $knbn_uid; ?> Kanban Label -->
+
     <?php endforeach; ?>
 </div>
 <!-- /Kanban Label Grid Container -->
@@ -119,3 +81,5 @@ foreach ($post_ids as $post_id) {
         }
     });
 </script>
+
+<?php $conn->close(); ?>

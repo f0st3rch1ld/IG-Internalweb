@@ -109,3 +109,71 @@ label {
 .knbn-admin-tab h4 {
     margin: none;
 }
+
+.knbn-lbl-grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: auto;
+    font-family: roboto;
+}
+
+.knbn-lbl {
+    width: 450px;
+    min-height: 100px;
+    margin: 10px;
+}
+
+.blue-label,
+.red-label {
+    height: calc(103px * 1.76);
+    width: calc(234px * 1.76);
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.blue-label {
+    background-color: #2E3192;
+}
+
+.red-label {
+    background-color: #ED2024;
+}
+
+.title-container {
+    height: calc(100% - (74px * 1.76));
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+}
+
+.title-container h4 {
+    margin: 0px;
+    color: #fff;
+    margin: 0px;
+    padding: 0px;
+    font-size: 40px;
+}
+
+.lower-label-container {
+    background-color: #fff;
+    border-style: solid;
+    border-width: 3px 0px 0px 0px;
+    border-color: #000;
+    height: calc(74px * 1.76);
+    width: 100%;
+}
