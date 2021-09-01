@@ -80,7 +80,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                     <div class="blue-knbn-qty">
                         <h3>QTY:</h3>
                         <p>
-                            <?php if ($blue_knbn_qty) {
+                            <?php if ($blue_knbn_qty != 0) {
                                 echo $blue_knbn_qty;
                             } ?>
                         </p>
@@ -99,7 +99,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                         <div class="red-knbn-qty">
                             <h3>QTY:</h3>
                             <p>
-                                <?php if ($red_knbn_qty) {
+                                <?php if ($red_knbn_qty != 0) {
                                     echo $red_knbn_qty;
                                 } ?>
                             </p>
