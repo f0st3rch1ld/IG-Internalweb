@@ -51,10 +51,18 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         global $knbn_notes;
 
         knbn_info_request($knbn_uid);
-        
 
-        
-        ?>
+        $blue_knbn_qty;
+        $red_knbn_qty;
+
+        if ($knbn_quantity) {
+            $qty_explode = explode('/', $knbn_quantity);
+            $blue_knbn_qty = $qty_explode[0];
+            $red_knbn_qty = $qty_explode[1];
+        }
+
+
+    ?>
 
         <!-- <?php echo $knbn_uid; ?> Kanban Label -->
         <div class="knbn-lbl">
@@ -71,7 +79,11 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                     </p>
                     <div class="blue-knbn-qty">
                         <h3>QTY:</h3>
-                        <p></p>
+                        <p>
+                            <?php if ($blue_knbn_qty) {
+                                echo $blue_knbn_qty;
+                            } ?>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -86,6 +98,11 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                     <div class="lower-left">
                         <div class="red-knbn-qty">
                             <h3>QTY:</h3>
+                            <p>
+                                <?php if ($red_knbn_qty) {
+                                    echo $red_knbn_qty;
+                                } ?>
+                            </p>
                         </div>
                         <div class="eta">
                             <h3>ETA:</h3>
