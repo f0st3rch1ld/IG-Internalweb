@@ -116,7 +116,11 @@
     // Bulk Download Functionality
     add_filter('handle_bulk_actions-edit-knbn_action', function($redirect_url, $action, $post_ids) {
         if ($action == 'bulk_download_kanban_labels') {
-            $redirect_url = add_query_arg(array('post_ids' => $post_ids), admin_url() . 'edit.php?post_type=knbn_action&page=download_kanban_labels');
+            $temp_id_array = array();
+            foreach ($post_ids as $post_id) {
+                array_push($temp_id_array, $post_id);
+            }
+            $redirect_url = add_query_arg('post_ids', $temp_id_array, admin_url() . 'edit.php?post_type=knbn_action&page=download_kanban_labels');
         }
         return $redirect_url;
     }, 10, 3);
