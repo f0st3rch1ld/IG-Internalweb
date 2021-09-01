@@ -37,8 +37,13 @@ foreach ($post_ids as $post_id) {
         width: calc(234px * 1.76);
         border-radius: 25px;
         border-style: solid;
-        border-width: 10px;
+        border-width: 3px;
         border-color: #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
     }
 
     .blue-label {
@@ -48,14 +53,29 @@ foreach ($post_ids as $post_id) {
     .red-label {
         background-color: red;
     }
+
+    .lower-label-container {
+        background-color: #fff;
+        border-style: solid;
+        border-width: 3px;
+        border-color: #000;
+        height: 74px;
+        width: 100%;
+    }
 </style>
 
 <!-- Kanban Label Grid Container -->
 <div class="knbn-lbl-grid-container">
     <?php foreach ($knbn_uid_to_dwnld as $knbn_uid) : ?>
         <div class="knbn-lbl">
-            <div class="blue-label"></div>
-            <div class="red-label"></div>
+            <div class="blue-label">
+                <div class="title-container"></div>
+                <div class="lower-label-container"></div>
+            </div>
+            <div class="red-label">
+                <div class="title-container"></div>
+                <div class="lower-label-container"></div>
+            </div>
             <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:100px; height:100px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
         </div>
     <?php endforeach; ?>
