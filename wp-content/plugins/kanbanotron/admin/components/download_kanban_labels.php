@@ -62,11 +62,9 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 </div>
                 <div class="lower-label-container">
                     <h3>Description</h3>
-                    <div class="description-container">
-                        <p>
-                            <?php echo $knbn_description; ?>
-                        </p>
-                    </div>
+                    <p>
+                        <?php echo $knbn_description; ?>
+                    </p>
                 </div>
             </div>
             <!-- /Blue Label -->
@@ -79,11 +77,9 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 <div class="lower-label-container">
                     <div class="lower-left">
                         <h3>Description</h3>
-                        <div class="description-container">
-                            <p>
-                                <?php echo $knbn_description; ?>
-                            </p>
-                        </div>
+                        <p>
+                            <?php echo $knbn_description; ?>
+                        </p>
                     </div>
                     <div class="lower-right">
                         <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:100px; height:100px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
