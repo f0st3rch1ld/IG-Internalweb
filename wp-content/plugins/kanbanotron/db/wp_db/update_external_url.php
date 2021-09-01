@@ -28,7 +28,7 @@ if ($knbn_does_url_exist_result->num_rows > 0) {
         echo "Error updating external URL: " . $conn->error;
     }
 } else {
-    $select_max_meta_id = "SELECT meta_id FROM wp_postmeta";
+    $select_max_meta_id = "SELECT MAX(meta_id) FROM wp_postmeta";
     $select_max_meta_result = $conn->query($select_max_meta_id);
     $new_max_meta;
 
@@ -36,7 +36,7 @@ if ($knbn_does_url_exist_result->num_rows > 0) {
 
     while ($row = $select_max_meta_result->fetch_assoc()) {
         global $new_max_meta;
-        $new_max_meta = intval(max($row['meta_id']));
+        $new_max_meta = intval($row["MAX(meta_id)"]);
         $new_max_meta++;
     }
 
