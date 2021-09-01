@@ -114,13 +114,10 @@
     });
 
     // Bulk Download Functionality
-    add_filter('handle_bulk_actions-edit-knbn_action', function($redirect_url, $action, $post_ids) {
+    add_filter('handle_bulk_actions-edit-knbn_action', function($action, $post_ids) {
         if ($action == 'bulk_download_kanban_labels') {
             // empty array to store uid's we need to download
             $knbn_uid_to_dwnld = array();
-
-            // gotta include the bulk downloader
-            include 'admin/components/bulk_download_kanban_labels.php';
 
             // lets add all the uids to the previous array
             foreach ($post_ids as $post_id) {
@@ -128,13 +125,36 @@
                 array_push($knbn_uid_to_dwnld, $bulk_knbn_uid);
             }
 
-            // now that we have all the uids, time to generate/download some lábels
-            blk_dwnld_lbls($knbn_uid_to_dwnld);
+            function redirect_post($url, array $data, array $headers = null) {
+                $params = [
+                    'http' => [
+                      'method' => 'POST',
+                      'content' => http_build_query($data)
+                    ]
+                  ];
+                
+                  if (!is_null($headers)) {
+                    $params['http']['header'] = '';
+                    foreach ($headers as $k => $v) {
+                      $params['http']['header'] .= "$k: $v\n";
+                    }
+                  }
+                
+                  $ctx = stream_context_create($params);
+                  $fp = @fopen($url, 'rb', false, $ctx);
+                
+                  if ($fp) {
+                    echo @stream_get_contents($fp);
+                    die();
+                  } else {
+                    // Error
+                    throw new Exception("Error loading '$url', $php_errormsg");
+                  }
+            }
 
-            $redirect_url = add_query_arg('download_kanban_labels', count($post_ids), $redirect_url);
+            redirect_post('http://internalweb/wp-admin/edit.php?post_type=knbn_action&page=download_kanban_labels', $knbn_uid_to_dwnld);
         }
-        return $redirect_url;
-    }, 10, 3);
+    }, 10, 2);
 
     // Gotta tell people that the bulk action has completed
     add_action('admin_notices', function() {
