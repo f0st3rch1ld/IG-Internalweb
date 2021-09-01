@@ -1,189 +1,200 @@
 .update-kanbans-app-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .update-kanbans-app-container .inner-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    max-width: 950px;
-    border-radius: 0px 0px 15px 15px;
-    background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  max-width: 950px;
+  border-radius: 0px 0px 15px 15px;
+  background-color: #fff;
 }
 
 .update-kanbans-app-container .inner-container div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: auto;
-    margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: auto;
+  margin: 20px;
 }
 
-
 #knbn-example-table {
-    width: 100%;
-    max-width: 1200px;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, .2) 2px 3px 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: lightgrey;
-    border-radius: 4px;
-    text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 3px 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgrey;
+  border-radius: 4px;
+  text-align: center;
 }
 
 #knbn-example-table thead {
-    background-color: grey;
-    height: 30px;
-    color: #fff;
-    border-style: none;
+  background-color: grey;
+  height: 30px;
+  color: #fff;
+  border-style: none;
 }
 
 hr {
-    border-color: lightgrey;
-    border-style: dashed;
-    border-width: 1px;
-    width: 90%;
+  border-color: lightgrey;
+  border-style: dashed;
+  border-width: 1px;
+  width: 90%;
 }
 
 th {
-    padding: 3px;
+  padding: 3px;
 }
 
 form {
-    margin: 20px;
+  margin: 20px;
 }
 
 label {
-    margin: 5px;
+  margin: 5px;
 }
 
 .mku-form-container {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
 }
 
 .mku-form-container label {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    min-width: 215px;
-    max-width: 285px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  min-width: 215px;
+  max-width: 285px;
 }
 
 .knbn-admin-tab {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20px !important;
-    width: auto !important;
-    padding: 10px;
-    font-weight: bold;
-    border-style: solid;
-    border-color: lightgrey;
-    border-width: 0px 1px 1px 1px;
-    border-radius: 0px 0px 5px 5px;
-    cursor: pointer;
-    margin: 2px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px !important;
+  width: auto !important;
+  padding: 10px;
+  font-weight: bold;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: 0px 1px 1px 1px;
+  border-radius: 0px 0px 5px 5px;
+  cursor: pointer;
+  margin: 2px !important;
 }
 
 .knbn-admin-tab:hover,
 .knbn-admin-tab.active {
-    border-color: #2271b1;
-    background-color: #2271b1;
-    color: #fff;
+  border-color: #2271b1;
+  background-color: #2271b1;
+  color: #fff;
 }
 
 .knbn-admin-tab h4 {
-    margin: none;
+  margin: none;
 }
 
 .knbn-lbl-grid-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    height: auto;
-    font-family: roboto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: auto;
+  font-family: roboto;
 }
 
 .knbn-lbl {
-    width: 450px;
-    min-height: 100px;
-    margin: 10px;
+  width: 450px;
+  min-height: 100px;
+  margin: 10px;
 }
 
 .blue-label,
 .red-label {
-    height: calc(103px * 1.76);
-    width: calc(234px * 1.76);
-    border-radius: 25px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    margin: 10px;
+  height: calc(103px * 1.76);
+  width: calc(234px * 1.76);
+  border-radius: 25px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  margin: 10px;
 }
 
 .blue-label {
-    background-color: #2E3192;
+  background-color: #2e3192;
 }
 
 .red-label {
-    background-color: #ED2024;
+  background-color: #ed2024;
 }
 
 .title-container {
-    height: calc(100% - (74px * 1.76));
-    width: 95%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    color: #fff;
+  height: calc(100% - (74px * 1.76));
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: #fff;
 }
 
 .title-container h4 {
-    margin: 0px;
-    color: #fff;
-    margin: 0px;
-    padding: 0px;
-    font-size: 37px;
+  margin: 0px;
+  color: #fff;
+  margin: 0px;
+  padding: 0px;
+  font-size: 37px;
 }
 
 .lower-label-container {
-    background-color: #fff;
-    border-style: solid;
-    border-width: 3px 0px 0px 0px;
-    border-color: #000;
-    height: calc(74px * 1.76);
-    width: 100%;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
+  background-color: #fff;
+  border-style: solid;
+  border-width: 3px 0px 0px 0px;
+  border-color: #000;
+  height: calc(74px * 1.76);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .lower-label-container h3 {
-    width:100%;
-    margin:10px;
-    font-size:20px;
+  width: 100%;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.description-container {
+  width: 100%;
+}
+
+.description-container p {
+  width: 100%;
+  margin: 10px;
+  font-size: 14px;
+  font-weight: bold;
 }
