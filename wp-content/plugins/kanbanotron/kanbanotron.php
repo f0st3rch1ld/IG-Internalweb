@@ -120,7 +120,7 @@
             foreach ($post_ids as $post_id) {
                 array_push($temp_id_array, $post_id);
             }
-            $redirect_url = add_query_arg('post_ids', $temp_id_array, admin_url() . 'edit.php?post_type=knbn_action&page=download_kanban_labels');
+            $redirect_url = add_query_arg(array('post_ids' => $temp_id_array), admin_url() . 'edit.php?post_type=knbn_action&page=download_kanban_labels');
         }
         return $redirect_url;
     }, 10, 3);
