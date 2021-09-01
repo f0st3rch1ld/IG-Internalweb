@@ -52,8 +52,8 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 
         knbn_info_request($knbn_uid);
 
-        $blue_knbn_qty;
-        $red_knbn_qty;
+        $blue_knbn_qty = 0;
+        $red_knbn_qty = 0;
 
         if ($knbn_quantity) {
             $qty_explode = explode('/', $knbn_quantity);
