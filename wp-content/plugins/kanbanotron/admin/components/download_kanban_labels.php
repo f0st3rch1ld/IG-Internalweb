@@ -70,7 +70,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                         <?php echo $knbn_description; ?>
                     </p>
                     <div class="blue-knbn-qty">
-                        <h3>Qty.</h3>
+                        <h3>QTY:</h3>
                         <p></p>
                     </div>
                 </div>
@@ -84,9 +84,15 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 </div>
                 <div class="lower-label-container">
                     <div class="lower-left">
-                        <div class="red-knbn-qty"></div>
-                        <div class="eta"></div>
-                        <div class="purchase-order-number"></div>
+                        <div class="red-knbn-qty">
+                            <h3>QTY:</h3>
+                        </div>
+                        <div class="eta">
+                            <h3>ETA:</h3>
+                        </div>
+                        <div class="purchase-order-number">
+                            <h3>PO:</h3>
+                        </div>
                     </div>
                     <div class="lower-right">
                         <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:100px; height:100px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
