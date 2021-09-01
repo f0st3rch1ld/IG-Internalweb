@@ -57,16 +57,16 @@ foreach ($post_ids as $post_id) {
     .title-container {
         height: calc(100% - (74px * 1.76));
         width: 100%;
-        display:flex;
-        flex-direction:row;
-        justify-content:flex-start;
-        align-items:center;
-        padding:10px;
-        color:#fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px;
+        color: #fff;
     }
 
     .title-container h4 {
-        color:#fff;
+        color: #fff;
     }
 
     .lower-label-container {
@@ -90,7 +90,9 @@ foreach ($post_ids as $post_id) {
                 <div class="lower-label-container"></div>
             </div>
             <div class="red-label">
-                <div class="title-container"></div>
+                <div class="title-container">
+                    <h4>Title</h4>
+                </div>
                 <div class="lower-label-container"></div>
             </div>
             <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:100px; height:100px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
