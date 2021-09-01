@@ -212,6 +212,11 @@ label {
   border-style: solid;
   border-width: 0px 3px 0px 0px;
   border-color: #000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .red-knbn-qty,
