@@ -25,7 +25,6 @@ foreach ($post_ids as $post_id) {
     }
 
     .knbn-lbl {
-        background-color: cyan;
         width: 450px;
         min-height: 100px;
         margin: 10px;
@@ -58,6 +57,16 @@ foreach ($post_ids as $post_id) {
     .title-container {
         height: calc(100% - (74px * 1.76));
         width: 100%;
+        display:flex;
+        flex-direction:row;
+        justify-content:flex-start;
+        align-items:center;
+        padding:10px;
+        color:#fff;
+    }
+
+    .title-container h4 {
+        color:#fff;
     }
 
     .lower-label-container {
@@ -75,7 +84,9 @@ foreach ($post_ids as $post_id) {
     <?php foreach ($knbn_uid_to_dwnld as $knbn_uid) : ?>
         <div class="knbn-lbl">
             <div class="blue-label">
-                <div class="title-container"></div>
+                <div class="title-container">
+                    <h4>Title</h4>
+                </div>
                 <div class="lower-label-container"></div>
             </div>
             <div class="red-label">
