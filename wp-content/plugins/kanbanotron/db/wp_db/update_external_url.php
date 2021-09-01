@@ -36,7 +36,7 @@ if ($knbn_does_url_exist_result->num_rows > 0) {
 
     while ($row = $select_max_meta_result->fetch_array()) {
         global $new_max_meta;
-        $new_max_meta = intval($row[0]);
+        $new_max_meta = intval($row['0']);
         $new_max_meta++;
     }
 
