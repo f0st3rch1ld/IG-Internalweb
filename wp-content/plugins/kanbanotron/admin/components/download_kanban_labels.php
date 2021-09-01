@@ -36,7 +36,7 @@ echo var_dump($knbn_uid_to_dwnld);
 
 <div class="knbn-lbl-grid-container">
     <div class="knbn-lbl">
-        <div id="1l234978asgfd7olua34ifrlkagsdlcv7-qrcode" style="width:100px; height:100px; margin-top:15px;" onload="makeCode('1l234978asgfd7olua34ifrlkagsdlcv7')"></div>
+        <div id="1l234978asgfd7olua34ifrlkagsdlcv7-qrcode" style="width:100px; height:100px; margin-top:15px;" onload="setTimeout(makeCode('1l234978asgfd7olua34ifrlkagsdlcv7'), 1000)"></div>
     </div>
 </div>
 
