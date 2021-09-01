@@ -125,34 +125,12 @@
                 array_push($knbn_uid_to_dwnld, $bulk_knbn_uid);
             }
 
-            function redirect_post($url, array $data, array $headers = null) {
-                $params = [
-                    'http' => [
-                      'method' => 'POST',
-                      'content' => http_build_query($data)
-                    ]
-                  ];
-                
-                  if (!is_null($headers)) {
-                    $params['http']['header'] = '';
-                    foreach ($headers as $k => $v) {
-                      $params['http']['header'] .= "$k: $v\n";
-                    }
-                  }
-                
-                  $ctx = stream_context_create($params);
-                  $fp = @fopen($url, 'rb', false, $ctx);
-                
-                  if ($fp) {
-                    echo @stream_get_contents($fp);
-                    die();
-                  } else {
-                    // Error
-                    throw new Exception("Error loading '$url', $php_errormsg");
-                  }
-            }
+            // Starts a session before page redirection
+            session_start();
+            $_SESSION["kanban_downloads"] = $knbn_uid_to_dwnld;
 
-            redirect_post('http://internalweb/wp-admin/edit.php?post_type=knbn_action&page=download_kanban_labels', $knbn_uid_to_dwnld);
+            header("Location: http://internalweb/wp-admin/edit.php?post_type=knbn_action&page=download_kanban_labels");
+            exit();
         }
     }, 10, 2);
 
