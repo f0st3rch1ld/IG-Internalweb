@@ -62,7 +62,7 @@ foreach ($post_ids as $post_id) {
     .lower-label-container {
         background-color: #fff;
         border-style: solid;
-        border-width: 3px;
+        border-width: 3px 0px 0px 0px;
         border-color: #000;
         height: calc(74px * 1.76);
         width: 100%;
