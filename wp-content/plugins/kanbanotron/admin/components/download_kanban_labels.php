@@ -50,7 +50,9 @@ echo var_dump($knbn_uid_to_dwnld);
             width: 100,
             height: 100
         });
+        console.log(qrcode);
         var elText = `http://internalweb/kanbanotron/?knbn_uid=${x}`;
         qrcode.makeCode(elText.value);
+        console.log(elText);
     }
 </script>
