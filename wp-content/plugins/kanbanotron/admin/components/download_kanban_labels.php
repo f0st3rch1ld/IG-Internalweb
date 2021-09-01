@@ -60,7 +60,12 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 <div class="title-container">
                     <h4><?php echo $knbn_vendor_part_number; ?></h4>
                 </div>
-                <div class="lower-label-container"></div>
+                <div class="lower-label-container">
+                    <h3>Description<h3>
+                    <div class="description-container">
+                        <?php echo $knbn_description; ?>
+                    </div>
+                </div>
             </div>
             <!-- /Blue Label -->
 
@@ -69,11 +74,19 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 <div class="title-container">
                     <h4><?php echo $knbn_vendor_part_number; ?></h4>
                 </div>
-                <div class="lower-label-container"></div>
+                <div class="lower-label-container">
+                    <div class="lower-left">
+                        <h3>Description<h3>
+                        <div class="description-container">
+                            <?php echo $knbn_description; ?>
+                        </div>
+                    </div>
+                    <div class="lower-right">
+                        <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:100px; height:100px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
+                    </div>
+                </div>
             </div>
             <!-- /Red Label -->
-
-            <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:100px; height:100px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
 
         </div>
         <!-- /<?php echo $knbn_uid; ?> Kanban Label -->
