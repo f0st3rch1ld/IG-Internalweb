@@ -54,6 +54,11 @@ foreach ($post_ids as $post_id) {
         background-color: red;
     }
 
+    .title-container {
+        height: calc(100% - (74px * 1.76));
+        width:100%;
+    }
+
     .lower-label-container {
         background-color: #fff;
         border-style: solid;
