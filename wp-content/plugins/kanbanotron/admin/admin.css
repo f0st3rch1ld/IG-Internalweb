@@ -166,6 +166,7 @@ label {
   margin: 0px;
   padding: 0px;
   font-size: 37px;
+  font-style: italic;
 }
 
 .lower-label-container {
@@ -183,14 +184,20 @@ label {
 }
 
 .lower-label-container h3 {
-  margin: 10px;
+  margin: 6px 10px;
   font-size: 20px;
 }
 
-.lower-label-container p {
-  margin: 0px 10px;
-  font-size: 14px;
-  font-weight: bold;
+.blue-knbn-qty {
+  width: 100%;
+  border-style: solid;
+  border-width: 3px 0px 0px 0px;
+  border-color: #000;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .lower-left {
