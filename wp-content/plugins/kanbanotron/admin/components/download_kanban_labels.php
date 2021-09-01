@@ -22,6 +22,7 @@ foreach ($post_ids as $post_id) {
         align-content: center;
         width: 100%;
         height: auto;
+        font-family: roboto;
     }
 
     .knbn-lbl {
@@ -56,17 +57,20 @@ foreach ($post_ids as $post_id) {
 
     .title-container {
         height: calc(100% - (74px * 1.76));
-        width: 100%;
+        width: 95%;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        padding: 10px;
         color: #fff;
     }
 
     .title-container h4 {
+        margin: 0px;
         color: #fff;
+        margin: 0px;
+        padding: 0px;
+        font-size: 40px;
     }
 
     .lower-label-container {
