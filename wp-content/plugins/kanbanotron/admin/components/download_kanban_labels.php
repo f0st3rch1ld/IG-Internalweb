@@ -34,8 +34,23 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 
 <!-- Kanban Label Grid Container -->
 <div class="knbn-lbl-grid-container">
-    <?php foreach ($knbn_uid_to_dwnld as $knbn_uid) : ?>
-        <?php knbn_info_request($knbn_uid); ?>
+    <?php foreach ($knbn_uid_to_dwnld as $knbn_uid) :
+
+        global $knbn_external_yn;
+        global $knbn_order_method;
+        global $knbn_external_url;
+        global $knbn_location;
+        global $knbn_vendor;
+        global $knbn_part_number;
+        global $knbn_vendor_part_number;
+        global $knbn_description;
+        global $knbn_package_quantity;
+        global $knbn_reorder_quantity;
+        global $knbn_quantity;
+        global $knbn_lead_time;
+        global $knbn_notes;
+
+        knbn_info_request($knbn_uid); ?>
 
         <!-- <?php echo $knbn_uid; ?> Kanban Label -->
         <div class="knbn-lbl">
