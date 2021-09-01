@@ -131,7 +131,7 @@
             // now that we have all the uids, time to generate/download some lábels
             blk_dwnld_lbls($knbn_uid_to_dwnld);
 
-            $redirect_url = add_query_arg('bulk_download_kanban_labels', count($post_ids), $redirect_url);
+            $redirect_url = add_query_arg('download_kanban_labels', count($post_ids), $redirect_url);
         }
         return $redirect_url;
     }, 10, 3);
