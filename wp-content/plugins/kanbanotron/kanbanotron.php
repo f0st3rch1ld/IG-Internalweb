@@ -114,8 +114,8 @@
     });
 
     // Bulk Download Functionality
-    add_filter('handle_bulk_actions-edit-knbn_action', function($action, $post_ids) {
-        if ($action == 'bulk_download_kanban_labels') :
+    add_filter('handle_bulk_actions-edit-knbn_action', function($redirect_url, $action, $post_ids) {
+        if ($action == 'bulk_download_kanban_labels') {
             // empty array to store uid's we need to download
             $knbn_uid_to_dwnld = array();
 
@@ -127,13 +127,11 @@
 
             session_start();
             $_SESSION['knbn_uids'] = $knbn_uid_to_dwnld;
-            ?>
 
-            <script>window.location.href="http://internalweb/wp-admin/edit.php?post_type=knbn_action&page=download_kanban_labels"</script>
-            
-            <?php
-        endif;
-    }, 10, 2);
+            $redirect_url = add_query_arg('bulk_download_kanban_labels', count($post_ids), $redirect_url);
+        }
+        return $redirect_url;
+    }, 10, 3);
 
     // Gotta tell people that the bulk action has completed
     add_action('admin_notices', function() {
