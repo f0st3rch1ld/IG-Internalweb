@@ -48,11 +48,11 @@ foreach ($post_ids as $post_id) {
     }
 
     .blue-label {
-        background-color: blue;
+        background-color: #2E3192;
     }
 
     .red-label {
-        background-color: red;
+        background-color: #ED2024;
     }
 
     .title-container {
