@@ -44,6 +44,7 @@ foreach ($post_ids as $post_id) {
         justify-content: space-between;
         align-items: center;
         overflow: hidden;
+        margin: 10px;
     }
 
     .blue-label {
@@ -56,7 +57,7 @@ foreach ($post_ids as $post_id) {
 
     .title-container {
         height: calc(100% - (74px * 1.76));
-        width:100%;
+        width: 100%;
     }
 
     .lower-label-container {
