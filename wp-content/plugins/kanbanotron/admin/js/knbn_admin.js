@@ -56,7 +56,7 @@ let generateCode = (x, y) => {
   console.log(y);
 }
 
-window.onload(function() {
+window.addEventListener('load', function() {
   let allDaCodez = document.getElementsByClassName('qrcode-container');
   for (i = 0; allDaCodez.length > i; i++) {
     let uid = this.getAttribute('data');
