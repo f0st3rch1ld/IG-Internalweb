@@ -176,25 +176,19 @@ label {
   height: calc(74px * 1.76);
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
 .lower-label-container h3 {
-  width: 100%;
   margin: 10px;
   font-size: 20px;
 }
 
-.description-container {
-  width: 100%;
-}
-
-.description-container p {
-  width: 100%;
-  margin: 10px;
+.lower-label-container p {
+  margin: 0px 10px;
   font-size: 14px;
   font-weight: bold;
 }
