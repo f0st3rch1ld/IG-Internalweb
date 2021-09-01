@@ -41,6 +41,8 @@ echo var_dump($knbn_uid_to_dwnld);
 </div>
 
 <script>
+    let qrcode;
+
     let generateCode = (x, y) => {
         let qrcode = new QRCode(document.getElementById(`${x}-qrcode`), {
             width: 100,
