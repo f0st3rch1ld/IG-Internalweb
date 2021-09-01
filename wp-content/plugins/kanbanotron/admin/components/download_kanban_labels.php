@@ -35,9 +35,11 @@ echo var_dump($knbn_uid_to_dwnld);
 </style>
 
 <div class="knbn-lbl-grid-container">
-    <div class="knbn-lbl">
-        <div class="qrcode-container" id="1l234978asgfd7olua34ifrlkagsdlcv-qrcode" style="width:100px; height:100px; margin-top:15px;" data="1l234978asgfd7olua34ifrlkagsdlcv"></div>
-    </div>
+    <?php foreach ($knbn_uid_to_dwnld as $knbn_uid) : ?>
+        <div class="knbn-lbl">
+            <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:100px; height:100px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
+        </div>
+    <?php endforeach; ?>
 </div>
 
 <script>
