@@ -1,6 +1,6 @@
 <?php
 
-$post_ids = $_GET['post_ids'];
+$post_ids = json_decode($_GET['post_ids']);
 
 // empty array to store uid's we need to download
 $knbn_uid_to_dwnld = array();
