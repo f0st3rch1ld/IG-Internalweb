@@ -28,36 +28,29 @@ echo var_dump($knbn_uid_to_dwnld);
 
     .knbn-lbl {
         background-color: cyan;
-        width: 100px;
-        height: 100px;
+        width: 450px;
+        min-height: 100px;
         margin: 10px;
     }
 </style>
 
 <div class="knbn-lbl-grid-container">
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
-    <div class="knbn-lbl"></div>
+    <div class="knbn-lbl">
+        <div id="1l234978asgfd7olua34ifrlkagsdlcv7-qrcode" style="width:100px; height:100px; margin-top:15px;" onload="makeCode('1l234978asgfd7olua34ifrlkagsdlcv7')"></div>
+    </div>
 </div>
+
+
+
+<script type="text/javascript">
+    let qrcode;
+
+    function makeCode(x) {
+        let qrcode = new QRCode(document.getElementById(`${x}-qrcode`), {
+            width: 100,
+            height: 100
+        });
+        var elText = `http://internalweb/kanbanotron/?knbn_uid=${x}`;
+        qrcode.makeCode(elText.value);
+    }
+</script>

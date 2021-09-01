@@ -205,5 +205,7 @@
     {
         wp_enqueue_script('knbn_admin.js', plugin_dir_url(__FILE__) . 'admin/js/knbn_admin.js', array('jquery'), false, true);
 
+        wp_enqueue_script('qrcode.js', plugin_dir_url(__FILE__) . 'admin/js/qrcode.js', array('jquery'), false, false);
+
         wp_enqueue_style('admin.css', plugin_dir_url(__FILE__) . 'admin/admin.css', false, false);
     }
