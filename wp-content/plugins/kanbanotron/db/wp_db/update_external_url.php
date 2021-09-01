@@ -33,13 +33,14 @@ if ($knbn_does_url_exist_result->num_rows > 0) {
     $new_max_meta;
 
     echo var_dump($select_max_meta_result->fetch_assoc());
-    echo 'max_meta: ' . $new_max_meta;
 
     while ($row = $select_max_meta_result->fetch_assoc()) {
         global $new_max_meta;
         $new_max_meta = intval($row["MAX(meta_id)"]);
         $new_max_meta++;
     }
+
+    echo 'max_meta: ' . $new_max_meta;
 
     $knbn_set_ext_url = "INSERT INTO wp_postmeta (meta_id, post_id, meta_key, meta_value) VALUES ($new_max_meta, $retrieved_id, 'external_product_url', $ext_url)";
 
