@@ -55,12 +55,3 @@ let generateCode = (x, y) => {
   qrcode.makeCode(y.value);
   console.log(y);
 }
-
-window.addEventListener('load', function() {
-  let allDaCodez = document.getElementsByClassName('qrcode-container');
-  for (i = 0; allDaCodez.length > i; i++) {
-    let uid = this.getAttribute('data');
-    let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
-    generateCode(uid, newCode);
-  }
-});

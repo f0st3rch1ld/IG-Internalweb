@@ -39,3 +39,14 @@ echo var_dump($knbn_uid_to_dwnld);
         <div class="qrcode-container" id="1l234978asgfd7olua34ifrlkagsdlcv-qrcode" style="width:100px; height:100px; margin-top:15px;" data="1l234978asgfd7olua34ifrlkagsdlcv"></div>
     </div>
 </div>
+
+<script>
+    window.addEventListener('load', function() {
+        let allDaCodez = document.getElementsByClassName('qrcode-container');
+        for (i = 0; allDaCodez.length > i; i++) {
+            let uid = this.getAttribute('data');
+            let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
+            generateCode(uid, newCode);
+        }
+    });
+</script>
