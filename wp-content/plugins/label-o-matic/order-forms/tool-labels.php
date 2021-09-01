@@ -57,6 +57,7 @@ $tool_labels = array(
         'Cut-Off-Tool-PWR1003' => 'Cut Off Tool',
         'Air-Buffer-PWR1004' => 'Air Buffer',
 	'Heat-Gun-PWR1023' => 'Heat Gun',
+	'Powder-Gun-Cup-PWR1024' => 'Powder Gun Cup',
     ),
     // /Power Tools Array
 
