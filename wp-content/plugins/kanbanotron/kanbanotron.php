@@ -128,7 +128,7 @@
             session_start();
             $_SESSION['knbn_uids'] = $knbn_uid_to_dwnld;
 
-            $redirect_url = add_query_arg('page', 'download_kanban_labels', admin_url() . 'edit.php?knbn_action');
+            $redirect_url = add_query_arg('page', 'download_kanban_labels', admin_url() . 'edit.php?post_type=knbn_action');
         }
         return $redirect_url;
     }, 10, 3);
