@@ -43,7 +43,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             <!-- Blue Label -->
             <div class="blue-label">
                 <div class="title-container">
-                    <h4><?php echo $knbn_part_number; ?></h4>
+                    <h4><?php echo $knbn_vendor_part_number; ?></h4>
                 </div>
                 <div class="lower-label-container"></div>
             </div>
@@ -52,7 +52,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             <!-- Red Label -->
             <div class="red-label">
                 <div class="title-container">
-                    <h4><?php echo $knbn_part_number; ?></h4>
+                    <h4><?php echo $knbn_vendor_part_number; ?></h4>
                 </div>
                 <div class="lower-label-container"></div>
             </div>
