@@ -188,6 +188,12 @@ label {
   font-size: 20px;
 }
 
+.lower-label-container p {
+  margin: 0px 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .blue-knbn-qty {
   width: 100%;
   border-style: solid;
