@@ -236,6 +236,11 @@ label {
   height: 59px;
 }
 
+.blue-knbn-qty p,
+.red-knbn-qty p {
+  font-size: 30px;
+}
+
 .eta {
   height: 59px;
   width: 149px;
