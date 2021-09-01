@@ -177,3 +177,8 @@ label {
     height: calc(74px * 1.76);
     width: 100%;
 }
+
+.lower-label-container h3 {
+    margin:10px;
+    font-size:20px;
+}
