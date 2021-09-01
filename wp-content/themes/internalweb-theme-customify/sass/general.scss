@@ -176,16 +176,26 @@ button {
       @include default-transition;
       overflow: hidden;
 
+      .po-title-container {
+        @include superflex(row, space-between, center, wrap, 100%, auto);
+        background-color: $default-blue;
+
+        .po-status {
+          color: rgba(255, 255, 255, 0.4);
+        }
+
+        h5 {
+          font-size: 1.2em;
+          font-weight: 600;
+          padding: 5px 15px;
+          margin: 0px;
+          color: #fff;
+        }
+      }
+
       &:hover {
         @include default-drop-shadow;
         @include default-transition;
-      }
-
-      h5 {
-        font-size: 1.2em;
-        font-weight: 600;
-        padding: 5px 15px;
-        margin: 0px;
       }
 
       .po-control-container {

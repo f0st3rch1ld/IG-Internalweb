@@ -363,6 +363,39 @@ button:focus {
   overflow: hidden;
 }
 
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  background-color: #0f83ff;
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-title-container .po-status {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-title-container h5 {
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 5px 15px;
+  margin: 0px;
+  color: #fff;
+}
+
 .kanbanotron-main-container .purchase-order-overview-container .purchase-order-container:hover {
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
           box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.22);
@@ -370,13 +403,6 @@ button:focus {
           transition-timing-function: ease-in-out;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
-}
-
-.kanbanotron-main-container .purchase-order-overview-container .purchase-order-container h5 {
-  font-size: 1.2em;
-  font-weight: 600;
-  padding: 5px 15px;
-  margin: 0px;
 }
 
 .kanbanotron-main-container .purchase-order-overview-container .purchase-order-container .po-control-container {
