@@ -12,8 +12,8 @@ foreach ($post_ids as $post_id) {
 }
 
 // Now we need to include the wp database connection
-include plugin_dir_path(__FILE__) . '../db/knbn_wp_connection.php';
-include plugin_dir_path(__FILE__) . '../db/request.php';
+include plugin_dir_path(__FILE__) . '../../db/knbn_wp_connection.php';
+include plugin_dir_path(__FILE__) . '../../db/request.php';
 
 // request.php reference
 // $knbn_external_yn;
