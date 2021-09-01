@@ -108,14 +108,14 @@
     }, 10, 2);
 
     // // Adds an option for bulk downloading kanban labels
-    add_filter('bulk_actions-edit-knbn_action', function($bulk_actions) {
+    add_filter('bulk_actions-edit-knbn_action', function ($bulk_actions) {
         $bulk_actions['bulk_download_kanban_labels'] = __('Download Selected Kanban Labels', 'txtdomain');
         return $bulk_actions;
     });
 
     // Bulk Download Functionality
-    add_filter('handle_bulk_actions-edit-knbn_action', function($action, $post_ids) {
-        if ($action == 'bulk_download_kanban_labels') {
+    add_filter('handle_bulk_actions-edit-knbn_action', function ($action, $post_ids) {
+        if ($action == 'bulk_download_kanban_labels') :
             // empty array to store uid's we need to download
             $knbn_uid_to_dwnld = array();
 
@@ -124,18 +124,21 @@
                 $bulk_knbn_uid = get_post_meta($post_id, 'product_setup_knbn_uid', true);
                 array_push($knbn_uid_to_dwnld, $bulk_knbn_uid);
             }
+            ?>
+            <form name="download-kanban-labels-redirect" method="post" action="<?php echo admin_url() . '/edit.php?post_type=knbn_action&page=download_kanban_labels' ?>" style="display:none;">
+                <input type="hidden" value="<?php $knbn_uid_to_dwnld ?>" />
+                <input type="submit" id="dwnld-knbn-rdr"/>
+            </form>
 
-            // Starts a session before page redirection
-            session_start();
-            $_SESSION["kanban_downloads"] = $knbn_uid_to_dwnld;
-
-            header("http://internalweb/wp-admin/edit.php?post_type=knbn_action&page=download_kanban_labels");
-            exit();
-        }
+            <script>
+                document.getElementById("dwnld-knbn-rdr").click();
+            </script>
+            <?php
+        endif;
     }, 10, 2);
 
     // Gotta tell people that the bulk action has completed
-    add_action('admin_notices', function() {
+    add_action('admin_notices', function () {
         if (!empty($_REQUEST['bulk_download_kanban_labels'])) {
             $num_downloaded = (int) $_REQUEST['bulk_download_kanban_labels'];
             printf('<div id="message" class="updated notice is-dismissable"><p>' . __('Generated and Downloaded %d Kanban Labels.', 'txtdomain') . '</p></div>', $num_downloaded);
