@@ -41,24 +41,21 @@ echo var_dump($knbn_uid_to_dwnld);
 </div>
 
 <script>
-    let qrcode;
-
-    let generateCode = (x, y) => {
-        let qrcode = new QRCode(document.getElementById(`${x}-qrcode`), {
-            width: 100,
-            height: 100,
-        });
-        console.log(qrcode);
-        qrcode.makeCode(y.value);
-        console.log(y);
-    }
-
     window.addEventListener('load', function() {
         let allDaCodez = document.getElementsByClassName('qrcode-container');
         for (i = 0; allDaCodez.length > i; i++) {
+
             let uid = allDaCodez[i].getAttribute('data');
+            
             let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
             generateCode(uid, newCode);
+
+            let qrcode = new QRCode(document.getElementById(`${uid}-qrcode`), {
+                width: 100,
+                height: 100,
+            });
+
+            qrcode.makeCode(newCode);
         }
     });
 </script>
