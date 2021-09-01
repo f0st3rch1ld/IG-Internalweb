@@ -59,7 +59,7 @@ foreach ($post_ids as $post_id) {
         border-style: solid;
         border-width: 3px;
         border-color: #000;
-        height: 74px;
+        height: calc(74px * 1.76);
         width: 100%;
     }
 </style>
