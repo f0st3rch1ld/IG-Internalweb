@@ -159,7 +159,7 @@ for ($i = 0; count($purchaseorderlineret_table_data_array) > $i; $i++) {
 
     <?php if ($knbn_external_url) : ?>
         <a href="<?php echo $knbn_external_url; ?>" target="_blank">Click to order from <?php echo $knbn_vendor; ?> <i class="far fa-plus-square"></i></a>
-    <?php elseif ($knbn_external_yn == 'external' && $knbn_order_method == 'generated-po') : ?>
+    <?php elseif ($knbn_external_yn == 'external' && $knbn_order_method == 'generated-po' && $knbn_reorder_quantity) : ?>
         <button onclick="addToPO('<?php echo $knbn_uid; ?>', document.getElementById('order-selection').value)">Add to PO <i class="far fa-plus-square"></i></button>
     <?php elseif ($knbn_external_yn == 'internal') : ?>
         <button onclick="">Send to Scheduler <i class="far fa-plus-square"></i></button>
