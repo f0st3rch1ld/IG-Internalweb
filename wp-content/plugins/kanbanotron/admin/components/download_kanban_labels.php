@@ -1,7 +1,14 @@
 <?php
 
-echo 'downlaod kanban labels page will go here.';
+$post_ids = $_GET['post_ids'];
 
-print_r($_SESSION);
+// empty array to store uid's we need to download
+$knbn_uid_to_dwnld = array();
 
-print_r($_POST);
+// lets add all the uids to the previous array
+foreach ($post_ids as $post_id) {
+    $bulk_knbn_uid = get_post_meta($post_id, 'product_setup_knbn_uid', true);
+    array_push($knbn_uid_to_dwnld, $bulk_knbn_uid);
+}
+
+echo var_dump($knbn_uid_to_dwnld);
