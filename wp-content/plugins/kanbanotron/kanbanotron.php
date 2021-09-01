@@ -129,7 +129,7 @@
             session_start();
             $_SESSION["kanban_downloads"] = $knbn_uid_to_dwnld;
 
-            header("Location: http://internalweb/wp-admin/edit.php?post_type=knbn_action&page=download_kanban_labels");
+            header("http://internalweb/wp-admin/edit.php?post_type=knbn_action&page=download_kanban_labels");
             exit();
         }
     }, 10, 2);
