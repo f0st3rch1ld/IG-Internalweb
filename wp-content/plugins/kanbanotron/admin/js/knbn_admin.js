@@ -44,3 +44,16 @@ document.getElementById('kanban-selection').addEventListener('change', function(
         upManKnbnFields(this.value);
     }
 });
+
+let qrcode;
+
+    function makeCode(x) {
+        let qrcode = new QRCode(document.getElementById(`${x}-qrcode`), {
+            width: 100,
+            height: 100
+        });
+        console.log(qrcode);
+        var elText = `http://internalweb/kanbanotron/?knbn_uid=${x}`;
+        qrcode.makeCode(elText.value);
+        console.log(elText);
+    }
