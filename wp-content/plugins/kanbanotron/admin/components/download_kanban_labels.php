@@ -11,8 +11,6 @@ foreach ($post_ids as $post_id) {
     array_push($knbn_uid_to_dwnld, $bulk_knbn_uid);
 }
 
-echo var_dump($knbn_uid_to_dwnld);
-
 ?>
 
 <style>
@@ -32,30 +30,45 @@ echo var_dump($knbn_uid_to_dwnld);
         min-height: 100px;
         margin: 10px;
     }
+
+    .blue-label,
+    .red-label {
+        height: 103px;
+        width: 234px;
+        border-radius: 10px;
+    }
+
+    .blue-label {
+        background-color: blue;
+    }
+
+    .red-label {
+        background-color: red;
+    }
 </style>
 
+<!-- Kanban Label Grid Container -->
 <div class="knbn-lbl-grid-container">
     <?php foreach ($knbn_uid_to_dwnld as $knbn_uid) : ?>
         <div class="knbn-lbl">
+            <div class="blue-label"></div>
+            <div class="red-label"></div>
             <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:100px; height:100px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
         </div>
     <?php endforeach; ?>
 </div>
+<!-- /Kanban Label Grid Container -->
 
 <script>
     window.addEventListener('load', function() {
         let allDaCodez = document.getElementsByClassName('qrcode-container');
         for (i = 0; allDaCodez.length > i; i++) {
-
             let uid = allDaCodez[i].getAttribute('data');
-
             let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
-
             let qrcode = new QRCode(document.getElementById(`${uid}-qrcode`), {
                 width: 100,
                 height: 100,
             });
-
             qrcode.makeCode(newCode);
         }
     });
