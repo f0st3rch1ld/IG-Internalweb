@@ -17,16 +17,20 @@ echo var_dump($knbn_uid_to_dwnld);
 
 <style>
     .knbn-lbl-grid-container {
-        display: grid;
-        grid-template-columns: auto auto auto auto auto;
-        justify-content: space-evenly;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         align-content: center;
+        width: 100%;
+        height: auto;
     }
 
     .knbn-lbl {
         background-color: cyan;
         width: 100px;
         height: 100px;
+        margin: 10px;
     }
 </style>
 
