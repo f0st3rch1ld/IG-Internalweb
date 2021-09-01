@@ -45,13 +45,3 @@ document
       upManKnbnFields(this.value);
     }
   });
-
-let generateCode = (x, y) => {
-  let qrcode = new QRCode(document.getElementById(`${x}-qrcode`), {
-    width: 100,
-    height: 100,
-  });
-  console.log(qrcode);
-  qrcode.makeCode(y.value);
-  console.log(y);
-}
