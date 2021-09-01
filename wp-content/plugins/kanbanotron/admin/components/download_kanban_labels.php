@@ -33,8 +33,8 @@ foreach ($post_ids as $post_id) {
 
     .blue-label,
     .red-label {
-        height: 103px;
-        width: 234px;
+        height: calc(103px * 1.76);
+        width: calc(234px * 1.76);
         border-radius: 10px;
     }
 
