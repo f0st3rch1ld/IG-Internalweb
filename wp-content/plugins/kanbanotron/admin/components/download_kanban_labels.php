@@ -63,7 +63,9 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 <div class="lower-label-container">
                     <h3>Description</h3>
                     <div class="description-container">
-                        <?php echo $knbn_description; ?>
+                        <p>
+                            <?php echo $knbn_description; ?>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -76,9 +78,11 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 </div>
                 <div class="lower-label-container">
                     <div class="lower-left">
-                        <h3>Description<h3>
+                        <h3>Description</h3>
                         <div class="description-container">
-                            <?php echo $knbn_description; ?>
+                            <p>
+                                <?php echo $knbn_description; ?>
+                            </p>
                         </div>
                     </div>
                     <div class="lower-right">
