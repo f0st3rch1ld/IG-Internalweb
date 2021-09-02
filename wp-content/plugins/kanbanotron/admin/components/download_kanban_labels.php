@@ -168,7 +168,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                     saveAs(blob, 'generated_kanban_labels.zip');
                 });
                 document.getElementById('loading-screen').classList.add('done-loading');
-            }, allKnbns.length * 50);
+            }, allKnbns.length * 150);
         }
         initDownload();
     });
