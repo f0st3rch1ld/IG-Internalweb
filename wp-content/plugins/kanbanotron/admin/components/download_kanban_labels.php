@@ -145,15 +145,13 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         let allKnbns = document.getElementsByClassName('knbn-lbl');
         for (i = 0; allKnbns.length > i; i++) {
             let fileName = allKnbns[i].getAttribute('data');
-            if (i = 0) {
-                domtoimage.toPng(allKnbns[i]).then(function(dataUrl) {
-                    let img = new Image();
-                    img.src = dataUrl;
-                    document.body.appendChild(img);
-                }).catch(function(error) {
-                    console.error('oops,something went wrong!', error);
-                });
-            }
+            domtoimage.toPng(allKnbns[i]).then(function(dataUrl) {
+                let img = new Image();
+                img.src = dataUrl;
+                document.body.appendChild(img);
+            }).catch(function(error) {
+                console.error('oops,something went wrong!', error);
+            });
         }
     });
 </script>
