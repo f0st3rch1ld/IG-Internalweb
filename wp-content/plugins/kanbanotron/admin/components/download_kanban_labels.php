@@ -75,9 +75,9 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 <div class="title-container">
                     <h4><?php echo $knbn_vendor_part_number; ?></h4>
                 </div>
-                <div class="blue-lower-label-container">
+                <div class="lower-label-container">
                     <h3>Description</h3>
-                    <p>
+                    <p class="blue-label-description">
                         <?php echo $knbn_description; ?>
                     </p>
                     <div class="blue-knbn-qty">
