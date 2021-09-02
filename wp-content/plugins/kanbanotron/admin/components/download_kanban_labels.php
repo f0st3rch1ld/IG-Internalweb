@@ -162,7 +162,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 }
             }, 3000);
         }
-        if (processedKnbns <= allKnbnsAmnt) {
+        while (processedKnbns < allKnbnsAmnt) {
             downloadCycle();
             processedKnbns += 5;
         }
