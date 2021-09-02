@@ -68,7 +68,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
     ?>
 
         <!-- <?php echo $knbn_uid; ?> Kanban Label -->
-        <div class="knbn-lbl">
+        <div class="knbn-lbl" data="<?php echo $knbn_vendor . "-" . $knbn_vendor_part_number; ?>">
 
             <!-- Blue Label -->
             <div class="blue-label">
