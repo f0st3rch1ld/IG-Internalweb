@@ -151,7 +151,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             });
         }
         for (i = 0; allKnbns.length > i; i++) {
-            setTimeout(initDownload(i), 1000);
+            setTimeout(initDownload(i), 5000);
 
         }
     });
