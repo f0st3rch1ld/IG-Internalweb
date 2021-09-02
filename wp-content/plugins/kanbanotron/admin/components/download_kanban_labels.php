@@ -64,6 +64,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             $blue_knbn_qty = $qty_explode[0];
             $red_knbn_qty = $qty_explode[1];
         }
+
     ?>
 
         <!-- <?php echo $knbn_uid; ?> Kanban Label -->
@@ -74,7 +75,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 <div class="title-container">
                     <h4><?php echo $knbn_vendor_part_number; ?></h4>
                 </div>
-                <div class="lower-label-container">
+                <div class="blue-lower-label-container">
                     <h3>Description</h3>
                     <p>
                         <?php echo $knbn_description; ?>

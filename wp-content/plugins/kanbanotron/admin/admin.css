@@ -169,7 +169,8 @@ label {
   font-style: italic;
 }
 
-.lower-label-container {
+.lower-label-container,
+.blue-lower-label-container {
   background-color: #fff;
   border-style: solid;
   border-width: 3px 0px 0px 0px;
@@ -188,10 +189,19 @@ label {
   font-size: 15px;
 }
 
+.blue-lower-label-container p {
+  margin: 0px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  height: 60px;
+  overflow:hidden;
+}
+
 .lower-label-container p {
   margin: 0px 10px;
   font-size: 14px;
   font-weight: bold;
+  height: 100px;
 }
 
 .blue-knbn-qty {
