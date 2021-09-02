@@ -71,7 +71,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
     ?>
 
         <!-- <?php echo $knbn_uid; ?> Kanban Label -->
-        <div class="knbn-lbl" data="<?php echo $knbn_vendor . "-" . $knbn_vendor_part_number; ?>">
+        <div class="knbn-lbl" data="<?php echo str_replace(' ', '-', $knbn_vendor . "-" . $knbn_vendor_part_number); ?>">
 
             <!-- Blue Label -->
             <div class="blue-label" style="background-image:url('<?php echo WP_CONTENT_URL . '/plugins/kanbanotron/admin/images/Cogs.png' ?>');">
