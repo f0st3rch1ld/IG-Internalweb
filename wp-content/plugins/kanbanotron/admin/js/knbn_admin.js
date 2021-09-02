@@ -37,11 +37,3 @@ let upManKnbnFields = (x) => {
   );
   xhttp.send();
 };
-
-let DTIActivate = (x, y) => {
-  domtoimage.toBlob(x).then(function(blob) {
-    window.saveAs(blob, y);
-  }).catch(function(error) {
-    console.error('oops,something went wrong!', error);
-  });
-}

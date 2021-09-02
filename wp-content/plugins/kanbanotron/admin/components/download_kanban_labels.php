@@ -146,8 +146,12 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         for (i = 0; allKnbns.length > i; i++) {
             let fileName = allKnbns[i].getAttribute('data');
             if (i = 0) {
-                DTIActivate(allKnbns[i], fileName);
-            } 
+                domtoimage.toBlob(allKnbns[i]).then(function(blob) {
+                    window.saveAs(blob, fileName);
+                }).catch(function(error) {
+                    console.error('oops,something went wrong!', error);
+                });
+            }
         }
     });
 </script>
