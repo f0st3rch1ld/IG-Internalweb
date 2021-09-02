@@ -153,7 +153,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         for (i = 0; allKnbns.length > i; i++) {
             setTimeout(function() {
                 initDownload(i);
-            });
+            }, 1000);
         }
     });
 </script>
