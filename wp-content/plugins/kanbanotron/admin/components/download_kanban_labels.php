@@ -153,7 +153,9 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                     zip.file(fileName, blob);
                 });
             }
-            window.saveAs(zip, 'Generated_Kanban_labels.zip');
+            zip.generateAsync({type:"blob"}).then(function(blob) {
+                saveAs(blob, 'generated_kanban_labels.zip');
+            });
         }
         initDownload(i);
     });
