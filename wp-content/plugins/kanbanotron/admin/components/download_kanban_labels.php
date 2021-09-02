@@ -32,9 +32,8 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 
 ?>
 
-<div class="knbn-loading-modal">
-    <p>Generating your order, please wait...</p>
-    <h2 id="percentage-generated">0%</h2>
+<div class="knbn-loading-modal" id="loading-screen">
+    <h2>Generating your order, please wait...</h2>
 </div>
 
 <!-- Kanban Label Grid Container -->
@@ -168,6 +167,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 }).then(function(blob) {
                     saveAs(blob, 'generated_kanban_labels.zip');
                 });
+                document.getElementById('loading-screen').classList.add('done-loading');
             }, allKnbns.length * 100);
         }
         initDownload();
