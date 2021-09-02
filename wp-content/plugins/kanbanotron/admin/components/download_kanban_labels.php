@@ -33,7 +33,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 ?>
 
 <div class="knbn-loading-modal" id="loading-screen">
-    <h2>Generating your order, please wait...</h2>
+    <h2 id="loading-text">Generating Kanban Labels, Please Wait...</h2>
 </div>
 
 <!-- Kanban Label Grid Container -->
@@ -139,9 +139,8 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         let allDaCodez = document.getElementsByClassName('qrcode-container');
         let allKnbns = document.getElementsByClassName('knbn-lbl');
 
-
-
         // QR Code Generation
+        document.getElementById('loading-text').innerHTML = "Generating QR Codes, Please Wait...";
         for (i = 0; allDaCodez.length > i; i++) {
             let uid = allDaCodez[i].getAttribute('data');
             let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
@@ -154,6 +153,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 
         // Image Save Functionality
         let initDownload = () => {
+            document.getElementById('loading-text').innerHTML = "Zipping Labels, Almost Done...";
             let zip = new JSZip();
             for (i = 0; allKnbns.length > i; i++) {
                 let fileName = allKnbns[i].getAttribute('data') + '.png';
@@ -168,7 +168,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                     saveAs(blob, 'generated_kanban_labels.zip');
                 });
                 document.getElementById('loading-screen').classList.add('done-loading');
-            }, allKnbns.length * 100);
+            }, allKnbns.length * 250);
         }
         initDownload();
     });
