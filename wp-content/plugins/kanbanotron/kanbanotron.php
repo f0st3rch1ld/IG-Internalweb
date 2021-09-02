@@ -207,5 +207,7 @@
 
         wp_enqueue_script('FileSaver.js', plugin_dir_url(__FILE__) . 'admin/node_modules/file-saver/src/FileSaver.js', array('jquery'), false, false);
 
+        wp_enqueue_script('jszip.js', plugin_dir_url(__FILE__) . 'admin/node_modules/jszip/dist/jszip.js', array('jquery'), false, false);
+
         wp_enqueue_style('admin.css', plugin_dir_url(__FILE__) . 'admin/admin.css', false, false);
     }
