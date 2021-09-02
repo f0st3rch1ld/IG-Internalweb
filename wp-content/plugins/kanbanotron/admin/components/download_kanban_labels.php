@@ -71,7 +71,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         <div class="knbn-lbl" data="<?php echo $knbn_vendor . "-" . $knbn_vendor_part_number; ?>">
 
             <!-- Blue Label -->
-            <div class="blue-label" style="background-image:url('<?php echo plugin_dir_path(__FILE__) . '../images/Cogs.png' ?>');">
+            <div class="blue-label" style="background-image:url('<?php echo WP_CONTENT_URL . 'plugins/kanbanotron/admin/images/Cogs.png' ?>');">
                 <div class="title-container">
                     <h4><?php echo $knbn_vendor_part_number; ?></h4>
                 </div>
@@ -93,7 +93,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             <!-- /Blue Label -->
 
             <!-- Red Label -->
-            <div class="red-label" style="background-image:url('<?php echo plugin_dir_path(__FILE__) . '../images/Cogs.png' ?>');">
+            <div class="red-label" style="background-image:url('<?php echo WP_CONTENT_URL . 'plugins/kanbanotron/admin/images/Cogs.png' ?>');">
                 <div class="title-container">
                     <h4><?php echo $knbn_vendor_part_number; ?></h4>
                 </div>
