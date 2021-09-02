@@ -182,7 +182,10 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         }
 
         // Image Save Functionality
-        document.getElementById('loading-text').innerHTML = "Zipping Labels, Almost Done...";
+        setTimeout(function() {
+            document.getElementById('loading-text').innerHTML = "Zipping Labels, Almost Done...";
+        }, allDaCodez.length * 100);
+
         initDownload();
     });
 </script>

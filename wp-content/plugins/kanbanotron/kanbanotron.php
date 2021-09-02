@@ -125,7 +125,7 @@
     add_action('admin_notices', function() {
         if (!empty($_REQUEST['bulk_download_kanban_labels'])) {
             $num_downloaded = (int) $_REQUEST['bulk_download_kanban_labels'];
-            printf('<div id="message" class="updated notice is-dismissable"><p>' . __('Generated and Downloaded %d Kanban Labels.', 'txtdomain') . '</p></div>', $num_downloaded);
+            printf('<div id="message" class="updated notice is-dismissable"><p>' . __('Generated and Downloaded %d Kanban Label Sets.', 'txtdomain') . '</p></div>', $num_downloaded);
         }
     });
 
