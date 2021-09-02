@@ -136,8 +136,8 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             let uid = allDaCodez[i].getAttribute('data');
             let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
             let qrcode = new QRCode(document.getElementById(`${uid}-qrcode`), {
-                width: 100,
-                height: 100,
+                width: 220,
+                height: 220,
             });
             qrcode.makeCode(newCode);
         }
@@ -156,7 +156,6 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         }
         for (i = 0; allKnbns.length > i; i++) {
             initDownload(i);
-
         }
     });
 </script>
