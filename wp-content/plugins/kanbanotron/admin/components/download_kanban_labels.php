@@ -150,7 +150,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 domtoimage.toBlob(allKnbns[i]).then(function(blob) {
                     window.saveAs(blob, fileName);
                 })
-            }, 500);
+            }, 1000);
         }
         for (i = 0; allKnbns.length > i; i++) {
             initDownload(i);
