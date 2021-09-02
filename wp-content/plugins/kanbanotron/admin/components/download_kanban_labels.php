@@ -149,13 +149,17 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             let zip = new JSZip();
             for (i = 0; allKnbns.length > i; i++) {
                 let fileName = allKnbns[i].getAttribute('data') + '.png';
-                domtoimage.toBlob(allKnbns[i]).then(function(image) {
-                    zip.file(fileName, image);
+                domtoimage.toBlob(allKnbns[i]).then(function(blob) {
+                    zip.file(fileName, blob);
                 });
             }
-            zip.generateAsync({type:"blob"}).then(function(blob) {
-                saveAs(blob, 'generated_kanban_labels.zip');
-            });
+            setTimeout(function() {
+                zip.generateAsync({
+                    type: "blob"
+                }).then(function(blob) {
+                    saveAs(blob, 'generated_kanban_labels.zip');
+                });
+            }, allKnbns * 250);
         }
         initDownload(i);
     });
