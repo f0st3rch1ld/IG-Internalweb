@@ -280,9 +280,3 @@ label {
   transition-timing-function: ease-in-out;
   transition-duration: 0.5s;
 }
-
-.done-loading {
-  display: none;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.5s;
-}

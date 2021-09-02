@@ -169,10 +169,12 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 }).then(function(blob) {
                     saveAs(blob, 'generated_kanban_labels.zip');
                 });
-                document.getElementById('loading-screen').classList.add('done-loading');
+
+                document.getElementById('loading-text').innerHTML = "Labels Zipped, Downloading";
+
                 setTimeout(function() {
                     window.location.replace("<?php echo admin_url() . 'edit.php?post_type=knbn_action&bulk_download_kanban_labels=' . count($knbn_uid_to_dwnld); ?>");
-                }, 3000);
+                }, 5000);
             }, allKnbns.length * 150);
         }
         initDownload();
