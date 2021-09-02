@@ -115,7 +115,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                         </div>
                     </div>
                     <div class="lower-right">
-                        <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:220px; height:220px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
+                        <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:190px; height:190px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
                     </div>
                 </div>
             </div>
@@ -136,8 +136,8 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             let uid = allDaCodez[i].getAttribute('data');
             let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
             let qrcode = new QRCode(document.getElementById(`${uid}-qrcode`), {
-                width: 220,
-                height: 220,
+                width: 190,
+                height: 190,
             });
             qrcode.makeCode(newCode);
         }
