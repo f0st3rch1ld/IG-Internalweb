@@ -140,10 +140,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 
     // QR Code Generation
     let updateLoadingScreen = (uid) => {
-        setTimeout(function() {
-            document.getElementById("loading-text").innerHTML =
-                "Generating QR Codes: " + uid;
-        }, 250);
+        document.getElementById("loading-text").innerHTML = "Generating QR Codes: " + uid;
     };
 
     let initDownload = () => {
@@ -166,13 +163,15 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             setTimeout(function() {
                 window.location.replace("<?php echo admin_url() . 'edit.php?post_type=knbn_action&bulk_download_kanban_labels=' . count($knbn_uid_to_dwnld); ?>");
             }, 10000);
-        }, allKnbns.length * 150);
+        }, allKnbns.length * 250);
     }
 
     window.addEventListener('load', function() {
         for (let i = 0; allDaCodez.length > i; i++) {
             let uid = allDaCodez[i].getAttribute('data');
-            updateLoadingScreen(uid);
+            setTimeout(function() {
+                updateLoadingScreen(uid);
+            }, 200);
             let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
             let qrcode = new QRCode(document.getElementById(`${uid}-qrcode`), {
                 width: 195,
@@ -184,7 +183,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         // Image Save Functionality
         setTimeout(function() {
             document.getElementById('loading-text').innerHTML = "Zipping Labels, Almost Done...";
-        }, allDaCodez.length * 100);
+        }, allDaCodez.length * 200);
 
         initDownload();
     });
