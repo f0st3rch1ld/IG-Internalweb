@@ -174,3 +174,13 @@
     </div>
 </div>
 <!-- /manual update container -->
+
+<script>
+    document
+        .getElementById("kanban-selection")
+        .addEventListener("change", function() {
+            if (this.value != "add-new-knbn") {
+                upManKnbnFields(this.value);
+            }
+        });
+</script>

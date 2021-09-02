@@ -38,10 +38,10 @@ let upManKnbnFields = (x) => {
   xhttp.send();
 };
 
-document
-  .getElementById("kanban-selection")
-  .addEventListener("change", function () {
-    if (this.value != "add-new-knbn") {
-      upManKnbnFields(this.value);
-    }
+let DTIActivate = (x, y) => {
+  domtoimage.toBlob(x).then(function(blob) {
+    window.saveAs(blob, y);
+  }).catch(function(error) {
+    console.error('oops,something went wrong!', error);
   });
+}

@@ -130,6 +130,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 
 <script>
     window.addEventListener('load', function() {
+        // QR Code Generation
         let allDaCodez = document.getElementsByClassName('qrcode-container');
         for (i = 0; allDaCodez.length > i; i++) {
             let uid = allDaCodez[i].getAttribute('data');
@@ -139,6 +140,14 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 height: 100,
             });
             qrcode.makeCode(newCode);
+        }
+        // Image Save Functionality
+        let allKnbns = document.getElementsByClassName('knbn-lbl');
+        for (i = 0; allKnbns.length > i; i++) {
+            let fileName = allKnbns[i].getAttribute('data');
+            if (i = 0) {
+                DTIActivate(allKnbns[i], fileName);
+            } 
         }
     });
 </script>
