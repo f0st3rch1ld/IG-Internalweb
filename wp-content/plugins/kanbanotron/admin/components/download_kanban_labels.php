@@ -127,12 +127,22 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 </div>
 <!-- /Kanban Label Grid Container -->
 
+<div class="knbn-loading-modal">
+    <h3>Generating your order, please wait...</h3>
+    <p id="percentage-generated">0%</p>
+</div>
+
 <?php $conn->close(); ?>
 
+<!-- This is where the magic happens -->
 <script>
     window.addEventListener('load', function() {
-        // QR Code Generation
         let allDaCodez = document.getElementsByClassName('qrcode-container');
+        let allKnbns = document.getElementsByClassName('knbn-lbl');
+
+
+
+        // QR Code Generation
         for (i = 0; allDaCodez.length > i; i++) {
             let uid = allDaCodez[i].getAttribute('data');
             let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
@@ -144,8 +154,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         }
 
         // Image Save Functionality
-        let allKnbns = document.getElementsByClassName('knbn-lbl');
-        let initDownload = (i) => {
+        let initDownload = () => {
             let zip = new JSZip();
             for (i = 0; allKnbns.length > i; i++) {
                 let fileName = allKnbns[i].getAttribute('data') + '.png';
@@ -159,8 +168,9 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 }).then(function(blob) {
                     saveAs(blob, 'generated_kanban_labels.zip');
                 });
-            }, allKnbns.length * 250);
+            }, allKnbns.length * 100);
         }
-        initDownload(i);
+        initDownload();
     });
 </script>
+<!-- /End of magic... there is no more magic, go home. -->
