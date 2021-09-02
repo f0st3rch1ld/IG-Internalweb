@@ -144,16 +144,17 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         }
 
         // Image Save Functionality
+        let zip = new JSZip();
         let allKnbns = document.getElementsByClassName('knbn-lbl');
         let initDownload = (i) => {
-            let fileName = allKnbns[i].getAttribute('data') + '.png';
-            domtoimage.toBlob(allKnbns[i]).then(function(blob) {
-                window.saveAs(blob, fileName);
-            });
+            for (i = 0; allKnbns.length > i; i++) {
+                let fileName = allKnbns[i].getAttribute('data') + '.png';
+                domtoimage.toBlob(allKnbns[i]).then(function(blob) {
+                    zip.file(fileName, blob);
+                });
+            }
+            window.saveAs(zip, 'Generated_Kanban_labels.zip');
         }
-        for (i = 0; allKnbns.length > i; i++) {
-
-            initDownload(i);
-        }
+        initDownload(i);
     });
 </script>
