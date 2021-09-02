@@ -164,7 +164,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         }
         if (processedKnbns <= allKnbnsAmnt) {
             downloadCycle();
-            processedknbns += 5;
+            processedKnbns += 5;
         }
     });
 </script>
