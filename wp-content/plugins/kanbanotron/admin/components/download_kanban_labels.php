@@ -32,6 +32,11 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 
 ?>
 
+<div class="knbn-loading-modal">
+    <h3>Generating your order, please wait...</h3>
+    <p id="percentage-generated">0%</p>
+</div>
+
 <!-- Kanban Label Grid Container -->
 <div class="knbn-lbl-grid-container">
     <?php foreach ($knbn_uid_to_dwnld as $knbn_uid) :
@@ -126,11 +131,6 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
     <?php endforeach; ?>
 </div>
 <!-- /Kanban Label Grid Container -->
-
-<div class="knbn-loading-modal">
-    <h3>Generating your order, please wait...</h3>
-    <p id="percentage-generated">0%</p>
-</div>
 
 <?php $conn->close(); ?>
 
