@@ -166,7 +166,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             let uid = allDaCodez[i].getAttribute('data');
             setTimeout(function() {
                 document.getElementById("loading-text").innerHTML = "Generating QR Codes: " + uid;
-            }, 200);
+            }, 400);
             let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
             let qrcode = new QRCode(document.getElementById(`${uid}-qrcode`), {
                 width: 195,
@@ -178,7 +178,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         // Image Save Functionality
         setTimeout(function() {
             document.getElementById('loading-text').innerHTML = "Zipping Labels, Almost Done...";
-        }, allDaCodez.length * 200);
+        }, allDaCodez.length * 400);
 
         initDownload();
     });
