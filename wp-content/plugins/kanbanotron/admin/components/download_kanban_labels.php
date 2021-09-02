@@ -33,8 +33,8 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 ?>
 
 <div class="knbn-loading-modal">
-    <h3>Generating your order, please wait...</h3>
-    <p id="percentage-generated">0%</p>
+    <p>Generating your order, please wait...</p>
+    <h2 id="percentage-generated">0%</h2>
 </div>
 
 <!-- Kanban Label Grid Container -->
