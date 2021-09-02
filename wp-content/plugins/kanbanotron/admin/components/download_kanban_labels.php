@@ -65,6 +65,8 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             $red_knbn_qty = $qty_explode[1];
         }
 
+        $conn->close();
+
     ?>
 
         <!-- <?php echo $knbn_uid; ?> Kanban Label -->
@@ -115,7 +117,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                         </div>
                     </div>
                     <div class="lower-right">
-                        <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:195px; height:195px; margin-top:27px;" data="<?php echo $knbn_uid; ?>"></div>
+                        <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:195px; height:195px; margin-top:30px;" data="<?php echo $knbn_uid; ?>"></div>
                     </div>
                 </div>
             </div>
@@ -149,12 +151,10 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             domtoimage.toBlob(allKnbns[i]).then(function(blob) {
                 window.saveAs(blob, fileName);
             });
-            return setTimeout(1000);
         }
         for (i = 0; allKnbns.length > i; i++) {
+
             initDownload(i);
         }
     });
 </script>
-
-<?php $conn->close(); ?>
