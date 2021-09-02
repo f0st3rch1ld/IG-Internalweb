@@ -146,7 +146,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         let allKnbns = document.getElementsByClassName('knbn-lbl');
         let initDownload = (i) => {
             let fileName = allKnbns[i].getAttribute('data') + '.svg';
-            domtoimage.toSvg(allKnbns[i], {filter: filter}).then(function(dataUrl) {
+            domtoimage.toSvg(allKnbns[i]).then(function(dataUrl) {
                 window.saveAs(File, fileName);
             });
         }
