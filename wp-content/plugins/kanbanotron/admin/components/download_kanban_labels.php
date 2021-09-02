@@ -170,10 +170,13 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                     saveAs(blob, 'generated_kanban_labels.zip');
                 });
                 document.getElementById('loading-screen').classList.add('done-loading');
-                window.location.replace("<?php echo admin_url() . 'edit.php?post_type=knbn_action&bulk_download_kanban_labels=' . count($knbn_uid_to_dwnld); ?>");
             }, allKnbns.length * 150);
         }
         initDownload();
+        
+        setTimeout(function() {
+            window.location.replace("<?php echo admin_url() . 'edit.php?post_type=knbn_action&bulk_download_kanban_labels=' . count($knbn_uid_to_dwnld); ?>");
+        }, 3000);
     });
 </script>
 <!-- /End of magic... there is no more magic, go home. -->
