@@ -159,7 +159,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 }).then(function(blob) {
                     saveAs(blob, 'generated_kanban_labels.zip');
                 });
-            }, allKnbns * 250);
+            }, allKnbns.length * 250);
         }
         initDownload(i);
     });
