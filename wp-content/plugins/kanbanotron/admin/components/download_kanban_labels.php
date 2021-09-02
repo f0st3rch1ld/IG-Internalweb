@@ -140,9 +140,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         let allKnbns = document.getElementsByClassName('knbn-lbl');
 
         // QR Code Generation
-        setTimeout(function() {
-            document.getElementById('loading-text').innerHTML = "Generating QR Codes, Please Wait...";
-        }, 1000);
+        document.getElementById('loading-text').innerHTML = "Generating QR Codes, Please Wait...";
 
         for (i = 0; allDaCodez.length > i; i++) {
             let uid = allDaCodez[i].getAttribute('data');
@@ -155,9 +153,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         }
 
         // Image Save Functionality
-        setTimeout(function() {
-            document.getElementById('loading-text').innerHTML = "Zipping Labels, Almost Done...";
-        }, 1000);
+        document.getElementById('loading-text').innerHTML = "Zipping Labels, Almost Done...";
 
         let initDownload = () => {
             let zip = new JSZip();
@@ -174,6 +170,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                     saveAs(blob, 'generated_kanban_labels.zip');
                 });
                 document.getElementById('loading-screen').classList.add('done-loading');
+                window.location.replace("<?php echo admin_url() . 'edit.php?post_type=knbn_action&bulk_download_kanban_labels=' . count($knbn_uid_to_dwnld); ?>");
             }, allKnbns.length * 150);
         }
         initDownload();
