@@ -141,10 +141,10 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             });
             qrcode.makeCode(newCode);
         }
-        
+
         // Image Save Functionality
         let allKnbns = document.getElementsByClassName('knbn-lbl');
-        let initDownload = () => {
+        let initDownload = (x) => {
             setTimeout(function(x) {
                 let fileName = x.getAttribute('data') + '.png';
                 domtoimage.toBlob(x).then(function(blob) {
