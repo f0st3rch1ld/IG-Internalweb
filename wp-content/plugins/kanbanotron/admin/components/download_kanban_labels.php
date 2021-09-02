@@ -152,8 +152,8 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         }
 
         // Image Save Functionality
+        document.getElementById('loading-text').innerHTML = "Zipping Labels, Almost Done...";
         let initDownload = () => {
-            document.getElementById('loading-text').innerHTML = "Zipping Labels, Almost Done...";
             let zip = new JSZip();
             for (i = 0; allKnbns.length > i; i++) {
                 let fileName = allKnbns[i].getAttribute('data') + '.png';
@@ -168,7 +168,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                     saveAs(blob, 'generated_kanban_labels.zip');
                 });
                 document.getElementById('loading-screen').classList.add('done-loading');
-            }, allKnbns.length * 250);
+            }, allKnbns.length * 50);
         }
         initDownload();
     });
