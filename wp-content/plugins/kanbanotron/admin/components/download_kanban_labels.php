@@ -144,6 +144,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 
         // Image Save Functionality
         let allKnbns = document.getElementsByClassName('knbn-lbl');
+        let loadTime = allKnbns.length * 1000;
         let initDownload = (i) => {
             setTimeout(function() {
                 let fileName = allKnbns[i].getAttribute('data') + '.png';
@@ -152,7 +153,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 }).then(function(blob) {
                     window.saveAs(blob, fileName);
                 });
-            }, 5000);
+            }, loadTime);
         }
         for (i = 0; allKnbns.length > i; i++) {
             initDownload(i);
