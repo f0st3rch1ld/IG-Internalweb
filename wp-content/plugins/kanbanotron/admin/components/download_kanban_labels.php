@@ -144,13 +144,12 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         // Image Save Functionality
         let allKnbns = document.getElementsByClassName('knbn-lbl');
         for (i = 0; allKnbns.length > i; i++) {
-            setInterval(function() {
-                allKnbns;
+            setTimeout(function() {
                 let fileName = allKnbns[i].getAttribute('data') + '.png';
                 domtoimage.toBlob(allKnbns[i]).then(function(blob) {
                     window.saveAs(blob, fileName);
-                });
-            }, 1000);
+                })
+            }, 500);
         }
     });
 </script>
