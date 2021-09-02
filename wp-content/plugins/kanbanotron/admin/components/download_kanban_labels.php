@@ -140,7 +140,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         let allKnbns = document.getElementsByClassName('knbn-lbl');
 
         // QR Code Generation
-        let generateQRs = (uid) => {
+        function generateQRs(uid) {
             setTimeout(function() {
                 document.getElementById('loading-text').innerHTML = "Generating QR Codes: " + uid;
             }, 250);
