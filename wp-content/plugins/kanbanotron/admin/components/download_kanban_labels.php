@@ -140,21 +140,21 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         let allKnbns = document.getElementsByClassName('knbn-lbl');
 
         // QR Code Generation
-        let generateQRs = () => {
+        let generateQRs = (uid) => {
             setTimeout(function() {
-                let uid = allDaCodez[i].getAttribute('data');
                 document.getElementById('loading-text').innerHTML = "Generating QR Codes: " + uid;
-                let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
-                let qrcode = new QRCode(document.getElementById(`${uid}-qrcode`), {
-                    width: 195,
-                    height: 195,
-                });
-                qrcode.makeCode(newCode);
             }, 250);
         }
 
         for (i = 0; allDaCodez.length > i; i++) {
-            generateQRs();
+            let uid = allDaCodez[i].getAttribute('data');
+            generateQrs(uid);
+            let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
+            let qrcode = new QRCode(document.getElementById(`${uid}-qrcode`), {
+                width: 195,
+                height: 195,
+            });
+            qrcode.makeCode(newCode);
         }
 
         // Image Save Functionality
