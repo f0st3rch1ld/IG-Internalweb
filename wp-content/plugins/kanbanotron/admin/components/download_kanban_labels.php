@@ -115,7 +115,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                         </div>
                     </div>
                     <div class="lower-right">
-                        <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:100px; height:100px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
+                        <div class="qrcode-container" id="<?php echo $knbn_uid; ?>-qrcode" style="width:220px; height:220px; margin-top:15px;" data="<?php echo $knbn_uid; ?>"></div>
                     </div>
                 </div>
             </div>
