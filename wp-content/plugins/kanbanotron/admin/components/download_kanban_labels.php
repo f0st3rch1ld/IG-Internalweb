@@ -145,9 +145,9 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         // Image Save Functionality
         let allKnbns = document.getElementsByClassName('knbn-lbl');
         let initDownload = (i) => {
-            let fileName = allKnbns[i].getAttribute('data') + '.png';
-            domtoimage.toBlob(allKnbns[i]).then(function(blob) {
-                window.saveAs(blob, fileName);
+            let fileName = allKnbns[i].getAttribute('data') + '.svg';
+            domtoimage.toSvg(allKnbns[i], {filter: filter}).then(function(dataUrl) {
+                window.saveAs(File, fileName);
             });
         }
         for (i = 0; allKnbns.length > i; i++) {
