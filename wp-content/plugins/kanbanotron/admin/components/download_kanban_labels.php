@@ -143,6 +143,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         }
 
         // Image Save Functionality
+        // at the moment it seems
         let allKnbns = document.getElementsByClassName('knbn-lbl');
         let initDownload = (i) => {
             setTimeout(function() {
@@ -152,7 +153,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
                 });
             }, 500);
         }
-        for (i = 0; allKnbns.length > i; i++) {
+        for (i = 0; allKnbns.length > i; setTimeout(function() {i++}, 500)) {
             initDownload(i);
         }
     });
