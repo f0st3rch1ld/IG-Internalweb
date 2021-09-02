@@ -146,8 +146,10 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         for (i = 0; allKnbns.length > i; i++) {
             let fileName = allKnbns[i].getAttribute('data');
             if (i = 0) {
-                domtoimage.toBlob(allKnbns[i]).then(function(blob) {
-                    window.saveAs(blob, fileName);
+                domtoimage.toPng(allKnbns[i]).then(function(dataUrl) {
+                    let img = new Image();
+                    img.src = dataUrl;
+                    document.body.appendChild(img);
                 }).catch(function(error) {
                     console.error('oops,something went wrong!', error);
                 });
