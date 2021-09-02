@@ -54,8 +54,7 @@
             'vendor' => __('Vendor', 'textdomain'),
             'part_number' => __('Part Number', 'textdomain'),
             'vendor_part_number' => __('Vendor Part Number', 'textdomain'),
-            'product_type' => __('Product Type', 'textdomain'),
-            // 'download_kanban_labels' => __('Download Kanban Labels', 'textdomain')
+            'product_type' => __('Product Type', 'textdomain')
         ]);
     });
 
@@ -102,9 +101,6 @@
                 echo 'No Vendor Part Number';
             }
         }
-        // elseif ($column_key == 'download_kanban_labels') {
-        //     echo '<a href="/wp-admin/edit.php?post_type=knbn_action&page=download_kanban_labels&knbn_uids=' . get_post_meta($post_id, 'product_setup_knbn_uid', true) . '" target="blank">Download Kanban Labels</a>';
-        // }
     }, 10, 2);
 
     // // Adds an option for bulk downloading kanban labels
@@ -125,7 +121,7 @@
         return $redirect_url;
     }, 10, 3);
 
-    // Gotta tell people that the bulk action has completed
+    // Gotta tell people that the bulk action has completed (If Redirected)
     add_action('admin_notices', function() {
         if (!empty($_REQUEST['bulk_download_kanban_labels'])) {
             $num_downloaded = (int) $_REQUEST['bulk_download_kanban_labels'];
