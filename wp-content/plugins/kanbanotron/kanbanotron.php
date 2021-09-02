@@ -205,5 +205,7 @@
 
         wp_enqueue_script('dom-tom-image.js', plugin_dir_url(__FILE__) . 'admin/node_modules/dom-to-image/src/dom-to-image.js', array('jquery'), false, false);
 
+        wp_enqueue_script('FileSaver.js', plugin_dir_url(__FILE__) . 'admin/node_modules/file-saver/src/FileSaver.js', array('jquery'), false, false);
+
         wp_enqueue_style('admin.css', plugin_dir_url(__FILE__) . 'admin/admin.css', false, false);
     }
