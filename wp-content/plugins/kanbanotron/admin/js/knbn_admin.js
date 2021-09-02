@@ -37,11 +37,3 @@ let upManKnbnFields = (x) => {
   );
   xhttp.send();
 };
-
-// QR Code Generation
-let updateLoadingScreen = (uid) => {
-  setTimeout(function () {
-    document.getElementById("loading-text").innerHTML =
-      "Generating QR Codes: " + uid;
-  }, 250);
-};

@@ -135,6 +135,37 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 
 <!-- This is where the magic happens -->
 <script>
+    // QR Code Generation
+    let updateLoadingScreen = (uid) => {
+        setTimeout(function() {
+            document.getElementById("loading-text").innerHTML =
+                "Generating QR Codes: " + uid;
+        }, 250);
+    };
+
+    let initDownload = () => {
+        let zip = new JSZip();
+        for (let i = 0; allKnbns.length > i; i++) {
+            let fileName = allKnbns[i].getAttribute('data') + '.png';
+            domtoimage.toBlob(allKnbns[i]).then(function(blob) {
+                zip.file(fileName, blob);
+            });
+        }
+        setTimeout(function() {
+            zip.generateAsync({
+                type: "blob"
+            }).then(function(blob) {
+                saveAs(blob, 'generated_kanban_labels.zip');
+            });
+
+            document.getElementById('loading-text').innerHTML = "Labels Zipped, Downloading";
+
+            setTimeout(function() {
+                window.location.replace("<?php echo admin_url() . 'edit.php?post_type=knbn_action&bulk_download_kanban_labels=' . count($knbn_uid_to_dwnld); ?>");
+            }, 10000);
+        }, allKnbns.length * 150);
+    }
+
     window.addEventListener('load', function() {
         let allDaCodez = document.getElementsByClassName('qrcode-container');
         let allKnbns = document.getElementsByClassName('knbn-lbl');
@@ -152,29 +183,6 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 
         // Image Save Functionality
         document.getElementById('loading-text').innerHTML = "Zipping Labels, Almost Done...";
-
-        let initDownload = () => {
-            let zip = new JSZip();
-            for (let i = 0; allKnbns.length > i; i++) {
-                let fileName = allKnbns[i].getAttribute('data') + '.png';
-                domtoimage.toBlob(allKnbns[i]).then(function(blob) {
-                    zip.file(fileName, blob);
-                });
-            }
-            setTimeout(function() {
-                zip.generateAsync({
-                    type: "blob"
-                }).then(function(blob) {
-                    saveAs(blob, 'generated_kanban_labels.zip');
-                });
-
-                document.getElementById('loading-text').innerHTML = "Labels Zipped, Downloading";
-
-                setTimeout(function() {
-                    window.location.replace("<?php echo admin_url() . 'edit.php?post_type=knbn_action&bulk_download_kanban_labels=' . count($knbn_uid_to_dwnld); ?>");
-                }, 10000);
-            }, allKnbns.length * 150);
-        }
         initDownload();
     });
 </script>
