@@ -198,7 +198,8 @@ label {
   overflow:hidden;
 }
 
-.lower-label-container p {
+.lower-label-container p,
+.blue-knbn-qty p {
   margin: 0px 10px;
   font-size: 14px;
   font-weight: bold;
