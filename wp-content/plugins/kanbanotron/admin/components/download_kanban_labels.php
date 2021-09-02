@@ -140,7 +140,10 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         let allKnbns = document.getElementsByClassName('knbn-lbl');
 
         // QR Code Generation
-        document.getElementById('loading-text').innerHTML = "Generating QR Codes, Please Wait...";
+        setTimeout(function() {
+            document.getElementById('loading-text').innerHTML = "Generating QR Codes, Please Wait...";
+        }, 1000);
+
         for (i = 0; allDaCodez.length > i; i++) {
             let uid = allDaCodez[i].getAttribute('data');
             let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
@@ -152,7 +155,10 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         }
 
         // Image Save Functionality
-        document.getElementById('loading-text').innerHTML = "Zipping Labels, Almost Done...";
+        setTimeout(function() {
+            document.getElementById('loading-text').innerHTML = "Zipping Labels, Almost Done...";
+        }, 1000);
+
         let initDownload = () => {
             let zip = new JSZip();
             for (i = 0; allKnbns.length > i; i++) {
