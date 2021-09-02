@@ -184,7 +184,8 @@ label {
   flex-wrap: wrap;
 }
 
-.lower-label-container h3 {
+.lower-label-container h3,
+.blue-lower-label-container h3 {
   margin: 6px;
   font-size: 15px;
 }
