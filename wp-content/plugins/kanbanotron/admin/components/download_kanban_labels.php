@@ -135,6 +135,9 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 
 <!-- This is where the magic happens -->
 <script>
+    let allDaCodez = document.getElementsByClassName('qrcode-container');
+    let allKnbns = document.getElementsByClassName('knbn-lbl');
+
     // QR Code Generation
     let updateLoadingScreen = (uid) => {
         setTimeout(function() {
@@ -167,9 +170,6 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
     }
 
     window.addEventListener('load', function() {
-        let allDaCodez = document.getElementsByClassName('qrcode-container');
-        let allKnbns = document.getElementsByClassName('knbn-lbl');
-
         for (let i = 0; allDaCodez.length > i; i++) {
             let uid = allDaCodez[i].getAttribute('data');
             updateLoadingScreen(uid);
