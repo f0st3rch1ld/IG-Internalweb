@@ -141,19 +141,19 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             });
             qrcode.makeCode(newCode);
         }
-
+        
         // Image Save Functionality
         let allKnbns = document.getElementsByClassName('knbn-lbl');
-        let initDownload = (x) => {
-            setTimeout(function(x) {
-                let fileName = x.getAttribute('data') + '.png';
-                domtoimage.toBlob(x).then(function(blob) {
+        let initDownload = (i) => {
+            setTimeout(function() {
+                let fileName = allKnbns[i].getAttribute('data') + '.png';
+                domtoimage.toBlob(allKnbns[i]).then(function(blob) {
                     window.saveAs(blob, fileName);
                 })
             }, 500);
         }
         for (i = 0; allKnbns.length > i; i++) {
-            initDownload(allKnbns[i]);
+            initDownload(i);
         }
     });
 </script>
