@@ -144,13 +144,13 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         }
 
         // Image Save Functionality
-        let zip = new JSZip();
         let allKnbns = document.getElementsByClassName('knbn-lbl');
         let initDownload = (i) => {
+            let zip = new JSZip();
             for (i = 0; allKnbns.length > i; i++) {
                 let fileName = allKnbns[i].getAttribute('data') + '.png';
-                domtoimage.toBlob(allKnbns[i]).then(function(blob) {
-                    zip.file(fileName, blob);
+                domtoimage.toBlob(allKnbns[i]).then(function(image) {
+                    zip.file(fileName, image);
                 });
             }
             zip.generateAsync({type:"blob"}).then(function(blob) {
