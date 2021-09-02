@@ -140,13 +140,13 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
         let allKnbns = document.getElementsByClassName('knbn-lbl');
 
         // QR Code Generation
-        function generateQRs(uid) {
-            setTimeout(function() {
-                document.getElementById('loading-text').innerHTML = "Generating QR Codes: " + uid;
-            }, 250);
-        }
-
-        for (i = 0; allDaCodez.length > i; i++) {
+    
+        for (let i = 0; allDaCodez.length > i; i++) {
+            let generateQRs = (uid) => {
+                setTimeout(function() {
+                    document.getElementById('loading-text').innerHTML = "Generating QR Codes: " + uid;
+                }, 250);
+            }
             let uid = allDaCodez[i].getAttribute('data');
             generateQrs(uid);
             let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
@@ -162,7 +162,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
 
         let initDownload = () => {
             let zip = new JSZip();
-            for (i = 0; allKnbns.length > i; i++) {
+            for (let i = 0; allKnbns.length > i; i++) {
                 let fileName = allKnbns[i].getAttribute('data') + '.png';
                 domtoimage.toBlob(allKnbns[i]).then(function(blob) {
                     zip.file(fileName, blob);
