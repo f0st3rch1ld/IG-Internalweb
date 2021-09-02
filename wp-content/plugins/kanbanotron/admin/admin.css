@@ -199,6 +199,7 @@ label {
   font-size: 14px;
   font-weight: bold;
   height: 60px;
+  overflow: hidden;
 }
 
 .blue-knbn-qty {
