@@ -171,7 +171,7 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             let uid = allDaCodez[i].getAttribute('data');
             setTimeout(function() {
                 updateLoadingScreen(uid);
-            }, 200);
+            }, 300);
             let newCode = `http://internalweb/kanbanotron/?knbn_uid=${uid}`;
             let qrcode = new QRCode(document.getElementById(`${uid}-qrcode`), {
                 width: 195,
