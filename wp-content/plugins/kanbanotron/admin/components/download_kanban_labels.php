@@ -64,9 +64,6 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             $blue_knbn_qty = $qty_explode[0];
             $red_knbn_qty = $qty_explode[1];
         }
-
-        $conn->close();
-
     ?>
 
         <!-- <?php echo $knbn_uid; ?> Kanban Label -->
@@ -129,6 +126,8 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
     <?php endforeach; ?>
 </div>
 <!-- /Kanban Label Grid Container -->
+
+<?php $conn->close(); ?>
 
 <script>
     window.addEventListener('load', function() {
