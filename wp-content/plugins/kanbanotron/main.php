@@ -11,7 +11,7 @@ if (!is_user_logged_in()) : ?>
 
 <?php else : ?>
 
-    <?php if ($current_user->$check_kanbanotron_acess == "enabled") : ?>
+    <?php if ($current_user->$check_kanbanotron_access == "enabled") : ?>
 
         <!-- Kanbanotron Container -->
         <div class="kanbanotron-main-container">
