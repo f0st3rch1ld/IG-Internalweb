@@ -68,7 +68,6 @@ if ($active_order_id_result->num_rows == 0) {
 } else {
 
     if ($active_order_id_result->num_rows > 1) : ?>
-        <p>Active orders retrieved.</p>
         <form method="post" action="" name="active_order_selection" class="active-order-form">
             <select name="order_selection" id="order-selection" onchange="updateActiveOrder(this.value); document.getElementById('active-order-submit').click();">
                 <?php $i; ?>
@@ -87,7 +86,6 @@ if ($active_order_id_result->num_rows == 0) {
             $active_order_id = $row['order_id'];
         }
         echo '
-        <p>Active order retrieved.</p>
         <input type="hidden" id="order-selection" value="' . $active_order_id . '" />';
     endif;
 }
