@@ -221,11 +221,18 @@
      <h3>Kanbanotron Access</h3>
      <table class="form-table">
          <tr>
-             <th><label for="check_kanbanotron_access">Enable Kanbanotron Access</label></th>
+             <th><label for="kanbanotron_access">Enable Kanbanotron Access</label></th>
              <td>
-                 <input type="checkbox" name="check_kanbanotron_access" id="check_kanbanotron_access" value="<?php echo esc_attr(get_the_author_meta('check_kanbanotron_access', $user->ID)); ?>" />
-                 <br />
-                 <span>Check this option if the employee is allowed access to the Kanbanotron.</span>
+                 <?php
+                    // get dropdown saved value
+                    $kanbanotron_status = get_the_author_meta('check_kanbanotron_access', $user->ID);
+                    ?>
+                 <!-- Employee Kanbanotron Access -->
+                 <select name="kanbanotron_access" id="kanbanotron_access">
+                     <option value="enabled" <?php if ($kanbanotron_status == "enabled") : ?> selected="selected"<?php endif; ?>>Enabled</option>
+                     <option value="disabled" <?php if ($kanbanotron_status == "disabled") : ?> selected="selected"<?php endif; ?>>Disabled</option>
+                 </select>
+                 <!-- /Employee Kanbanotron Access -->
              </td>
          </tr>
      </table>
