@@ -229,8 +229,8 @@
                     ?>
                  <!-- Employee Kanbanotron Access -->
                  <select name="check_kanbanotron_access" id="check_kanbanotron_access">
-                     <option value="enabled" <?php if ($kanbanotron_status == "enabled") : ?> selected="selected" <?php endif; ?>>Enabled</option>
                      <option value="disabled" <?php if ($kanbanotron_status == "disabled") : ?> selected="selected" <?php endif; ?>>Disabled</option>
+                     <option value="enabled" <?php if ($kanbanotron_status == "enabled") : ?> selected="selected" <?php endif; ?>>Enabled</option>
                  </select>
                  <!-- /Employee Kanbanotron Access -->
              </td>
