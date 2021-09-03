@@ -14,22 +14,6 @@ if (array_key_exists('xhttp', $_REQUEST)) {
     include plugin_dir_path(__FILE__) . '../db/qb_db/purchaseorder_request.php';
 }
 
-retrieve_po_data();
-// purchaseorder_request referance
-
-// --$purchaseorder_table_data_array;
-// ----TxnID
-// ----TimeCreated
-// ----VendorRef_FullName
-// ----Memo
-
-// --$purchaseorderlineret_table_data_array;
-// ----ItemRef_ListID
-// ----ItemRef_FullName
-// ----Description
-// ----Quantity
-// ----PARENT_IDKEY
-
 knbn_info_request($knbn_uid);
 
 qbdb_item_request($knbn_vendor_part_number);
@@ -41,11 +25,7 @@ qbdb_item_request($knbn_vendor_part_number);
 
 $knbn_on_order = FALSE;
 
-for ($i = 0; count($purchaseorderlineret_table_data_array) > $i; $i++) {
-    if ($qbdb_ListID == $purchaseorderlineret_table_data_array[$i]['ItemRef_ListID']) {
-        $knbn_on_order = TRUE;
-    }
-} ?>
+?>
 
 <!-- kanban search container -->
 <div id="knbn_uid-form">

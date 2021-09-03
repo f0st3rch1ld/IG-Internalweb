@@ -35,6 +35,5 @@ if ($knbn_does_url_exist_result->num_rows > 0) {
         echo "Error updating external URL: " . $conn->error;
     }
 }
-
 // Closes connection to WP Database
 $conn->close();
