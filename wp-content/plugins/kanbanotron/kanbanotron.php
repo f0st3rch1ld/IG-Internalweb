@@ -104,13 +104,13 @@
     }, 10, 2);
 
     // // Adds an option for bulk downloading kanban labels
-    add_filter('bulk_actions-edit-knbn_action', function($bulk_actions) {
+    add_filter('bulk_actions-edit-knbn_action', function ($bulk_actions) {
         $bulk_actions['bulk_download_kanban_labels'] = __('Download Selected Kanban Labels', 'txtdomain');
         return $bulk_actions;
     });
 
     // Bulk Download Functionality
-    add_filter('handle_bulk_actions-edit-knbn_action', function($redirect_url, $action, $post_ids) {
+    add_filter('handle_bulk_actions-edit-knbn_action', function ($redirect_url, $action, $post_ids) {
         if ($action == 'bulk_download_kanban_labels') {
             $temp_id_array = array();
             foreach ($post_ids as $post_id) {
@@ -122,7 +122,7 @@
     }, 10, 3);
 
     // Gotta tell people that the bulk action has completed (If Redirected)
-    add_action('admin_notices', function() {
+    add_action('admin_notices', function () {
         if (!empty($_REQUEST['bulk_download_kanban_labels'])) {
             $num_downloaded = (int) $_REQUEST['bulk_download_kanban_labels'];
             printf('<div id="message" class="updated notice is-dismissable"><p>' . __('Generated and Downloaded %d Kanban Label Sets.', 'txtdomain') . '</p></div>', $num_downloaded);
@@ -210,4 +210,34 @@
         wp_enqueue_script('jszip.js', plugin_dir_url(__FILE__) . 'admin/node_modules/jszip/dist/jszip.js', array('jquery'), false, false);
 
         wp_enqueue_style('admin.css', plugin_dir_url(__FILE__) . 'admin/admin.css', false, false);
+    }
+
+    // Code for adding extra fields to user's profile section.
+    add_action('kanbanotron_access', 'enable_kanbanotron_access');
+    add_action('Edit_kanbanotron_access', 'enable_kanbanotron_access');
+
+    function enable_kanbanotron_access($user)
+    { ?>
+     <h3>Kanbanotron Access</h3>
+     <table class="form-table">
+         <tr>
+             <th><label for="check_kanbanotron_access">Enable Kanbanotron Access</label></th>
+             <td>
+                 <input type="checkbox" name="check_kanbanotron_access" id="check_kanbanotron_access" value="<?php echo esc_attr(get_the_author_meta('check_kanbanotron_access', $user->ID)); ?>" />
+                 <br />
+                 <span>Check this option if the employee is allowed access to the Kanbanotron.</span>
+             </td>
+         </tr>
+     </table>
+ <?php }
+
+    add_action('personal_options_update', 'save_extra_profile_fields');
+    add_action('edit_user_profile_update', 'save_extra_profile_fields');
+
+    function save_extra_profile_fields($user_id)
+    {
+        if (!current_user_can('edit_user', $user_id)) {
+            return false;
+        }
+        update_user_meta($user_id, 'check_kanbanotron_access', $_POST['check_kanbanotron_access']);
     }
