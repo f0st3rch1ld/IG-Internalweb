@@ -221,14 +221,14 @@
      <h3>Kanbanotron Access</h3>
      <table class="form-table">
          <tr>
-             <th><label for="kanbanotron_access">Enable Kanbanotron Access</label></th>
+             <th><label for="check_kanbanotron_access">Enable Kanbanotron Access</label></th>
              <td>
                  <?php
                     // get dropdown saved value
                     $kanbanotron_status = get_the_author_meta('check_kanbanotron_access', $user->ID);
                     ?>
                  <!-- Employee Kanbanotron Access -->
-                 <select name="kanbanotron_access" id="kanbanotron_access">
+                 <select name="check_kanbanotron_access" id="check_kanbanotron_access">
                      <option value="enabled" <?php if ($kanbanotron_status == "enabled") : ?> selected="selected" <?php endif; ?>>Enabled</option>
                      <option value="disabled" <?php if ($kanbanotron_status == "disabled") : ?> selected="selected" <?php endif; ?>>Disabled</option>
                  </select>
