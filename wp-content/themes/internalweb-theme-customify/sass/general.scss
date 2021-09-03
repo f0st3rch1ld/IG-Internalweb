@@ -145,6 +145,11 @@ button {
         border-width: 0px 0px 2px 0px;
         border-color: $default-grey;
 
+        a,
+        button {
+          margin: 5px;
+        }
+
         input {
           width: calc(100% - 100px) !important;
           margin: 5px;
