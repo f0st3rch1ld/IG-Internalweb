@@ -38,9 +38,10 @@ if ($knbn_does_url_exist_result->num_rows > 0) {
 
     echo var_dump($max_meta_array);
     $new_max_meta = max($max_meta_array);
+    $new_max_meta++;
     echo $new_max_meta;
 
-    $knbn_set_ext_url = "INSERT INTO wp_postmeta (meta_id, post_id, meta_key, meta_value) VALUES ($new_max_meta, $retrieved_id, 'external_product_url', $ext_url)";
+    $knbn_set_ext_url = "INSERT INTO wp_postmeta (meta_id, post_id, meta_key, meta_value) VALUES ($new_max_meta, $retrieved_id, 'external_product_url', " . json_encode($ext_url) . ")";
 
     if ($conn->query($knbn_set_ext_url) === TRUE) {
         echo "External URL updated";
