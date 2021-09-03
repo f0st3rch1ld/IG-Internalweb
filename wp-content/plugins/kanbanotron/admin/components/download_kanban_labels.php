@@ -138,6 +138,12 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
     let allDaCodez = document.getElementsByClassName('qrcode-container');
     let allKnbns = document.getElementsByClassName('knbn-lbl');
 
+    browser.downloads.onChanged.addListener(function() {
+        setTimeout(function() {
+            window.location.replace("<?php echo admin_url() . 'edit.php?post_type=knbn_action&bulk_download_kanban_labels=' . count($knbn_uid_to_dwnld); ?>");
+        }, 3000);
+    });
+
     let initDownload = () => {
         let zip = new JSZip();
         for (let i = 0; allKnbns.length > i; i++) {
@@ -154,10 +160,6 @@ include plugin_dir_path(__FILE__) . '../../db/request.php';
             });
 
             document.getElementById('loading-text').innerHTML = "Labels Zipped, Downloading";
-
-            setTimeout(function() {
-                window.location.replace("<?php echo admin_url() . 'edit.php?post_type=knbn_action&bulk_download_kanban_labels=' . count($knbn_uid_to_dwnld); ?>");
-            }, 10000);
         }, allKnbns.length * 250);
     }
 
