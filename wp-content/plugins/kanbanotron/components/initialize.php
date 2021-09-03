@@ -93,7 +93,5 @@ if ($active_order_id_result->num_rows == 0) {
 
 <!-- <button onclick="newPO()">New Chocolate Chip <i class="fas fa-cookie-bite"></i></button> -->
 
-<a href="/kanbanotron/?on_order_ov=1">View On-Order List</a>
-
 </div>
 <!-- /Active Order Controls Container -->
