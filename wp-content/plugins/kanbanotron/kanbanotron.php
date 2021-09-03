@@ -213,8 +213,8 @@
     }
 
     // Code for adding extra fields to user's profile section.
-    add_action('kanbanotron_access', 'enable_kanbanotron_access');
-    add_action('Edit_kanbanotron_access', 'enable_kanbanotron_access');
+    add_action('show_user_profile', 'enable_kanbanotron_access');
+    add_action('edit_user_profile', 'enable_kanbanotron_access');
 
     function enable_kanbanotron_access($user)
     { ?>
@@ -231,8 +231,8 @@
      </table>
  <?php }
 
-    add_action('kanbanotron_options_update', 'save_kanbanotron_profile_fields');
-    add_action('edit_kanbanotron_profile_update', 'save_kanbanotron_profile_fields');
+    add_action('personal_options_update', 'save_kanbanotron_profile_fields');
+    add_action('edit_user_profile_update', 'save_kanbanotron_profile_fields');
 
     function save_kanbanotron_profile_fields($user_id)
     {
