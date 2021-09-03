@@ -49,6 +49,8 @@ if ($active_order_id_result->num_rows == 0) {
         generate_order_id();
     }
 
+    echo "<script>updateActiveOrder('" . $active_order_id . "');</script>";
+
     include plugin_dir_path(__FILE__) . '../db/kanbanotron_connection.php';
 
     $new_active_order = "INSERT INTO purchase_orders (order_id, is_active) VALUES ('$active_order_id', 'active')";
