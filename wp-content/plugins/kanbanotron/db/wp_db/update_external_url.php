@@ -36,7 +36,7 @@ if ($knbn_does_url_exist_result->num_rows > 0) {
         $max_meta_array = [$row['meta_id']];
     }
 
-    echo var_dump($max_meta_array);
+    echo var_dump(max($max_meta_array));
     $new_max_meta = max($max_meta_array);
     $new_max_meta++;
     echo $new_max_meta;
