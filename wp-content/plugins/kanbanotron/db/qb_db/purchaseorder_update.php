@@ -25,10 +25,6 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
     global $new_PO_RefNumber;
     global $new_PO_Number;
 
-    // Generates PO_Number based on currently logged in user and date
-    $current_user = wp_get_current_user();
-    $new_PO_Number = strtoupper(substr(esc_html($current_user->user_firstname), 0) . substr(esc_html($current_user->user_lastname), 0)) . date('d/m/y');
-
     $temp_TxnID_array = array();
     $temp_TxnNumber_array = array();
     $temp_RefNumber_array = array();
@@ -144,7 +140,7 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
         '" . $qbdb_items_request_array[0]['TermsRef_ListID'] . "',
         '" . $qbdb_items_request_array[0]['TermsRef_FullName'] . "',
         $order_total,
-        '" . $new_PO_Number . "',
+        'Test-Memo',
         1,
         0,
         0,
