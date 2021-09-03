@@ -11,22 +11,30 @@ if (!is_user_logged_in()) : ?>
 
 <?php else : ?>
 
-    <!-- Kanbanotron Container -->
-    <div class="kanbanotron-main-container">
+    <?php if ($current_user->$check_kanbanotron_acess == "enabled") : ?>
 
-        <?php if (isset($_GET['knbn_uid'])) : ?>
-            <?php include 'components/app.php'; ?>
-        <?php elseif (isset($_GET['on_order_ov'])) : ?>
-            <?php include 'components/on_order_list.php'; ?>
-        <?php else : ?>
-            <form name="knbn_uid-enter" id="knbn_uid-form" action="" method="get">
-                <input type="text" id="knbn_uid" name="knbn_uid" placeholder="Scan your QR Code" autofocus />
-                <input type="submit" value="Search for kanban to add to order" />
-            </form>
-            <a href="/kanbanotron/?on_order_ov=1">View On Order List</a>
-        <?php endif; ?>
+        <!-- Kanbanotron Container -->
+        <div class="kanbanotron-main-container">
 
-    </div>
-    <!-- /Kanbanotron Container -->
+            <?php if (isset($_GET['knbn_uid'])) : ?>
+                <?php include 'components/app.php'; ?>
+            <?php elseif (isset($_GET['on_order_ov'])) : ?>
+                <?php include 'components/on_order_list.php'; ?>
+            <?php else : ?>
+                <form name="knbn_uid-enter" id="knbn_uid-form" action="" method="get">
+                    <input type="text" id="knbn_uid" name="knbn_uid" placeholder="Scan your QR Code" autofocus />
+                    <input type="submit" value="Search for kanban to add to order" />
+                </form>
+                <a href="/kanbanotron/?on_order_ov=1">View On Order List</a>
+            <?php endif; ?>
+
+        </div>
+        <!-- /Kanbanotron Container -->
+
+    <?php else : ?>
+
+        <p>Unfortunately, you don't seem to have access to this part of the website. If you think this is a mistake, please send a ticket to IT! Thank you!</p>
+
+    <?php endif; ?>
 
 <?php endif; ?>
