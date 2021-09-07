@@ -13,7 +13,6 @@ $temp_TxnID_array;
 $new_PO_TxnID;
 $new_PO_TxnNumber;
 $new_PO_RefNumber;
-$new_PO_Number;
 
 function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
 {
@@ -23,7 +22,6 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
     global $new_PO_TxnID;
     global $new_PO_TxnNumber;
     global $new_PO_RefNumber;
-    global $new_PO_Number;
 
     $temp_TxnID_array = array();
     $temp_TxnNumber_array = array();
@@ -140,7 +138,7 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
         '" . $qbdb_items_request_array[0]['TermsRef_ListID'] . "',
         '" . $qbdb_items_request_array[0]['TermsRef_FullName'] . "',
         $order_total,
-        'Test-Memo',
+        'KNBN" . date('mm/dd/yy') . "',
         1,
         0,
         0,
