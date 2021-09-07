@@ -138,7 +138,7 @@ function purchaseorder_update($qbdb_items_request_array, $vendor, $order_total)
         '" . $qbdb_items_request_array[0]['TermsRef_ListID'] . "',
         '" . $qbdb_items_request_array[0]['TermsRef_FullName'] . "',
         $order_total,
-        'KNBN" . date('mm/dd/yy') . "',
+        'KNBN" . date('m/d/y') . "',
         1,
         0,
         0,
