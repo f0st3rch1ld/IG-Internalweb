@@ -98,6 +98,25 @@ function removeAllFromPO(x, y) {
   }
 }
 
+// AJAX request to remove all kanbans from a specific vendor from a PO
+function removeAllFromPOAfterSubmit(x, y) {
+  console.log(x);
+  console.log(y);
+
+  const xhttp = new XMLHttpRequest();
+
+  xhttp.onload = function () {
+    console.log(this.responseText);
+    loadPOPreview(x);
+  };
+
+  xhttp.open(
+    "GET",
+    `../../wp-content/plugins/kanbanotron/components/remove_all_from_purchase_order.php/?active_po=${x}&vndr=${y}`
+  );
+  xhttp.send();
+}
+
 // AJAX request to create a new purchase order
 function newPO() {
   // sends request to update database with a new Purchase Order
@@ -124,7 +143,7 @@ function submitPurchaseOrder(x, y) {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
       console.log(this.responseText);
-      removeAllFromPO(x, y);
+      removeAllFromPOAfterSubmit(x, y);
     };
     xhttp.open(
       "GET",
