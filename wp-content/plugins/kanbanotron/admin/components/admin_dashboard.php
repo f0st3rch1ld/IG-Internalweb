@@ -55,7 +55,7 @@
         <p>
             Use the CSV updater when you want to update kanbanotron with new kanbans. It will read your .csv importing it into both the kanbanotron database, creating new records, or updating ones that already exist.
             <br />
-            Here is an example table of how the .csv needs to be formatted:
+            <strong>Here is an example table of how the .csv needs to be formatted:</strong>
         </p>
 
         <table id="knbn-example-table">
