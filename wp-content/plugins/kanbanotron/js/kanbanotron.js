@@ -124,6 +124,7 @@ function submitPurchaseOrder(x, y) {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
       console.log(this.responseText);
+      removeAllFromPO(x, y);
     };
     xhttp.open(
       "GET",
