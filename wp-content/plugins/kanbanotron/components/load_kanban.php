@@ -141,12 +141,12 @@ $knbn_on_order = FALSE;
         <a href="<?php echo $knbn_external_url; ?>" target="_blank">Click to order from <?php echo $knbn_vendor; ?> <i class="far fa-plus-square"></i></a>
     <?php elseif ($knbn_external_yn == 'external' && $knbn_order_method == 'generated-po' && $knbn_reorder_quantity) : ?>
         <div class="group">
-            <a href="/kanbanotron/?on_order_ov=1">View On-Order List</a>
+            <!-- <a href="/kanbanotron/?on_order_ov=1">View On-Order List</a> -->
             <button onclick="addToPO('<?php echo $knbn_uid; ?>', document.getElementById('order-selection').value)">Add to PO <i class="far fa-plus-square"></i></button>
         </div>
     <?php elseif ($knbn_external_yn == 'internal') : ?>
         <div class="group">
-            <a href="/kanbanotron/?on_order_ov=1">View On-Order List</a>
+            <!-- <a href="/kanbanotron/?on_order_ov=1">View On-Order List</a> -->
             <button onclick="">Send to Scheduler <i class="far fa-plus-square"></i></button>
         </div>
     <?php endif; ?>
