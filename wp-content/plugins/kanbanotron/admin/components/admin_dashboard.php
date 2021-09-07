@@ -48,9 +48,9 @@
 </div> -->
 <!-- /qb sync container -->
 
-<?php if (!wp_is_mobile()) : ?>
+<?php //if (!wp_is_mobile()) : ?>
     <!-- csv update container -->
-    <div class="knbn-admin-container" id="knbn-csv-update-container" style="display:none">
+    <div class="knbn-admin-container" id="knbn-csv-update-container" >
         <h3>CSV Update</h3>
         <p>
             Use the CSV updater when you want to update both kanbanotron, and quickbooks with new kanbans. It will read your .csv, importing it into both the kanbanotron database, as well as the quickbooks database, creating new records, or updating ones that already exist.
@@ -98,7 +98,7 @@
 
     </div>
     <!-- /csv update container -->
-<?php endif; ?>
+<?php //endif; ?>
 
 <!-- <hr /> -->
 
