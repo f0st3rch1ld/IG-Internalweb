@@ -23,7 +23,7 @@ if (!is_user_logged_in()) : ?>
                 <input type="text" id="knbn_uid" name="knbn_uid" placeholder="Scan your QR Code" autofocus />
                 <input type="submit" value="Search for kanban to add to order" />
             </form>
-            <a href="/kanbanotron/?on_order_ov=1">View On Order List</a>
+            <!-- <a href="/kanbanotron/?on_order_ov=1">View On Order List</a> -->
         <?php endif; ?>
 
     </div>
