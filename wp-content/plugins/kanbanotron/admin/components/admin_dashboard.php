@@ -53,7 +53,7 @@
     <div class="knbn-admin-container" id="knbn-csv-update-container" >
         <h3>CSV Update</h3>
         <p>
-            Use the CSV updater when you want to update both kanbanotron, and quickbooks with new kanbans. It will read your .csv, importing it into both the kanbanotron database, as well as the quickbooks database, creating new records, or updating ones that already exist.
+            Use the CSV updater when you want to update kanbanotron with new kanbans. It will read your .csv importing it into both the kanbanotron database, creating new records, or updating ones that already exist.
             <br />
             Here is an example table of how the .csv needs to be formatted:
         </p>
@@ -66,12 +66,11 @@
                     <th>location</th>
                     <th>man_part_number</th>
                     <th>description</th>
-                    <th>blue_qty</th>
-                    <th>red_qty</th>
-                    <th>freight_policy</th>
-                    <th>package_qty</th>
-                    <th>lead_time</th>
-
+                    <th>Purchasing U/M</th>
+                    <th>Lead Time</th>
+                    <th>Kanban Blue/Red</th>
+                    <th>Type</th>
+                    <th>Price</th>
                 </tr>
             </thead>
             <tbody>
@@ -81,11 +80,11 @@
                     <td>Hardware</td>
                     <td>9283K14</td>
                     <td>1" Internal Poly Plug</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>Fed Ex</td>
-                    <td>100</td>
-                    <td>2 Days</td>
+                    <td>1 Pack (10 per pack)</td>
+                    <td>10 Days</td>
+                    <td>100/100</td>
+                    <td>Service</td>
+                    <td>100.00</td>
                 </tr>
             </tbody>
         </table>
