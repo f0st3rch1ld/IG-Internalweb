@@ -29,6 +29,10 @@ if (!is_user_logged_in()) : ?>
     </div>
     <!-- /Kanbanotron Container -->
 
+    <script>
+        document.cookie = `wp_current_user=<?php echo $current_user->ID; ?>`;
+    </script>
+
 <?php else : ?>
 
     <p>Unfortunately, you don't seem to have access to this part of the website. If you think this is a mistake, please send a ticket to IT! Thank you!</p>
