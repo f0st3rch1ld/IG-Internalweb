@@ -40,7 +40,7 @@ $tool_labels = array(
         'Long-Chalk-Line-HND1011' => 'Long Chalk Line',
         'Short-Chalk-Line-HND1012' => 'Short Chalk Line',
         'Chalk-HND1013' => 'Chalk',
-        'String-Line-HND1014' => 'String Line'
+        'String-Line-HND1014' => 'String Line',
 	'Dead-Blow-Hammer-HND1053' => 'Dead Blow Hammer',	
     ),
     // /Hand Tools Array
@@ -62,12 +62,12 @@ $tool_labels = array(
 	'Drill-Index-PWR1012' => 'Drill Index',
 	'Air-Tools-PWR1013' => 'Air Tools',
 	'Sawzall-PWR1014' => 'Sawzall',
-	'Half-Drive-Metric-Sockets-PWR1015' => '1/2" Drive Metric Sockets",
+	'Half-Drive-Metric-Sockets-PWR1015' => '1/2" Drive Metric Sockets',
 	'Concrete-anchor-tools-PWR1016' => 'Concrete Anchor Tools',
 	'Sawzall-Blades-PWR1017' => 'Sawzall Blades',
 	'Grinder-PWR1018' => 'Grinder',
 	'Belt-Sander-PWR1019' => 'Belt Sander',
-	'Rotary-File-PWR1020 => 'Rotary File',
+	'Rotary-File-PWR1020' => 'Rotary File',
 	'Air-Gun-PWR1021' => 'Air Gun',
 	'Air-Hammer-PWR1022' => 'Air Hammer',
 	'Heat-Gun-PWR1023' => 'Heat Gun',
