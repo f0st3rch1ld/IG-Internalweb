@@ -41,40 +41,40 @@ $tool_labels = array(
         'Short-Chalk-Line-HND1012' => 'Short Chalk Line',
         'Chalk-HND1013' => 'Chalk',
         'String-Line-HND1014' => 'String Line',
-	'Dead-Blow-Hammer-HND1053' => 'Dead Blow Hammer',	
+        'Dead-Blow-Hammer-HND1053' => 'Dead Blow Hammer',
     ),
     // /Hand Tools Array
 
     // Power Tools Array
     'power-tools' => array(
         'Die-Grinder-PWR1000' => 'Die Grinder',
-	'Finger-Sander-PWR1001' => 'Finger Sander',
-	'Air-Nozzle-PWR1002' => 'Air Nozzle',
+        'Finger-Sander-PWR1001' => 'Finger Sander',
+        'Air-Nozzle-PWR1002' => 'Air Nozzle',
         'Cut-Off-Tool-PWR1003' => 'Cut Off Tool',
         'Air-Buffer-PWR1004' => 'Air Buffer',
-	'Impact-PWR1005' => 'Impact',
-	'Drill-PWR1006' => 'Drill',
-	'Gyro-PWR1007' => 'Gyro',
-	'Flashlight-PWR1008' => 'Flashlight',
-	'Ratchet-PWR1009' => 'Ratchet',
-	'Jig-Saw-PWR1010' => 'Jig Saw',
-	'Porta-Band-PWR1011' => 'Porta Band',
-	'Drill-Index-PWR1012' => 'Drill Index',
-	'Air-Tools-PWR1013' => 'Air Tools',
-	'Sawzall-PWR1014' => 'Sawzall',
-	'Half-Drive-Metric-Sockets-PWR1015' => '1/2" Drive Metric Sockets',
-	'Concrete-anchor-tools-PWR1016' => 'Concrete Anchor Tools',
-	'Sawzall-Blades-PWR1017' => 'Sawzall Blades',
-	'Grinder-PWR1018' => 'Grinder',
-	'Belt-Sander-PWR1019' => 'Belt Sander',
-	'Rotary-File-PWR1020' => 'Rotary File',
-	'Air-Gun-PWR1021' => 'Air Gun',
-	'Air-Hammer-PWR1022' => 'Air Hammer',
-	'Heat-Gun-PWR1023' => 'Heat Gun',
-	'Powder-Gun-Cup-PWR1024' => 'Powder Gun Cup',
-	'DA-Sander-PWR1025' => 'DA Sander',
-	'DA-Pads-PWR1026' => 'DA Pads',
-	'LABEL-Air-Hose-PWR0007-Stocked' => 'Air Hose',
+        'Impact-PWR1005' => 'Impact',
+        'Drill-PWR1006' => 'Drill',
+        'Gyro-PWR1007' => 'Gyro',
+        'Flashlight-PWR1008' => 'Flashlight',
+        'Ratchet-PWR1009' => 'Ratchet',
+        'Jig-Saw-PWR1010' => 'Jig Saw',
+        'Porta-Band-PWR1011' => 'Porta Band',
+        'Drill-Index-PWR1012' => 'Drill Index',
+        'Air-Tools-PWR1013' => 'Air Tools',
+        'Sawzall-PWR1014' => 'Sawzall',
+        'Half-Drive-Metric-Sockets-PWR1015' => '1/2" Drive Metric Sockets',
+        'Concrete-anchor-tools-PWR1016' => 'Concrete Anchor Tools',
+        'Sawzall-Blades-PWR1017' => 'Sawzall Blades',
+        'Grinder-PWR1018' => 'Grinder',
+        'Belt-Sander-PWR1019' => 'Belt Sander',
+        'Rotary-File-PWR1020' => 'Rotary File',
+        'Air-Gun-PWR1021' => 'Air Gun',
+        'Air-Hammer-PWR1022' => 'Air Hammer',
+        'Heat-Gun-PWR1023' => 'Heat Gun',
+        'Powder-Gun-Cup-PWR1024' => 'Powder Gun Cup',
+        'DA-Sander-PWR1025' => 'DA Sander',
+        'DA-Pads-PWR1026' => 'DA Pads',
+        'LABEL-Air-Hose-PWR0007-Stocked' => 'Air Hose',
         'LABEL-110-Cord-PWR0015-Stocked' => '110 Cord',
         'LABEL-220-Cord-PWR0016-Stocked' => '220 Cord',
         'LABEL-Water-Hose-PWR0017-Stocked' => 'Water Hose',
@@ -126,27 +126,27 @@ $tool_labels = array(
 <!-- Request New Options -->
 <div class="radio-group" id="request-new-tool-label-group" style="display:none;">
 
-        <p><strong>What kind of tool label do you need?</strong></p>
+    <p><strong>What kind of tool label do you need?</strong></p>
 
-        <label for="hand-tool">
-            <input type="radio" class="dynamic-form tool-labels-condition" name="new-tool-label-type" id="hand-tool" value="hand-tool" form="" />
-            Hand Tools
-        </label>
+    <label for="hand-tool">
+        <input type="radio" class="dynamic-form tool-labels-condition" name="new-tool-label-type" id="hand-tool" value="hand-tool" form="" />
+        Hand Tools
+    </label>
 
-        <label for="power-tool">
-            <input type="radio" class="dynamic-form tool-labels-condition" name="new-tool-label-type" id="power-tool" value="power-tool" form="" />
-            Power Tool
-        </label>
+    <label for="power-tool">
+        <input type="radio" class="dynamic-form tool-labels-condition" name="new-tool-label-type" id="power-tool" value="power-tool" form="" />
+        Power Tool
+    </label>
 
-        <label for="electronic-tool">
-            <input type="radio" class="dynamic-form tool-labels-condition" name="new-tool-label-type" id="electronic-tool" value="electronic-tool" form="" />
-            Electronic Tool
-        </label>
+    <label for="electronic-tool">
+        <input type="radio" class="dynamic-form tool-labels-condition" name="new-tool-label-type" id="electronic-tool" value="electronic-tool" form="" />
+        Electronic Tool
+    </label>
 
-        <label for="fixture">
-            <input type="radio" class="dynamic-form tool-labels-condition" name="new-tool-label-type" id="fixture" value="fixture" form="" />
-            Fixture
-        </label>
+    <label for="fixture">
+        <input type="radio" class="dynamic-form tool-labels-condition" name="new-tool-label-type" id="fixture" value="fixture" form="" />
+        Fixture
+    </label>
 
     <label for="tool-label-text">Text:</label>
     <input class="dynamic-form tool-labels-condition" type="text" name="new-tool-label-text" id="tool-label-text" form="">
